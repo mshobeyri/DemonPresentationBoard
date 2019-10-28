@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/src/qml"/>
+    <qresource prefix="/">
+        <file>src/qml/SidePanel/SidePanel.qml</file>
+        <file>src/qml/SidePanel/SidePanelTimelineControls.qml</file>
+        <file>src/qml/SidePanel/SidePanelElements.qml</file>
+        <file>src/qml/SidePanel/SidePanelContainer.qml</file>
+        <file>src/qml/main.qml</file>
+        <file>src/qml/SidePanel/SidePanelOptions.qml</file>
+        <file>src/qml/SidePanel/SidePanelLabelTextField.qml</file>
+        <file>src/qml/World/World.qml</file>
+        <file>src/qml/Elements/ElementBase.qml</file>
+        <file>src/qml/Elements/ElementRectangle.qml</file>
+        <file>src/qml/Elements/ElementText.qml</file>
+        <file>src/qml/Elements/ElementImage.qml</file>
+        <file>src/qml/Elements/ElementBracket.qml</file>
+        <file>src/qml/Timeline/Timeline.qml</file>
+    </qresource>
+    <qresource prefix="/res">
+        <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
+        <file>res/Font Awesome 5 Pro-Regular-400.otf</file>
+        <file>res/image.svg</file>
+    </qresource>
+</RCC>
