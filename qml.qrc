@@ -16,6 +16,8 @@
         <file>src/qml/Elements/ElementBracket.qml</file>
         <file>src/qml/Timeline/Timeline.qml</file>
         <file>src/qml/Timeline/FramesGrid.qml</file>
+        <file>src/qml/Elements/ElementCircle.qml</file>
+        <file>src/qml/Elements/ElementIcon.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

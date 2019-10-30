@@ -46,10 +46,12 @@ Grid {
             ListElement{
                 icon : "circle"
                 tooltip: "circle"
+                componentStr: "qrc:/src/qml/Elements/ElementCircle.qml"
             }
             ListElement{
-                icon : "dice"
+                icon : "info-circle"
                 tooltip: "icon"
+                componentStr: "qrc:/src/qml/Elements/ElementIcon.qml"
             }
             ListElement{
                 icon : "[ ]"

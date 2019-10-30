@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import QtGraphicalEffects 1.0
 
 Item{
     id: iroot;
@@ -8,6 +9,7 @@ Item{
     y: 120
     width: 0;
     height: 0;
+    property bool fixAspectRatio: false
     property real handleSize: 16
     property bool selected: currentElement === iroot
     property alias component:iloader.sourceComponent
@@ -99,26 +101,34 @@ Item{
                     }
                 }
             }
-
-            Pane{
+            Item{
                 id: isizeHandle
+
                 x: 100 - width/2
-                y: 100 - width/2
+                y: fixAspectRatio? x :100 - width/2
                 width: handleSize
                 height: width
-                Material.elevation: 3
                 opacity: selected? 1 : 0
                 visible: opacity!==0
-                padding: 0
                 Behavior on opacity {
                     NumberAnimation{duration: 200}
                 }
-                Rectangle  {
+                Pane{
                     anchors.fill: parent
+                    Material.elevation: 6
+                }
+
+                Rectangle  {
+                    id: ihandleRect
+
                     radius: 3
-                    anchors.margins: -1
                     color:"midnightblue"
                     antialiasing: true
+                    z:1
+
+                    anchors.fill: parent
+                    anchors.margins: -1
+
                     Label{
                         font.pixelSize: parent.height/3*2
                         font.family: ifontAwsome.name
@@ -130,14 +140,13 @@ Item{
                             horizontalCenterOffset: 1
                         }
                     }
-
                 }
                 MouseArea{
                     anchors.fill: parent
                     drag.target: isizeHandle
-                    drag.axis: Drag.XAndYAxis
+                    drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
                     drag.minimumX: 30
-                    drag.minimumY: 30
+                    drag.minimumY: drag.minimumX
                 }
             }
         }
