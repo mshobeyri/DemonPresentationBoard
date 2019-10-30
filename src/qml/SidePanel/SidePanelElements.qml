@@ -32,7 +32,8 @@ Grid {
             }
             ListElement{
                 icon : "video"
-                tooltip: "video"
+                tooltip: "media"
+                componentStr: "qrc:/src/qml/Elements/ElementMedia.qml"
             }
             ListElement{
                 icon : "browser"
@@ -64,11 +65,12 @@ Grid {
             }
             ListElement{
                 icon : "long-arrow-right"
-                tooltip: "border"
+                tooltip: "arrow"
             }
             ListElement{
                 icon : "table"
                 tooltip: "table"
+                componentStr: "qrc:/src/qml/Elements/ElementTable.qml"
             }
             ListElement{
                 icon : "chart-line"

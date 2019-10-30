@@ -1,26 +1,29 @@
 <RCC>
     <qresource prefix="/src/qml"/>
     <qresource prefix="/">
+        <file>src/qml/main.qml</file>
         <file>src/qml/SidePanel/SidePanel.qml</file>
         <file>src/qml/SidePanel/SidePanelTimelineControls.qml</file>
         <file>src/qml/SidePanel/SidePanelElements.qml</file>
         <file>src/qml/SidePanel/SidePanelContainer.qml</file>
-        <file>src/qml/main.qml</file>
         <file>src/qml/SidePanel/SidePanelOptions.qml</file>
         <file>src/qml/SidePanel/SidePanelLabelTextField.qml</file>
-        <file>src/qml/World/World.qml</file>
         <file>src/qml/Elements/ElementBase.qml</file>
         <file>src/qml/Elements/ElementRectangle.qml</file>
         <file>src/qml/Elements/ElementText.qml</file>
         <file>src/qml/Elements/ElementImage.qml</file>
         <file>src/qml/Elements/ElementBracket.qml</file>
-        <file>src/qml/Timeline/Timeline.qml</file>
+        <file>src/qml/Elements/ElementMedia.qml</file>
         <file>src/qml/Timeline/FramesGrid.qml</file>
         <file>src/qml/Elements/ElementCircle.qml</file>
         <file>src/qml/Elements/ElementIcon.qml</file>
+        <file>src/qml/World/World.qml</file>
+        <file>src/qml/Timeline/Timeline.qml</file>
         <file>src/qml/Timeline/FrameOptions.qml</file>
         <file>src/qml/CustomDialog.qml</file>
         <file>src/qml/IconButton.qml</file>
+        <file>src/qml/Elements/ElementArrow.qml</file>
+        <file>src/qml/Elements/ElementTable.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

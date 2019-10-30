@@ -1,4 +1,4 @@
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 
@@ -6,7 +6,7 @@ int
 main(int argc, char* argv[]) {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
     app.setApplicationName("pl-illustrator");
     app.setOrganizationName("waterbear");
     QQuickStyle::setStyle("material");

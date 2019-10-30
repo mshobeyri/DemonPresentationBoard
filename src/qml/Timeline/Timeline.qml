@@ -12,6 +12,7 @@ CustomDialog {
     property var currentFrameModel: undefined
     property int easingType: Easing.InOutQuint
     property int duration: 1000
+    visible: false
 
     function grabFrame(){
         iframesGrid.frameModel.append({"rotation":worldFrame.rotation,
