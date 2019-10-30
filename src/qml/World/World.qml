@@ -74,14 +74,10 @@ Item{
             }
         }
 
-        color: "green"
+        color: "#9da8b3"
         x: 20
         y: 20
         width: iwin.width - 40
         height: iwin.height - 40
-
-        ElementRectangle{
-
-        }
     }
 }

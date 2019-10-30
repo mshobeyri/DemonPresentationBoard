@@ -1,16 +1,13 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import QtQuick.Layouts 1.12
+import ".."
 
-
-Pane {
+CustomDialog {
     id: iroot
-    anchors.fill: parent
-    anchors.margins: 20
-    visible: true
-    background: Rectangle{
-        opacity: 0.5
-    }
+
+    dialgTitle: "Timeline"
     property var worldFrame: undefined
     property var currentFrameModel: undefined
     property int easingType: Easing.InOutQuint
@@ -18,14 +15,32 @@ Pane {
 
     function grabFrame(){
         iframesGrid.frameModel.append({"rotation":worldFrame.rotation,
-                               "x":worldFrame.x ,
-                               "y":worldFrame.y,
-                               "scale":worldFrame.scale})
+                                          "x":worldFrame.x ,
+                                          "y":worldFrame.y,
+                                          "scale":worldFrame.scale,
+                                          "time":0,
+                                          "spendTime":0,
+                                          "notes":""})
     }
 
-    FramesGrid{
-        id: iframesGrid
+    function goPrev(){
+        iframesGrid.goPrev()
+    }
+    function goNext(){
+        iframesGrid.goNext()
+    }
+    Row{
         anchors.fill: parent
-        anchors.rightMargin: 400
+        FramesGrid{
+            id: iframesGrid
+            width: iwin.width / 6
+            height: parent.height
+        }
+        ToolSeparator{
+            height: parent.height
+        }
+        FrameOptions{
+
+        }
     }
 }

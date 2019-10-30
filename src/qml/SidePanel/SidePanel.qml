@@ -9,6 +9,13 @@ Item{
     height: parent.height
     anchors.right: parent.right
     property string insertCandidateComponent : ""
+    property Rectangle panelsPosition: Rectangle{
+        x: idrawer.visible?10: 10 + idrawer.width/2
+        y: 10
+        width: iwin.width - 20 - idrawer.width
+        height: iwin.height - 20
+    }
+
     Settings{
         property alias pinnedDrawer: ipinDrawerBtn.checked
     }

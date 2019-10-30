@@ -1,25 +1,37 @@
 import QtQuick 2.12
 import QtQml.Models 2.12
+import QtQuick.Controls 2.5
 
-GridView {
+ListView {
     id: igrid
-    property alias frameModel: iframesModel
 
+    clip: true
     displaced: Transition {
         NumberAnimation { properties: "x,y"; easing.type: Easing.OutQuad }
     }
-    cellWidth : iwin.width / 6 + 10
-    cellHeight:  iwin.height / 6 + 10
 
-    function goFrame(model){
+    property alias frameModel: iframesModel
+
+    function goCurrentFrame(){
         if(ianimations.running)
             ianimations.stop()
-        currentFrameModel = model
+        currentFrameModel = currentItem.modelObj()
         ianimations.start()
     }
+    function goPrev(){
+        if(igrid.currentIndex > 0 )
+            igrid.currentIndex--
+    }
+
+    function goNext(){
+        if(igrid.currentIndex+1 < igrid.count)
+            igrid.currentIndex++
+    }
+    onCurrentIndexChanged: goCurrentFrame()
 
     ParallelAnimation{
         id: ianimations
+
         running: false
         PropertyAnimation{
             property: "x"
@@ -58,16 +70,29 @@ GridView {
         }
         delegate: MouseArea {
             id: idelegateRoot
+            function index(){
+                return model.index
+            }
+            function modelObj(){
+                return model
+            }
 
             width: iwin.width / 6
             height: iwin.height / 6
             drag.target: icon
+            scale: currentItem === idelegateRoot ? 1 : 0.9
+            Behavior on scale {
+                NumberAnimation{duration: 100}
+            }
 
             property string name: DelegateModel.toString()
             property int selectedIndex: -1
             property int releaseIndex: -1
             property int visualIndex: DelegateModel.itemsIndex
-            onClicked: goFrame(model)
+            onClicked: {
+                currentIndex = model.index
+                goCurrentFrame(model)
+            }
             Rectangle {
                 id: icon
 
@@ -95,6 +120,13 @@ GridView {
                            worldFrame.scale===model.scale &&
                            worldFrame.rotation===model.rotation)
                 }
+                Label{
+                    anchors.centerIn: parent
+                    text: model.index
+                    font.pixelSize: parent.height/3 * 2
+                    opacity: 0.1
+                }
+
                 states: [
                     State {
                         when: icon.Drag.active
@@ -117,10 +149,7 @@ GridView {
                     if(idelegateRoot.selectedIndex==-1){
                         selectedIndex = drag.source.visualIndex
                     }
-                    //                       firstIndex = drag.source.visualIndex+1
-                    //                       secondIndex = delegateRoot.visualIndex+1
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
-                    //                       for(var i=0;i<animationVideoModel.count;i++)animationVideoModel.setProperty(i,"signal",signal++)
                 }
             }
         }
