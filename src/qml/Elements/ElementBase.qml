@@ -13,39 +13,42 @@ Item{
     property real handleSize: 16
     property bool selected: currentElement === iroot
     property alias component:iloader.sourceComponent
+    property bool editMode: false
     signal doubleClicked;
     Item {
-        id: container;
+        id: imain;
+
         width: isizeHandle.x+handleSize/2;
         height: isizeHandle.y+handleSize/2;
         anchors.centerIn: parent;
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                if(currentElement == undefined)
-                    currentElement = iroot
-                else
-                    currentElement = undefined
-            }
-            onDoubleClicked: iroot.doubleClicked()
-            drag.target: iroot
-            drag.axis: Drag.XAndYAxis
-        }
+
         property real centerX : (width / 2);
         property real centerY : (height / 2);
 
         Item{
             id: ibaseElement;
             transformOrigin: Item.Center;
+            antialiasing: true;
+            anchors.fill: parent;
 
             Loader{
                 id: iloader
                 anchors.fill: parent
             }
 
-
-            antialiasing: true;
-            anchors.fill: parent;
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    if(currentElement == undefined)
+                        currentElement = iroot
+                    else
+                        currentElement = undefined
+                }
+                onDoubleClicked: iroot.doubleClicked()
+                drag.target: iroot
+                drag.axis: Drag.XAndYAxis
+                enabled: !editMode
+            }
 
             Pane{
                 id: irotationHandle
@@ -81,9 +84,9 @@ Item{
                 MouseArea{
                     anchors.fill: parent;
                     onPositionChanged:  {
-                        var point =  mapToItem (container, mouse.x, mouse.y);
-                        var diffX = (point.x - container.centerX);
-                        var diffY = -1 * (point.y - container.centerY);
+                        var point =  mapToItem (imain, mouse.x, mouse.y);
+                        var diffX = (point.x - imain.centerX);
+                        var diffY = -1 * (point.y - imain.centerY);
                         var rad = Math.atan (diffY / diffX);
                         var deg = (rad * 180 / Math.PI);
                         if (diffX > 0 && diffY > 0) {

@@ -3,14 +3,13 @@ import QtQuick 2.12
 ElementBase{
     id: icontainer
 
-    property bool editMode: false
     onDoubleClicked:{
-        editMode = true
+        icontainer.editMode = true
         currentElement = icontainer
     }
     onSelectedChanged: {
         if(!selected)
-            editMode = false
+            icontainer.editMode = false
     }
 
     component:  Component {

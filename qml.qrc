@@ -24,6 +24,7 @@
         <file>src/qml/IconButton.qml</file>
         <file>src/qml/Elements/ElementArrow.qml</file>
         <file>src/qml/Elements/ElementTable.qml</file>
+        <file>src/qml/Elements/ElementChart.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
