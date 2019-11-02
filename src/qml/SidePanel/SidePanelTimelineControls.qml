@@ -3,7 +3,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import QtQuick.Layouts 1.12
 
-Pane {
+Frame {
     padding: 0
     Column{
         width: parent.width

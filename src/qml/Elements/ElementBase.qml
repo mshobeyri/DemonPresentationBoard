@@ -9,12 +9,21 @@ Item{
     y: 120
     width: 0;
     height: 0;
+    property alias w: isizeHandle.x
+    property alias h: isizeHandle.y
+    property alias r: ibaseElement.rotation
     property bool fixAspectRatio: false
     property real handleSize: 16
     property bool selected: currentElement === iroot
     property alias component:iloader.sourceComponent
     property bool editMode: false
+    property bool locked: false
     signal doubleClicked;
+    function deleteIt(){
+        iworld.currentElement = undefined
+        iroot.destroy()
+    }
+
     Item {
         id: imain;
 
@@ -47,7 +56,20 @@ Item{
                 onDoubleClicked: iroot.doubleClicked()
                 drag.target: iroot
                 drag.axis: Drag.XAndYAxis
-                enabled: !editMode
+                enabled: !editMode && !locked
+            }
+            MouseArea{
+                anchors.fill: parent
+                enabled: locked
+                propagateComposedEvents: true
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                onPressed: {
+                    if (mouse.button === Qt.LeftButton){
+                        mouse.accepted = false
+                    }else{
+                        locked = false
+                    }
+                }
             }
 
             Pane{

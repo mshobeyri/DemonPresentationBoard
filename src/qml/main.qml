@@ -11,7 +11,8 @@ ApplicationWindow {
     height: 600
     title: qsTr("pl-illustrator")
     Material.theme: Material.Dark
-    Material.accent: Material.BlueGrey
+    Material.accent: Material.Blue
+    visibility: ApplicationWindow.Maximized
 
     FontLoader{
         id: ifontAwsome

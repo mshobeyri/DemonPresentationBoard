@@ -58,6 +58,7 @@ Item{
                 }
 
                 currentElement = undefined
+                isidePanel.container.elements.deselectAll()
             }
             focus: true
             Keys.onPressed: {
@@ -80,7 +81,7 @@ Item{
             }
         }
 
-        ElementChart{
+        ElementRectangle{
 
         }
     }

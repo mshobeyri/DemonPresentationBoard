@@ -7,6 +7,7 @@ Flickable {
     width: parent.width
     interactive: height < contentHeight
     clip: true
+    property var elements: ielements
     Column{
         id: iheight
         width: parent.width
@@ -15,6 +16,7 @@ Flickable {
             padding: 10
         }
         SidePanelElements{
+            id: ielements
         }
         Label {
             text: qsTr("options:")

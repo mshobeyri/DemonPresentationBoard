@@ -8,6 +8,7 @@ Item{
     width: parent.width
     height: parent.height
     anchors.right: parent.right
+    property var container: icontainer
     property string insertCandidateComponent : ""
     property Rectangle panelsPosition: Rectangle{
         x: idrawer.visible?10: 10 + idrawer.width/2
@@ -45,10 +46,22 @@ Item{
         width: 260
         dim: false
         edge: Qt.RightEdge
-        opacity: 0.8
+        background: Rectangle{
+            opacity: 0.9
+            color: Material.background
+        }
+
         closePolicy: Drawer.NoAutoClose
         visible: ipinDrawerBtn.checked
+        interactive: false
         modal: false
+        ToolSeparator{
+            height: parent.height
+            anchors.left: parent.Left
+            leftInset: 0
+            leftPadding: 0
+        }
+
         ColumnLayout{
             anchors.fill: parent
             RowLayout{
@@ -86,6 +99,7 @@ Item{
             }
 
             SidePanelContainer{
+                id: icontainer
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }

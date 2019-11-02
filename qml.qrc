@@ -25,6 +25,10 @@
         <file>src/qml/Elements/ElementArrow.qml</file>
         <file>src/qml/Elements/ElementTable.qml</file>
         <file>src/qml/Elements/ElementChart.qml</file>
+        <file>src/qml/ColorPicker.qml</file>
+        <file>src/qml/SidePanel/SidePanelColorSelector.qml</file>
+        <file>src/qml/ChessBoard.qml</file>
+        <file>src/qml/SidePanel/SidePanelValueBox.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

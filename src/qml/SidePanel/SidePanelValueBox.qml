@@ -6,16 +6,15 @@ import QtQuick.Layouts 1.12
 RowLayout {
     spacing: 10
     property alias label: ilable.text
-    property alias text: itext.text
-    property alias textFocus: itext.focus
+    property alias value: ispinbox.value
     property int labelSize: ilable.paintedWidth
     Label{
         id: ilable
         Layout.preferredWidth: labelSize
     }
-    TextField{
-        id: itext
+    SpinBox{
+        id: ispinbox
         Layout.fillWidth: true
-        selectByMouse: true
+        editable: true
     }
 }

@@ -2,15 +2,15 @@ import QtQuick 2.12
 
 ElementBase{
     id: icontainer
-    property int rectWidth: 10
+    property int braceWidth: 10
     property color color: "blue"
-    property color backgroundColor: "white"
+    property color backgroundColor: "transparent"
     component:  Component {
         Rectangle {
             color: icontainer.backgroundColor
             antialiasing: true
             Rectangle{
-                width:rectWidth
+                width:braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
@@ -19,7 +19,7 @@ ElementBase{
                 }
             }
             Rectangle{
-                width:rectWidth
+                width:braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
@@ -30,8 +30,8 @@ ElementBase{
             }
 
             Rectangle{
-                width: 2*rectWidth
-                height: rectWidth
+                width: 2*braceWidth
+                height: braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
@@ -40,8 +40,8 @@ ElementBase{
                 }
             }
             Rectangle{
-                width: 2*rectWidth
-                height: rectWidth
+                width: 2*braceWidth
+                height: braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
@@ -50,8 +50,8 @@ ElementBase{
                 }
             }
             Rectangle{
-                width: 2*rectWidth
-                height: rectWidth
+                width: 2*braceWidth
+                height: braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
@@ -60,8 +60,8 @@ ElementBase{
                 }
             }
             Rectangle{
-                width: 2*rectWidth
-                height: rectWidth
+                width: 2*braceWidth
+                height: braceWidth
                 color: icontainer.color
                 antialiasing: true
                 anchors{
