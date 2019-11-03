@@ -16,6 +16,10 @@ ColumnLayout {
         izField.textFocus = false
         irField.textFocus = false
     }
+    function optionVisible(optionName){
+        return iworld.currentElement!==undefined &&
+                iworld.currentElement.hasOwnProperty(optionName)
+    }
 
     Row{
         Layout.alignment: Qt.AlignRight
@@ -91,8 +95,8 @@ ColumnLayout {
     SidePanelColorSelector{
         label: "color"
         labelSize : iborderColor.labelSize
-        visible: iworld.currentElement!==undefined &&
-                 iworld.currentElement.color!==undefined
+
+        visible: optionVisible('color')
         color: visible? iworld.currentElement.color:"white"
         onColorChanged: if(visible)iworld.currentElement.color = color
     }
@@ -100,33 +104,35 @@ ColumnLayout {
     SidePanelColorSelector{
         id: iborderColor
 
-        visible: iworld.currentElement!==undefined &&
-                 iworld.currentElement.borderColor!==undefined
+        visible: optionVisible('borderColor')
         label: "border color"
         color: visible? iworld.currentElement.borderColor:"white"
         onColorChanged: if(visible)iworld.currentElement.borderColor = color
     }
     SidePanelColorSelector{
-        visible: iworld.currentElement!==undefined &&
-                 iworld.currentElement.backgroundColor!==undefined
+
+        visible: optionVisible('backgroundColor')
         label: "background"
         color: visible? iworld.currentElement.backgroundColor:"white"
         onColorChanged: if(visible)iworld.currentElement.backgroundColor = color
     }
     SidePanelValueBox{
-        visible: iworld.currentElement!==undefined &&
-                 iworld.currentElement.borderWidth!==undefined
+        visible: optionVisible('borderWidth')
         labelSize : iborderColor.labelSize
         label: "border width"
         value: visible? iworld.currentElement.borderWidth:0
         onValueChanged: if(visible)iworld.currentElement.borderWidth = value
     }
     SidePanelValueBox{
-        visible: iworld.currentElement!==undefined &&
-                 iworld.currentElement.braceWidth!==undefined
+        visible: optionVisible('braceWidth')
         labelSize : iborderColor.labelSize
         label: "brace width"
         value: visible? iworld.currentElement.braceWidth:0
         onValueChanged:if(visible)iworld.currentElement.braceWidth = value
+    }
+    SidePanelTextOptions{
+        visible: optionVisible('textFont')
+        textFont: visible? iworld.currentElement.textFont:defaultFont
+        textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
     }
 }
