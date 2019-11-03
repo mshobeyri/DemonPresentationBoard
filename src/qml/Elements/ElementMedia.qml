@@ -24,6 +24,7 @@ ElementBase{
 
             source: icontainer.source
             antialiasing: true
+            backgroundColor: icontainer.color
             Item{
                 width: parent.width
                 height: irowLayout.height

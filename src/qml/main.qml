@@ -22,6 +22,11 @@ ApplicationWindow {
         id: ifontAwsomereg
         source: "qrc:/res/res/Font Awesome 5 Pro-Regular-400.otf"
     }
+    FontLoader{
+        id: ifontAwsomebrands
+        source: "qrc:/res/res/Font Awesome 5 Brands-Regular-400.otf"
+        Component.onCompleted: console.log(ifontAwsomebrands.name)
+    }
     World{
         id: iworld
     }
@@ -32,4 +37,8 @@ ApplicationWindow {
     SidePanel{
         id: isidePanel
     }
+    SidePanelIconGallery{
+        visible: true
+    }
 }
+

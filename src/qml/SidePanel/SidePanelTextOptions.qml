@@ -62,6 +62,7 @@ Column{
             popup.x: -labelSize
             popup.width: iroot.width
             popup.height: iwin.height / 2
+            flat: true
             currentIndex: model.indexOf(textFont.family)
             onCurrentTextChanged: if(focus)textFontOutput.family = currentText
             delegate: MenuItem{

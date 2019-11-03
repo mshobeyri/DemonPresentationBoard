@@ -30,10 +30,13 @@
         <file>src/qml/ChessBoard.qml</file>
         <file>src/qml/SidePanel/SidePanelValueBox.qml</file>
         <file>src/qml/SidePanel/SidePanelTextOptions.qml</file>
+        <file>src/qml/SidePanel/SidePanelIconGallery.qml</file>
+        <file>src/qml/SidePanel/SidePanelIconsJs.js</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
         <file>res/Font Awesome 5 Pro-Regular-400.otf</file>
         <file>res/image.svg</file>
+        <file>res/Font Awesome 5 Brands-Regular-400.otf</file>
     </qresource>
 </RCC>

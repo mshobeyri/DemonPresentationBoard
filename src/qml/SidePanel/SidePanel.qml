@@ -69,8 +69,7 @@ Item{
                 Button{
                     text: "cog"
                     flat: true
-                    font.family: ifontAwsomereg.name
-
+                    font.family: ifontAwsome.name
                     leftInset: 5
                     rightInset: 5
                     width: height
@@ -84,7 +83,8 @@ Item{
                     id: ipinDrawerBtn
                     text: "thumbtack"
                     flat: true
-                    font.family: ifontAwsomereg.name
+                    font.family: ifontAwsome.name
+                    font.bold: true
                     checkable: true
                     checked: true
                     scale: 0.7
