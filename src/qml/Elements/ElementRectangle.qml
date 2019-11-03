@@ -11,6 +11,7 @@ ElementBase{
             border.width: icontainer.borderWidth
             border.color: icontainer.borderColor
             antialiasing: true
+
         }
     }
 }

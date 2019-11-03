@@ -12,7 +12,7 @@ ElementBase{
     property color color: "#000000"
     FileDialog{
         id: isourceSelector
-
+        nameFilters: ["Video files (*.mp4 *.avi *.mov *.mkv *.wmv)", "All files (*.*)"]
         onAccepted: icontainer.source = currentFile
         onRejected: icontainer.deleteIt()
     }

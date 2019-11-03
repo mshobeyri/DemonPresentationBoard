@@ -81,9 +81,5 @@ Item{
                 }
             }
         }
-
-        ElementMedia{
-
-        }
     }
 }
