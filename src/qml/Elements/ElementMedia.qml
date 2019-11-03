@@ -3,11 +3,20 @@ import QtAV 1.6
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import Qt.labs.platform 1.1
 
 ElementBase{
     id: icontainer
 
-    property string source: "file:////home/mehrdad/Downloads/Telegram Desktop/1.mp4"
+    property string source: ""
+    property color color: "#000000"
+    FileDialog{
+        id: isourceSelector
+
+        onAccepted: icontainer.source = currentFile
+        onRejected: icontainer.deleteIt()
+    }
+    Component.onCompleted: isourceSelector.open()
 
     component:  Component {
         Video {
@@ -20,6 +29,7 @@ ElementBase{
                 height: irowLayout.height
                 anchors.bottom: parent.bottom
                 opacity: imousarea.containsMouse || ibutton.hovered || islider.hovered?1 : 0
+                parent: icontainer.selectDragMouseArea
                 Behavior on opacity{
                     NumberAnimation{duration: 200}
                 }

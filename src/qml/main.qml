@@ -32,4 +32,5 @@ ApplicationWindow {
     SidePanel{
         id: isidePanel
     }
+
 }

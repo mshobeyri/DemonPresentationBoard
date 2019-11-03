@@ -5,6 +5,7 @@ Item{
     anchors.fill: parent
     property var currentElement: undefined
     property alias frame: iframe
+    property real handlesScale: 1 / iframe.scale
     Rectangle {
         id: iframe
         antialiasing: true
@@ -81,7 +82,7 @@ Item{
             }
         }
 
-        ElementRectangle{
+        ElementMedia{
 
         }
     }

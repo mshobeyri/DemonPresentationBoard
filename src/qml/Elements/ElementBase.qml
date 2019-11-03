@@ -18,6 +18,7 @@ Item{
     property alias component:iloader.sourceComponent
     property bool editMode: false
     property bool locked: false
+    property alias selectDragMouseArea: iselectDragMouseArea
     signal doubleClicked;
     function deleteIt(){
         iworld.currentElement = undefined
@@ -35,7 +36,8 @@ Item{
         property real centerY : (height / 2);
 
         Item{
-            id: ibaseElement;
+            id: ibaseElement
+
             transformOrigin: Item.Center;
             antialiasing: true;
             anchors.fill: parent;
@@ -46,18 +48,22 @@ Item{
             }
 
             MouseArea{
+                id: iselectDragMouseArea
                 anchors.fill: parent
                 onClicked: {
-                    if(currentElement == undefined)
-                        currentElement = iroot
-                    else
+                    if(currentElement == iroot)
                         currentElement = undefined
+                    else
+                        currentElement = iroot
+                    mouse.accepted = true
                 }
+                propagateComposedEvents: true
                 onDoubleClicked: iroot.doubleClicked()
                 drag.target: iroot
                 drag.axis: Drag.XAndYAxis
                 enabled: !editMode && !locked
             }
+
             MouseArea{
                 anchors.fill: parent
                 enabled: locked
@@ -82,6 +88,7 @@ Item{
                 opacity: selected? 1 : 0
                 visible: opacity!==0
                 padding: 0
+                scale: iworld.handlesScale
                 anchors {
                     horizontalCenter: parent.right
                     verticalCenter: parent.verticalCenter
@@ -135,6 +142,7 @@ Item{
                 height: width
                 opacity: selected? 1 : 0
                 visible: opacity!==0
+                scale: iworld.handlesScale
                 Behavior on opacity {
                     NumberAnimation{duration: 200}
                 }
@@ -142,15 +150,17 @@ Item{
                     anchors.fill: parent
                     Material.elevation: 6
                 }
-
+                MouseArea{
+                    anchors.fill: parent
+                    drag.target: isizeHandle
+                    drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
+                    drag.minimumX: 30
+                    drag.minimumY: drag.minimumX
+                }
                 Rectangle  {
-                    id: ihandleRect
-
                     radius: 3
                     color:"midnightblue"
                     antialiasing: true
-                    z:1
-
                     anchors.fill: parent
                     anchors.margins: -1
 
@@ -165,13 +175,6 @@ Item{
                             horizontalCenterOffset: 1
                         }
                     }
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    drag.target: isizeHandle
-                    drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
-                    drag.minimumX: 30
-                    drag.minimumY: drag.minimumX
                 }
             }
         }
