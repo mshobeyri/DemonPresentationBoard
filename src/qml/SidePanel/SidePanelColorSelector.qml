@@ -11,6 +11,7 @@ Column {
     property alias label: icolorCodeTextField.label
     property alias labelSize: icolorCodeTextField.labelSize
     property color color
+    property string colorOutput: ""
 
     RowLayout{
         width: parent.width
@@ -18,26 +19,28 @@ Column {
             id: icolorCodeTextField
             Layout.preferredWidth: 150
             label: "color"
-            text: iroot.color
-            onTextChanged: {
-                if(iroot.visible)
-                    color = text
-            }
+            text: irect.color
+            validationRegex: /^#(([0-9a-fA-F]{3}){1,2}|([0-9a-fA-F]{8}))$/
+            onTextChanged:  if(isValid)iroot.colorOutput = text
         }
         ChessBoard{
             Layout.preferredWidth: 20
             Layout.preferredHeight: 20
             anchors.margins: 1
             Rectangle{
-                color: icolorCodeTextField.text
+                id: irect
                 border.color: "black"
                 border.width: 1
                 layer.enabled: true
                 anchors.fill: parent
+                color: iroot.color
+                onColorChanged: iroot.colorOutput = color
             }
             MouseArea{
                 anchors.fill: parent
-                onClicked: icolorCodeTextField.textFocus = false
+                onClicked: {
+                    icolorCodeTextField.textFocus = false
+                }
             }
         }
 
@@ -63,7 +66,8 @@ Column {
         Behavior on opacity {
             NumberAnimation{duration: 200}
         }
+
         onColorValueChanged: if(visible)
-                                 icolorCodeTextField.text = colorValue
+                                 colorOutput = colorValue
     }
 }

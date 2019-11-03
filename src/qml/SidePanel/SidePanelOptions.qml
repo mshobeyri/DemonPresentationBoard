@@ -9,12 +9,7 @@ ColumnLayout {
     width: parent.width - 20
     anchors.horizontalCenter: parent.horizontalCenter
     onVisibleChanged: {
-        ixField.textFocus = false
-        iyField.textFocus = false
-        iwField.textFocus = false
-        ihField.textFocus = false
-        izField.textFocus = false
-        irField.textFocus = false
+        ioptions.forceActiveFocus()
     }
     function optionVisible(optionName){
         return iworld.currentElement!==undefined &&
@@ -98,23 +93,21 @@ ColumnLayout {
 
         visible: optionVisible('color')
         color: visible? iworld.currentElement.color:"white"
-        onColorChanged: if(visible)iworld.currentElement.color = color
+        onColorOutputChanged: if(visible)iworld.currentElement.color = colorOutput
     }
-
     SidePanelColorSelector{
         id: iborderColor
 
         visible: optionVisible('borderColor')
         label: "border color"
         color: visible? iworld.currentElement.borderColor:"white"
-        onColorChanged: if(visible)iworld.currentElement.borderColor = color
+        onColorOutputChanged: if(visible)iworld.currentElement.borderColor = colorOutput
     }
     SidePanelColorSelector{
-
         visible: optionVisible('backgroundColor')
         label: "background"
         color: visible? iworld.currentElement.backgroundColor:"white"
-        onColorChanged: if(visible)iworld.currentElement.backgroundColor = color
+        onColorOutputChanged:  if(visible)iworld.currentElement.backgroundColor = colorOutput
     }
     SidePanelValueBox{
         visible: optionVisible('borderWidth')

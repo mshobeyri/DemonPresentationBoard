@@ -81,5 +81,14 @@ Item{
                 }
             }
         }
+
+        ElementText{
+            color: "red"
+        }
+
+        ElementText{
+            x:400
+            color: "blue"
+        }
     }
 }
