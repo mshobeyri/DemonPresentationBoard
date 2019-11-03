@@ -2,9 +2,9 @@ import QtQuick 2.12
 
 ElementBase{
     id: icontainer
-    property color color: "blue"
-    property color borderColor: "#fff"
-    property real borderWidth: 1
+    property color color: "#333333"
+    property color borderColor: "#141452"
+    property real borderWidth: 10
     component:  Component {
         Rectangle {
             color: icontainer.color

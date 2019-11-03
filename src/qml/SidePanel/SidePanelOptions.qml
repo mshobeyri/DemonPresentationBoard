@@ -41,6 +41,7 @@ ColumnLayout {
 
     RowLayout{
         spacing: 10
+        Layout.fillWidth: true
         SidePanelLabelTextField{
             id: ixField
             label: "x"
@@ -55,8 +56,8 @@ ColumnLayout {
         }
     }
     RowLayout{
-
         spacing: 10
+        Layout.fillWidth: true
         SidePanelLabelTextField{
             id: iwField
             label: "w"
@@ -72,6 +73,7 @@ ColumnLayout {
     }
     RowLayout{
         spacing: 10
+        Layout.fillWidth: true
         SidePanelLabelTextField{
             id: izField
             label: "z"
@@ -85,6 +87,7 @@ ColumnLayout {
             onTextChanged: if(textFocus)iworld.currentElement.r = Number(text)
         }
     }
+
     SidePanelColorSelector{
         label: "color"
         labelSize : iborderColor.labelSize
@@ -93,6 +96,7 @@ ColumnLayout {
         color: visible? iworld.currentElement.color:"white"
         onColorChanged: if(visible)iworld.currentElement.color = color
     }
+
     SidePanelColorSelector{
         id: iborderColor
 
@@ -125,5 +129,4 @@ ColumnLayout {
         value: visible? iworld.currentElement.braceWidth:0
         onValueChanged:if(visible)iworld.currentElement.braceWidth = value
     }
-
 }

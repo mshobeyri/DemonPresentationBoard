@@ -4,23 +4,25 @@ import QtQuick.Controls.Material 2.3
 import QtQuick.Layouts 1.12
 import ".."
 
-ColumnLayout {
+Column {
     id: iroot
-    Layout.preferredWidth: 260
+
+    Layout.preferredWidth: parent.width - 20
     property alias label: icolorCodeTextField.label
     property alias labelSize: icolorCodeTextField.labelSize
     property color color
-    onColorChanged: {
-        icolorCodeTextField.text = color
-    }
 
     RowLayout{
-        Layout.fillWidth: true
+        width: parent.width
         SidePanelLabelTextField{
             id: icolorCodeTextField
             Layout.preferredWidth: 150
             label: "color"
-            onTextChanged: color = text
+            text: iroot.color
+            onTextChanged: {
+                if(iroot.visible)
+                    color = text
+            }
         }
         ChessBoard{
             Layout.preferredWidth: 20
@@ -33,6 +35,10 @@ ColumnLayout {
                 layer.enabled: true
                 anchors.fill: parent
             }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: icolorCodeTextField.textFocus = false
+            }
         }
 
         Item{
@@ -40,30 +46,24 @@ ColumnLayout {
             Layout.fillWidth: true
         }
     }
+
     ColorPicker{
         id: icolorPicker
 
-        visible: icolorCodeTextField.textFocus
-        height: visible? parent.width / 2 - 20:0
-        Layout.preferredWidth: parent.width - 20
-        Layout.preferredHeight: height
-        opacity: !visible?0:1
+        visible: opacity!==0
+        width: parent.width - 20
+        height: icolorCodeTextField.textFocus ?parent.width / 2 - 20:0
+        opacity: icolorCodeTextField.textFocus?1:0
         Layout.leftMargin: 20
+        clip: true
 
         Behavior on height {
-            NumberAnimation{duration: 300}
+            NumberAnimation{duration: 200}
         }
         Behavior on opacity {
-            NumberAnimation{duration: 300}
+            NumberAnimation{duration: 200}
         }
-        onColorValueChanged: iroot.color = colorValue
-
-    }
-    ToolButton{
-        text: "check"
-        font.family: ifontAwsome.name
-        onClicked: icolorCodeTextField.textFocus = false
-        visible: icolorCodeTextField.textFocus
-        Layout.alignment: Qt.AlignRight
+        onColorValueChanged: if(visible)
+                                 icolorCodeTextField.text = colorValue
     }
 }

@@ -14,9 +14,13 @@ Flickable {
         Label {
             text: qsTr("insert:")
             padding: 10
+
+            visible: iworld.currentElement===undefined
         }
         SidePanelElements{
             id: ielements
+
+            visible: iworld.currentElement===undefined
         }
         Label {
             text: qsTr("options:")
