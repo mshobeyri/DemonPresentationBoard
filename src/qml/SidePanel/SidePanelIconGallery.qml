@@ -88,7 +88,10 @@ CustomDialog {
                             flat: true
                             font.family: ifontAwsome.name
                             font.bold: idelegate.modelObj().bold
-                            onClicked: iworld.currentElement.icon = modelData
+                            onClicked: {
+                                iworld.currentElement.icon = modelData
+                                iworld.currentElement.bold = font.bold
+                            }
                         }
                     }
                 }

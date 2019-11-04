@@ -52,7 +52,7 @@ ElementBase{
                                 anchors.margins: icontainer.spacing
                                 color:icontainer.textColor
                                 enabled: editMode
-                                text: model.modelData
+                                text: "text"
                                 font: icontainer.textFont
                                 wrapMode: TextEdit.WordWrap
                                 horizontalAlignment: textJustify
