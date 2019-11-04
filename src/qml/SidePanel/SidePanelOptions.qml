@@ -92,10 +92,16 @@ ColumnLayout {
         id: icolor
         label: "color"
         labelSize : iborderColor.labelSize
-
         visible: optionVisible('color')
         color: visible? iworld.currentElement.color:"white"
         onColorOutputChanged: if(visible)iworld.currentElement.color = colorOutput
+    }
+    SidePanelColorSelector{
+        label: "text color"
+        labelSize : iborderColor.labelSize
+        visible: optionVisible('textColor')
+        color: visible? iworld.currentElement.textColor:"white"
+        onColorOutputChanged: if(visible)iworld.currentElement.textColor = colorOutput
     }
     SidePanelColorSelector{
         id: iborderColor
@@ -107,9 +113,17 @@ ColumnLayout {
     }
     SidePanelColorSelector{
         visible: optionVisible('backgroundColor')
+        labelSize : iborderColor.labelSize
         label: "background"
         color: visible? iworld.currentElement.backgroundColor:"white"
         onColorOutputChanged:  if(visible)iworld.currentElement.backgroundColor = colorOutput
+    }
+    SidePanelColorSelector{
+        labelSize : iborderColor.labelSize
+        visible: optionVisible('sepratorsColor')
+        label: "seprators"
+        color: visible? iworld.currentElement.sepratorsColor:"white"
+        onColorOutputChanged:  if(visible)iworld.currentElement.sepratorsColor = colorOutput
     }
     SidePanelValueBox{
         visible: optionVisible('borderWidth')
@@ -124,6 +138,27 @@ ColumnLayout {
         label: "brace width"
         value: visible? iworld.currentElement.braceWidth:0
         onValueChanged:if(visible)iworld.currentElement.braceWidth = value
+    }
+    SidePanelValueBox{
+        visible: optionVisible('rows')
+        labelSize : iborderColor.labelSize
+        label: "rows"
+        value: visible? iworld.currentElement.rows:0
+        onValueChanged: if(visible)iworld.currentElement.rows = value
+    }
+    SidePanelValueBox{
+        visible: optionVisible('cols')
+        labelSize : iborderColor.labelSize
+        label: "columns"
+        value: visible? iworld.currentElement.cols:0
+        onValueChanged: if(visible)iworld.currentElement.cols = value
+    }
+    SidePanelValueBox{
+        visible: optionVisible('spacing')
+        labelSize : iborderColor.labelSize
+        label: "spacing"
+        value: visible? iworld.currentElement.spacing:0
+        onValueChanged: if(visible)iworld.currentElement.spacing = value
     }
     SidePanelTextOptions{
         visible: optionVisible('textFont')

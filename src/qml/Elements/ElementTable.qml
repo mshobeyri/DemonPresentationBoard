@@ -3,13 +3,14 @@ import QtQuick 2.12
 ElementBase{
     id: icontainer
 
-    property bool editMode: false
     property int rows: 3
     property int cols: 2
-    property color backgroundColor: "red"
-    property color tableColor: "blue"
+    property color sepratorsColor: "#9cb26a6a"
+    property color backgroundColor: "#584f4f"
     property color textColor: "white"
     property int spacing: 4
+    property font textFont
+    property int textJustify: TextEdit.AlignLeft
 
     onDoubleClicked:{
         editMode = true
@@ -22,32 +23,41 @@ ElementBase{
 
     component:  Component {
         Rectangle{
-            color: tableColor
+            id: irect
+
+            color: sepratorsColor
             clip: true
-            GridView{
-                anchors.fill: parent
-                model: ["asda","asdas","asda","asasdasdasas","asda","asdas"]
-                interactive: false
-                cellWidth: parent.width/icontainer.cols
-                cellHeight: parent.height/icontainer.rows
-                delegate: Item{
-                    width: parent.width/icontainer.cols
-                    height: parent.height/icontainer.rows
-                    Rectangle{
-                        width: parent.width -icontainer.spacing
-                        height: parent.height -icontainer.spacing
-                        color: icontainer.backgroundColor
-                        anchors.centerIn: parent
-                        TextEdit {
-                            id: itxt
+            Grid{
+                id: igrid
+                anchors{
+                    fill: parent
+                    margins: icontainer.spacing
+                    rightMargin: 0
+                    bottomMargin: 0
+                }
+                rows: icontainer.rows
+                columns: icontainer.cols
+                spacing: icontainer.spacing
+                Repeater{
+                    model: icontainer.rows* icontainer.cols
+                    Item{
+                        width: (igrid.width/icontainer.cols)-icontainer.spacing
+                        height: (igrid.height/icontainer.rows)-icontainer.spacing
+                        Rectangle{
                             anchors.fill: parent
-                            color:icontainer.textColor
-                            enabled: editMode
-                            text: model.modelData
-                            font.pixelSize: 14
-                            wrapMode: TextEdit.WordWrap
-                            horizontalAlignment: TextEdit.AlignHCenter
-                            verticalAlignment: TextEdit.AlignVCenter
+                            color: icontainer.backgroundColor
+                            anchors.centerIn: parent
+                            TextEdit {
+                                anchors.fill: parent
+                                anchors.margins: icontainer.spacing
+                                color:icontainer.textColor
+                                enabled: editMode
+                                text: model.modelData
+                                font: icontainer.textFont
+                                wrapMode: TextEdit.WordWrap
+                                horizontalAlignment: textJustify
+                                verticalAlignment: TextEdit.AlignVCenter
+                            }
                         }
                     }
                 }
