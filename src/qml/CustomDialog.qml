@@ -44,6 +44,10 @@ Dialog {
 
     background: Rectangle{
         color: Material.background
-        opacity: 0.7
+        opacity: 0.9
+
+        Frame{
+            anchors.fill: parent
+        }
     }
 }

@@ -1,7 +1,6 @@
 var icons = [
     {
         "icons": [
-            "accessible-icon",
             "american-sign-language-interpreting",
             "assistive-listening-systems",
             "audio-description",
@@ -254,8 +253,7 @@ var icons = [
             "volume-down",
             "volume-mute",
             "volume-off",
-            "volume-up",
-            "youtube"
+            "volume-up"
         ],
         "label": "Audio & Video"
     },
@@ -546,8 +544,6 @@ var icons = [
             "at",
             "bell",
             "bell-slash",
-            "bluetooth",
-            "bluetooth-b",
             "broadcast-tower",
             "bullhorn",
             "chalkboard",
@@ -616,12 +612,8 @@ var icons = [
     },
     {
         "icons": [
-            "bitcoin",
-            "btc",
             "dollar-sign",
             "euro-sign",
-            "gg",
-            "gg-circle",
             "lira-sign",
             "money-bill",
             "money-bill-alt",
@@ -946,7 +938,6 @@ var icons = [
     },
     {
         "icons": [
-            "accessible-icon",
             "ambulance",
             "h-square",
             "heart",
@@ -1722,8 +1713,6 @@ var icons = [
     },
     {
         "icons": [
-            "amazon-pay",
-            "apple-pay",
             "badge",
             "bell",
             "bookmark",
@@ -1733,37 +1722,22 @@ var icons = [
             "camera-retro",
             "cart-arrow-down",
             "cart-plus",
-            "cc-amazon-pay",
-            "cc-amex",
-            "cc-apple-pay",
-            "cc-diners-club",
-            "cc-discover",
-            "cc-jcb",
-            "cc-mastercard",
-            "cc-paypal",
-            "cc-stripe",
-            "cc-visa",
             "certificate",
             "credit-card",
             "credit-card-blank",
             "credit-card-front",
-            "ethereum",
             "gem",
             "gift",
-            "google-wallet",
             "handshake",
             "heart",
             "key",
             "money-check",
             "money-check-alt",
-            "paypal",
             "shopping-bag",
             "shopping-basket",
             "shopping-cart",
             "star",
             "star-exclamation",
-            "stripe",
-            "stripe-s",
             "tag",
             "tags",
             "thumbs-down",
@@ -1980,7 +1954,6 @@ var icons = [
     },
     {
         "icons": [
-            "accessible-icon",
             "address-book",
             "address-card",
             "bed",
@@ -2028,7 +2001,6 @@ var icons = [
     },
     {
         "icons": [
-            "accessible-icon",
             "ambulance",
             "bicycle",
             "bus",

@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import ".."
 
 ColumnLayout {
     id: ioptions
@@ -127,5 +128,13 @@ ColumnLayout {
         visible: optionVisible('textFont')
         textFont: visible? iworld.currentElement.textFont:defaultFont
         textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
+    }
+    IconButton{
+        visible: optionVisible('icon')
+        iconStr: visible? iworld.currentElement.icon:""
+        text: "Open Icon Gallery"
+        Layout.fillWidth: true
+        flat: true
+        onClicked: iiconGallery.open()
     }
 }

@@ -38,7 +38,7 @@ ApplicationWindow {
         id: isidePanel
     }
     SidePanelIconGallery{
-        visible: true
+        id: iiconGallery
     }
 }
 
