@@ -1,11 +1,20 @@
 import QtQuick 2.12
 import Qt.labs.platform 1.1
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
     property string source: "qrc:/res/res/image.svg"
     property bool isAnimated: icontainer.source.indexOf(".gif")===icontainer.source.length-4
     property bool isVector: icontainer.source.indexOf(".svg")===icontainer.source.length-4
+    property var json: {
+        "type":Element.image,
+        "common": icontainer.commonData,
+        "source": icontainer.source
+    }
+
+    Component.onCompleted: isourceSelector.open()
+
     FileDialog{
         id: isourceSelector
         nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
@@ -13,7 +22,6 @@ ElementBase{
         onRejected: icontainer.deleteIt()
     }
 
-    Component.onCompleted: isourceSelector.open()
 
     component:  Component {
         Item{

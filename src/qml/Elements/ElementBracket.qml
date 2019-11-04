@@ -1,10 +1,20 @@
 import QtQuick 2.12
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
-    property int braceWidth: 10
+
     property color color: "blue"
     property color backgroundColor: "transparent"
+    property int braceWidth: 10
+    property var json: {
+        "type":Element.bracket,
+        "common": icontainer.commonData,
+        "color": icontainer.color,
+        "backgroundColor": icontainer.backgroundColor,
+        "braceWidth": icontainer.braceWidth
+    }
+
     component:  Component {
         Rectangle {
             color: icontainer.backgroundColor

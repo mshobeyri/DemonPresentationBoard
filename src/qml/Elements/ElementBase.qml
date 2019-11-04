@@ -19,11 +19,24 @@ Item{
     property bool editMode: false
     property bool locked: false
     property alias selectDragMouseArea: iselectDragMouseArea
+    property var commonData: {
+        "x": iroot.x,
+        "y": iroot.y,
+        "z": iroot.z,
+        "w": iroot.w,
+        "h": iroot.h,
+        "r": ibaseElement.rotation,
+        "l": iroot.locked,
+        "v": iroot.visible,
+    }
+
     signal doubleClicked;
+
     function deleteIt(){
         iworld.currentElement = undefined
         iroot.destroy()
     }
+
 
     Item {
         id: imain;

@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import "../Elements"
+import "../Elements/ElementHelper.js" as Element
 
 Item{
     id: iroot
@@ -9,6 +10,31 @@ Item{
     property var currentElement: undefined
     property alias frame: iframe
     property real handlesScale: 1 / iframe.scale
+
+    function toJson(){
+        var elements = []
+        for(var i= 0;i<ielementContainer.children.length;i++){
+            elements.push(ielementContainer.children[i].json)
+        }
+        return elements
+    }
+
+    function fromJson(json){
+        while(ielementContainer.children.length > 0){
+            ielementContainer.children[0].deleteIt()
+        }
+        var elements = json.elements
+
+        for(var i= 0;i<elements.length;i++){
+            crateElement(elements[i].type,{json:elements[i]})
+        }
+
+    }
+    function crateElement(type, properties){
+        var component = Qt.createComponent(Element.path(type))
+        if(component.status === Component.Ready)
+            component.createObject(ielementContainer , properties)
+    }
 
     Shortcut {
         sequence: StandardKey.Delete
@@ -48,6 +74,7 @@ Item{
         }
     }
 
+
     Rectangle {
         id: iframe
 
@@ -55,7 +82,6 @@ Item{
         color: "#9da8b3"
         x: (iroot.width - width) / 2
         y: (iroot.height - height) / 2
-        Component.onCompleted: console.log(iroot.height ,height , scale)
         width: 1920
         height: 1080
         scale: Math.min(iroot.width / width,iroot.height/height)*0.95
@@ -97,14 +123,12 @@ Item{
             hoverEnabled: true
             onClicked: {
                 if(isidePanel.insertCandidateComponent!==""){
-                    var component = Qt.createComponent(isidePanel.insertCandidateComponent)
-                    if(component.status === Component.Ready)
-                        component.createObject(iframe , {x:mouseX,y:mouseY})
+                    crateElement(isidePanel.insertCandidateComponent, {x:mouseX,y:mouseY})
                 }
-
                 currentElement = undefined
                 isidePanel.container.elements.deselectAll()
             }
+
             focus: true
             Keys.onPressed: {
                 if (event.key === Qt.Key_Control) {
@@ -126,14 +150,18 @@ Item{
             }
         }
 
+        Item{
+            id: ielementContainer
 
-        ElementText{
-            color: "red"
-        }
+            anchors.fill: parent
+            ElementText{
+                color: "red"
+            }
 
-        ElementText{
-            x:400
-            color: "blue"
+            ElementText{
+                x:400
+                color: "blue"
+            }
         }
     }
 }

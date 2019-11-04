@@ -1,11 +1,10 @@
 import QtQuick 2.0
 import QtCharts 2.3
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
-    property color color: "blue"
-    property color borderColor: "white"
-    property real borderWidth: 10
+
     component:  Component {
         Rectangle{
             ChartView {

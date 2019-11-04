@@ -4,19 +4,28 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import Qt.labs.platform 1.1
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
 
     property string source: ""
     property color color: "#000000"
+    property var json: {
+        "type":Element.media,
+        "common": icontainer.commonData,
+        "source": icontainer.source,
+        "color": icontainer.color,
+    }
+
+    Component.onCompleted: isourceSelector.open()
+
     FileDialog{
         id: isourceSelector
         nameFilters: ["Video files (*.mp4 *.avi *.mov *.mkv *.wmv)", "All files (*.*)"]
         onAccepted: icontainer.source = currentFile
         onRejected: icontainer.deleteIt()
     }
-    Component.onCompleted: isourceSelector.open()
 
     component:  Component {
         Video {

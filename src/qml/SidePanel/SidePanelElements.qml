@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
-
+import "../Elements/ElementHelper.js" as Element
 Grid {
     id: iroot
     columns: 4
@@ -21,61 +21,51 @@ Grid {
         model: ListModel{
             ListElement{
                 icon : "file-alt"
-                tooltip: "text"
-                componentStr: "qrc:/src/qml/Elements/ElementText.qml"
-
+                name: "text"
             }
             ListElement{
                 icon : "image"
-                tooltip: "image"
-                componentStr: "qrc:/src/qml/Elements/ElementImage.qml"
+                name: "image"
             }
             ListElement{
                 icon : "video"
-                tooltip: "media"
-                componentStr: "qrc:/src/qml/Elements/ElementMedia.qml"
+                name: "media"
             }
             ListElement{
                 icon : "browser"
-                tooltip: "browser"
+                name: "browser"
             }
             ListElement{
                 icon : "rectangle-landscape"
-                tooltip: "rectangle"
-                componentStr: "qrc:/src/qml/Elements/ElementRectangle.qml"
+                name: "rectangle"
             }
             ListElement{
                 icon : "circle"
-                tooltip: "circle"
-                componentStr: "qrc:/src/qml/Elements/ElementCircle.qml"
+                name: "circle"
             }
             ListElement{
                 icon : "info-circle"
-                tooltip: "icon"
-                componentStr: "qrc:/src/qml/Elements/ElementIcon.qml"
+                name: "icon"
             }
             ListElement{
                 icon : "[ ]"
-                tooltip: "bracket"
-                componentStr: "qrc:/src/qml/Elements/ElementBracket.qml"
+                name: "bracket"
             }
             ListElement{
                 icon : "walking"
-                tooltip: "animation"
+                name: "animation"
             }
             ListElement{
                 icon : "long-arrow-right"
-                tooltip: "arrow"
-                componentStr: "qrc:/src/qml/Elements/ElementArrow.qml"
+                name: "arrow"
             }
             ListElement{
                 icon : "table"
-                tooltip: "table"
-                componentStr: "qrc:/src/qml/Elements/ElementTable.qml"
+                name: "table"
             }
             ListElement{
                 icon : "chart-line"
-                tooltip: "chart"
+                name: "chart"
             }
         }
         delegate: Button{
@@ -88,7 +78,7 @@ Grid {
             rightInset: 5
             width: height
             checkable: true
-            ToolTip.text: model.tooltip.toUpperCase()
+            ToolTip.text: model.name.toUpperCase()
             ToolTip.delay: 0
             ToolTip.visible: hovered
 
@@ -97,7 +87,7 @@ Grid {
                     deselectAll()
                 }else{
                     currentSelected = model.index
-                    insertCandidateComponent = model.componentStr
+                    insertCandidateComponent = model.name
                 }
             }
         }

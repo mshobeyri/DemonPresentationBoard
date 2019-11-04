@@ -33,6 +33,8 @@
         <file>src/qml/SidePanel/SidePanelIconGallery.qml</file>
         <file>src/qml/SidePanel/SidePanelIconsJs.js</file>
         <file>src/qml/SidePanel/SidePanelVectorOptions.qml</file>
+        <file>src/qml/FileManager.qml</file>
+        <file>src/qml/Elements/ElementHelper.js</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

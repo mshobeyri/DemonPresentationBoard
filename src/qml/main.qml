@@ -40,5 +40,8 @@ ApplicationWindow {
     SidePanelIconGallery{
         id: iiconGallery
     }
+    FileManager{
+
+    }
 }
 

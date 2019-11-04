@@ -35,6 +35,7 @@ CustomDialog {
             }
             TextField{
                 id: isearchFields
+
                 Layout.fillWidth: true
             }
         }
@@ -59,12 +60,14 @@ CustomDialog {
             }
             delegate: Column{
                 id: idelegate
+
                 leftPadding: 40
                 function modelObj(){
                     return model
                 }
                 Label{
                     id: icategory
+
                     text: model.category
                     topPadding: 10
                     font.pointSize: 12

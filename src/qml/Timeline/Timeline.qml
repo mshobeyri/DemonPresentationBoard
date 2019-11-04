@@ -15,22 +15,51 @@ CustomDialog {
     property int easingType: Easing.InOutQuint
     property int duration: 1000
 
-    function grabFrame(){
-        iframesGrid.frameModel.append({"rotation":worldFrame.rotation,
-                                          "x":worldFrame.x ,
-                                          "y":worldFrame.y,
-                                          "scale":worldFrame.scale,
-                                          "time":0,
-                                          "spendTime":0,
-                                          "notes":""})
-    }
-
     function goPrev(){
         iframesGrid.goPrev()
     }
+
     function goNext(){
         iframesGrid.goNext()
     }
+
+    function grabFrame(){
+        appendFrame(worldFrame.x,worldFrame.y,worldFrame.scale,
+                    worldFrame.rotation,0,"");
+    }
+
+    function appendFrame(x,y,scale,rotation,time,notes){
+        iframesGrid.frameModel.append({"x": x ,
+                                          "y": y,
+                                          "scale": scale,
+                                          "rotation": rotation,
+                                          "time":time,
+                                          "spendTime":0,
+                                          "notes":notes})
+    }
+
+    function toJson(){
+        var frames = []
+        for(var i=0;i< iframesGrid.frameModel.count;i++){
+            var frame = iframesGrid.frameModel.get(i)
+            frames.push({"x":frame.x ,
+                            "y":frame.y,
+                            "scale":frame.scale,
+                            "rotation":frame.rotation,
+                            "time":frame.time,
+                            "notes":frame.notes})
+        }
+        return frames
+    }
+
+    function fromJson(json){
+        iframesGrid.frameModel.clear()
+        for(var i = 0; i < json.length;i++){
+            appendFrame(json[i].x,json[i].y,json[i].scale,
+                        json[i].rotation,json[i].time,json[i].notes);
+        }
+    }
+
     Shortcut {
         sequence: StandardKey.MoveToNextChar
         onActivated: {

@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
@@ -10,6 +11,14 @@ ElementBase{
     property string fontFamilyName: ifontAwsome.name
     property string icon: "info-circle"
     property bool bold: false
+    property var json: {
+        "type":Element.icon,
+        "common": icontainer.commonData,
+        "color": icontainer.color,
+        "fontFamilyName": icontainer.fontFamilyName,
+        "icon": icontainer.icon,
+        "bold": icontainer.bold
+    }
     component:  Component {
         Label {
             color: icontainer.color

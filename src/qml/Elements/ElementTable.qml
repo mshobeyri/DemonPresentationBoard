@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
@@ -11,6 +12,16 @@ ElementBase{
     property int spacing: 4
     property font textFont
     property int textJustify: TextEdit.AlignLeft
+    property var json: {
+        "type":Element.table,
+        "common": icontainer.commonData,
+        "sepratorsColor": icontainer.sepratorsColor,
+        "backgroundColor": icontainer.backgroundColor,
+        "textColor": icontainer.textColor,
+        "spacing": icontainer.spacing,
+        "textFont": icontainer.textFont,
+        "textJustify": icontainer.textJustify
+    }
 
     onDoubleClicked:{
         editMode = true

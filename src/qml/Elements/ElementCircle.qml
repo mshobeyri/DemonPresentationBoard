@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
@@ -7,6 +8,13 @@ ElementBase{
     property color color: "blue"
     property color borderColor: "white"
     property real borderWidth: 10
+    property var json: {
+        "type":Element.circle,
+        "common": icontainer.commonData,
+        "color": icontainer.color,
+        "borderColor": icontainer.borderColor,
+        "borderWidth": icontainer.borderWidth
+    }
     component:  Component {
         Rectangle {
             color: icontainer.color

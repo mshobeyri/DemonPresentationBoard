@@ -1,10 +1,21 @@
 import QtQuick 2.12
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
+
     property color color: "#333333"
     property string rightMarker: "triangle"
     property string leftMarker: ""
+
+    property var json: {
+        "type": Element.arrow,
+        "common": icontainer.commonData,
+        "color": icontainer.color,
+        "righMarker": icontainer.rightMarker,
+        "leftMarker":  icontainer.leftMarker
+    }
+
     component:  Component {
         Item {
             antialiasing: true

@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
@@ -7,6 +8,14 @@ ElementBase{
     property color backgroundColor: "transparent"
     property font textFont
     property int textJustify: TextEdit.AlignLeft
+    property var json: {
+        "type": Element.text,
+        "common": icontainer.commonData,
+        "color": icontainer.color,
+        "backgroundColor": icontainer.backgroundColor,
+        "textFont": icontainer.textFont,
+        "textJustify": icontainer.textJustify
+    }
 
     onDoubleClicked:{
         icontainer.editMode = true
