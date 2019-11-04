@@ -66,6 +66,7 @@ Grid {
             ListElement{
                 icon : "long-arrow-right"
                 tooltip: "arrow"
+                componentStr: "qrc:/src/qml/Elements/ElementArrow.qml"
             }
             ListElement{
                 icon : "table"

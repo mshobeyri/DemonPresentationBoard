@@ -89,6 +89,7 @@ ColumnLayout {
     }
 
     SidePanelColorSelector{
+        id: icolor
         label: "color"
         labelSize : iborderColor.labelSize
 
@@ -136,5 +137,8 @@ ColumnLayout {
         Layout.fillWidth: true
         flat: true
         onClicked: iiconGallery.open()
+    }
+    SidePanelVectorOptions{
+        labelSize: icolor.labelSize
     }
 }
