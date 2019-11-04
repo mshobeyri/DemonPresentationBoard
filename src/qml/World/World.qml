@@ -2,19 +2,63 @@ import QtQuick 2.12
 import "../Elements"
 
 Item{
+    id: iroot
+
     anchors.fill: parent
+
     property var currentElement: undefined
     property alias frame: iframe
     property real handlesScale: 1 / iframe.scale
+
+    Shortcut {
+        sequence: StandardKey.Delete
+        onActivated: {
+            if(currentElement!==undefined)
+                currentElement.deleteIt()
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.Cancel
+        onActivated: {
+            currentElement = undefined
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.ZoomIn
+        onActivated: {
+            iframe.scale += 0.1 * iframe.scale
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.ZoomOut
+        onActivated: {
+            iframe.scale -= 0.1* iframe.scale
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.MoveToPreviousWord
+        onActivated: {
+            iframe.rotation --
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.MoveToNextWord
+        onActivated: {
+            iframe.rotation ++
+        }
+    }
+
     Rectangle {
         id: iframe
+
         antialiasing: true
         color: "#9da8b3"
-        x: 20
-        y: 20
-        width: iwin.width - 40
-        height: iwin.height - 40
-
+        x: (iroot.width - width) / 2
+        y: (iroot.height - height) / 2
+        Component.onCompleted: console.log(iroot.height ,height , scale)
+        width: 1920
+        height: 1080
+        scale: Math.min(iroot.width / width,iroot.height/height)*0.95
         PinchArea{
             anchors.fill: parent
             pinch.target: iframe
@@ -43,7 +87,7 @@ Item{
             }
         }
 
-        MouseArea{
+        MouseArea {
             id: iframeMouseArea
 
             anchors.fill: parent
@@ -81,6 +125,7 @@ Item{
                 }
             }
         }
+
 
         ElementText{
             color: "red"

@@ -75,7 +75,7 @@ RowLayout {
     ComboBox{
         id: irightMarkerCombo
 
-        model: ["","triangle","circle","stop"]]
+        model: ["","triangle","circle","stop"]
         font.bold: true
         Layout.preferredWidth: height
         font.family: ifontAwsome.name

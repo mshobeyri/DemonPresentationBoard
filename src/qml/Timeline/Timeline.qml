@@ -8,11 +8,12 @@ CustomDialog {
     id: iroot
 
     dialgTitle: "Timeline"
+    visible: false
+
     property var worldFrame: undefined
     property var currentFrameModel: undefined
     property int easingType: Easing.InOutQuint
     property int duration: 1000
-    visible: false
 
     function grabFrame(){
         iframesGrid.frameModel.append({"rotation":worldFrame.rotation,
@@ -29,6 +30,18 @@ CustomDialog {
     }
     function goNext(){
         iframesGrid.goNext()
+    }
+    Shortcut {
+        sequence: StandardKey.MoveToNextChar
+        onActivated: {
+            goNext()
+        }
+    }
+    Shortcut {
+        sequence: StandardKey.MoveToPreviousChar
+        onActivated: {
+            goPrev()
+        }
     }
     Row{
         anchors.fill: parent
