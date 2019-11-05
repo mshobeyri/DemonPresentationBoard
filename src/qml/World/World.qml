@@ -12,28 +12,36 @@ Item{
     property real handlesScale: 1 / iframe.scale
 
     function toJson(){
+        var json = {
+            "elements":""
+        }
+
         var elements = []
         for(var i= 0;i<ielementContainer.children.length;i++){
             elements.push(ielementContainer.children[i].json)
         }
-        return elements
+        json.elements = elements
+        return json
     }
 
     function fromJson(json){
-        while(ielementContainer.children.length > 0){
-            ielementContainer.children[0].deleteIt()
-        }
         var elements = json.elements
-
         for(var i= 0;i<elements.length;i++){
-            crateElement(elements[i].type,{json:elements[i]})
+            crateElement(elements[i].type,elements[i])
         }
 
     }
     function crateElement(type, properties){
         var component = Qt.createComponent(Element.path(type))
-        if(component.status === Component.Ready)
-            component.createObject(ielementContainer , properties)
+        if(component.status === Component.Ready){
+            var obj = component.createObject(ielementContainer,properties)
+            if(properties.common!==undefined){
+                obj.fromJson(properties)
+                obj.fromJsonBase(properties.common)
+            }else if(type === Element.image || type ===Element.media){
+                obj.created()
+            }
+        }
     }
 
     Shortcut {

@@ -15,14 +15,24 @@ ElementBase{
     property var json: {
         "type":Element.table,
         "common": icontainer.commonData,
-        "sepratorsColor": icontainer.sepratorsColor,
-        "backgroundColor": icontainer.backgroundColor,
-        "textColor": icontainer.textColor,
+        "sepratorsColor": icontainer.sepratorsColor.toString(),
+        "backgroundColor": icontainer.backgroundColor.toString(),
+        "textColor": icontainer.textColor.toString(),
         "spacing": icontainer.spacing,
         "textFont": icontainer.textFont,
         "textJustify": icontainer.textJustify
     }
-
+    function fromJson(json){
+        sepratorsColor = json.sepratorsColor
+        backgroundColor = json.backgroundColor
+        textColor = json.textColor
+        spacing = json.spacing
+        textJustify = json.textJustify
+        textFont.family = json.textFont.family
+        textFont.bold = json.textFont.bold
+        textFont.italic = json.textFont.italic
+        textFont.pointSize = json.textFont.pointSize
+    }
     onDoubleClicked:{
         editMode = true
         currentElement = icontainer

@@ -53,11 +53,12 @@ CustomDialog {
     }
 
     function fromJson(json){
-        iframesGrid.frameModel.clear()
-        for(var i = 0; i < json.length;i++){
-            appendFrame(json[i].x,json[i].y,json[i].scale,
-                        json[i].rotation,json[i].time,json[i].notes);
-        }
+        console.log(JSON.stringify(json))
+//        iframesGrid.frameModel.clear()
+//        for(var i = 0; i < json.length;i++){
+//            appendFrame(json[i].x,json[i].y,json[i].scale,
+//                        json[i].rotation,json[i].time,json[i].notes);
+//        }
     }
     signal timelienChanged
 

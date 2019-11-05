@@ -11,11 +11,15 @@ ElementBase{
     property var json: {
         "type": Element.arrow,
         "common": icontainer.commonData,
-        "color": icontainer.color,
-        "righMarker": icontainer.rightMarker,
+        "color": icontainer.color.toString(),
+        "rightMarker": icontainer.rightMarker,
         "leftMarker":  icontainer.leftMarker
     }
-
+    function fromJson(json){
+        color = json.color
+        rightMarker = json.rightMarker
+        leftMarker = json.leftMarker
+    }
     component:  Component {
         Item {
             antialiasing: true

@@ -38,6 +38,17 @@ Item{
         iroot.destroy()
     }
 
+    function fromJsonBase(json){
+        iroot.x = json.x
+        iroot.y = json.y
+        iroot.z = json.z
+        iroot.w = json.w
+        iroot.h = json.h
+        ibaseElement.rotation = json.r
+        iroot.locked = json.l
+        iroot.visible = json.v
+    }
+
     onElementJsonChanged: {
         ifileManager.fileChanged()
     }

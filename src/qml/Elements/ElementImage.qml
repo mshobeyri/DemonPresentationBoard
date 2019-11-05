@@ -13,7 +13,12 @@ ElementBase{
         "source": icontainer.source
     }
 
-    Component.onCompleted: isourceSelector.open()
+    function fromJson(json){
+        source = json.source
+    }
+    function created(){
+        isourceSelector.open()
+    }
 
     FileDialog{
         id: isourceSelector
@@ -21,7 +26,6 @@ ElementBase{
         onAccepted: icontainer.source = currentFile
         onRejected: icontainer.deleteIt()
     }
-
 
     component:  Component {
         Item{

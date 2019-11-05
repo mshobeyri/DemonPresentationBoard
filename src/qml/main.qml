@@ -13,7 +13,6 @@ ApplicationWindow {
     Material.theme: Material.Dark
     Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
-
     FontLoader{
         id: ifontAwsome
         source: "qrc:/res/res/Font Awesome 5 Pro-Solid-900.otf"
@@ -25,7 +24,6 @@ ApplicationWindow {
     FontLoader{
         id: ifontAwsomebrands
         source: "qrc:/res/res/Font Awesome 5 Brands-Regular-400.otf"
-        Component.onCompleted: console.log(ifontAwsomebrands.name)
     }
     World{
         id: iworld
@@ -55,10 +53,13 @@ ApplicationWindow {
 
             return JSON.stringify(file)
         }
-        fromFileFunc: function fromFile(){
 
+        fromFileFunc: function fromFile(data){
+            var jsData = JSON.parse(data)
+            iworld.fromJson(jsData.world)
+            itimeline.fromJson(jsData.timeline)
         }
-        nameFilters:  ["pl-illustrator Files (*.pli)", "All files (*.*)"]
+        fileFormat :"pli"
     }
 }
 

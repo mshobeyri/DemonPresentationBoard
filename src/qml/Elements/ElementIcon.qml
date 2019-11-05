@@ -14,10 +14,16 @@ ElementBase{
     property var json: {
         "type":Element.icon,
         "common": icontainer.commonData,
-        "color": icontainer.color,
+        "color": icontainer.color.toString(),
         "fontFamilyName": icontainer.fontFamilyName,
         "icon": icontainer.icon,
         "bold": icontainer.bold
+    }
+    function fromJson(json){
+        color = json.color
+        fontFamilyName = json.fontFamilyName
+        icon = json.icon
+        bold = json.bold
     }
     component:  Component {
         Label {

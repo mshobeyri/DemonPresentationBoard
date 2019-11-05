@@ -11,12 +11,20 @@ ElementBase{
     property var json: {
         "type": Element.text,
         "common": icontainer.commonData,
-        "color": icontainer.color,
-        "backgroundColor": icontainer.backgroundColor,
+        "color": icontainer.color.toString(),
+        "backgroundColor": icontainer.backgroundColor.toString(),
         "textFont": icontainer.textFont,
         "textJustify": icontainer.textJustify
     }
-
+    function fromJson(json){
+        color = json.color
+        backgroundColor = json.backgroundColor
+        textJustify = json.textJustify
+        textFont.family = json.textFont.family
+        textFont.bold = json.textFont.bold
+        textFont.italic = json.textFont.italic
+        textFont.pointSize = json.textFont.pointSize
+    }
     onDoubleClicked:{
         icontainer.editMode = true
         currentElement = icontainer

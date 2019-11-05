@@ -3,6 +3,7 @@ import QtQuick.Controls 2.5 as QQ2
 import Qt.labs.platform 1.0
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.3
+import Qt.labs.settings 1.0
 
 Item {
     id : iroot
@@ -13,7 +14,7 @@ Item {
     property var toFileFunc:undefined
     property var fromFileFunc:undefined
     property int openRecentsCount: 20
-    property var nameFilters
+    property string fileFormat
 
     property var openRecents: []
     property string currentFilePath: ""
@@ -32,20 +33,24 @@ Item {
     }
 
     function openBtnTriggered(){
-        if(!iprv.doesForgotToSave(function(){iopenFileDialog.open()})){
-            iopenFileDialog.open()
-        }
+        iopenFileDialog.open()
     }
 
     function fileChanged(){
         isFileChanged = true
     }
 
-    Component.onCompleted: iprv.appName = application.title
+    Settings{
+        property alias openRecents: iroot.openRecents
+    }
+
     Item{
         id: iprv
 
         property string appName
+        readonly property var nameFilters:
+            [iprv.appName+" Files (*."+fileFormat+")",
+            "All files (*.*)"]
 
         property string appTitle: {
             var str = appName
@@ -56,21 +61,34 @@ Item {
             str
         }
 
+        Component.onCompleted: appName = application.title
+
         onAppTitleChanged: {
             application.title = appTitle
         }
-
+        function openAccepted(path){
+            open(path)
+            newFile(path)
+        }
         function saveAccepted(path){
+            path = path.toString()
+            if(path.substring(
+                        path.lastIndexOf(".")+1,
+                        path.length)!==fileFormat)
+            path = path + "."+fileFormat
             newFile(path)
             save()
         }
-        function openAccepted(path){
-            newFile(path)
+        function open(path){
+            fromFileFunc(fileio.read(path))
         }
+
         function save(){
             var data = toFileFunc()
+            fileio.write(currentFilePath,data)
             isFileChanged = false
         }
+
         function closeBtnTriggered(close){
             close.accepted = false
             if(!iprv.doesForgotToSave(function(){Qt.quit()})){
@@ -82,7 +100,7 @@ Item {
             currentFilePath = path
             for(var i=0;i<openRecents.length;i++){
                 if(openRecents[i].path === currentFilePath){
-                    openRecents.remove(i)
+                    openRecents.splice(i,1)
                 }
             }
             currentFileName = currentFilePath.substring(
@@ -94,8 +112,9 @@ Item {
                                  "path": currentFilePath
                              })
             while (openRecents.length > openRecentsCount)
-                openRecents.remove(0)
+                openRecents.splice(0,1)
         }
+
         function doesForgotToSave(func){
             if(!isFileChanged)
                 return false
@@ -144,7 +163,7 @@ Item {
         }
         QQ2.Label{
             text: "If you close without saving,"
-            +" your changes will be discarded."
+                  +" your changes will be discarded."
         }
         footer: RowLayout{
             Item{
@@ -154,7 +173,10 @@ Item {
             QQ2.Button{
                 flat: true
                 text: "Close widhtout saving"
-                onClicked:  iforgotToSaveDialog.discartFunc()
+                onClicked:  {
+                    iforgotToSaveDialog.discartFunc()
+                    iforgotToSaveDialog.close()
+                }
                 Material.foreground: Material.accent
             }
             QQ2.Button{
@@ -176,15 +198,16 @@ Item {
         id: isaveFileDialog
 
         fileMode: FileDialog.SaveFile
-        nameFilters: iroot.nameFilters
+        nameFilters: iprv.nameFilters
         onAccepted: iprv.saveAccepted(isaveFileDialog.currentFile)
+        defaultSuffix:  fileFormat
     }
 
     FileDialog{
         id: iopenFileDialog
 
         fileMode: FileDialog.OpenFile
-        nameFilters: iroot.nameFilters
+        nameFilters: iprv.nameFilters
         onAccepted: iprv.openAccepted(iopenFileDialog.currentFile)
     }
 }

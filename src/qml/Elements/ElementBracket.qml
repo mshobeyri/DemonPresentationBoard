@@ -10,9 +10,14 @@ ElementBase{
     property var json: {
         "type":Element.bracket,
         "common": icontainer.commonData,
-        "color": icontainer.color,
-        "backgroundColor": icontainer.backgroundColor,
+        "color": icontainer.color.toString(),
+        "backgroundColor": icontainer.backgroundColor.toString(),
         "braceWidth": icontainer.braceWidth
+    }
+    function fromJson(json){
+        color = json.color
+        backgroundColor = json.backgroundColor
+        braceWidth = json.braceWidth
     }
 
     component:  Component {

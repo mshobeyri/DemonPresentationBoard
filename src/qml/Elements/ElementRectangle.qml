@@ -9,9 +9,14 @@ ElementBase{
     property var json: {
         "type":Element.rectangle,
         "common": icontainer.commonData,
-        "color": icontainer.color,
-        "borderColor": icontainer.borderColor,
+        "color": icontainer.color.toString(),
+        "borderColor": icontainer.borderColor.toString(),
         "borderWidth": icontainer.borderWidth
+    }
+    function fromJson(json){
+        color = json.color
+        borderColor = json.borderColor
+        borderWidth = json.borderWidth
     }
     component:  Component {
         Rectangle {

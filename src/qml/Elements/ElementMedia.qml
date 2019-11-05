@@ -15,10 +15,15 @@ ElementBase{
         "type":Element.media,
         "common": icontainer.commonData,
         "source": icontainer.source,
-        "color": icontainer.color,
+        "color": icontainer.color.toString(),
     }
-
-    Component.onCompleted: isourceSelector.open()
+    function fromJson(json){
+        source = json.source
+        color = json.color
+    }
+    function created(){
+        isourceSelector.open()
+    }
 
     FileDialog{
         id: isourceSelector
