@@ -5,7 +5,8 @@ import ".."
 
 Flickable {
     id: iroot
-    visible: iframesGrid.currentIndex!==-1
+    visible: iframesGrid.currentIndex!==-1 &&
+             iframesGrid.currentItem!==null
     height: parent.height
     contentHeight: icol.height
     width: iwin.width / 3
@@ -14,14 +15,16 @@ Flickable {
         id: icol
         spacing: 5
 
-
         Label{
             text: "Frame Time(min):"
         }
         SpinBox{
             value: iroot.visible?iframesGrid.currentItem.modelObj().time:0
-            onValueChanged: iframesGrid.frameModel.setProperty(
+            onValueChanged: {
+                iframesGrid.frameModel.setProperty(
                                 iframesGrid.currentIndex,"time",value)
+                timelienChanged()
+            }
         }
         Item{
             width: 10
@@ -38,9 +41,12 @@ Flickable {
             selectByKeyboard: true
             selectByMouse: true
             placeholderText: "write some note for this frame ..."
-            text: iroot.visible?iframesGrid.currentItem.modelObj().notes:""
-            onTextChanged: iframesGrid.frameModel.setProperty(
+            text: iroot.visible ?iframesGrid.currentItem.modelObj().notes:""
+            onTextChanged: {
+                iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"notes",text)
+                timelienChanged()
+            }
         }
         Item{
             width: 10

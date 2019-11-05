@@ -15,6 +15,7 @@ ElementBase{
         "borderColor": icontainer.borderColor,
         "borderWidth": icontainer.borderWidth
     }
+
     component:  Component {
         Rectangle {
             color: icontainer.color

@@ -154,14 +154,6 @@ Item{
             id: ielementContainer
 
             anchors.fill: parent
-            ElementText{
-                color: "red"
-            }
-
-            ElementText{
-                x:400
-                color: "blue"
-            }
         }
     }
 }

@@ -12,13 +12,15 @@ Item{
     property alias w: isizeHandle.x
     property alias h: isizeHandle.y
     property alias r: ibaseElement.rotation
+    property alias selectDragMouseArea: iselectDragMouseArea
+    property alias component: iloader.sourceComponent
     property bool fixAspectRatio: false
     property real handleSize: 16
-    property bool selected: currentElement === iroot
-    property alias component:iloader.sourceComponent
+    readonly property bool selected: currentElement === iroot
     property bool editMode: false
     property bool locked: false
-    property alias selectDragMouseArea: iselectDragMouseArea
+    property var elementJson : iroot.json
+    signal doubleClicked;
     property var commonData: {
         "x": iroot.x,
         "y": iroot.y,
@@ -30,13 +32,15 @@ Item{
         "v": iroot.visible,
     }
 
-    signal doubleClicked;
-
     function deleteIt(){
         iworld.currentElement = undefined
+        ifileManager.fileChanged()
         iroot.destroy()
     }
 
+    onElementJsonChanged: {
+        ifileManager.fileChanged()
+    }
 
     Item {
         id: imain;

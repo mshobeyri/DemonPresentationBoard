@@ -59,6 +59,7 @@ CustomDialog {
                         json[i].rotation,json[i].time,json[i].notes);
         }
     }
+    signal timelienChanged
 
     Shortcut {
         sequence: StandardKey.MoveToNextChar

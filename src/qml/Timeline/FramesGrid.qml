@@ -15,7 +15,8 @@ ListView {
     function goCurrentFrame(){
         if(ianimations.running)
             ianimations.stop()
-        currentFrameModel = currentItem.modelObj()
+        if(currentItem!==null)
+            currentFrameModel = currentItem.modelObj()
         ianimations.start()
     }
     function goPrev(){
@@ -27,6 +28,7 @@ ListView {
         if(igrid.currentIndex+1 < igrid.count)
             igrid.currentIndex++
     }
+
     onCurrentIndexChanged: goCurrentFrame()
 
     ParallelAnimation{
@@ -36,28 +38,32 @@ ListView {
         PropertyAnimation{
             property: "x"
             target: worldFrame
-            to:currentFrameModel!==undefined?currentFrameModel.x:0
+            to:currentFrameModel!==undefined && currentFrameModel!==null
+               ?currentFrameModel.x:0
             easing.type: easingType
             duration: iroot.duration
         }
         PropertyAnimation{
             property: "y"
             target: worldFrame
-            to:currentFrameModel!==undefined?currentFrameModel.y:0
+            to:currentFrameModel!==undefined && currentFrameModel!==null
+               ?currentFrameModel.y:0
             easing.type: easingType
             duration: iroot.duration
         }
         PropertyAnimation{
             property: "scale"
             target: worldFrame
-            to:currentFrameModel!==undefined?currentFrameModel.scale:0
+            to:currentFrameModel!==undefined && currentFrameModel!==null
+               ?currentFrameModel.scale:0
             easing.type: easingType
             duration: iroot.duration
         }
         RotationAnimation {
             property: "rotation";
             target: worldFrame
-            to:currentFrameModel!==undefined?currentFrameModel.rotation:0
+            to:currentFrameModel!==undefined && currentFrameModel!==null
+               ?currentFrameModel.rotation:0
             direction:RotationAnimation.Shortest
             easing.type: easingType
             duration: iroot.duration
@@ -67,9 +73,11 @@ ListView {
         id: ivisualModel
         model: ListModel {
             id: iframesModel
+            onCountChanged: timelienChanged()
         }
         delegate: MouseArea {
             id: idelegateRoot
+
             function index(){
                 return model.index
             }
@@ -81,14 +89,15 @@ ListView {
             height: iwin.height / 6
             drag.target: icon
             scale: currentItem === idelegateRoot ? 1 : 0.9
+
             Behavior on scale {
                 NumberAnimation{duration: 100}
             }
 
             property string name: DelegateModel.toString()
             property int selectedIndex: -1
-            property int releaseIndex: -1
             property int visualIndex: DelegateModel.itemsIndex
+
             onClicked: {
                 currentIndex = model.index
                 goCurrentFrame(model)
@@ -150,6 +159,7 @@ ListView {
                         selectedIndex = drag.source.visualIndex
                     }
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
+                    timelienChanged()
                 }
             }
         }

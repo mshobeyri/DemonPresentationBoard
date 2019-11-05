@@ -9,7 +9,7 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 600
-    title: qsTr("pl-illustrator")
+    title: "pl-illustrator"
     Material.theme: Material.Dark
     Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
@@ -33,6 +33,7 @@ ApplicationWindow {
     Timeline{
         id: itimeline
         worldFrame: iworld.frame
+        onTimelienChanged: ifileManager.fileChanged()
     }
     SidePanel{
         id: isidePanel
@@ -41,7 +42,23 @@ ApplicationWindow {
         id: iiconGallery
     }
     FileManager{
+        id: ifileManager
 
+        application: iwin
+        toFileFunc: function toFile(){
+            var file = {
+                "world":"",
+                "timeline":""
+            }
+            file.world = iworld.toJson()
+            file.timeline = itimeline.toJson()
+
+            return JSON.stringify(file)
+        }
+        fromFileFunc: function fromFile(){
+
+        }
+        nameFilters:  ["pl-illustrator Files (*.pli)", "All files (*.*)"]
     }
 }
 
