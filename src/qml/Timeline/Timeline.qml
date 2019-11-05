@@ -53,12 +53,10 @@ CustomDialog {
     }
 
     function fromJson(json){
-        console.log(JSON.stringify(json))
-//        iframesGrid.frameModel.clear()
-//        for(var i = 0; i < json.length;i++){
-//            appendFrame(json[i].x,json[i].y,json[i].scale,
-//                        json[i].rotation,json[i].time,json[i].notes);
-//        }
+        for(var i=0 ; i< json.length;i++){
+            var f = json[i]
+            appendFrame(f.x,f.y,f.scale,f.rotation,f.time,f.notes)
+        }
     }
     signal timelienChanged
 

@@ -123,6 +123,7 @@ ListView {
                     height: parent.height
                     recursive: true
                     anchors.centerIn: icon
+                    textureSize: Qt.size(width,height)
                     sourceItem: iworld
                     live: (worldFrame.x===model.x &&
                            worldFrame.y===model.y &&
@@ -131,7 +132,7 @@ ListView {
                 }
                 Label{
                     anchors.centerIn: parent
-                    text: model.index
+                    text: model.index+1
                     font.pixelSize: parent.height/3 * 2
                     opacity: 0.1
                 }
