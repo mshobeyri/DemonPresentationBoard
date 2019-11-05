@@ -8,8 +8,8 @@ Item{
     anchors.fill: parent
 
     property var currentElement: undefined
-    property alias frame: iframe
-    property real handlesScale: 1 / iframe.scale
+    property alias surface: isurface
+    property real handlesScale: 1 / isurface.scale
 
     function toJson(){
         var json = {
@@ -60,31 +60,31 @@ Item{
     Shortcut {
         sequence: StandardKey.ZoomIn
         onActivated: {
-            iframe.scale += 0.1 * iframe.scale
+            isurface.scale += 0.1 * isurface.scale
         }
     }
     Shortcut {
         sequence: StandardKey.ZoomOut
         onActivated: {
-            iframe.scale -= 0.1* iframe.scale
+            isurface.scale -= 0.1* isurface.scale
         }
     }
     Shortcut {
         sequence: StandardKey.MoveToPreviousWord
         onActivated: {
-            iframe.rotation --
+            isurface.rotation --
         }
     }
     Shortcut {
         sequence: StandardKey.MoveToNextWord
         onActivated: {
-            iframe.rotation ++
+            isurface.rotation ++
         }
     }
 
 
     Rectangle {
-        id: iframe
+        id: isurface
 
         antialiasing: true
         color: "#9da8b3"
@@ -95,7 +95,7 @@ Item{
         scale: Math.min(iroot.width / width,iroot.height/height)*0.95
         PinchArea{
             anchors.fill: parent
-            pinch.target: iframe
+            pinch.target: isurface
             pinch.minimumRotation: -360
             pinch.maximumRotation: 360
             pinch.minimumScale: 0.1
@@ -104,18 +104,18 @@ Item{
             property real zRestore: 0
             onSmartZoom: {
                 if (pinch.scale > 0) {
-                    iframe.rotation = 0;
-                    iframe.scale = Math.min(root.width, root.height) / Math.max(image.sourceSize.width, image.sourceSize.height) * 0.85
-                    iframe.x = flick.contentX + (flick.width - iframe.width) / 2
-                    iframe.y = flick.contentY + (flick.height - iframe.height) / 2
-                    zRestore = iframe.z
-                    iframe.z = ++root.highestZ;
+                    isurface.rotation = 0;
+                    isurface.scale = Math.min(root.width, root.height) / Math.max(image.sourceSize.width, image.sourceSize.height) * 0.85
+                    isurface.x = flick.contentX + (flick.width - isurface.width) / 2
+                    isurface.y = flick.contentY + (flick.height - isurface.height) / 2
+                    zRestore = isurface.z
+                    isurface.z = ++root.highestZ;
                 } else {
-                    iframe.rotation = pinch.previousAngle
-                    iframe.scale = pinch.previousScale
-                    iframe.x = pinch.previousCenter.x - iframe.width / 2
-                    iframe.y = pinch.previousCenter.y - iframe.height / 2
-                    iframe.z = zRestore
+                    isurface.rotation = pinch.previousAngle
+                    isurface.scale = pinch.previousScale
+                    isurface.x = pinch.previousCenter.x - isurface.width / 2
+                    isurface.y = pinch.previousCenter.y - isurface.height / 2
+                    isurface.z = zRestore
                     --root.highestZ
                 }
             }
@@ -126,12 +126,13 @@ Item{
 
             anchors.fill: parent
             drag.axis: Drag.XAndYAxis
-            drag.target: iframe
+            drag.target: isurface
             preventStealing: false
             hoverEnabled: true
             onClicked: {
                 if(isidePanel.insertCandidateComponent!==""){
-                    crateElement(isidePanel.insertCandidateComponent, {x:mouseX,y:mouseY})
+                    crateElement(isidePanel.insertCandidateComponent,
+                                 {x:mouseX,y:mouseY,rotation: - isurface.rotation})
                 }
                 currentElement = undefined
                 isidePanel.container.elements.deselectAll()
@@ -145,15 +146,15 @@ Item{
             }
             onWheel: {
                 if (wheel.modifiers & Qt.ControlModifier) {
-                    iframe.rotation += wheel.angleDelta.y / 120 * 5;
-                    if (Math.abs(iframe.rotation) < 4)
-                        iframe.rotation = 0;
+                    isurface.rotation += wheel.angleDelta.y / 120 * 5;
+                    if (Math.abs(isurface.rotation) < 4)
+                        isurface.rotation = 0;
                 } else {
-                    iframe.rotation += wheel.angleDelta.x / 120;
-                    if (Math.abs(iframe.rotation) < 0.6)
-                        iframe.rotation = 0;
-                    var scaleBefore = iframe.scale;
-                    iframe.scale += iframe.scale * wheel.angleDelta.y / 120 / 10;
+                    isurface.rotation += wheel.angleDelta.x / 120;
+                    if (Math.abs(isurface.rotation) < 0.6)
+                        isurface.rotation = 0;
+                    var scaleBefore = isurface.scale;
+                    isurface.scale += isurface.scale * wheel.angleDelta.y / 120 / 10;
                 }
             }
         }
