@@ -14,6 +14,7 @@ Item{
     property alias r: ibaseElement.rotation
     property alias selectDragMouseArea: iselectDragMouseArea
     property alias component: iloader.sourceComponent
+    property alias loader: iloader
     property bool fixAspectRatio: false
     property real handleSize: 16
     readonly property bool selected: currentElement === iroot
