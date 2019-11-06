@@ -22,6 +22,9 @@ CustomDialog {
     function goNext(){
         iframesGrid.goNext()
     }
+    function goTo(frame){
+        iframesGrid.goTo(frame)
+    }
 
     function grabFrame(){
         appendFrame(worldFrame.x,worldFrame.y,worldFrame.scale,
@@ -36,6 +39,9 @@ CustomDialog {
                                           "time":time,
                                           "spendTime":0,
                                           "notes":notes})
+    }
+    function currentFrameData(){
+        return iframesGrid.currentFrameData()
     }
 
     function toJson(){

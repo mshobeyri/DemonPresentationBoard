@@ -61,5 +61,8 @@ ApplicationWindow {
         }
         fileFormat :"dpb"
     }
+    RemoteHandler{
+        id: iremoteHandler
+    }
 }
 

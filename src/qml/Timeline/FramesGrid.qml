@@ -29,7 +29,17 @@ ListView {
             igrid.currentIndex++
     }
 
-    onCurrentIndexChanged: goCurrentFrame()
+    function goTo(frame){
+        igrid.currentIndex = frame - 1
+    }
+    function currentFrameData(){
+        return frameModel.get(igrid.currentIndex)
+    }
+
+    onCurrentIndexChanged: {
+        goCurrentFrame()
+        iremoteHandler.frameChanged()
+    }
 
     ParallelAnimation{
         id: ianimations

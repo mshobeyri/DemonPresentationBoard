@@ -10,6 +10,7 @@ Item{
     property var currentElement: undefined
     property alias surface: isurface
     property real handlesScale: 1 / isurface.scale
+    property alias fakeLaser: ifakeLaser
 
     function toJson(){
         var json = {
@@ -164,5 +165,10 @@ Item{
 
             anchors.fill: parent
         }
+    }
+    FakeLaser{
+        id: ifakeLaser
+
+        anchors.fill: parent
     }
 }
