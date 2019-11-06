@@ -117,6 +117,7 @@ ElementBase{
                             anchors.fill: parent
                             color: icontainer.backgroundColor
                             anchors.centerIn: parent
+                            antialiasing: true
                             TextEdit {
                                 anchors.fill: parent
                                 antialiasing: true

@@ -51,6 +51,9 @@ ElementBase{
                 text: "Your Text Here!"
                 font: icontainer.textFont
                 wrapMode: TextEdit.WordWrap
+                selectByMouse: true
+                selectByKeyboard: true
+                antialiasing: true
                 horizontalAlignment: textJustify
             }
         }
