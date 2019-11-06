@@ -9,7 +9,7 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 600
-    title: "pl-illustrator"
+    title: "Demon Presentation Board"
     Material.theme: Material.Dark
     Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
@@ -59,7 +59,7 @@ ApplicationWindow {
             iworld.fromJson(jsData.world)
             itimeline.fromJson(jsData.timeline)
         }
-        fileFormat :"pli"
+        fileFormat :"dpb"
     }
 }
 
