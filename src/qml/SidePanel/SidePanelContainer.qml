@@ -25,10 +25,13 @@ Flickable {
         Label {
             text: qsTr("options:")
             padding: 10
-            visible: iworld.currentElement!==undefined
         }
         SidePanelOptions{
             visible: iworld.currentElement!==undefined
+        }
+
+        SidePanelWorldOptions{
+            visible: iworld.currentElement===undefined
         }
     }
 }

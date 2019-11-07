@@ -10,7 +10,7 @@ CustomDialog {
     dialgTitle: "Timeline"
     visible: false
 
-    property var worldFrame: undefined
+    property var board: undefined
     property var currentFrameModel: undefined
     property int easingType: Easing.InOutQuint
     property int duration: 1000
@@ -27,8 +27,8 @@ CustomDialog {
     }
 
     function grabFrame(){
-        appendFrame(worldFrame.x,worldFrame.y,worldFrame.scale,
-                    worldFrame.rotation,0,"");
+        appendFrame(board.x,board.y,board.scale,
+                    board.rotation,0,"");
     }
 
     function appendFrame(x,y,scale,rotation,time,notes){

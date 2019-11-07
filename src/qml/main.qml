@@ -30,7 +30,7 @@ ApplicationWindow {
     }
     Timeline{
         id: itimeline
-        worldFrame: iworld.surface
+        board: iworld.board
         onTimelienChanged: ifileManager.fileChanged()
     }
     SidePanel{

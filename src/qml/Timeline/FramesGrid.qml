@@ -47,7 +47,7 @@ ListView {
         running: false
         PropertyAnimation{
             property: "x"
-            target: worldFrame
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.x:0
             easing.type: easingType
@@ -55,7 +55,7 @@ ListView {
         }
         PropertyAnimation{
             property: "y"
-            target: worldFrame
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.y:0
             easing.type: easingType
@@ -63,7 +63,7 @@ ListView {
         }
         PropertyAnimation{
             property: "scale"
-            target: worldFrame
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.scale:0
             easing.type: easingType
@@ -71,7 +71,7 @@ ListView {
         }
         RotationAnimation {
             property: "rotation";
-            target: worldFrame
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.rotation:0
             direction:RotationAnimation.Shortest
@@ -135,10 +135,10 @@ ListView {
                     anchors.centerIn: icon
                     textureSize: Qt.size(width,height)
                     sourceItem: iworld
-                    live: (worldFrame.x===model.x &&
-                           worldFrame.y===model.y &&
-                           worldFrame.scale===model.scale &&
-                           worldFrame.rotation===model.rotation)
+                    live: (board.x===model.x &&
+                           board.y===model.y &&
+                           board.scale===model.scale &&
+                           board.rotation===model.rotation)
                 }
                 Label{
                     anchors.centerIn: parent

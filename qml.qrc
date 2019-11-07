@@ -37,6 +37,9 @@
         <file>src/qml/Elements/ElementHelper.js</file>
         <file>src/qml/RemoteHandler.qml</file>
         <file>src/qml/World/FakeLaser.qml</file>
+        <file>src/qml/World/Board.qml</file>
+        <file>src/qml/World/Background.qml</file>
+        <file>src/qml/SidePanel/SidePanelWorldOptions.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
@@ -44,5 +47,17 @@
         <file>res/image.svg</file>
         <file>res/Font Awesome 5 Brands-Regular-400.otf</file>
         <file>res/logo.png</file>
+        <file>res/backgrounds/worldmap.svg</file>
+        <file>res/backgrounds/pattern-3.svg</file>
+        <file>res/backgrounds/pattern-1.svg</file>
+        <file>res/backgrounds/pattern-2.svg</file>
+        <file>res/backgrounds/pattern-4.svg</file>
+        <file>res/backgrounds/pattern-5.svg</file>
+        <file>res/backgrounds/pattern-6.svg</file>
+        <file>res/backgrounds/pattern-7.svg</file>
+        <file>res/backgrounds/pattern-8.svg</file>
+        <file>res/backgrounds/pattern-9.svg</file>
+        <file>res/backgrounds/pattern-10.svg</file>
+        <file>res/backgrounds/tree.svg</file>
     </qresource>
 </RCC>
