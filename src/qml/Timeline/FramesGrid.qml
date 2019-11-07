@@ -35,6 +35,34 @@ ListView {
     function currentFrameData(){
         return frameModel.get(igrid.currentIndex)
     }
+    footer: Frame {
+        width: iwin.width / 6 - 10
+        height: iwin.height / 6 - 10
+        scale: 0.9
+        anchors.horizontalCenter: parent.horizontalCenter
+        Rectangle{
+            anchors.fill: parent
+            opacity: iaddMouseArea.containsMouse?0.1:0
+            Behavior on opacity {
+                NumberAnimation{duration: 200}
+            }
+        }
+        MouseArea{
+            id: iaddMouseArea
+
+            anchors.fill: parent
+            hoverEnabled: true
+            onClicked: grabFrame()
+        }
+
+        Label{
+            anchors.centerIn: parent
+            text: "plus"
+            font.family: ifontAwsome.name
+            font.pixelSize: parent.height/3 * 2
+            opacity: 0.1
+        }
+    }
 
     onCurrentIndexChanged: {
         goCurrentFrame()
