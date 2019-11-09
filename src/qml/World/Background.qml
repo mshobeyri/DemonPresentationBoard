@@ -28,6 +28,7 @@ Item{
 
     Rectangle{
         anchors.fill: parent
+        antialiasing: true
         color: parent.color
     }
     FileDialog{

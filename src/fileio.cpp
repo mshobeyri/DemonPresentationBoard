@@ -1,13 +1,13 @@
 #include "fileio.h"
 #include <QDebug>
 #include <QFile>
+#include <QGuiApplication>
 #include <QTextStream>
 #include <QUrl>
 
 
 QString
 FileIO::read(const QString& filePath) const {
-    qDebug() << toLocalFile(filePath);
     QFile file(toLocalFile(filePath));
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return "";
@@ -37,4 +37,14 @@ FileIO::toLocalFile(const QString& filePath) const {
 bool
 FileIO::fileExist(const QString& filePath) const {
     return QFile::exists(toLocalFile(filePath));
+}
+
+void
+FileIO::copyToClipboard(const QString& text) const {
+    QGuiApplication::clipboard()->setText(text);
+}
+
+QString
+FileIO::getClipboard() const {
+    return QGuiApplication::clipboard()->text();
 }
