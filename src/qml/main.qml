@@ -4,13 +4,14 @@ import QtQuick.Controls.Material 2.3
 import "SidePanel"
 import "World"
 import "Timeline"
+import "Settings"
 ApplicationWindow {
     id: iwin
     visible: true
     width: 800
     height: 600
     title: "Demon Presentation Board"
-    Material.theme: Material.Dark
+    Material.theme: isettings.appInterface.theme
     Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
     FontLoader{
@@ -33,12 +34,16 @@ ApplicationWindow {
         board: iworld.board
         onTimelienChanged: ifileManager.fileChanged()
     }
-    SidePanel{
-        id: isidePanel
-    }
     SidePanelIconGallery{
         id: iiconGallery
     }
+    Settings{
+        id: isettings
+    }
+    SidePanel{
+        id: isidePanel
+    }
+
     FileManager{
         id: ifileManager
 

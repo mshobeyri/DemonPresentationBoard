@@ -44,7 +44,7 @@ Dialog {
 
     background: Rectangle{
         color: Material.background
-        opacity: 0.9
+        opacity: isettings.appInterface.menuOpacity
 
         Frame{
             anchors.fill: parent

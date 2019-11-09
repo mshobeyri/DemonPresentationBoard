@@ -136,6 +136,7 @@ Item{
                         font.family: ifontAwsome.name
                         text: "sync-alt"
                         anchors.centerIn: parent
+                        Material.foreground: "white"
                     }
                 }
 
@@ -197,6 +198,7 @@ Item{
                         font.pixelSize: parent.height/3*2
                         font.family: ifontAwsome.name
                         text: "arrows-alt-h"
+                        Material.foreground: "white"
                         rotation: 45
                         anchors {
                             centerIn: parent

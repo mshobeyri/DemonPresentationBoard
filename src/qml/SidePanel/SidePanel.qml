@@ -7,11 +7,12 @@ import Qt.labs.settings 1.1
 Item{
     width: parent.width
     height: parent.height
-    anchors.right: parent.right
     property var container: icontainer
     property string insertCandidateComponent : ""
     property Rectangle panelsPosition: Rectangle{
-        x: idrawer.visible?10: 10 + idrawer.width/2
+        x: idrawer.edge === Qt.RightEdge?
+               idrawer.visible?10: 10 + idrawer.width/2:
+               idrawer.visible? idrawer.width + 10: idrawer.width/2
         y: 10
         width: iwin.width - 20 - idrawer.width
         height: iwin.height - 20
@@ -23,6 +24,8 @@ Item{
 
     MouseArea{
         id: icloseDrawer
+
+        x: idrawer.edge === Qt.RightEdge? 0: idrawer.width
         width: iwin.width - idrawer.width
         height: iwin.height
         onEntered: {
@@ -35,19 +38,21 @@ Item{
         width: 20
         height: parent.height
         hoverEnabled: true
-        anchors.right: parent.right
+        anchors.right: idrawer.edge === Qt.RightEdge?
+                           parent.right:parent.left
         onEntered: {
             idrawer.open()
         }
     }
     Drawer {
         id: idrawer
+
         height: parent.height
         width: 260
         dim: false
-        edge: Qt.RightEdge
+        edge: isettings.appInterface.sidePannelEdge
         background: Rectangle{
-            opacity: 0.9
+            opacity: isettings.appInterface.menuOpacity
             color: Material.background
         }
 
@@ -64,22 +69,23 @@ Item{
 
         ColumnLayout{
             anchors.fill: parent
+            spacing: 0
             RowLayout{
 
                 Button{
-                    text: "cog"
+                    text: "bars"
                     flat: true
                     font.family: ifontAwsome.name
-                    leftInset: 5
-                    rightInset: 5
-                    width: height
+
+                    Layout.preferredWidth: height
+                    onClicked: imenu.open()
                 }
 
                 Item{
                     Layout.fillWidth: true
                 }
 
-                Button{
+                ToolButton{
                     id: ipinDrawerBtn
                     text: "thumbtack"
                     flat: true
@@ -87,10 +93,7 @@ Item{
                     font.bold: true
                     checkable: true
                     checked: true
-                    scale: 0.7
-                    leftInset: 5
-                    rightInset: 5
-                    width: height
+                    font.pixelSize: height / 4.5
                 }
             }
             MenuSeparator{
@@ -108,5 +111,9 @@ Item{
                 Layout.fillWidth: true
             }
         }
+    }
+    SidePanelMenu{
+        x: idrawer.x
+        id: imenu
     }
 }
