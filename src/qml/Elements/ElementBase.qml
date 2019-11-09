@@ -50,10 +50,6 @@ Item{
         iroot.visible = json.v
     }
 
-    onElementJsonChanged: {
-        ifileManager.fileChanged()
-    }
-
     Item {
         id: imain;
 
@@ -87,7 +83,14 @@ Item{
 
             MouseArea{
                 id: iselectDragMouseArea
+
                 anchors.fill: parent
+                propagateComposedEvents: true
+                onDoubleClicked: iroot.doubleClicked()
+                drag.target: iroot
+                drag.axis: Drag.XAndYAxis
+                enabled: !editMode && !locked
+                property bool moved: false
                 onClicked: {
                     if(currentElement == iroot)
                         currentElement = undefined
@@ -95,11 +98,15 @@ Item{
                         currentElement = iroot
                     mouse.accepted = true
                 }
-                propagateComposedEvents: true
-                onDoubleClicked: iroot.doubleClicked()
-                drag.target: iroot
-                drag.axis: Drag.XAndYAxis
-                enabled: !editMode && !locked
+
+                onPositionChanged: moved = true
+                onReleased: {
+                    if(moved)
+                    {
+                        ifileManager.fileChanged()
+                        moved = false
+                    }
+                }
             }
 
             MouseArea{
@@ -151,6 +158,7 @@ Item{
 
                 MouseArea{
                     anchors.fill: parent;
+                    onReleased: ifileManager.fileChanged()
                     onPositionChanged:  {
                         var point =  mapToItem (imain, mouse.x, mouse.y);
                         var diffX = (point.x - imain.centerX);
@@ -195,6 +203,7 @@ Item{
                     drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
                     drag.minimumX: 30
                     drag.minimumY: drag.minimumX
+                    onReleased: ifileManager.fileChanged()
                 }
                 Rectangle  {
                     radius: 3

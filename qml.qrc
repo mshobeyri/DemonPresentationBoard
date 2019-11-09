@@ -44,6 +44,8 @@
         <file>src/qml/SidePanel/SidePanelMenu.qml</file>
         <file>src/qml/Settings/SettingsRemote.qml</file>
         <file>src/qml/Settings/SettingsInterface.qml</file>
+        <file>src/qml/UndoRedo.qml</file>
+        <file>src/qml/Welcome.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

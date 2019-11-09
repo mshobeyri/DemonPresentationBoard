@@ -20,7 +20,7 @@ Dialog {
         }
     }
 
-    visible: true
+    visible: false
     clip: true
     header: RowLayout{
         Label{

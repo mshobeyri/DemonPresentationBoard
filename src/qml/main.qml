@@ -10,7 +10,8 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 600
-    title: "Demon Presentation Board"
+    minimumWidth: 800
+    minimumHeight: 600
     Material.theme: isettings.appInterface.theme
     Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
@@ -47,6 +48,7 @@ ApplicationWindow {
     FileManager{
         id: ifileManager
 
+        appTitle: "Demon Presentation Board"
         application: iwin
         toFileFunc: function toFile(){
             var file = {
@@ -60,6 +62,8 @@ ApplicationWindow {
         }
 
         fromFileFunc: function fromFile(data){
+            itimeline.clear()
+            iworld.clear()
             var jsData = JSON.parse(data)
             iworld.fromJson(jsData.world)
             itimeline.fromJson(jsData.timeline)
@@ -68,6 +72,9 @@ ApplicationWindow {
     }
     RemoteHandler{
         id: iremoteHandler
+    }
+    Welcome{
+        visible: true
     }
 }
 

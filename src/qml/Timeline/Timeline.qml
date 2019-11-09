@@ -64,6 +64,10 @@ CustomDialog {
             appendFrame(f.x,f.y,f.scale,f.rotation,f.time,f.notes)
         }
     }
+    function clear(){
+        iframesGrid.frameModel.clear()
+    }
+
     signal timelienChanged
 
     Shortcut {

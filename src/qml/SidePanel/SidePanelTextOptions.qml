@@ -7,7 +7,7 @@ Column{
     id: iroot
 
     width: parent.width
-    property int labelSize: ilable.paintedWidth
+    property int labelSize: ipointSize.labelSize
     property int textJustify
     property font textFont
     property font defaultFont
@@ -30,24 +30,15 @@ Column{
         textFontOutput.italic = !textFontOutput.italic
     }
 
-    RowLayout {
-        spacing: 10
+    SidePanelValueBox{
+        id: ipointSize
+
+        label: "point size"
+        value: textFont.pointSize
         width: parent.width
-
-        Label{
-            id: ilable
-            Layout.preferredWidth: labelSize
-            text: "point size"
-        }
-
-        SpinBox{
-            id: ispinbox
-            Layout.fillWidth: true
-            editable: true
-            value: textFont.pointSize
-            onValueChanged: textFontOutput.pointSize = value
-        }
+        onValueChanged: textFontOutput.pointSize = value
     }
+
     RowLayout {
         spacing: 10
         width: parent.width

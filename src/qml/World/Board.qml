@@ -51,8 +51,10 @@ Item {
         hoverEnabled: true
         onClicked: {
             if(isidePanel.insertCandidateComponent!==""){
-                crateElement(isidePanel.insertCandidateComponent,
+                createElement(isidePanel.insertCandidateComponent,
                              {x:mouseX,y:mouseY,rotation: - iboard.rotation})
+
+                ifileManager.fileChanged()
             }
             currentElement = undefined
             isidePanel.container.elements.deselectAll()

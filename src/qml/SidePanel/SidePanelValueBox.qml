@@ -14,7 +14,15 @@ RowLayout {
     }
     SpinBox{
         id: ispinbox
+
         Layout.fillWidth: true
         editable: true
+        onValueModified: if(!upDownPressed)
+                             ifileManager.fileChanged()
+        property var upDownPressed : up.pressed || down.pressed
+        onUpDownPressedChanged: {
+            if(!upDownPressed)
+                ifileManager.fileChanged()
+        }
     }
 }

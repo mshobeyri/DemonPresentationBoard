@@ -28,11 +28,11 @@ Item{
     function fromJson(json){
         var elements = json.elements
         for(var i= 0;i<elements.length;i++){
-            crateElement(elements[i].type,elements[i])
+            createElement(elements[i].type,elements[i])
         }
 
     }
-    function crateElement(type, properties){
+    function createElement(type, properties){
         var component = Qt.createComponent(Element.path(type))
         if(component.status === Component.Ready){
             var obj = component.createObject(iboard.elementContainer,properties)
@@ -42,6 +42,11 @@ Item{
             }else if(type === Element.image || type ===Element.media){
                 obj.created()
             }
+        }
+    }
+    function clear(){
+        for(var i= 0;i<iboard.elementContainer.children.length;i++){
+            iboard.elementContainer.children[i].destroy()
         }
     }
 

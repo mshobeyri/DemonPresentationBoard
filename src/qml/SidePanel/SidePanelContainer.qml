@@ -27,7 +27,8 @@ Flickable {
             padding: 10
         }
         SidePanelOptions{
-            visible: iworld.currentElement!==undefined
+            visible: iworld.currentElement!==undefined &&
+                     iworld.currentElement!==null
         }
 
         SidePanelWorldOptions{

@@ -16,10 +16,12 @@ Item {
     property int openRecentsCount: 20
     property string fileFormat
 
-    property var openRecents: []
+    property alias openRecentModel: iopenRecentModel
+
     property string currentFilePath: ""
     property string currentFileName: ""
     property bool isFileChanged: false
+    property string appTitle
 
     function saveBtnTriggered(){
         if(currentFilePath==="")
@@ -38,30 +40,63 @@ Item {
 
     function fileChanged(){
         isFileChanged = true
+        iundoRedo.grab()
+    }
+    function open(path){
+        iundoRedo.clear()
+        fromFileFunc(fileio.read(path))
+        iundoRedo.grab()
+    }
+
+    Component.onCompleted:  {
+        if(isettings.openRecentsStr === "")
+            return
+        var openRecentJs = JSON.parse(isettings.openRecentsStr)
+        for(var i = 0;i < openRecentJs.length;i++)
+            openRecentModel.append({
+                            "title": openRecentJs[i].title,
+                            "subtitle": openRecentJs[i].subtitle
+                        })
+
+    }
+    Component.onDestruction: {
+        var modelJs = []
+        for(var i = 0;i < openRecentModel.count;i++)
+        modelJs.push({
+                         "title": openRecentModel.get(i).title,
+                         "subtitle": openRecentModel.get(i).subtitle
+                     })
+        isettings.openRecentsStr = JSON.stringify(modelJs)
+    }
+
+    ListModel{
+        id: iopenRecentModel
     }
 
     Settings{
-        property alias openRecents: iroot.openRecents
+        id: isettings
+        property string openRecentsStr
+    }
+
+    UndoRedo{
+        id: iundoRedo
     }
 
     Item{
         id: iprv
 
-        property string appName
         readonly property var nameFilters:
-            [iprv.appName+" Files (*."+fileFormat+")",
+            [iprv.appTitle+" Files (*."+fileFormat+")",
             "All files (*.*)"]
 
         property string appTitle: {
-            var str = appName
+            var str = iroot.appTitle
             if(currentFileName!=="")
                 str+=" - "+currentFileName
             if(isFileChanged)
                 str+="*"
             str
         }
-
-        Component.onCompleted: appName = application.title
 
         onAppTitleChanged: {
             application.title = appTitle
@@ -75,13 +110,11 @@ Item {
             if(path.substring(
                         path.lastIndexOf(".")+1,
                         path.length)!==fileFormat)
-            path = path + "."+fileFormat
+                path = path + "."+fileFormat
             newFile(path)
             save()
         }
-        function open(path){
-            fromFileFunc(fileio.read(path))
-        }
+
 
         function save(){
             var data = toFileFunc()
@@ -97,22 +130,22 @@ Item {
         }
 
         function newFile(path){
-            currentFilePath = path
-            for(var i=0;i<openRecents.length;i++){
-                if(openRecents[i].path === currentFilePath){
-                    openRecents.splice(i,1)
+            currentFilePath = fileio.toLocalFile(path)
+            for(var i=0;i<openRecentModel.count;i++){
+                if(openRecentModel.get(i).subtitle === currentFilePath){
+                    openRecentModel.remove(i)
                 }
             }
             currentFileName = currentFilePath.substring(
                         currentFilePath.lastIndexOf("/")+1,
                         currentFilePath.length)
             isFileChanged = false
-            openRecents.push({
-                                 "name": currentFileName,
-                                 "path": currentFilePath
+            openRecentModel.insert(0,{
+                                 "title": currentFileName,
+                                 "subtitle": currentFilePath
                              })
-            while (openRecents.length > openRecentsCount)
-                openRecents.splice(0,1)
+            while (openRecentModel.count > openRecentsCount)
+                openRecentModel.remove(0)
         }
 
         function doesForgotToSave(func){

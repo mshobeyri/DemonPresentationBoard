@@ -7,7 +7,7 @@ ColumnLayout{
     id: iroot
 
     width: parent.width - 20
-    property int labelSize: ivelocity.paintedWidth
+    property int labelSize: iabouncance.labelSize
     anchors.horizontalCenter: parent.horizontalCenter
 
     RowLayout {
@@ -50,57 +50,28 @@ ColumnLayout{
             onClicked: iworld.board.background.openImageSelector()
         }
     }
-    RowLayout {
-        spacing: 10
+
+    SidePanelValueBox{
+        label: "quality"
+        labelSize: iroot.labelSize
         width: parent.width
-        visible: iworld.board.background.type === 1
-
-        Label{
-            Layout.preferredWidth: labelSize
-            text: "quality"
-        }
-
-        SpinBox{
-            Layout.fillWidth: true
-            editable: true
-            value: iworld.board.background.quality
-            onValueChanged: iworld.board.background.quality = value
-        }
+        value: iworld.board.background.quality
+        onValueChanged: iworld.board.background.quality = value
     }
-    RowLayout {
-        spacing: 10
+    SidePanelValueBox{
+        id: iabouncance
+
+        label: "abundance"
         width: parent.width
-        visible: iworld.board.background.type ===2
-
-        Label{
-            Layout.preferredWidth: labelSize
-            text: "abundance"
-        }
-
-        SpinBox{
-            Layout.fillWidth: true
-            editable: true
-            value: iworld.board.background.aboundance
-            onValueChanged: iworld.board.background.aboundance = value
-        }
+        value: iworld.board.background.aboundance
+        onValueChanged: iworld.board.background.aboundance = value
     }
 
-    RowLayout {
-        spacing: 10
+    SidePanelValueBox{
+        label: "velocity"
+        labelSize: iroot.labelSize
         width: parent.width
-
-        Label{
-            id: ivelocity
-
-            Layout.preferredWidth: labelSize
-            text: "velocity"
-        }
-
-        SpinBox{
-            Layout.fillWidth: true
-            editable: true
-            value: iworld.board.background.velocity
-            onValueChanged: iworld.board.background.velocity = value
-        }
+        value: iworld.board.background.velocity
+        onValueChanged: iworld.board.background.velocity = value
     }
 }

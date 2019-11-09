@@ -21,9 +21,12 @@ RowLayout {
         id: itext
         Layout.fillWidth: true
         selectByMouse: true
-        onAccepted: iroot.accepted()
+        onAccepted: {
+            focus = false
+        }
         validator: RegExpValidator{
             id: iregex
         }
+        onFocusChanged: if(!focus)ifileManager.fileChanged()
     }
 }
