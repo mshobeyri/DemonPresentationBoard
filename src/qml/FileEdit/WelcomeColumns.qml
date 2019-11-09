@@ -11,6 +11,7 @@ ColumnLayout{
     property alias label: ilabel.text
     property alias model: ifilesRepeater.model
     Layout.preferredWidth: ifilesRepeater.width
+    signal btnClicked
     IconButton{
         id: ibutton
 
@@ -18,7 +19,7 @@ ColumnLayout{
         iconStr: "folder"
         flat: true
         Layout.preferredWidth: buttonWidth
-        onClicked: ifileManager.openBtnTriggered()
+        onClicked: btnClicked()
         Frame{
             anchors.fill: parent
             anchors.topMargin:  parent.topInset

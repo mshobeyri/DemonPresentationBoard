@@ -16,6 +16,7 @@ CustomDialog {
             button.text: "New Project"
             button.iconStr: "file-plus"
             label: "Templates"
+            onBtnClicked: iroot.close()
             model: ListModel{
                 ListElement{
                     title: "ssss"
@@ -34,27 +35,13 @@ CustomDialog {
             }
         }
         WelcomeColumns{
-            button.text: "New Project"
-            button.iconStr: "file-plus"
-            label: "Templates"
+            button.text: "Open Project"
+            button.iconStr: "folder"
+            label: "Recent Projects"
             Layout.fillWidth: true
             Layout.preferredWidth: 250
-            model: ListModel{
-                ListElement{
-                    title: "ssss"
-                    subtitle : "ajsdkjash dkja skdj akjs d"
-                }
-
-                ListElement{
-                    title: "ssss"
-                    subtitle : "ajsdkjash dkja skdj akjs d"
-                }
-
-                ListElement{
-                    title: "ssss"
-                    subtitle : "ajsdkjash dkja skdj akjs d"
-                }
-            }
+            model: ifileManager.openRecentModel
+            onBtnClicked: ifileManager.openBtnTriggered()
         }
     }
 }
