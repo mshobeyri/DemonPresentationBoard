@@ -13,7 +13,8 @@ ColumnLayout {
         ioptions.forceActiveFocus()
     }
     function optionVisible(optionName){
-        return iworld.currentElement!==undefined &&
+        return iworld.currentElement!==null &&
+                iworld.currentElement!==undefined &&
                 iworld.currentElement.hasOwnProperty(optionName)
     }
 

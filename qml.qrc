@@ -33,9 +33,7 @@
         <file>src/qml/SidePanel/SidePanelIconGallery.qml</file>
         <file>src/qml/SidePanel/SidePanelIconsJs.js</file>
         <file>src/qml/SidePanel/SidePanelVectorOptions.qml</file>
-        <file>src/qml/FileManager.qml</file>
         <file>src/qml/Elements/ElementHelper.js</file>
-        <file>src/qml/RemoteHandler.qml</file>
         <file>src/qml/World/FakeLaser.qml</file>
         <file>src/qml/World/Board.qml</file>
         <file>src/qml/World/Background.qml</file>
@@ -44,8 +42,11 @@
         <file>src/qml/SidePanel/SidePanelMenu.qml</file>
         <file>src/qml/Settings/SettingsRemote.qml</file>
         <file>src/qml/Settings/SettingsInterface.qml</file>
-        <file>src/qml/UndoRedo.qml</file>
-        <file>src/qml/Welcome.qml</file>
+        <file>src/qml/FileEdit/FileManager.qml</file>
+        <file>src/qml/FileEdit/UndoRedo.qml</file>
+        <file>src/qml/FileEdit/Welcome.qml</file>
+        <file>src/qml/Settings/RemoteHandler.qml</file>
+        <file>src/qml/FileEdit/WelcomeColumns.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

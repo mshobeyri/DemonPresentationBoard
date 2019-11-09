@@ -5,6 +5,8 @@ import "SidePanel"
 import "World"
 import "Timeline"
 import "Settings"
+import "FileEdit"
+
 ApplicationWindow {
     id: iwin
     visible: true
