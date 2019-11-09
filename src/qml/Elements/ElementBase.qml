@@ -75,6 +75,15 @@ Item{
                 id: iloader
                 anchors.fill: parent
             }
+            DropShadow{
+                source: iloader.item
+                anchors.fill: ibaseElement
+                horizontalOffset: 0
+                verticalOffset: 0
+                radius: 8.0
+                samples: 17
+                color: "#80000000"
+            }
 
             MouseArea{
                 id: iselectDragMouseArea
