@@ -4,6 +4,8 @@ import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
+    baseWidth: 130
+    baseHeight: 90
     property string source: "qrc:/res/res/image.svg"
     property bool isAnimated: icontainer.source.indexOf(".gif")===icontainer.source.length-4
     property bool isVector: icontainer.source.indexOf(".svg")===icontainer.source.length-4
@@ -16,7 +18,8 @@ ElementBase{
     function fromJson(json){
         source = json.source
     }
-    function created(){
+
+    onCreated: {
         if(icontainer.source == "qrc:/res/res/image.svg")
             isourceSelector.open()
     }
@@ -24,7 +27,9 @@ ElementBase{
     FileDialog{
         id: isourceSelector
         nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
-        onAccepted: icontainer.source = currentFile
+        onAccepted: {
+            icontainer.source = currentFile
+        }
         onRejected: icontainer.deleteIt()
     }
 

@@ -2,6 +2,8 @@
 #include <QDebug>
 #include <QFile>
 #include <QGuiApplication>
+#include <QStandardPaths>
+#include <QTemporaryDir>
 #include <QTextStream>
 #include <QUrl>
 
@@ -47,4 +49,13 @@ FileIO::copyToClipboard(const QString& text) const {
 QString
 FileIO::getClipboard() const {
     return QGuiApplication::clipboard()->text();
+}
+
+QString
+FileIO::tempFolder() const {
+    QTemporaryDir dir;
+    if (dir.isValid()) {
+        return dir.path();
+    }
+    return "";
 }

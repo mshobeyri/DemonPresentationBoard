@@ -18,12 +18,14 @@ Item{
     property alias component: iloader.sourceComponent
     property alias loader: iloader
     property bool fixAspectRatio: false
+    property int aspectRatio: 1
     property real handleSize: 16
     readonly property bool selected: currentElement === iroot
     property bool editMode: false
     property bool locked: false
     property var elementJson : iroot.json
     signal doubleClicked;
+    signal created
     property var commonData: {
         "x": iroot.x,
         "y": iroot.y,
@@ -53,6 +55,12 @@ Item{
         iroot.locked = json.l
         iroot.visible = json.v
     }
+
+    onCreated: {
+        baseWidth *= iworld.handlesScale
+        baseHeight *= iworld.handlesScale
+    }
+
 
     Item {
         id: imain;
@@ -187,8 +195,8 @@ Item{
             Item{
                 id: isizeHandle
 
-                x: baseWidth - width/2
-                y: fixAspectRatio? x :baseHeight - width/2
+                x: (baseWidth) - width/2
+                y: fixAspectRatio? x * aspectRatio  :baseHeight - width/2
                 width: handleSize
                 height: width
                 opacity: selected? 1 : 0

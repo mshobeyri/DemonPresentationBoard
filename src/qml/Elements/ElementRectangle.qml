@@ -3,6 +3,10 @@ import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
+
+    baseWidth: 100
+    baseHeight: 100
+
     property color color: "#333333"
     property color borderColor: "#141452"
     property real borderWidth: 10

@@ -49,6 +49,7 @@ Item {
     }
 
     Component.onCompleted:  {
+        console.log(fileio.tempFolder())
         if(isettings.openRecentsStr === "")
             return
         var openRecentJs = JSON.parse(isettings.openRecentsStr)

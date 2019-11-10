@@ -40,7 +40,7 @@ Item{
             if(properties.common!==undefined){
                 obj.fromJson(properties)
                 obj.fromJsonBase(properties.common)
-            }else if(type === Element.image || type ===Element.media){
+            }else{
                 obj.created()
             }
             return obj

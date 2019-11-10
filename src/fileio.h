@@ -14,6 +14,7 @@ public:
     Q_INVOKABLE bool fileExist(const QString& filePath) const;
     Q_INVOKABLE void copyToClipboard(const QString& text) const;
     Q_INVOKABLE QString getClipboard() const;
+    Q_INVOKABLE QString tempFolder() const;
 };
 
 #endif // FILEIO_H
