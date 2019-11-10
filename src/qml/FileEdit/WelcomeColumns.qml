@@ -48,7 +48,7 @@ ColumnLayout{
                     return
                 }
 
-                ifileManager.open(model.subtitle)
+                ifileManager.openAccepted(model.subtitle)
                 iroot.close()
             }
             Row{

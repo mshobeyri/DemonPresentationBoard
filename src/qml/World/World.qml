@@ -108,8 +108,7 @@ Item{
                     Qmlhelper.isAppFile(drag.urls[0])
         }
         onDropped: {
-            if(Qmlhelper.isImage(drop.urls[0]))
-            iworld.createElement(Element.image,{source:drop.urls[0],x:drag.x,y:drag.y})
+            ifileManager.openAccepted(drop.urls[0])
         }
     }
 }

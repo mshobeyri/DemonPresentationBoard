@@ -38,14 +38,12 @@ Item {
     function openBtnTriggered(){
         iopenFileDialog.open()
     }
+    function openAccepted(path){
+        iprv.open(path)
+    }
 
     function fileChanged(){
         isFileChanged = true
-        iundoRedo.grab()
-    }
-    function open(path){
-        iundoRedo.clear()
-        fromFileFunc(fileio.read(path))
         iundoRedo.grab()
     }
 
@@ -102,10 +100,7 @@ Item {
         onAppTitleChanged: {
             application.title = appTitle
         }
-        function openAccepted(path){
-            open(path)
-            newFile(path)
-        }
+
         function saveAccepted(path){
             path = path.toString()
             if(Qmlhelper.fileFormatFromPath(path)!==fileFormat)
@@ -114,6 +109,19 @@ Item {
             save()
         }
 
+        function open(path){
+            if(!iprv.doesForgotToSave(function(){
+                iundoRedo.clear()
+                fromFileFunc(fileio.read(path))
+                iundoRedo.grab()
+                iprv.newFile(path)
+            })){
+                iundoRedo.clear()
+                fromFileFunc(fileio.read(path))
+                iundoRedo.grab()
+                iprv.newFile(path)
+            }
+        }
 
         function save(){
             var data = toFileFunc()
@@ -219,7 +227,10 @@ Item {
             }
             QQ2.Button{
                 text: "Save"
-                onClicked: saveBtnTriggered()
+                onClicked: {
+                    iforgotToSaveDialog.close()
+                    saveBtnTriggered()
+                }
                 Layout.rightMargin: 10
                 Material.background: Material.accent
             }
@@ -240,6 +251,6 @@ Item {
 
         fileMode: FileDialog.OpenFile
         nameFilters: iprv.nameFilters
-        onAccepted: iprv.openAccepted(iopenFileDialog.currentFile)
+        onAccepted: openAccepted(iopenFileDialog.currentFile)
     }
 }
