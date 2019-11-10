@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import "../Elements"
 import "../Elements/ElementHelper.js" as Element
+import "../qmlHelper.js" as Qmlhelper
 
 Item{
     id: iroot
@@ -99,5 +100,16 @@ Item{
         id: ifakeLaser
 
         anchors.fill: parent
+    }
+    DropArea{
+        anchors.fill: parent
+        onEntered: {
+            drag.accepted = drag.urls.length === 1 &&
+                    Qmlhelper.isAppFile(drag.urls[0])
+        }
+        onDropped: {
+            if(Qmlhelper.isImage(drop.urls[0]))
+            iworld.createElement(Element.image,{source:drop.urls[0],x:drag.x,y:drag.y})
+        }
     }
 }

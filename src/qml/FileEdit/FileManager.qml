@@ -4,6 +4,7 @@ import Qt.labs.platform 1.0
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.3
 import Qt.labs.settings 1.0
+import "../qmlHelper.js" as Qmlhelper
 
 Item {
     id : iroot
@@ -54,18 +55,18 @@ Item {
         var openRecentJs = JSON.parse(isettings.openRecentsStr)
         for(var i = 0;i < openRecentJs.length;i++)
             openRecentModel.append({
-                            "title": openRecentJs[i].title,
-                            "subtitle": openRecentJs[i].subtitle
-                        })
+                                       "title": openRecentJs[i].title,
+                                       "subtitle": openRecentJs[i].subtitle
+                                   })
 
     }
     Component.onDestruction: {
         var modelJs = []
         for(var i = 0;i < openRecentModel.count;i++)
-        modelJs.push({
-                         "title": openRecentModel.get(i).title,
-                         "subtitle": openRecentModel.get(i).subtitle
-                     })
+            modelJs.push({
+                             "title": openRecentModel.get(i).title,
+                             "subtitle": openRecentModel.get(i).subtitle
+                         })
         isettings.openRecentsStr = JSON.stringify(modelJs)
     }
 
@@ -107,9 +108,7 @@ Item {
         }
         function saveAccepted(path){
             path = path.toString()
-            if(path.substring(
-                        path.lastIndexOf(".")+1,
-                        path.length)!==fileFormat)
+            if(Qmlhelper.fileFormatFromPath(path)!==fileFormat)
                 path = path + "."+fileFormat
             newFile(path)
             save()
@@ -141,9 +140,9 @@ Item {
                         currentFilePath.length)
             isFileChanged = false
             openRecentModel.insert(0,{
-                                 "title": currentFileName,
-                                 "subtitle": currentFilePath
-                             })
+                                       "title": currentFileName,
+                                       "subtitle": currentFilePath
+                                   })
             while (openRecentModel.count > openRecentsCount)
                 openRecentModel.remove(0)
         }

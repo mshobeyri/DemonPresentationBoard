@@ -47,6 +47,7 @@
         <file>src/qml/FileEdit/Welcome.qml</file>
         <file>src/qml/Settings/RemoteHandler.qml</file>
         <file>src/qml/FileEdit/WelcomeColumns.qml</file>
+        <file>src/qml/qmlHelper.js</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>

@@ -1,4 +1,6 @@
 import QtQuick 2.12
+import "../Elements/ElementHelper.js" as Element
+import "../qmlHelper.js" as Qmlhelper
 
 Item {
     id: iboard
@@ -92,5 +94,20 @@ Item {
         id: ielementContainer
 
         anchors.fill: parent
+    }
+    DropArea{
+        anchors.fill: parent
+        onEntered: {
+            drag.accepted = Qmlhelper.isImage(drag.urls[0]) ||
+                    Qmlhelper.isMedia(drag.urls[0])
+        }
+        onDropped: {
+            for(var i = 0; i< drop.urls.length;i++){
+                if(Qmlhelper.isImage(drop.urls[i]))
+                    iworld.createElement(Element.image,{source:drop.urls[i],x:drag.x,y:drag.y})
+                if(Qmlhelper.isMedia(drop.urls[i]))
+                    iworld.createElement(Element.media,{source:drop.urls[i],x:drag.x,y:drag.y})
+            }
+        }
     }
 }

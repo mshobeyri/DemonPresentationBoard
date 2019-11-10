@@ -22,7 +22,8 @@ ElementBase{
         color = json.color
     }
     function created(){
-        isourceSelector.open()
+        if(icontainer.source == "")
+            isourceSelector.open()
     }
 
     FileDialog{

@@ -17,7 +17,8 @@ ElementBase{
         source = json.source
     }
     function created(){
-        isourceSelector.open()
+        if(icontainer.source == "qrc:/res/res/image.svg")
+            isourceSelector.open()
     }
 
     FileDialog{
