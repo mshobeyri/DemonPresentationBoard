@@ -28,7 +28,8 @@ ElementBase{
         id: isourceSelector
         nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
         onAccepted: {
-            icontainer.source = currentFile
+            console.log(fileio.tempFile(currentFile))
+            icontainer.source = fileio.tempFile(currentFile)
         }
         onRejected: icontainer.deleteIt()
     }

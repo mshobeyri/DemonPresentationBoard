@@ -49,7 +49,6 @@ Item {
     }
 
     Component.onCompleted:  {
-        console.log(fileio.tempFolder())
         if(isettings.openRecentsStr === "")
             return
         var openRecentJs = JSON.parse(isettings.openRecentsStr)
@@ -86,6 +85,8 @@ Item {
     Item{
         id: iprv
 
+        property string tempPath: fileio.tempFolder()
+        Component.onCompleted: console.log(tempPath)
         readonly property var nameFilters:
             [iprv.appTitle+" Files (*."+fileFormat+")",
             "All files (*.*)"]
@@ -98,6 +99,7 @@ Item {
                 str+="*"
             str
         }
+
 
         onAppTitleChanged: {
             application.title = appTitle

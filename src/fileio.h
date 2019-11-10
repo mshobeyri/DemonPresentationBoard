@@ -2,7 +2,7 @@
 #define FILEIO_H
 
 #include <QObject>
-#include <QClipboard>
+#include <QTemporaryDir>
 
 class FileIO : public QObject
 {
@@ -15,6 +15,11 @@ public:
     Q_INVOKABLE void copyToClipboard(const QString& text) const;
     Q_INVOKABLE QString getClipboard() const;
     Q_INVOKABLE QString tempFolder() const;
+    Q_INVOKABLE QString tempFile(const QString& path) const;
+
+private:
+    QTemporaryDir m_dir;
+    QByteArray fileChecksum(QFile &file) const;
 };
 
 #endif // FILEIO_H
