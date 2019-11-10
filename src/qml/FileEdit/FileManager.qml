@@ -40,6 +40,7 @@ Item {
     }
     function openAccepted(path){
         iprv.open(path)
+        iwelcome.close()
     }
 
     function fileChanged(){

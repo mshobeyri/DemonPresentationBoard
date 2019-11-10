@@ -5,32 +5,29 @@ import QtQuick.Layouts 1.12
 import ".."
 
 CustomDialog {
-    id: iroot
+    id: iwelcome
 
     dialgTitle: "Welcome"
 
-    contentItem: RowLayout{
+     RowLayout{
         spacing: 10
+        anchors.fill: parent
         WelcomeColumns{
-            Layout.maximumWidth: 250
+            Layout.minimumWidth: 250
+            Layout.fillHeight: true
             button.text: "New Project"
             button.iconStr: "file-plus"
             label: "Templates"
-            onBtnClicked: iroot.close()
+            onBtnClicked: iwelcome.close()
             model: ListModel{
                 ListElement{
-                    title: "ssss"
-                    subtitle : "ajsdkjash dkja skdj akjs d"
+                    title: "hell"
+                    subtitle : "red dragon theme"
                 }
 
                 ListElement{
-                    title: "ssss"
-                    subtitle : "ajsdkjash dkja skdj akjs d"
-                }
-
-                ListElement{
-                    title: "ssss"
-                    subtitle : "ajs akj skja sjdhkajsh kddkjash dkja skdj akjs d"
+                    title: "dark"
+                    subtitle : "dark theme"
                 }
             }
         }
@@ -39,9 +36,25 @@ CustomDialog {
             button.iconStr: "folder"
             label: "Recent Projects"
             Layout.fillWidth: true
-            Layout.preferredWidth: 250
+            Layout.fillHeight: true
+            Layout.minimumWidth: 250
+            itemsWidth: 250
             model: ifileManager.openRecentModel
-            onBtnClicked: ifileManager.openBtnTriggered()
+            onBtnClicked: {
+                ifileManager.openBtnTriggered()
+            }
+            onItemClicked: {
+                if(!fileio.fileExist(subtitle)){
+                    ifileManager.openRecentModel.remove(index)
+                    return
+                }
+                ifileManager.openAccepted(subtitle)
+                iwelcome.close()
+            }
+        }
+        Item{
+            Layout.fillWidth: true
+            Layout.fillHeight: true
         }
     }
 }

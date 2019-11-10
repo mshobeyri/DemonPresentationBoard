@@ -76,6 +76,7 @@ ApplicationWindow {
         id: iremoteHandler
     }
     Welcome{
+        id: iwelcome
         visible: true
     }
 }

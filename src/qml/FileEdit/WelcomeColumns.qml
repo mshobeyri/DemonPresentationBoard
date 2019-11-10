@@ -6,12 +6,16 @@ import ".."
 
 
 ColumnLayout{
+    id: iroot
+
     property int buttonWidth: 250
+    property int itemsWidth: buttonWidth
     property alias button: ibutton
     property alias label: ilabel.text
     property alias model: ifilesRepeater.model
-    Layout.preferredWidth: ifilesRepeater.width
+
     signal btnClicked
+    signal itemClicked(var subtitle,var index)
     IconButton{
         id: ibutton
 
@@ -24,6 +28,7 @@ ColumnLayout{
             anchors.fill: parent
             anchors.topMargin:  parent.topInset
             anchors.bottomMargin: parent.bottomInset
+            enabled: false
         }
     }
     Label{
@@ -35,25 +40,22 @@ ColumnLayout{
     ListView{
         id: ifilesRepeater
 
-        width: contentWidth
-        model: ifileManager.openRecentModel
+        Layout.preferredWidth: itemsWidth
         Layout.fillHeight: true
+        flickableDirection: Flickable.AutoFlickDirection
+        interactive: true
+        clip: true
         delegate: ItemDelegate{
-            height: irow.height
-            implicitWidth: irow.width
+            height: irow.height + 10
+            width: itemsWidth
             hoverEnabled: true
             onClicked: {
-                if(!fileio.fileExist(model.subtitle)){
-                    ifileManager.openRecentModel.remove(model.index)
-                    return
-                }
-
-                ifileManager.openAccepted(model.subtitle)
-                iroot.close()
+                itemClicked(model.subtitle,model.index)
             }
             Row{
                 id: irow
-
+                Component.onCompleted: if(width>itemsWidth)itemsWidth = width + 10
+                anchors.verticalCenter: parent.verticalCenter
                 leftPadding: 10
                 topPadding: 2
                 spacing: 5
@@ -66,21 +68,18 @@ ColumnLayout{
                 Column{
                     spacing: 5
                     Label{
+                        font.pointSize: 10
                         Material.foreground: Material.accent
                         text: model.title
                     }
                     Label{
+                        font.pointSize: 8
                         Material.foreground: Material.Grey
                         text: model.subtitle
                         width: paintedWidth
                     }
                 }
-
             }
         }
-    }
-    Item{
-        Layout.preferredWidth: 10
-        Layout.fillHeight: true
     }
 }

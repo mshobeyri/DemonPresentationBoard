@@ -24,11 +24,11 @@ ElementBase{
     component:  Component {
         Rectangle {
             color: icontainer.color
+            width: height
             border.width: icontainer.borderWidth
             border.color: icontainer.borderColor
             antialiasing: true
             radius: width
-            width: height
         }
     }
 }

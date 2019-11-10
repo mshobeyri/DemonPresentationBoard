@@ -9,6 +9,8 @@ Item{
     y: 120
     width: 0;
     height: 0;
+    property int baseWidth: 100
+    property int baseHeight: 100
     property alias w: isizeHandle.x
     property alias h: isizeHandle.y
     property alias r: ibaseElement.rotation
@@ -40,11 +42,13 @@ Item{
     }
 
     function fromJsonBase(json){
+
         iroot.x = json.x
         iroot.y = json.y
         iroot.z = json.z
         iroot.w = json.w
-        iroot.h = json.h
+        if(!fixAspectRatio)
+            iroot.h = json.h
         ibaseElement.rotation = json.r
         iroot.locked = json.l
         iroot.visible = json.v
@@ -183,8 +187,8 @@ Item{
             Item{
                 id: isizeHandle
 
-                x: 100 - width/2
-                y: fixAspectRatio? x :100 - width/2
+                x: baseWidth - width/2
+                y: fixAspectRatio? x :baseHeight - width/2
                 width: handleSize
                 height: width
                 opacity: selected? 1 : 0
