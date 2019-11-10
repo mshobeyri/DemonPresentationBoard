@@ -13,6 +13,9 @@ Item {
     property alias elementContainer: ielementContainer
     property alias background: ibackground
 
+    function sceneCenter(){
+        return mapFromItem(iworld,iworld.width/2,iworld.height/2)
+    }
     PinchArea{
         anchors.fill: parent
         pinch.target: iboard
@@ -52,7 +55,7 @@ Item {
         onClicked: {
             if(isidePanel.insertCandidateComponent!==""){
                 createElement(isidePanel.insertCandidateComponent,
-                             {x:mouseX,y:mouseY,rotation: - iboard.rotation})
+                              {x:mouseX,y:mouseY,rotation: - iboard.rotation})
 
                 ifileManager.fileChanged()
             }

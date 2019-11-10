@@ -4,6 +4,7 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
+    property string text : "Your Text Here!"
     property color color: "#333333"
     property color backgroundColor: "transparent"
     property font textFont
@@ -11,6 +12,7 @@ ElementBase{
     property var json: {
         "type": Element.text,
         "common": icontainer.commonData,
+        "text": icontainer.text,
         "color": icontainer.color.toString(),
         "backgroundColor": icontainer.backgroundColor.toString(),
         "textFont": icontainer.textFont,
@@ -42,19 +44,21 @@ ElementBase{
             border.color: selected? Qt.lighter(itxt.color): "transparent"
             antialiasing: true
             clip: true
+
             TextEdit {
                 id: itxt
                 anchors.fill: parent
                 anchors.margins: 2
                 color: icontainer.color
                 enabled: editMode
-                text: "Your Text Here!"
+                text: icontainer.text
                 font: icontainer.textFont
                 wrapMode: TextEdit.WordWrap
                 selectByMouse: true
                 selectByKeyboard: true
                 antialiasing: true
                 horizontalAlignment: textJustify
+                onTextChanged: icontainer.text = text
             }
         }
     }

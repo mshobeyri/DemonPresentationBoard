@@ -42,7 +42,9 @@ Item{
             }else if(type === Element.image || type ===Element.media){
                 obj.created()
             }
+            return obj
         }
+        return null
     }
     function clear(){
         for(var i= 0;i<iboard.elementContainer.children.length;i++){

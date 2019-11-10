@@ -1,8 +1,55 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import "../Elements/ElementHelper.js" as Eelements
 
 Menu {
+
+    function cut(){
+        if(iworld.currentElement!==null &&
+                iworld.currentElement!== undefined){
+            iworld.currentElement.destroy()
+            fileio.copyToClipboard(JSON.stringify(iworld.currentElement.json))
+        }
+    }
+
+    function copy(){
+        if(iworld.currentElement!==null &&
+                iworld.currentElement!== undefined)
+            fileio.copyToClipboard(JSON.stringify(iworld.currentElement.json))
+    }
+
+    function paste(){
+        var txt = fileio.getClipboard()
+        try {
+            var js = JSON.parse(txt)
+            if(js.type!==undefined)
+                iworld.createElement(js.type,js)
+            else
+                pasteText(txt)
+        }catch(err){
+            pasteText(txt)
+        }
+    }
+    function pasteText(txt){
+        var sc = iworld.board.sceneCenter()
+        iworld.createElement(Eelements.text,{text:txt,x:sc.x,y:sc.y,rotation:-iworld.board.rotation})
+    }
+
+    Shortcut{
+        sequence: StandardKey.Cut
+        onActivated: cut()
+    }
+    Shortcut{
+        sequence: StandardKey.Copy
+        onActivated: copy()
+    }
+    Shortcut{
+        sequence: StandardKey.Paste
+        onActivated: paste()
+    }
+
+
     Menu{
         title: "File"
 
@@ -21,37 +68,15 @@ Menu {
 
         MenuItem{
             text: "Cut"
-            shortcut: StandardKey.cut
-            onTriggered: {
-
-                if(iworld.currentElement!==null &&
-                        iworld.currentElement!== undefined){
-                    iworld.currentElement.destroy()
-                    fileio.copyToClipboard(iworld.currentElement.json)
-                }
-            }
+            onTriggered: cut()
         }
         MenuItem{
             text: "Copy"
-            shortcut: StandardKey.Copy
-            onTriggered: {
-                if(iworld.currentElement!==null &&
-                        iworld.currentElement!== undefined)
-                    fileio.copyToClipboard(iworld.currentElement.json)
-            }
+            onTriggered: copy()
         }
         MenuItem{
             text: "Paste"
-            shortcut: StandardKey.Paste
-            onTriggered: {
-                var txt = fileio.getClipboard()
-                try {
-                    var js = JSON.parse(txt)
-                    iworld.createElement(js.type,js)
-                }catch(err){
-
-                }
-            }
+            onTriggered: paste()
         }
     }
     MenuSeparator{}
