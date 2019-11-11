@@ -9,19 +9,21 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
+    property string tempName: ""
     property string source: ""
     property color color: "#000000"
     property var json: {
         "type":Element.media,
         "common": icontainer.commonData,
-        "source": icontainer.source,
+        "tempName": icontainer.tempName,
         "color": icontainer.color.toString(),
     }
     function fromJson(json){
-        source = json.source
+        source = fileio.tempFolderFileUrl(json.tempName)
         color = json.color
     }
-    function created(){
+
+    onCreated: {
         if(icontainer.source == "")
             isourceSelector.open()
     }
@@ -29,7 +31,10 @@ ElementBase{
     FileDialog{
         id: isourceSelector
         nameFilters: ["Video files (*.mp4 *.avi *.mov *.mkv *.wmv)", "All files (*.*)"]
-        onAccepted: icontainer.source = currentFile
+        onAccepted: {
+            icontainer.tempName = fileio.copyToTempFolder(currentFile)
+            icontainer.source = fileio.tempFolderFileUrl(tempName)
+        }
         onRejected: icontainer.deleteIt()
     }
 

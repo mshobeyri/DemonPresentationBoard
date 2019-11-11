@@ -6,21 +6,22 @@ ElementBase{
     id: icontainer
     baseWidth: 130
     baseHeight: 90
-    property string source: "qrc:/res/res/image.svg"
+    property string tempName: ""
+    property string source: ""
     property bool isAnimated: icontainer.source.indexOf(".gif")===icontainer.source.length-4
     property bool isVector: icontainer.source.indexOf(".svg")===icontainer.source.length-4
     property var json: {
         "type":Element.image,
         "common": icontainer.commonData,
-        "source": icontainer.source
+        "tempName": icontainer.tempName
     }
 
     function fromJson(json){
-        source = json.source
+        source = fileio.tempFolderFileUrl(json.tempName)
     }
 
     onCreated: {
-        if(icontainer.source == "qrc:/res/res/image.svg")
+        if(icontainer.source == "")
             isourceSelector.open()
     }
 
@@ -28,8 +29,8 @@ ElementBase{
         id: isourceSelector
         nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
         onAccepted: {
-            console.log(fileio.tempFile(currentFile))
-            icontainer.source = fileio.tempFile(currentFile)
+            icontainer.tempName = fileio.copyToTempFolder(currentFile)
+            icontainer.source = fileio.tempFolderFileUrl(tempName)
         }
         onRejected: icontainer.deleteIt()
     }

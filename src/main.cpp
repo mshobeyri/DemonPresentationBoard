@@ -11,7 +11,7 @@ main(int argc, char* argv[]) {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
-    app.setApplicationName("pl-illustrator");
+    app.setApplicationName("demon-presentation-board");
     app.setOrganizationName("waterbear");
     QQuickStyle::setStyle("material");
 

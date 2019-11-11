@@ -14,6 +14,7 @@ Item {
     property var application: undefined
     property var toFileFunc:undefined
     property var fromFileFunc:undefined
+    property var binaryFilesFunc:undefined
     property int openRecentsCount: 20
     property string fileFormat
 
@@ -129,7 +130,9 @@ Item {
 
         function save(){
             var data = toFileFunc()
-            fileio.write(currentFilePath,data)
+            var binaries = binaryFilesFunc()
+            fileio.write(currentFilePath,
+                         data,binaries)
             isFileChanged = false
         }
 

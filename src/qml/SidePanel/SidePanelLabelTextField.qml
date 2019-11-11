@@ -19,6 +19,7 @@ RowLayout {
     }
     TextField{
         id: itext
+
         Layout.fillWidth: true
         selectByMouse: true
         onAccepted: {

@@ -33,6 +33,16 @@ Item{
         }
 
     }
+    function binaryFiles(){
+        var binaries = []
+        for(var i= 0;i<iboard.elementContainer.children.length;i++){
+            if(iboard.elementContainer.children[i].json.hasOwnProperty('tempName')){
+                binaries.push(iboard.elementContainer.children[i].json.tempName)
+            }
+        }
+        return binaries
+    }
+
     function createElement(type, properties){
         var component = Qt.createComponent(Element.path(type))
         if(component.status === Component.Ready){

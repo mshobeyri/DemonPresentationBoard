@@ -70,6 +70,11 @@ ApplicationWindow {
             iworld.fromJson(jsData.world)
             itimeline.fromJson(jsData.timeline)
         }
+
+        binaryFilesFunc: function(){
+            return iworld.binaryFiles()
+        }
+
         fileFormat :"dpb"
     }
     RemoteHandler{
