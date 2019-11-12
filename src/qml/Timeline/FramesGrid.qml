@@ -90,19 +90,18 @@ ListView {
             duration: iroot.duration
         }
         PropertyAnimation{
-            property: "scale"
-            target: board
+            property: "xScale"
+            target: board.scaleTransform
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.scale:0
             easing.type: easingType
             duration: iroot.duration
         }
-        RotationAnimation {
-            property: "rotation";
-            target: board
+        PropertyAnimation{
+            property: "yScale"
+            target: board.scaleTransform
             to:currentFrameModel!==undefined && currentFrameModel!==null
-               ?currentFrameModel.rotation:0
-            direction:RotationAnimation.Shortest
+               ?currentFrameModel.scale:0
             easing.type: easingType
             duration: iroot.duration
         }
@@ -165,8 +164,7 @@ ListView {
                     sourceItem: iworld
                     live: (board.x===model.x &&
                            board.y===model.y &&
-                           board.scale===model.scale &&
-                           board.rotation===model.rotation)
+                           board.scaleTransform.xScale===model.scale)
                 }
                 Label{
                     anchors.centerIn: parent

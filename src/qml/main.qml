@@ -16,7 +16,12 @@ ApplicationWindow {
     minimumHeight: 600
     Material.theme: isettings.appInterface.theme
     Material.accent: Material.Blue
-    visibility: ApplicationWindow.Maximized
+//    visibility: ApplicationWindow.Maximized
+    onWidthChanged: iworld.updatePosition()
+    onHeightChanged: iworld.updatePosition()
+
+    readonly property real animationDuration: 200
+
     FontLoader{
         id: ifontAwsome
         source: "qrc:/res/res/Font Awesome 5 Pro-Solid-900.otf"

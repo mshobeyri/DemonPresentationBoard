@@ -9,8 +9,8 @@ Item{
     y: -iboard.y * velocity / 100
     width: parent.width
     height: parent.height
-    property int velocity: 10
-    property string color: "purpule"
+    property int velocity: 0
+    property string color: "red"
     property string source: "qrc:/res/res/backgrounds/pattern-10.svg"
     property int quality: 20
     property int aboundance : 20
@@ -30,6 +30,8 @@ Item{
         anchors.fill: parent
         antialiasing: true
         color: parent.color
+        border.width: 2
+        border.color: "black"
     }
     FileDialog{
         id: isourceSelector

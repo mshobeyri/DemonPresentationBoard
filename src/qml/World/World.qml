@@ -9,7 +9,7 @@ Item{
     anchors.fill: parent
 
     property var currentElement: undefined
-    property real handlesScale: 1 / iboard.scale
+    property real handlesScale: 1 / iboard.scaleTransform.xScale
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
 
@@ -62,6 +62,15 @@ Item{
             iboard.elementContainer.children[i].destroy()
         }
     }
+    function updatePosition(){
+        var baseScale = Math.min(iwin.width /iboard.width,
+                                 iwin.height /iboard.height)*0.9
+        iboard.animeEnable = false
+        iboard.scaleTransform.xScale = baseScale
+        iboard.scaleTransform.yScale = baseScale
+        iboard.moveCenter()
+        iboard.animeEnable = true
+    }
 
     Shortcut {
         sequence: StandardKey.Delete
@@ -79,28 +88,17 @@ Item{
     Shortcut {
         sequence: StandardKey.ZoomIn
         onActivated: {
-            iboard.scale += 0.1 * iboard.scale
+            iboard.scaleTransform.xScale += 0.1* iboard.scaleTransform.xScale
+            iboard.scaleTransform.yScale += 0.1* iboard.scaleTransform.yScale
         }
     }
     Shortcut {
         sequence: StandardKey.ZoomOut
         onActivated: {
-            iboard.scale -= 0.1* iboard.scale
+            iboard.scaleTransform.xScale -= 0.1* iboard.scaleTransform.xScale
+            iboard.scaleTransform.yScale -= 0.1* iboard.scaleTransform.yScale
         }
     }
-    Shortcut {
-        sequence: StandardKey.MoveToPreviousWord
-        onActivated: {
-            iboard.rotation --
-        }
-    }
-    Shortcut {
-        sequence: StandardKey.MoveToNextWord
-        onActivated: {
-            iboard.rotation ++
-        }
-    }
-
 
     Board{
         id: iboard

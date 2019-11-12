@@ -27,15 +27,14 @@ CustomDialog {
     }
 
     function grabFrame(){
-        appendFrame(board.x,board.y,board.scale,
-                    board.rotation,0,"");
+        var bg = board.boardGeometry()
+        appendFrame(bg.x,bg.y,bg.scale,0,"");
     }
 
-    function appendFrame(x,y,scale,rotation,time,notes){
+    function appendFrame(x,y,scale,time,notes){
         iframesGrid.frameModel.append({"x": x ,
                                           "y": y,
                                           "scale": scale,
-                                          "rotation": rotation,
                                           "time":time,
                                           "spendTime":0,
                                           "notes":notes})
@@ -51,7 +50,6 @@ CustomDialog {
             frames.push({"x":frame.x ,
                             "y":frame.y,
                             "scale":frame.scale,
-                            "rotation":frame.rotation,
                             "time":frame.time,
                             "notes":frame.notes})
         }
@@ -61,7 +59,7 @@ CustomDialog {
     function fromJson(json){
         for(var i=0 ; i< json.length;i++){
             var f = json[i]
-            appendFrame(f.x,f.y,f.scale,f.rotation,f.time,f.notes)
+            appendFrame(f.x,f.y,f.scale,f.time,f.notes)
         }
     }
     function clear(){
