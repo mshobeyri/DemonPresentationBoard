@@ -9,7 +9,7 @@ Item{
     anchors.fill: parent
 
     property var currentElement: undefined
-    property real handlesScale: 1 / iboard.scaleTransform.xScale
+    property real handlesScale: 1 / iboard.xScale
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
 
@@ -66,8 +66,8 @@ Item{
         var baseScale = Math.min(iwin.width /iboard.width,
                                  iwin.height /iboard.height)*0.9
         iboard.animeEnable = false
-        iboard.scaleTransform.xScale = baseScale
-        iboard.scaleTransform.yScale = baseScale
+        iboard.xScale = baseScale
+        iboard.yScale = baseScale
         iboard.moveCenter()
         iboard.animeEnable = true
     }
@@ -88,15 +88,15 @@ Item{
     Shortcut {
         sequence: StandardKey.ZoomIn
         onActivated: {
-            iboard.scaleTransform.xScale += 0.1* iboard.scaleTransform.xScale
-            iboard.scaleTransform.yScale += 0.1* iboard.scaleTransform.yScale
+            iboard.xScale += 0.1* iboard.xScale
+            iboard.yScale += 0.1* iboard.yScale
         }
     }
     Shortcut {
         sequence: StandardKey.ZoomOut
         onActivated: {
-            iboard.scaleTransform.xScale -= 0.1* iboard.scaleTransform.xScale
-            iboard.scaleTransform.yScale -= 0.1* iboard.scaleTransform.yScale
+            iboard.xScale -= 0.1* iboard.xScale
+            iboard.yScale -= 0.1* iboard.yScale
         }
     }
 

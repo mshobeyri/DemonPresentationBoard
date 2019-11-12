@@ -91,7 +91,7 @@ ListView {
         }
         PropertyAnimation{
             property: "xScale"
-            target: board.scaleTransform
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.scale:0
             easing.type: easingType
@@ -99,7 +99,7 @@ ListView {
         }
         PropertyAnimation{
             property: "yScale"
-            target: board.scaleTransform
+            target: board
             to:currentFrameModel!==undefined && currentFrameModel!==null
                ?currentFrameModel.scale:0
             easing.type: easingType
@@ -164,7 +164,7 @@ ListView {
                     sourceItem: iworld
                     live: (board.x===model.x &&
                            board.y===model.y &&
-                           board.scaleTransform.xScale===model.scale)
+                           board.xScale===model.scale)
                 }
                 Label{
                     anchors.centerIn: parent

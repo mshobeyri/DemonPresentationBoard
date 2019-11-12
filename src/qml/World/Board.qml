@@ -11,20 +11,22 @@ Item {
 
     property alias elementContainer: ielementContainer
     property alias background: ibackground
-    property alias scaleTransform: itransform
     property bool animeEnable: true
+    property alias xScale: itransform.xScale
+    property alias yScale: itransform.yScale
+
     function sceneCenter(){
         return mapFromItem(iworld,iworld.width/2,iworld.height/2)
     }
     function moveCenter(){
-        iboard.x = (iworld.width - iboard.width*itransform.xScale)/2
-        iboard.y = (iworld.height - iboard.height*itransform.yScale)/2
+        iboard.x = (iworld.width - iboard.width*xScale)/2
+        iboard.y = (iworld.height - iboard.height*yScale)/2
     }
     function boardGeometry(){
         return {
             "x": iboard.x,
             "y": iboard.y,
-            "scale": iboard.scaleTransform.xScale,
+            "scale": iboard.xScale,
         }
     }
 
@@ -60,12 +62,12 @@ Item {
 
         onWheel: {
             var zoomFactor = wheel.angleDelta.y > 0 ? factor : 1 / factor
-            var realX = wheel.x * itransform.xScale
-            var realY = wheel.y * itransform.yScale
+            var realX = wheel.x * xScale
+            var realY = wheel.y * yScale
             iboard.x += (1 - zoomFactor) * realX
             iboard.y += (1 - zoomFactor) * realY
-            itransform.xScale *= zoomFactor
-            itransform.yScale *= zoomFactor
+            xScale *= zoomFactor
+            yScale *= zoomFactor
         }
     }
 
