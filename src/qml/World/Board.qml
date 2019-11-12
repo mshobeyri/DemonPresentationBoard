@@ -18,10 +18,6 @@ Item {
     function sceneCenter(){
         return mapFromItem(iworld,iworld.width/2,iworld.height/2)
     }
-    function moveCenter(){
-        iboard.x = (iworld.width - iboard.width*xScale)/2
-        iboard.y = (iworld.height - iboard.height*yScale)/2
-    }
     function boardGeometry(){
         return {
             "x": iboard.x,
@@ -58,7 +54,7 @@ Item {
             isidePanel.container.elements.deselectAll()
         }
 
-        property double factor: 2.0
+        property double factor: 1.5
 
         onWheel: {
             var zoomFactor = wheel.angleDelta.y > 0 ? factor : 1 / factor

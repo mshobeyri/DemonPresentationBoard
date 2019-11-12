@@ -63,13 +63,8 @@ Item{
         }
     }
     function updatePosition(){
-        var baseScale = Math.min(iwin.width /iboard.width,
-                                 iwin.height /iboard.height)
-        iboard.animeEnable = false
-        iboard.xScale = baseScale
-        iboard.yScale = baseScale
-        iboard.moveCenter()
-        iboard.animeEnable = true
+        var baseScale = iwin.height /iboard.height * 0.8
+        iadjuster.scale = baseScale
     }
 
     Shortcut {
@@ -99,9 +94,14 @@ Item{
             iboard.yScale -= 0.1* iboard.yScale
         }
     }
+    Item{
+        id: iadjuster
 
-    Board{
-        id: iboard
+        anchors.fill: parent
+        transformOrigin: Item.TopLeft
+        Board{
+            id: iboard
+        }
     }
 
     FakeLaser{
