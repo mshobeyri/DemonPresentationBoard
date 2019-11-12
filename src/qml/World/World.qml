@@ -64,7 +64,7 @@ Item{
     }
     function updatePosition(){
         var baseScale = Math.min(iwin.width /iboard.width,
-                                 iwin.height /iboard.height)*0.9
+                                 iwin.height /iboard.height)
         iboard.animeEnable = false
         iboard.xScale = baseScale
         iboard.yScale = baseScale

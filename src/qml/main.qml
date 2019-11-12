@@ -19,7 +19,7 @@ ApplicationWindow {
 //    visibility: ApplicationWindow.Maximized
     onWidthChanged: iworld.updatePosition()
     onHeightChanged: iworld.updatePosition()
-
+    Component.onCompleted: iworld.updatePosition()
     readonly property real animationDuration: 200
 
     FontLoader{
