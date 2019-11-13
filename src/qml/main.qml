@@ -15,16 +15,10 @@ ApplicationWindow {
     minimumWidth: 800
     minimumHeight: 600
     Material.theme: isettings.appInterface.theme
-    Material.accent: Material.Blue
-//    visibility: ApplicationWindow.Maximized
+    Material.accent: Material.Red
+    visibility: ApplicationWindow.Maximized
     onWidthChanged: iworld.updatePosition()
     onHeightChanged: iworld.updatePosition()
-    Component.onCompleted: {
-        iworld.updatePosition()
-        iworld.board.x = 10
-        iworld.board.y = 10
-
-    }
 
     readonly property real animationDuration: 200
 

@@ -3,15 +3,23 @@ import "../Elements"
 import "../Elements/ElementHelper.js" as Element
 import "../qmlHelper.js" as Qmlhelper
 
-Item{
+Rectangle{
     id: iroot
 
-    anchors.fill: parent
-
+    width: Math.min(parent.width,parent.height*16/9)
+    height: Math.min(parent.height,parent.width*9/16)
+    anchors.centerIn: parent
+    color: "red"
     property var currentElement: undefined
     property real handlesScale: 1 / iboard.xScale
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
+
+    Component.onCompleted: {
+        updatePosition()
+        board.x = 10
+        board.y = 10
+    }
 
     function toJson(){
         var json = {
@@ -63,7 +71,8 @@ Item{
         }
     }
     function updatePosition(){
-        var baseScale = iwin.height /iboard.height * 0.8
+        var baseScale = Math.min(iwin.height /iboard.height,iwin.width/iboard.width)
+                * 0.90
         iadjuster.scale = baseScale
     }
 
@@ -94,10 +103,9 @@ Item{
             iboard.yScale -= 0.1* iboard.yScale
         }
     }
-    Item{
+    Rectangle{
         id: iadjuster
-
-        anchors.fill: parent
+        anchors.centerIn: parent
         transformOrigin: Item.TopLeft
         Board{
             id: iboard
