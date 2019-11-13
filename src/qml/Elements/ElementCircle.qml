@@ -28,6 +28,7 @@ ElementBase{
             border.width: icontainer.borderWidth
             border.color: icontainer.borderColor
             antialiasing: true
+            smooth: true
             radius: width
         }
     }

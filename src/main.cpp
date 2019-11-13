@@ -14,6 +14,7 @@ main(int argc, char* argv[]) {
     app.setApplicationName("demon-presentation-board");
     app.setOrganizationName("waterbear");
     QQuickStyle::setStyle("material");
+    QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
     QQmlApplicationEngine engine;
 

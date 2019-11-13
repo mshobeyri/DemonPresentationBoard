@@ -6,8 +6,8 @@ Item {
     id: iboard
 
     antialiasing: true
-    width: 1920
-    height: 1080
+    width: 1920*5
+    height: 1080*5
 
     property alias elementContainer: ielementContainer
     property alias background: ibackground
@@ -54,9 +54,8 @@ Item {
             isidePanel.container.elements.deselectAll()
         }
 
-        property double factor: 1.5
-
         onWheel: {
+            var factor = wheel.modifiers & Qt.ControlModifier? 1.01:1.5
             var zoomFactor = wheel.angleDelta.y > 0 ? factor : 1 / factor
             var realX = wheel.x * xScale
             var realY = wheel.y * yScale
