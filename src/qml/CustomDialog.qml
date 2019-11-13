@@ -12,6 +12,7 @@ Dialog {
     width: isidePanel.panelsPosition.width
     height: isidePanel.panelsPosition.height
     closePolicy: "NoAutoClose"
+
     property alias dialgTitle : ititle.text
     Behavior on x{
         NumberAnimation{

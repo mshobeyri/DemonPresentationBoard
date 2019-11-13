@@ -29,6 +29,7 @@ CustomDialog {
     function grabFrame(){
         var bg = board.boardGeometry()
         appendFrame(bg.x,bg.y,bg.scale,0,"");
+        iroot.open()
     }
 
     function appendFrame(x,y,scale,time,notes){
@@ -84,6 +85,7 @@ CustomDialog {
         anchors.fill: parent
         FramesGrid{
             id: iframesGrid
+
             width: iwin.width / 6
             height: parent.height
         }
