@@ -183,9 +183,21 @@ ListView {
                     anchors.centerIn: icon
                     textureSize: Qt.size(width,height)
                     sourceItem: iworld
-                    live: (board.x===model.x &&
+                    live: (iframesGrid.currentIndex === model.index &&
+                           board.x===model.x &&
                            board.y===model.y &&
                            board.xScale===model.scale)
+                    onLiveChanged:{
+                        if(live){
+                            iworld.grabToImage(function(result) {
+                                iremoteHandler.sendImage(result)
+                            });
+                            var m ={
+                                "notes": model.notes
+                            }
+                            iremoteHandler.sendMessage(JSON.stringify(m))
+                        }
+                    }
                 }
 
 

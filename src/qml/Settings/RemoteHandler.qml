@@ -5,16 +5,26 @@ import QtQml 2.12
 Item{
     property WebSocket connection: null
 
+    function sendImage(image){
+        image.saveToFile(fileio.tempFolder()+"/sc.png");
+        connection.sendBinaryMessage(
+                    fileio.getImageData(fileio.tempFolder()+"/sc.png"))
+    }
+    function sendMessage(message){
+        connection.sendTextMessage(message)
+    }
+
     function handleMessage(message){
         var messageJson = JSON.parse(message)
-        switch (message.cmd){
+        switch (messageJson.cmd){
         case "next": itimeline.goNext()
             break;
         case "prev": itimeline.goPrev()
             break;
         case "goto": itimeline.goTo(messageJson.frame)
             break;
-        case "laser": iworld.fakeLaser.
+        case "laser":
+            iworld.fakeLaser.
             pointTo(messageJson.x,messageJson.y)
             break;
         }
@@ -36,7 +46,6 @@ Item{
             connection = webSocket
             webSocket.onTextMessageReceived.connect(function(message) {
                 handleMessage(message)
-                webSocket.sendTextMessage(message);
             });
         }
     }

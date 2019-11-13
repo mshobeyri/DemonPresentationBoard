@@ -123,6 +123,15 @@ FileIO::tempFolderFilePath(const QString& fileName) const {
     return out.absoluteFilePath();
 }
 
+QString FileIO::getImageData(const QString &fileName) const
+{
+    QFile binaryFile(fileName);
+    if (binaryFile.open(QIODevice::ReadOnly)) {
+        return binaryFile.readAll().toBase64();
+    }
+    return "";
+}
+
 QByteArray
 FileIO::fileChecksum(QFile& file) const {
     if (file.open(QFile::ReadOnly)) {

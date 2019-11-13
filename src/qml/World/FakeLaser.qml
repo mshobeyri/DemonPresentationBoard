@@ -15,10 +15,9 @@ Item {
     Rectangle{
         id: ilaserPoint
 
-        width: 20
+        width: 15
         height: width
         radius: width
-        anchors.centerIn: parent
         color: "red"
         opacity: 0.8
         visible: false

@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE QString copyToTempFolder(const QString& path) const;
     Q_INVOKABLE QString tempFolderFileUrl(const QString& fileName) const;
     Q_INVOKABLE QString tempFolderFilePath(const QString& fileName) const;
+    Q_INVOKABLE QString getImageData(const QString& fileName) const;
 
 private:
     QTemporaryDir m_dir;
