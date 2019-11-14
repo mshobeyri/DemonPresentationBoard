@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Connection.qml</file>
+        <file>../res/Font Awesome 5 Pro-Solid-900.otf</file>
+        <file>LaserSettings.qml</file>
+        <file>NotesSettings.qml</file>
+        <file>ConnectionSetting.qml</file>
+        <file>../res/logo.png</file>
+    </qresource>
+</RCC>

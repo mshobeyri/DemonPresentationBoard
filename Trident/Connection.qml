@@ -2,6 +2,9 @@ import QtWebSockets 1.1
 import QtQuick 2.12
 
 Item{
+    id: iroot
+
+    property alias url: isocket.url
     function fakeLaser(x,y){
         var m ={
             "cmd": "laser",
@@ -10,18 +13,25 @@ Item{
         }
         isocket.sendTextMessage(JSON.stringify(m))
     }
+    function setLaserSettings(color , size){
+        var m ={
+            "cmd": "laserSettings",
+            "color":color,
+            "size":size
+        }
+        isocket.sendTextMessage(JSON.stringify(m))
+    }
+
     function goNext(){
         var m ={
             "cmd": "next",
         }
-
         isocket.sendTextMessage(JSON.stringify(m))
     }
     function goPrev(){
         var m ={
             "cmd": "prev",
         }
-
         isocket.sendTextMessage(JSON.stringify(m))
     }
 
