@@ -11,7 +11,8 @@ Item{
                     fileio.getImageData(fileio.tempFolder()+"/sc.png"))
     }
     function sendMessage(message){
-        connection.sendTextMessage(message)
+        if(connection!==null)
+            connection.sendTextMessage(message)
     }
 
     function handleMessage(message){
@@ -27,14 +28,6 @@ Item{
             iworld.fakeLaser.
             pointTo(messageJson.x,messageJson.y)
             break;
-        }
-    }
-
-    function frameChanged(){
-        if(connection!==null){
-            connection.sendTextMessage(
-                        JSON.stringify(
-                            itimeline.currentFrameData()))
         }
     }
 

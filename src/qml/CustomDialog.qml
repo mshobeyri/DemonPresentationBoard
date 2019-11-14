@@ -39,7 +39,9 @@ Dialog {
             padding: 10
             rightInset: 6
             leftInset: 6
-            onClicked: iroot.close()
+            onClicked: {
+                iroot.close()
+            }
         }
     }
 

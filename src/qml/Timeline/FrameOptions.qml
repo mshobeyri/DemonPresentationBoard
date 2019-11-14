@@ -14,7 +14,25 @@ Flickable {
     Column{
         id: icol
         spacing: 5
+        Label{
+            text: "Frame Name:"
+        }
 
+        TextField{
+            width: iroot.width
+            selectByMouse: true
+            placeholderText: "set a name to this frame"
+            text: iroot.visible ?iframesGrid.currentItem.modelObj().name:""
+            onTextChanged: {
+                iframesGrid.frameModel.setProperty(
+                               iframesGrid.currentIndex,"name",text)
+                timelienChanged()
+            }
+        }
+        Item{
+            width: 10
+            height: 10
+        }
         Label{
             text: "Frame Time(min):"
         }

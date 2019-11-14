@@ -67,7 +67,9 @@ ListView {
 
     onCurrentIndexChanged: {
         goCurrentFrame()
-        iremoteHandler.frameChanged()
+        iremoteHandler.sendMessage(
+                    JSON.stringify(
+                        itimeline.currentFrameData()))
     }
 
     ParallelAnimation{
