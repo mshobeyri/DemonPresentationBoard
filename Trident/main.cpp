@@ -1,8 +1,8 @@
 #include "../src/upnpmanager.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QQuickStyle>
 #include <QQmlContext>
+#include <QQuickStyle>
 
 int
 main(int argc, char* argv[]) {
@@ -14,7 +14,7 @@ main(int argc, char* argv[]) {
     QQuickStyle::setStyle("material");
 
     UpnpManager upnpmanager;
-    upnpmanager.sendDiscoveryMessage();
+    upnpmanager.handleNotify = true;
 
     QQmlApplicationEngine engine;
 

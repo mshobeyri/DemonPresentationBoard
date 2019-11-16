@@ -6,11 +6,17 @@
 
 class UpnpManager : public QUdpSocket
 {
+    Q_OBJECT
 public:
     UpnpManager();
-    void sendDiscoveryMessage();
-    void stopSendingDiscoveryMessage();
-    void handleMessage(QString message);
+    Q_INVOKABLE void startDiscovery();
+    Q_INVOKABLE void stopDiscovery();
+
+    void             handleMessage(QString message);
+    bool handleNotify = false;
+    bool handleSearch = false;
+signals:
+    void newUrlListRecieved(QString urlList);
 
 private:
     QTimer     m_broadcastTimer;

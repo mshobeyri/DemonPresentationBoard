@@ -45,6 +45,11 @@ Dialog {
                 onTextChanged:
                     iconnection.url = "ws://"+iip.text+":"+iport.text
             }
+            ToolButton{
+                font.family: ifontAwsome.name
+                text: "magic"
+                onClicked: upnp.startDiscovery()
+            }
         }
     }
     footer: RowLayout{

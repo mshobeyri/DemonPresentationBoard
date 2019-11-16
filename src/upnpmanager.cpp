@@ -38,13 +38,13 @@ urls() {
             if (address.protocol() != QAbstractSocket::IPv4Protocol)
                 continue;
             auto url =
-                address.toString().prepend("ws://").append(":").append("1422");
+                address.toString().prepend("ws://").append(":").append("54321");
             if (!urls.contains(url)) {
                 urls.push_back(url);
             }
         }
     }
-    return urls.join(',').prepend("[").append(']');
+    return urls.join("\",\"").prepend("[\"").append("\"]");
 }
 
 UpnpManager::UpnpManager() {
@@ -65,34 +65,40 @@ UpnpManager::UpnpManager() {
             });
         });
 
-    bind(QHostAddress::AnyIPv4, upnpPort, QAbstractSocket::ShareAddress);
-}
-
-void
-UpnpManager::sendDiscoveryMessage() {
     m_broadcastTimer.setSingleShot(false);
     connect(&m_broadcastTimer, &QTimer::timeout, [this]() {
         this->writeDatagram(
             m_requestMessage, m_requestMessage.size(), upnpAddress, upnpPort);
     });
+
+    bind(QHostAddress::AnyIPv4, upnpPort, QAbstractSocket::ShareAddress);
+}
+
+void
+UpnpManager::startDiscovery() {
     m_broadcastTimer.start(1000);
 }
 
 void
-UpnpManager::stopSendingDiscoveryMessage() {
+UpnpManager::stopDiscovery() {
     m_broadcastTimer.stop();
 }
 
 void
 UpnpManager::handleMessage(QString message) {
-    if (message.endsWith("USER-AGENT:DemonPresentationBoard\r\n\r\n") &&
+    if (handleSearch &&
+        message.endsWith("USER-AGENT:DemonPresentationBoard\r\n\r\n") &&
         message.startsWith("M-SEARCH")) {
         QByteArray message = m_respondMessage.arg(urls()).toUtf8();
         this->writeDatagram(message, upnpAddress, upnpPort);
     } else if (
+        handleNotify &&
         message.endsWith("USER-AGENT:DemonPresentationBoard\r\n\r\n") &&
         message.startsWith("NOTIFY")) {
-        auto begin = message.indexOf("Location:");
-        qDebug() << message.mid(begin, message.indexOf("\r\n", begin));
+        QString beginStr = "Location:";
+        QString endStr   = "]";
+        auto    begin    = message.indexOf(beginStr) + beginStr.length();
+        newUrlListRecieved(
+            message.mid(begin, message.indexOf(endStr) - begin + 1));
     }
 }
