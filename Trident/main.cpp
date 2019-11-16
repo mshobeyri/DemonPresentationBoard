@@ -1,6 +1,8 @@
+#include "../src/upnpmanager.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
+#include <QQmlContext>
 
 int
 main(int argc, char* argv[]) {
@@ -11,7 +13,12 @@ main(int argc, char* argv[]) {
     app.setOrganizationName("waterbear");
     QQuickStyle::setStyle("material");
 
+    UpnpManager upnpmanager;
+
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("upnp", &upnpmanager);
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

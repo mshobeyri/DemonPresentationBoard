@@ -9,7 +9,7 @@ class UpnpManager : public QUdpSocket
 public:
     UpnpManager();
     void sendDiscoveryMessage();
-    void stopDiscoveryMessage();
+    void stopSendingDiscoveryMessage();
     void handleMessage(QString message);
 
 private:

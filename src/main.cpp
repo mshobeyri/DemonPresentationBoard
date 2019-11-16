@@ -1,9 +1,10 @@
 #include "fileio.h"
+#include "upnpmanager.h"
 
 #include <QApplication>
 #include <QQmlApplicationEngine>
-#include <QQuickStyle>
 #include <QQmlContext>
+#include <QQuickStyle>
 #include <QSplashScreen>
 
 int
@@ -16,10 +17,14 @@ main(int argc, char* argv[]) {
     QQuickStyle::setStyle("material");
     QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
+    UpnpManager upnpmanager;
+
     QQmlApplicationEngine engine;
 
     FileIO fileio;
-    engine.rootContext()->setContextProperty("fileio",&fileio);
+    engine.rootContext()->setContextProperty("fileio", &fileio);
+    engine.rootContext()->setContextProperty("upnp", &upnpmanager);
+
     engine.load(QUrl(QStringLiteral("qrc:/src/qml/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
