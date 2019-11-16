@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         src/main.cpp \
-        src/fileio.cpp
+        src/fileio.cpp \
+    src/upnpmanager.cpp
 
 RESOURCES += qml.qrc
 
@@ -40,4 +41,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    src/fileio.h
+    src/fileio.h \
+    src/upnpmanager.h
