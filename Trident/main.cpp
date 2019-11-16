@@ -14,6 +14,7 @@ main(int argc, char* argv[]) {
     QQuickStyle::setStyle("material");
 
     UpnpManager upnpmanager;
+    upnpmanager.sendDiscoveryMessage();
 
     QQmlApplicationEngine engine;
 
