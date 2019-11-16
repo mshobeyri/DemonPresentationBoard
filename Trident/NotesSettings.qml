@@ -24,15 +24,27 @@ Dialog {
             value: 10
         }
     }
-    footer: Button{
-        text: "OK"
-        flat: true
-        Material.foreground: Material.accent
-        leftPadding: 10
-        rightPadding: 10
-        onClicked: {
-            noteSize = inoteSize.value
-            iroot.close()
+    footer: RowLayout{
+        Item{
+            Layout.fillWidth: true
+        }
+        Button{
+            text: "Cancel"
+            flat: true
+            Material.foreground: Material.accent
+            onClicked: {
+                iroot.close()
+            }
+        }
+        Button{
+            text: "OK"
+            flat: true
+            Material.background: Material.accent
+            Layout.rightMargin: 10
+            onClicked: {
+                noteSize = inoteSize.value
+                iroot.close()
+            }
         }
     }
 }

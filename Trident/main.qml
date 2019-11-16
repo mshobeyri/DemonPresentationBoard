@@ -8,7 +8,7 @@ ApplicationWindow {
     width: 380
     height: 640
     title: qsTr("Demon Trident")
-    Material.accent: "red"
+    Material.accent: "#7f0000"
     Material.theme: Material.Dark
 
     property string imageData: ""

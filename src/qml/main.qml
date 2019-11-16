@@ -15,7 +15,7 @@ ApplicationWindow {
     minimumWidth: 800
     minimumHeight: 600
     Material.theme: isettings.appInterface.theme
-    Material.accent: Material.Red
+    Material.accent: "#7f0000"
     visibility: ApplicationWindow.Maximized
     onWidthChanged: iworld.updatePosition()
     onHeightChanged: iworld.updatePosition()
@@ -29,10 +29,6 @@ ApplicationWindow {
     FontLoader{
         id: ifontAwsomereg
         source: "qrc:/res/res/Font Awesome 5 Pro-Regular-400.otf"
-    }
-    FontLoader{
-        id: ifontAwsomebrands
-        source: "qrc:/res/res/Font Awesome 5 Brands-Regular-400.otf"
     }
     World{
         id: iworld
