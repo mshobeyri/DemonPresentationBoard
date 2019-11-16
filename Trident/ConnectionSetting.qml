@@ -28,6 +28,8 @@ Dialog {
             }
             TextField{
                 id: iip
+
+                selectByMouse: true
                 onTextChanged:
                     iconnection.url = "ws://"+iip.text+":"+iport.text
             }
@@ -40,8 +42,10 @@ Dialog {
             }
             TextField{
                 id: iport
+
                 width: iip.width/2
                 placeholderText: "port"
+                selectByMouse: true
                 onTextChanged:
                     iconnection.url = "ws://"+iip.text+":"+iport.text
             }
