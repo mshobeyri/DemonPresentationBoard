@@ -17,6 +17,15 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
+contains(QT_ARCH, i386): {
+    CONFIG(release, debug|release): DESTDIR = $$PWD/../bin/release/32
+    else:CONFIG(debug, debug|release): DESTDIR = $$PWD/../bin/debug/32
+}else{
+    CONFIG(release, debug|release): DESTDIR = $$PWD/../bin/release/64
+    else:CONFIG(debug, debug|release): DESTDIR = $$PWD/../bin/debug/64
+}
+
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
