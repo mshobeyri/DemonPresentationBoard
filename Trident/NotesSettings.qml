@@ -10,14 +10,14 @@ Dialog {
     contentHeight: icolumn.height
     title: "Notes Settings"
 
-    property int noteSize: 10
+    property alias noteSize: inoteSize.value
 
     Column{
         id: icolumn
         spacing: 5
         Label{
             topPadding: 20
-            text: "size"
+            text: "Size"
         }
         SpinBox{
             id: inoteSize
@@ -29,20 +29,11 @@ Dialog {
             Layout.fillWidth: true
         }
         Button{
-            text: "Cancel"
+            text: "Close"
             flat: true
             Material.foreground: Material.accent
-            onClicked: {
-                iroot.close()
-            }
-        }
-        Button{
-            text: "OK"
-            flat: true
-            Material.background: Material.accent
             Layout.rightMargin: 10
             onClicked: {
-                noteSize = inoteSize.value
                 iroot.close()
             }
         }

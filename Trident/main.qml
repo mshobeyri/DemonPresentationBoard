@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import QtQuick.Layouts 1.12
+import Qt.labs.settings 1.0
 
 ApplicationWindow {
     visible: true
@@ -26,11 +27,34 @@ ApplicationWindow {
 
             ToolButton{
                 font.family: ifontAwsome.name
-                text: "cogs"
+                text: "wifi"
                 onClicked: iconnectionSetting.open()
+                Rectangle{
+                    width: parent.width/5
+                    height: width
+                    radius: width
+                    color: iconnection.isConnected?"green":"red"
+                    anchors{
+                        right: parent.right
+                        bottom: parent.bottom
+                        rightMargin: 10
+                        bottomMargin: 10
+                    }
+                }
             }
         }
     }
+    Settings{
+        id: isettings
+
+        property alias laserColor: ilaserSetting.color
+        property alias laserSize: ilaserSetting.size
+        property alias noteSize: inotesSetting.noteSize
+        property alias ip: iconnectionSetting.ip
+        property alias port: iconnectionSetting.port
+        property alias url: iconnection.url
+    }
+
     FontLoader{
         id: ifontAwsome
         source: "qrc:/../res/Font Awesome 5 Pro-Solid-900.otf"
@@ -79,7 +103,7 @@ ApplicationWindow {
 
             }
             Image{
-
+                visible: iimage.status !== Image.Ready
                 width: parent.width/1.5
                 height: parent.height/1.5
                 source: "qrc:/../res/logo.png"
@@ -88,6 +112,7 @@ ApplicationWindow {
             }
 
             Image{
+                id: iimage
                 anchors.fill: parent
                 source: imageData!==""?"data:image/png;base64," + imageData:""
             }
@@ -155,6 +180,7 @@ ApplicationWindow {
             ComboBox{
                 model: ["Name of god"]
                 Layout.fillWidth: true
+                Layout.rightMargin: 10
                 flat: true
                 indicator.rotation: 180
             }

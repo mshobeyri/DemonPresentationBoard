@@ -14,5 +14,9 @@ Item {
         Label{
             text: "3. Select your computer name or scan following qr in app"
         }
+        Label{
+            text: iremoteHandler.url
+            Material.foreground: Material.Blue
+        }
     }
 }

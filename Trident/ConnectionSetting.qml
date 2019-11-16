@@ -9,6 +9,8 @@ Dialog {
     contentWidth: icolumn.width
     contentHeight: icolumn.height
     title: "Connection"
+    property alias ip: iip.text
+    property alias port: iport.text
     Column{
         id: icolumn
         spacing: 5
@@ -26,6 +28,8 @@ Dialog {
             }
             TextField{
                 id: iip
+                onTextChanged:
+                    iconnection.url = "ws://"+iip.text+":"+iport.text
             }
             Label{
                 text: ":"
@@ -38,6 +42,8 @@ Dialog {
                 id: iport
                 width: iip.width/2
                 placeholderText: "port"
+                onTextChanged:
+                    iconnection.url = "ws://"+iip.text+":"+iport.text
             }
         }
     }
@@ -46,20 +52,11 @@ Dialog {
             Layout.fillWidth: true
         }
         Button{
-            text: "Cancel"
+            text: "Close"
             flat: true
             Material.foreground: Material.accent
-            onClicked: {
-                iroot.close()
-            }
-        }
-        Button{
-            text: "OK"
-            flat: true
-            Material.background: Material.accent
             Layout.rightMargin: 10
             onClicked: {
-                iconnection.url = "ws://"+iip.text+":"+iport.text
                 iroot.close()
             }
         }

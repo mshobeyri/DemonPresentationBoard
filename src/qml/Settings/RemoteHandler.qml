@@ -4,6 +4,7 @@ import QtQml 2.12
 
 Item{
     property WebSocket connection: null
+    property alias url: isocketServer.url
 
     function sendImage(image){
         image.saveToFile(fileio.tempFolder()+"/sc.png");
@@ -32,9 +33,10 @@ Item{
     }
 
     WebSocketServer {
+        id: isocketServer
+
         listen: true
-        port: 19574
-        Component.onCompleted: console.log(url)
+        port: 54321
         onClientConnected: {
             connection = webSocket
             webSocket.onTextMessageReceived.connect(function(message) {

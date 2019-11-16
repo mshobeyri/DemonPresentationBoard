@@ -5,6 +5,8 @@ Item{
     id: iroot
 
     property alias url: isocket.url
+    property bool isConnected: isocket.status === WebSocket.Open
+
     function fakeLaser(x,y){
         var m ={
             "cmd": "laser",
@@ -49,7 +51,6 @@ Item{
             notes = mesageJson.notes
 
         }
-
         onStatusChanged: {
             if(status===WebSocket.Open)
                 ireconnecTimer.stop()
