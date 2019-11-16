@@ -18,6 +18,7 @@ main(int argc, char* argv[]) {
     QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
     UpnpManager upnpmanager;
+    upnpmanager.sendDiscoveryMessage();
 
     QQmlApplicationEngine engine;
 
