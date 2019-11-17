@@ -41,6 +41,11 @@ ApplicationWindow {
     SidePanelIconGallery{
         id: iiconGallery
     }
+    SidePanelChartGallery{
+        id: ichartGallery
+        visible: true
+    }
+
     Settings{
         id: isettings
     }
@@ -83,7 +88,6 @@ ApplicationWindow {
     }
     Welcome{
         id: iwelcome
-        visible: true
     }
 }
 

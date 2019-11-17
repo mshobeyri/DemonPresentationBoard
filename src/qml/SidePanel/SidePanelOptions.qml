@@ -174,6 +174,14 @@ ColumnLayout {
         flat: true
         onClicked: iiconGallery.open()
     }
+    IconButton{
+        visible: optionVisible('chartType')
+        iconStr: visible? iworld.currentElement.chartType:""
+        text: "Open Chart Gallery"
+        Layout.fillWidth: true
+        flat: true
+        onClicked: ichartGallery.open()
+    }
     SidePanelVectorOptions{
         labelSize: icolor.labelSize
     }
