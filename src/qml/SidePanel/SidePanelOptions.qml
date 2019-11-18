@@ -176,7 +176,7 @@ ColumnLayout {
     }
     IconButton{
         visible: optionVisible('chartType')
-        iconStr: visible? iworld.currentElement.chartType:""
+        iconStr: visible? iworld.currentElement.chartTypeIcon:""
         text: "Open Chart Gallery"
         Layout.fillWidth: true
         flat: true
