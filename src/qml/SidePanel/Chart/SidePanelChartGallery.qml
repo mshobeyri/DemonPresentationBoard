@@ -178,24 +178,28 @@ CustomDialog {
             Label{
                 text: "Preview"
             }
-            ChartView{
-                width: 400
-                height: 400
-                theme: ChartView.ChartThemeHighContrast
-                visible: chartType === ChartView.SeriesTypePie
-                antialiasing: true
+//            ChartView{
+//                width: 400
+//                height: 400
+//                theme: ChartView.ChartThemeHighContrast
+//                visible: chartType === ChartView.SeriesTypePie
+//                antialiasing: true
 
-                PieSeries {
-                    id: ipieChart
-                    property string name: "Pie Chart"
-                    function updateAxis(){}
-                    function updateChart(){
-                        for(var i=0;i<imodel.count;i++){
-                            ipieChart.append(imodel.get(i).label,Number(imodel.get(i).values.get(0).value))
-                        }
-                    }
-                }
+//                PieSeries {
+//                    id: ipieChart
+//                    property string name: "Pie Chart"
+//                    function updateAxis(){}
+//                    function updateChart(){
+//                        for(var i=0;i<imodel.count;i++){
+//                            ipieChart.append(imodel.get(i).label,Number(imodel.get(i).values.get(0).value))
+//                        }
+//                    }
+//                }
+//            }
+            ChartPie{
+                id: ipieChart
             }
+
             ChartBar{
                 id: ibarChart
             }
