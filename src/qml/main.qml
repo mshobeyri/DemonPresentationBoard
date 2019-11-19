@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import "SidePanel"
+import "SidePanel/Chart"
 import "World"
 import "Timeline"
 import "Settings"

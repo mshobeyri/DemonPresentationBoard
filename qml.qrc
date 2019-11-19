@@ -48,7 +48,17 @@
         <file>src/qml/Settings/RemoteHandler.qml</file>
         <file>src/qml/FileEdit/WelcomeColumns.qml</file>
         <file>src/qml/qmlHelper.js</file>
-        <file>src/qml/SidePanel/SidePanelChartGallery.qml</file>
+        <file>src/qml/SidePanel/Chart/SidePanelChartGallery.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBar.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBase.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBarHorizontal.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBaseBar.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBarStacked.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBarStackedHorizontal.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBarPercent.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBarPercentHorizontal.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartBaseXY.qml</file>
+        <file>src/qml/SidePanel/Chart/ChartTable.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
