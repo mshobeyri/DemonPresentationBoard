@@ -7,17 +7,21 @@ ChartBase{
     function clear(){
         removeAllSeries()
     }
-    function updateAxis(){}
-    function updateChart(){
-        ivalueAxis.max = 0
-        ivalueAxis.min = 0
-        irangeAxis.max = 0
-        irangeAxis.min = 0
+    function updateAxis(){
+        irangeAxis.min = rangeForm
+        irangeAxis.max = rangeTo
+        irangeAxis.tickCount = rangeTick
+        ivalueAxis.min = valueForm
+        ivalueAxis.max = valueTo
+        ivalueAxis.tickCount = valueTick
+    }
 
+    function updateChart(){
         for(var i=0;i<imodel.count;i++){
             var serie = createSeries(iroot.type,imodel.get(i).label)
             serie.axisX = irangeAxis
             serie.axisY = ivalueAxis
+
             for(var j=0;j<imodel.get(i).values.count;j++){
                 var x = Number(iheadersModel.get(j).value)
                 var y = Number(imodel.get(i).values.get(j).value)
@@ -26,15 +30,6 @@ ChartBase{
                 }else{
                     serie.append(x,y)
                 }
-
-                if(x > irangeAxis.max)
-                    irangeAxis.max = x
-                if(x < irangeAxis.min)
-                    irangeAxis.min = x
-                if(y > ivalueAxis.max)
-                    ivalueAxis.max= y
-                if(y < ivalueAxis.min)
-                    ivalueAxis.min= y
             }
         }
     }

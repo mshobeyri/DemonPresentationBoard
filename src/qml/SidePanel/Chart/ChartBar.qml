@@ -6,7 +6,7 @@ ChartBaseBar{
 
     name: "Bar Chart"
     type: ChartView.SeriesTypeBar
-    ranageAxis: iseries.axisY
+    rangeAxis: iseries.axisY
     series: iseries
 
     BarSeries{

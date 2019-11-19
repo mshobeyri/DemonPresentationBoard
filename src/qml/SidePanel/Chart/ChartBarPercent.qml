@@ -6,7 +6,7 @@ ChartBaseBar{
 
     name: "Percent Bar Chart"
     type: ChartView.SeriesTypePercentBar
-    ranageAxis: iseries.axisY
+    rangeAxis: iseries.axisY
     series: iseries
 
     PercentBarSeries{

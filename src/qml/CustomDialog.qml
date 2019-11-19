@@ -12,8 +12,11 @@ Dialog {
     width: isidePanel.panelsPosition.width
     height: isidePanel.panelsPosition.height
     closePolicy: "NoAutoClose"
+    clip: true
+    visible: false
 
     property alias dialgTitle : ititle.text
+
     Behavior on x{
         NumberAnimation{
             duration: 200
@@ -21,8 +24,6 @@ Dialog {
         }
     }
 
-    visible: false
-    clip: true
     header: RowLayout{
         Label{
             id: ititle

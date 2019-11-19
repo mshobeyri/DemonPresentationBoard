@@ -3,7 +3,7 @@ import QtQuick.Controls 2.5
 import QtCharts 2.3
 
 Column{
-     width: parent.width - 100
+    width: parent.width - 100
     Row {
         width: parent.width
         ListView{
@@ -12,13 +12,20 @@ Column{
             model: imodel
             width: contentWidth >parent.width?
                        parent.width :contentWidth
-            height: contentHeight
+            height: interactive?contentHeight + iscorllBar.height:contentHeight
             currentIndex: 0
             contentWidth: currentItem===null?0:currentItem.width
             contentHeight: currentItem===null?0:currentItem.height*imodel.count
             flickableDirection: Flickable.HorizontalFlick
-//            clip: true
+            clip: true
             interactive: contentWidth > width
+
+            ScrollBar.horizontal: ScrollBar {
+                id: iscorllBar
+                anchors.bottom: parent.bottom
+                width: parent.width
+            }
+
             Behavior on contentWidth {
                 NumberAnimation{duration: 100}
             }
@@ -28,7 +35,7 @@ Column{
             }
 
             header: Row{
-                leftPadding: 250
+                leftPadding: 150
                 Repeater{
                     model: iheadersModel
                     delegate: Column{
@@ -37,8 +44,8 @@ Column{
                             text: "trash-alt"
                             flat: true
                             width: 100
-                            enabled: imodel.get(0).values.count > 1
-                            opacity: hovered?1:0
+                            enabled: iheadersModel.count > 1
+                            opacity: enabled?hovered?1:0.1:0
                             onClicked: {
                                 for(var i=imodel.count-1;i>=0;i--){
                                     imodel.get(i).values.remove(index)
@@ -68,7 +75,7 @@ Column{
                     font.family: ifontAwsome.name
                     text: "trash-alt"
                     enabled: imodel.count > 1
-                    opacity: hovered?1:0
+                    opacity: enabled?hovered?1:0.1:0
                     onClicked: {
                         imodel.remove(index)
                         updateChart()
@@ -77,6 +84,7 @@ Column{
 
                 TextField{
                     width: 100
+                    visible: false
                     selectByMouse: true
                     placeholderText: "color"
                     text: model.color

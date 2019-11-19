@@ -6,7 +6,7 @@ ChartBaseBar{
     antialiasing: true
     name: "Horizontal Percent Bar Chart"
     type: ChartView.SeriesTypeHorizontalPercentBar
-    ranageAxis: iseries.axisX
+    rangeAxis: iseries.axisX
     series: iseries
 
     HorizontalPercentBarSeries{

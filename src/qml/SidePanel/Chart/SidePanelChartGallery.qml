@@ -14,6 +14,13 @@ CustomDialog {
     property var currentChart: getChart(chartType)
     property rect area: Qt.rect(0,100,0,100)
 
+    property alias valueForm: ivalueForm.value
+    property alias valueTo: ivalueTo.value
+    property alias valueTick: ivalueTick.value
+    property alias rangeForm: irangeForm.value
+    property alias rangeTo: irangeTo.value
+    property alias rangeTick: irangeTick.value
+
     onCurrentChartChanged: {
         updateChart()
     }
@@ -51,7 +58,7 @@ CustomDialog {
             color: ""
             label: ""
             values: [
-                ListElement{value:"0"}
+                ListElement{value: ""}
             ]
         }
     }
@@ -65,6 +72,7 @@ CustomDialog {
         contentHeight: icolumn.height
         interactive: height < contentHeight || width < contentWidth
         anchors.fill: parent
+        clip: true
         Column{
             id: icolumn
             width: parent.width
@@ -88,25 +96,67 @@ CustomDialog {
                     text: "value from"
                 }
                 SpinBox{
-
+                    id: ivalueForm
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 0
+                    onValueChanged: currentChart.updateAxis()
                 }
                 Label{
                     text: "value to"
                 }
                 SpinBox{
-
+                    id: ivalueTo
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 100
+                    onValueChanged: currentChart.updateAxis()
+                }
+                Label{
+                    text: "value tick"
+                }
+                SpinBox{
+                    id: ivalueTick
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 5
+                    onValueChanged: currentChart.updateAxis()
                 }
                 Label{
                     text: "range from"
                 }
                 SpinBox{
-
+                    id: irangeForm
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 0
+                    onValueChanged: currentChart.updateAxis()
                 }
                 Label{
                     text: "range to"
                 }
                 SpinBox{
-
+                    id: irangeTo
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 100
+                    onValueChanged: currentChart.updateAxis()
+                }
+                Label{
+                    text: "range tick"
+                }
+                SpinBox{
+                    id: irangeTick
+                    from: -100000
+                    to: 100000
+                    editable: true
+                    value: 5
+                    onValueChanged: currentChart.updateAxis()
                 }
             }
             Item{

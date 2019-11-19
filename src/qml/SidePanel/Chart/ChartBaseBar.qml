@@ -3,7 +3,7 @@ import QtCharts 2.3
 
 ChartBase{
     property alias valueAxis: iaxis
-    property var ranageAxis: undefined
+    property var rangeAxis: undefined
     property var series
 
     function clear(){
@@ -13,6 +13,9 @@ ChartBase{
         for(var i=0;i<iheadersModel.count;i++){
             iaxis.categories[i] = iheadersModel.get(i).value
         }
+        rangeAxis.min = rangeForm
+        rangeAxis.max = rangeTo
+        rangeAxis.tickCount = valueTick
     }
     function updateChart(){
         for(var i=0;i<imodel.count;i++){
@@ -20,17 +23,8 @@ ChartBase{
             for(var j=0;j< imodel.get(i).values.count;j++){
                 var value = Number(imodel.get(i).values.get(j).value)
                 values.push(value)
-                if(ranageAxis!==undefined){
-                    if(i===0 || value < ranageAxis.min)
-                        ranageAxis.min = value
-                    if(i===0 || value > ranageAxis.max)
-                        ranageAxis.max = value
-                }
             }
             series.append(imodel.get(i).label,values)
-        }
-        if(ranageAxis!==undefined){
-            ranageAxis.max += ranageAxis.max/10
         }
     }
 

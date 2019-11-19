@@ -6,7 +6,7 @@ ChartBaseBar{
 
     name: "Stacked Bar Chart"
     type: ChartView.SeriesTypeStackedBar
-    ranageAxis: iseries.axisY
+    rangeAxis: iseries.axisY
     series: iseries
 
     StackedBarSeries{

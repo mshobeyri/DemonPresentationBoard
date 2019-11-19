@@ -6,7 +6,7 @@ ChartBaseBar{
     antialiasing: true
     name: "Stacked Horizontal Bar Chart"
     type: ChartView.SeriesTypeHorizontalStackedBar
-    ranageAxis: iseries.axisX
+    rangeAxis: iseries.axisX
     series: iseries
 
     HorizontalStackedBarSeries{
