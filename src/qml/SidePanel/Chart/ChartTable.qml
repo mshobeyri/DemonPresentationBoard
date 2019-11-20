@@ -54,7 +54,8 @@ Column{
                             }
                         }
                         TextField{
-                            visible: chartType !== ChartView.SeriesTypePie
+                            visible: chartType !== ChartView.SeriesTypePie ||
+                                     imodel.get(0).values.count !==1
                             width: 100
                             selectByMouse: true
                             placeholderText: "range"

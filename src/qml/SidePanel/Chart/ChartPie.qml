@@ -9,19 +9,26 @@ ChartBase{
     property real holeSize: 0.1
 
     function clear(){
-        //        removeAllSeries()
+        removeAllSeries()
     }
     function updateAxis(){}
 
     function updateChart(){
-        for(var i=0;i<imodel.count;i++){
-            var serie = createSeries(iroot.type,
-                                     imodel.get(i).label)
-//            serie.holeSize = (i/imodel.count)
-
-            for(var j=0;j<imodel.get(i).values.count;j++){
+        for(var j=0;j<imodel.get(0).values.count;j++){
+            for(var i=0;i<imodel.count;i++){
+                var serie = createSeries(iroot.type,
+                                         imodel.get(i).label)
+                serie.holeSize = (i/imodel.count)
+                serie.z = i
                 var y = Number(imodel.get(i).values.get(j).value)
-                serie.append(imodel.get(i).lable,y)
+                var l = imodel.get(0).values.count===1 ||
+                        iheadersModel.get(j).value===""?
+                            imodel.get(i).label:
+                            iheadersModel.get(j).value+"-"
+                            +imodel.get(i).label
+
+
+                series(j).append(l, y)
             }
         }
     }
