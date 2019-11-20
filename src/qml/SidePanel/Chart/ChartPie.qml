@@ -4,7 +4,6 @@ import QtCharts 2.3
 ChartBase{
     id: iroot
 
-    name: "Pie Chart"
     type: ChartView.SeriesTypePie
     property real holeSize: 0.1
 

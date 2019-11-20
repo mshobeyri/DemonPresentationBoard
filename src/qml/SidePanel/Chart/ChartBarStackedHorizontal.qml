@@ -3,8 +3,8 @@ import QtCharts 2.3
 
 ChartBaseBar{
     id: iroot
+
     antialiasing: true
-    name: "Stacked Horizontal Bar Chart"
     type: ChartView.SeriesTypeHorizontalStackedBar
     rangeAxis: iseries.axisX
     series: iseries

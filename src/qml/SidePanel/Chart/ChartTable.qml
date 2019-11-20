@@ -3,11 +3,17 @@ import QtQuick.Controls 2.5
 import QtCharts 2.3
 
 Column{
+    property alias table: itable
+    function updateHeaders(){
+        table.headerItem.headersRepeater.model = []
+        table.headerItem.headersRepeater.model = iheadersModel
+    }
+
     width: parent.width - 100
     Row {
         width: parent.width
         ListView{
-            id: iroot
+            id: itable
 
             model: imodel
             width: contentWidth >parent.width?
@@ -35,8 +41,10 @@ Column{
             }
 
             header: Row{
+                property alias headersRepeater: iheadersRepeater
                 leftPadding: 150
                 Repeater{
+                    id: iheadersRepeater
                     model: iheadersModel
                     delegate: Column{
                         Button{
@@ -54,12 +62,12 @@ Column{
                             }
                         }
                         TextField{
-                            visible: chartType !== ChartView.SeriesTypePie ||
-                                     imodel.get(0).values.count !==1
                             width: 100
                             selectByMouse: true
+                            text: model.value
                             placeholderText: "range"
                             onTextChanged: {
+                                if(!focus) return
                                 iheadersModel.get(index).value = text
                                 updateChart()
                             }
@@ -85,20 +93,11 @@ Column{
 
                 TextField{
                     width: 100
-                    visible: false
-                    selectByMouse: true
-                    placeholderText: "color"
-                    text: model.color
-                    onTextChanged: {
-                        model.color = text
-                    }
-                }
-                TextField{
-                    width: 100
                     selectByMouse: true
                     placeholderText: "label"
                     text: model.label
                     onTextChanged: {
+                        if(!focus) return
                         model.label = text
                         updateChart()
                     }
@@ -111,7 +110,8 @@ Column{
                         placeholderText: "value"
                         text: model.value!==undefined?model.value:""
                         onTextChanged: {
-                            if(text!=="-")
+                            if(!focus) return
+                            if(text!=="-")//todo
                                 parent.modelObj().values.get(index).value = text
                             updateChart()
                         }
@@ -122,7 +122,7 @@ Column{
         Button{
             y: 50
             width: 50
-            height: iroot.height - 50
+            height: itable.height - 50
             flat: true
             font.family: ifontAwsome.name
             text: "plus"
@@ -133,11 +133,11 @@ Column{
             onClicked: {
                 var c = imodel.get(0).values.count
                 for(var i=0;i<imodel.count;i++){
-                    imodel.get(i).values.insert(c,{value:0})
+                    imodel.get(i).values.insert(c,{value:""})
                 }
                 iheadersModel.append({value:""})
                 updateChart()
-                iroot.flick(iroot.interactive?-iroot.contentWidth:0,0)
+                itable.flick(itable.interactive?-itable.contentWidth:0,0)
             }
         }
     }
@@ -145,12 +145,12 @@ Column{
         flat: true
         font.family: ifontAwsome.name
         text: "plus"
-        width: iroot.width - 50
+        width: itable.width - 50
         x: 50
         onClicked: {
             var values = [];
             for(var i=0;i<imodel.get(0).values.count;i++){
-                values.push(0)
+                values.push({value:""})
             }
 
             imodel.insert(imodel.count,{color:"",label:"",values:values})

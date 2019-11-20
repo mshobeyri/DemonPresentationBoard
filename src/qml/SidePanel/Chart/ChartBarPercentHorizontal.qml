@@ -3,8 +3,8 @@ import QtCharts 2.3
 
 ChartBaseBar{
     id: iroot
+
     antialiasing: true
-    name: "Horizontal Percent Bar Chart"
     type: ChartView.SeriesTypeHorizontalPercentBar
     rangeAxis: iseries.axisX
     series: iseries

@@ -4,7 +4,6 @@ import QtCharts 2.3
 ChartBaseBar{
     id: iroot
 
-    name: "Stacked Bar Chart"
     type: ChartView.SeriesTypeStackedBar
     rangeAxis: iseries.axisY
     series: iseries

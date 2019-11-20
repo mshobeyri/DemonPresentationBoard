@@ -4,7 +4,6 @@ import QtCharts 2.3
 ChartBaseBar{
     id: iroot
 
-    name: "Percent Bar Chart"
     type: ChartView.SeriesTypePercentBar
     rangeAxis: iseries.axisY
     series: iseries

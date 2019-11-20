@@ -4,7 +4,6 @@ import QtCharts 2.3
 ChartBaseBar{
     id: iroot
 
-    name: "Bar Chart"
     type: ChartView.SeriesTypeBar
     rangeAxis: iseries.axisY
     series: iseries
