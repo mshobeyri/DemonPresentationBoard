@@ -80,7 +80,6 @@ Grid {
             ToolTip.text: model.name.toUpperCase()
             ToolTip.delay: 0
             ToolTip.visible: hovered
-            Material.foreground: "white"
             onClicked: {
                 if(model.index === currentSelected){
                     deselectAll()

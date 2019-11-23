@@ -5,6 +5,10 @@ import QtQuick.Layouts 1.12
 
 Pane {
     leftInset: 1
+    background: Rectangle{
+        color: "transparent"
+    }
+
     Column{
         width: parent.width
         MenuSeparator{width: parent.width}
@@ -17,7 +21,6 @@ Pane {
                 flat: true
                 ToolTip.text: "Move Previous Frame"
                 ToolTip.visible: hovered
-                Material.foreground: "white"
                 Layout.fillWidth: true
                 onClicked: itimeline.goPrev()
             }
@@ -27,13 +30,11 @@ Pane {
                 flat: true
                 ToolTip.text: "Move Next Frame"
                 ToolTip.visible: hovered
-                Material.foreground: "white"
                 Layout.fillWidth: true
                 onClicked: itimeline.goNext()
             }
             Button{
                 text: "project-diagram"
-                Material.foreground: "white"
                 flat: true
                 Layout.preferredWidth: height
                 ToolTip.text: "Open Timeline Menu"
@@ -42,7 +43,6 @@ Pane {
                 onClicked: itimeline.open()
             }
             Button{
-                Material.foreground: "white"
                 text: "plus"
                 font.family: ifontAwsome.name
                 flat: true

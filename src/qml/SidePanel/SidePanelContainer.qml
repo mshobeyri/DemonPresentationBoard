@@ -12,19 +12,28 @@ Flickable {
         id: iheight
         width: parent.width
         Label {
-            text: qsTr("insert:")
+            id: iinsertLabel
+            text: qsTr("Insert")
             padding: 10
-
+            font.pointSize: 12
             visible: iworld.currentElement===undefined
+            Material.foreground: Material.accent
         }
         SidePanelElements{
             id: ielements
 
             visible: iworld.currentElement===undefined
         }
+        MenuSeparator{
+            visible:iinsertLabel.visible
+            width: parent.width
+        }
+
         Label {
-            text: qsTr("options:")
+            text: qsTr("Options")
+            Material.foreground: Material.accent
             padding: 10
+            font.pointSize: 12
         }
         SidePanelOptions{
             visible: iworld.currentElement!==undefined &&

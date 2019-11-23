@@ -16,7 +16,7 @@ ApplicationWindow {
     minimumWidth: 800
     minimumHeight: 600
     Material.theme: isettings.appInterface.theme
-    Material.accent: Material.Blue
+    Material.accent: Material.Teal
     visibility: ApplicationWindow.Maximized
     onWidthChanged: iworld.updatePosition()
     onHeightChanged: iworld.updatePosition()
