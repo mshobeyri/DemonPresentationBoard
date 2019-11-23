@@ -10,7 +10,7 @@ Item{
     width: parent.width
     height: parent.height
     property int velocity: 0
-    property string color: "red"
+    property string color: "#500a99"
     property string source: "qrc:/res/res/backgrounds/pattern-10.svg"
     property int quality: 20
     property int aboundance : 20

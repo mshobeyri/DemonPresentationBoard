@@ -16,6 +16,7 @@ Item{
     property alias r: ibaseElement.rotation
     property alias selectDragMouseArea: iselectDragMouseArea
     property alias component: iloader.sourceComponent
+    property alias componentSrc: iloader.source
     property alias loader: iloader
     property bool fixAspectRatio: false
     property int aspectRatio: 1

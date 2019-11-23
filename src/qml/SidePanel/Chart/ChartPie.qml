@@ -13,6 +13,8 @@ ChartBase{
     function updateAxis(){}
 
     function updateChart(){
+        if(imodel.get(0)===undefined)
+            return
         for(var j=0;j<imodel.get(0).values.count;j++){
             for(var i=0;i<imodel.count;i++){
                 var serie = createSeries(iroot.type,

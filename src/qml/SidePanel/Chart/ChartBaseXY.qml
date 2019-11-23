@@ -4,6 +4,8 @@ import QtCharts 2.3
 ChartBase{
     id: iroot
 
+    type: ChartView.SeriesTypeScatter
+
     function clear(){
         removeAllSeries()
     }
@@ -17,14 +19,14 @@ ChartBase{
     }
 
     function updateChart(){
-        for(var i=0;i<imodel.count;i++){
-            var serie = createSeries(iroot.type,imodel.get(i).label)
+        for(var i=0;i<dataModel.count;i++){
+            var serie = createSeries(iroot.type,dataModel.get(i).label)
             serie.axisX = irangeAxis
             serie.axisY = ivalueAxis
 
-            for(var j=0;j<imodel.get(i).values.count;j++){
-                var x = Number(iheadersModel.get(j).value)
-                var y = Number(imodel.get(i).values.get(j).value)
+            for(var j=0;j<dataModel.get(i).values.count;j++){
+                var x = Number(headersModel.get(j).value)
+                var y = Number(dataModel.get(i).values.get(j).value)
                 if(iroot.type === ChartView.SeriesTypeArea){
                     serie.upperSeries.append(x,y)
                 }else{

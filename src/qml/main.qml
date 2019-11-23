@@ -16,7 +16,7 @@ ApplicationWindow {
     minimumWidth: 800
     minimumHeight: 600
     Material.theme: isettings.appInterface.theme
-    Material.accent: "#7f0000"
+    Material.accent: Material.Blue
     visibility: ApplicationWindow.Maximized
     onWidthChanged: iworld.updatePosition()
     onHeightChanged: iworld.updatePosition()
@@ -44,7 +44,6 @@ ApplicationWindow {
     }
     SidePanelChartGallery{
         id: ichartGallery
-        visible: true
     }
 
     Settings{

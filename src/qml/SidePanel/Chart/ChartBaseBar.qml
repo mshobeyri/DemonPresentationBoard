@@ -10,21 +10,21 @@ ChartBase{
         iseries.clear()
     }
     function updateAxis(){
-        for(var i=0;i<iheadersModel.count;i++){
-            iaxis.categories[i] = iheadersModel.get(i).value
+        for(var i=0;i<headersModel.count;i++){
+            iaxis.categories[i] = headersModel.get(i).value
         }
         rangeAxis.min = rangeForm
         rangeAxis.max = rangeTo
-        rangeAxis.tickCount = valueTick
+        rangeAxis.tickCount = rangeTick
     }
     function updateChart(){
-        for(var i=0;i<imodel.count;i++){
+        for(var i=0;i<dataModel.count;i++){
             var values = []
-            for(var j=0;j< imodel.get(i).values.count;j++){
-                var value = Number(imodel.get(i).values.get(j).value)
+            for(var j=0;j< dataModel.get(i).values.count;j++){
+                var value = Number(dataModel.get(i).values.get(j).value)
                 values.push(value)
             }
-            series.append(imodel.get(i).label,values)
+            series.append(dataModel.get(i).label,values)
         }
     }
 

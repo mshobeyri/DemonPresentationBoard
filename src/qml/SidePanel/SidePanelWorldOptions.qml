@@ -23,7 +23,7 @@ ColumnLayout{
             flat: true
             model: ["Color","Image","Pattern"]
             currentIndex: iworld.board.background.type
-            onCurrentIndexChanged:  iworld.board.background.type = currentIndex
+            onCurrentIndexChanged: iworld.board.background.type = currentIndex
         }
     }
 
@@ -32,7 +32,9 @@ ColumnLayout{
         labelSize : 100
         label: "color"
         color: visible? iworld.board.background.color:"white"
-        onColorOutputChanged: iworld.board.background.color = colorOutput
+        onColorOutputChanged: if(visible &&
+                                      iworld.board.background.color !== colorOutput)
+                                  iworld.board.background.color = colorOutput
     }
 
     RowLayout {

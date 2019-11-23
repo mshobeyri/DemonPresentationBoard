@@ -4,7 +4,6 @@ import QtCharts 2.3
 ChartBaseBar{
     id: iroot
 
-    antialiasing: true
     type: ChartView.SeriesTypeHorizontalPercentBar
     rangeAxis: iseries.axisX
     series: iseries

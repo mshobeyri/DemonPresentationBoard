@@ -11,121 +11,28 @@ CustomDialog {
 
     dialgTitle: "Chart Gallery"
     visible: false
-    property alias chartType: ichartType.currentIndex
-    property var currentChart: getChart(chartType)
-    property rect area: Qt.rect(0,100,0,100)
 
-    property alias valueForm: ivalueForm.value
-    property alias valueTo: ivalueTo.value
-    property alias valueTick: ivalueTick.value
-    property alias rangeForm: irangeForm.value
-    property alias rangeTo: irangeTo.value
-    property alias rangeTick: irangeTick.value
+    property var selectedChart
+    property alias imodel: ichartComponent.dataModel
+    property alias iheadersModel: ichartComponent.headersModel
 
-    onCurrentChartChanged: {
-        updateChart()
-    }
-    function toJson(){
-        var headers = []
-        for(var i=0;i<iheadersModel.count;i++)
-            headers.push(iheadersModel.get(i).value.toString())
-
-        var data = []
-        for(i=0;i<imodel.count;i++){
-
-            var rowValues = [];
-            for(var j=0;j<imodel.get(i).values.count;j++){
-                rowValues.push(imodel.get(i).values.get(j).value)
-            }
-
-            var row ={
-                "label": imodel.get(i).label,
-                "values": rowValues
-            }
-
-            data.push(row)
-        }
-        var axises= {
-            "range":{
-                "from": rangeForm,
-                "to": rangeTo,
-                "tick": rangeTick
-            },
-            "value":{
-                "from": valueForm,
-                "to": valueTo,
-                "tick": valueTick
-            }
-        }
-        var options = {
-            "legend": ilegendCheck.checked,
-            "theme": itheme.currentIndex
-        }
-
-        var json = {
-            "type": ichartType.currentIndex,
-            "headers":headers,
-            "data":data,
-            "axises": axises,
-            "options": options
-        }
-        return json
-    }
-
-    function fromJson(json){
-        iheadersModel.clear()
-        imodel.clear()
-
-        ichartType.currentIndex = json.type
-
-        for(var i=0;i<json.headers.length;i++){
-            iheadersModel.append({value:json.headers[i].toString()})
-        }
-
-        for(i=0;i<json.data.length;i++){
-            imodel.append({label:json.data[i].label,values:[]})
-
-            for(var j=0;j<json.data[i].values.length;j++){
-                imodel.get(i).values.append({value:json.data[i].values[j].toString()})
-            }
-        }
-
-        rangeForm = json.axises.range.from
-        rangeTo = json.axises.range.to
-        rangeTick = json.axises.range.tick
-        valueForm = json.axises.value.from
-        valueTo = json.axises.value.to
-        valueTick = json.axises.value.tick
-
-        ilegendCheck.checked = json.options.legend
-        itheme.currentIndex = json.options.theme
-
-        ichartTable.updateHeaders()
-    }
-
-    Button{
-        anchors.centerIn: parent
-        onClicked: {
-            fromJson(toJson())
+    function openGallery(chart){
+        open()
+        selectedChart = chart
+        if(selectedChart!==undefined && selectedChart!==null){
+            ichartComponent.fromJson(selectedChart.toJson())
+            ichartType.currentIndex = ichartComponent.chartType
+            itheme.currentIndex = ichartComponent.currentTheme
+            ilegendCheck.checked = ichartComponent.containLegend
+            ivalueForm.value = ichartComponent.valueForm
+            ivalueTo.value = ichartComponent.valueTo
+            ivalueTick.value = ichartComponent.valueTick
+            irangeForm.value = ichartComponent.rangeForm
+            irangeTo.value = ichartComponent.rangeTo
+            irangeTick.value = ichartComponent.rangeTick
         }
     }
 
-    function getChart(chartType){
-        switch (chartType){
-        case ChartView.SeriesTypePie: return ipieChart
-        case ChartView.SeriesTypeBar: return ibarChart
-        case ChartView.SeriesTypeHorizontalBar: return ihorizontalBarChart
-        case ChartView.SeriesTypePercentBar: return ipercentBarChart
-        case ChartView.SeriesTypeHorizontalPercentBar: return ihorizontalPercentBarChart
-        case ChartView.SeriesTypeStackedBar: return istackBarChart
-        case ChartView.SeriesTypeHorizontalStackedBar: return ihorizontalStackBarChart
-        case ChartView.SeriesTypeLine: return ilineChart
-        case ChartView.SeriesTypeSpline: return isplineChart
-        case ChartView.SeriesTypeArea: return iareaChart
-        case ChartView.SeriesTypeScatter: return iscatterChart
-        default: return ipieChart
-        }
-    }
     function chartName(type){
         switch (type){
         case ChartView.SeriesTypePie: return "Pie Chart"
@@ -142,30 +49,12 @@ CustomDialog {
         default: return "Unknown"
         }
     }
-
     function updateChart(){
-        currentChart.clear()
-        currentChart.updateAxis()
-        currentChart.updateChart()
+        ichartComponent.updateChart()
+        if(selectedChart!==undefined && selectedChart!==null)
+            selectedChart.fromJsonChart(ichartComponent.toJson())
     }
 
-    ListModel{
-        id: imodel
-
-        ListElement{
-            color: ""
-            label: ""
-            values: [
-                ListElement{value: ""}
-            ]
-        }
-    }
-    ListModel{
-        id: iheadersModel
-        ListElement{
-            value:""
-        }
-    }
     Flickable{
         contentHeight: icolumn.height
         interactive: height < contentHeight || width < contentWidth
@@ -194,6 +83,10 @@ CustomDialog {
                             width: parent.width
                             text: chartName(index)
                         }
+                        onCurrentIndexChanged: {
+                            ichartComponent.chartType = currentIndex
+                            updateChart()
+                        }
                     }
 
                     Label{
@@ -205,11 +98,19 @@ CustomDialog {
                         Layout.preferredWidth: 300
                         model:["Light","BlueCerulean","Dark","BrownSand","BlueNcs"
                             ,"HighContrast","BlueIcy","Qt"]
+                        onCurrentIndexChanged: {
+                            ichartComponent.currentTheme = currentIndex
+                            updateChart()
+                        }
                     }
 
                     CheckBox{
                         id: ilegendCheck
                         text: "legend"
+                        onCheckedChanged: {
+                            ichartComponent.containLegend = checked
+                            updateChart()
+                        }
                     }
                     Item{
                         Layout.preferredWidth: 1
@@ -236,7 +137,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 0
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.valueForm = value
+                            updateChart()
+                        }
                     }
                     Label{
                         text: "value to"
@@ -247,7 +151,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 100
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.valueTo = value
+                            updateChart()
+                        }
                     }
                     Label{
                         text: "value tick"
@@ -258,7 +165,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 5
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.valueTick = value
+                            updateChart()
+                        }
                     }
                     Label{
                         text: "range from"
@@ -269,7 +179,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 0
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.rangeForm = value
+                            updateChart()
+                        }
                     }
                     Label{
                         text: "range to"
@@ -280,7 +193,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 100
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.rangeTo = value
+                            updateChart()
+                        }
                     }
                     Label{
                         text: "range tick"
@@ -291,7 +207,10 @@ CustomDialog {
                         to: 100000
                         editable: true
                         value: 5
-                        onValueChanged: currentChart.updateAxis()
+                        onValueChanged: {
+                            ichartComponent.rangeTick = value
+                            updateChart()
+                        }
                     }
                 }
 
@@ -299,45 +218,12 @@ CustomDialog {
                     Label{
                         text: "Preview"
                     }
-                    ChartPie{
-                        id: ipieChart
-                    }
-                    ChartBar{
-                        id: ibarChart
-                    }
-                    ChartBarHorizontal{
-                        id: ihorizontalBarChart
-                    }
-                    ChartBarPercent{
-                        id: ipercentBarChart
-                    }
-                    ChartBarPercentHorizontal{
-                        id: ihorizontalPercentBarChart
-                    }
-                    ChartBarStacked{
-                        id: istackBarChart
-                    }
-                    ChartBarStackedHorizontal{
-                        id: ihorizontalStackBarChart
-                    }
-                    ChartBaseXY{
-                        id: ilineChart
-                        type: ChartView.SeriesTypeLine
-                    }
-                    ChartBaseXY{
-                        id: isplineChart
-                        type: ChartView.SeriesTypeSpline
-                    }
-                    ChartBaseXY{
-                        id: iareaChart
-                        type: ChartView.SeriesTypeArea
-                    }
-                    ChartBaseXY{
-                        id: iscatterChart
-                        type: ChartView.SeriesTypeScatter
+                    ChartComponent{
+                        id: ichartComponent
+                        width: 450
+                        height: 400
                     }
                 }
-
             }
             Item{
                 width: 40

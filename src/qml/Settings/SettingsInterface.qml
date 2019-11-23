@@ -10,7 +10,7 @@ Item {
                              Material.Dark:Material.Light
     property var sidePannelEdge: isidePanelEdgeCombo.currentIndex===0?
                              Qt.RightEdge:Qt.LeftEdge
-    property var menuOpacity: imenusBackground.currentIndex === 0 ? 0.8:1
+    property var menuOpacity: imenusBackground.currentIndex === 0 ? 0.9:1
 
     QLS.Settings{
         id: isettings

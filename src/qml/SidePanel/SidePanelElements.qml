@@ -72,7 +72,6 @@ Grid {
             id: ibutton
             text: model.icon
             flat: true
-            Material.background: Material.Indigo
             font.family: ifontAwsome.name
             leftInset: 5
             rightInset: 5

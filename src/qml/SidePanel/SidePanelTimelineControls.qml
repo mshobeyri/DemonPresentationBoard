@@ -17,7 +17,6 @@ Pane {
                 flat: true
                 ToolTip.text: "Move Previous Frame"
                 ToolTip.visible: hovered
-                Material.background: Material.Indigo
                 Material.foreground: "white"
                 Layout.fillWidth: true
                 onClicked: itimeline.goPrev()
@@ -28,14 +27,12 @@ Pane {
                 flat: true
                 ToolTip.text: "Move Next Frame"
                 ToolTip.visible: hovered
-                Material.background: Material.Indigo
                 Material.foreground: "white"
                 Layout.fillWidth: true
                 onClicked: itimeline.goNext()
             }
             Button{
                 text: "project-diagram"
-                Material.background: Material.DeepPurple
                 Material.foreground: "white"
                 flat: true
                 Layout.preferredWidth: height
@@ -45,7 +42,6 @@ Pane {
                 onClicked: itimeline.open()
             }
             Button{
-                Material.background: Material.Green
                 Material.foreground: "white"
                 text: "plus"
                 font.family: ifontAwsome.name
