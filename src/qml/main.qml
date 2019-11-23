@@ -88,6 +88,7 @@ ApplicationWindow {
     }
     Welcome{
         id: iwelcome
+        visible: true
     }
 }
 

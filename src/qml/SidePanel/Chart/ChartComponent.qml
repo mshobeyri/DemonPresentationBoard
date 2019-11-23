@@ -50,6 +50,9 @@ Column{
         ListElement{
             value:""
         }
+        onCountChanged: {
+            updateChart()
+        }
     }
 
     function toJson(){
@@ -104,7 +107,6 @@ Column{
     function fromJson(json){
         iheadersModel.clear()
         imodel.clear()
-//        clear()
 
         chartType = json.type
 

@@ -21,11 +21,13 @@ ChartBase{
                                          imodel.get(i).label)
                 serie.holeSize = (i/imodel.count)
                 serie.z = i
+                var header = iheadersModel.get(j)
+                if(header === undefined) return
                 var y = Number(imodel.get(i).values.get(j).value)
                 var l = imodel.get(0).values.count===1 ||
-                        iheadersModel.get(j).value===""?
+                        header.value===""?
                             imodel.get(i).label:
-                            iheadersModel.get(j).value+"-"
+                            header.value+"-"
                             +imodel.get(i).label
 
 

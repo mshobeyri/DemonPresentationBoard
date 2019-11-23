@@ -25,7 +25,8 @@ ChartBase{
             serie.axisY = ivalueAxis
 
             for(var j=0;j<dataModel.get(i).values.count;j++){
-                var x = Number(headersModel.get(j).value)
+                var x = headersModel.get(j)!==undefined?
+                            Number(headersModel.get(j).value):0
                 var y = Number(dataModel.get(i).values.get(j).value)
                 if(iroot.type === ChartView.SeriesTypeArea){
                     serie.upperSeries.append(x,y)

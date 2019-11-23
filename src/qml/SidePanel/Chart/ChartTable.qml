@@ -59,7 +59,6 @@ Column{
                                     imodel.get(i).values.remove(index)
                                 }
                                 iheadersModel.remove(index)
-                                updateChart()
                             }
                         }
                         TextField{

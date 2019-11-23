@@ -10,6 +10,7 @@ ChartBase{
         iseries.clear()
     }
     function updateAxis(){
+        iaxis.clear()
         for(var i=0;i<headersModel.count;i++){
             iaxis.categories[i] = headersModel.get(i).value
         }

@@ -49,7 +49,12 @@ Menu {
         onActivated: paste()
     }
 
+    MenuItem{
+        text: "Welcome"
+        onTriggered: iwelcome.open()
+    }
 
+    MenuSeparator{}
     Menu{
         title: "File"
 
@@ -79,10 +84,7 @@ Menu {
             onTriggered: paste()
         }
     }
-    MenuSeparator{}
-    MenuItem{
-        text: "Remote"
-    }
+
     MenuSeparator{}
     MenuItem{
         text: "Settings"
