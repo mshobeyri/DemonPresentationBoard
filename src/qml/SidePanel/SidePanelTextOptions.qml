@@ -106,6 +106,7 @@ Column{
                 onCheckedChanged: {
                     textJustifyOutput = TextEdit.AlignRight
                     //update position
+                    updateCurrentElement()
                 }
             }
             Button{

@@ -3,6 +3,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 import "SidePanel"
 import "SidePanel/Chart"
+import "Theme"
 import "World"
 import "Timeline"
 import "Settings"
@@ -44,6 +45,9 @@ ApplicationWindow {
     }
     SidePanelChartGallery{
         id: ichartGallery
+    }
+    ThemeGallery{
+        id: ithemeGallery
     }
 
     Settings{

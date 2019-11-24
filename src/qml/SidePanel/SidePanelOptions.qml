@@ -43,6 +43,7 @@ ColumnLayout {
     RowLayout{
         spacing: 10
         Layout.fillWidth: true
+        visible: !optionVisible('animeTextFont')
         SidePanelLabelTextField{
             id: ixField
             label: "x"
@@ -59,6 +60,7 @@ ColumnLayout {
     RowLayout{
         spacing: 10
         Layout.fillWidth: true
+        visible: !optionVisible('animeTextFont')
         SidePanelLabelTextField{
             id: iwField
             label: "w"
@@ -83,6 +85,7 @@ ColumnLayout {
         }
         SidePanelLabelTextField{
             id: irField
+            visible: !optionVisible('animeTextFont')
             label: "r"
             text: ioptions.visible?iworld.currentElement.r.toFixed(0):0
             onTextChanged: if(textFocus)iworld.currentElement.r = Number(text)
@@ -164,6 +167,11 @@ ColumnLayout {
     SidePanelTextOptions{
         visible: optionVisible('textFont')
         textFont: visible? iworld.currentElement.textFont:defaultFont
+        textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
+    }
+    SidePanelAnimationOption{
+        visible: optionVisible('animeTextFont')
+        textFont: visible? iworld.currentElement.animeTextFont:defaultFont
         textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
     }
     IconButton{

@@ -30,7 +30,7 @@ function path(element){
     case bracket:
         return "qrc:/src/qml/Elements/ElementBracket.qml"
     case animation:
-        return "qrc:/src/qml/Elements/ElementImage.qml"
+        return "qrc:/src/qml/Elements/ElementAnimation.qml"
     case arrow:
         return "qrc:/src/qml/Elements/ElementArrow.qml"
     case table:

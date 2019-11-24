@@ -27,6 +27,9 @@ Item{
     property var elementJson : iroot.json
     signal doubleClicked;
     signal created
+    signal positionChanged
+    signal sizeChanged
+    signal angleChanged
     property var commonData: {
         "x": iroot.x,
         "y": iroot.y,
@@ -45,7 +48,6 @@ Item{
     }
 
     function fromJsonBase(json){
-
         iroot.x = json.x
         iroot.y = json.y
         iroot.z = json.z
@@ -117,6 +119,7 @@ Item{
                     if(moved)
                     {
                         ifileManager.fileChanged()
+                        iroot.positionChanged()
                         moved = false
                     }
                 }
@@ -171,7 +174,10 @@ Item{
 
                 MouseArea{
                     anchors.fill: parent;
-                    onReleased: ifileManager.fileChanged()
+                    onReleased: {
+                        ifileManager.fileChanged()
+                        angleChanged()
+                    }
                     onPositionChanged:  {
                         var point =  mapToItem (imain, mouse.x, mouse.y);
                         var diffX = (point.x - imain.centerX);
@@ -197,7 +203,7 @@ Item{
                 id: isizeHandle
 
                 x: (baseWidth) - width/2
-                y: fixAspectRatio? x * aspectRatio  :baseHeight - width/2
+                y: fixAspectRatio? x * aspectRatio : baseHeight - width/2
                 width: handleSize
                 height: width
                 opacity: selected? 1 : 0
@@ -216,7 +222,10 @@ Item{
                     drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
                     drag.minimumX: 30
                     drag.minimumY: drag.minimumX
-                    onReleased: ifileManager.fileChanged()
+                    onReleased: {
+                        ifileManager.fileChanged()
+                        sizeChanged()
+                    }
                 }
                 Rectangle  {
                     radius: 3

@@ -52,7 +52,7 @@ Grid {
                 name: "bracket"
             }
             ListElement{
-                icon : "walking"
+                icon : "font"
                 name: "animation"
             }
             ListElement{

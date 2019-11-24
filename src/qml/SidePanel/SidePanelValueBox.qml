@@ -15,6 +15,8 @@ RowLayout {
     SpinBox{
         id: ispinbox
 
+        from: 0
+        to: 100000
         Layout.fillWidth: true
         editable: true
         onValueModified: if(!upDownPressed)

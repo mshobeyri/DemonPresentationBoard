@@ -61,6 +61,9 @@
         <file>src/qml/SidePanel/Chart/ChartTable.qml</file>
         <file>src/qml/SidePanel/Chart/ChartPie.qml</file>
         <file>src/qml/SidePanel/Chart/ChartComponent.qml</file>
+        <file>src/qml/Theme/ThemeGallery.qml</file>
+        <file>src/qml/Elements/ElementAnimation.qml</file>
+        <file>src/qml/SidePanel/SidePanelAnimationOption.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
