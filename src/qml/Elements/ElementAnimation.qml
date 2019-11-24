@@ -58,9 +58,9 @@ ElementBase{
 
     function fromJson(json){
         textJustify = json.textJustify
-        animeTextFont.family = json.textFont.family
-        animeTextFont.bold = json.textFont.bold
-        animeTextFont.italic = json.textFont.italic
+        animeTextFont.family = json.animeTextFont.family
+        animeTextFont.bold = json.animeTextFont.bold
+        animeTextFont.italic = json.animeTextFont.italic
         animationDuration = json.animationDuration
         easingType = json.easingType
 
@@ -72,7 +72,7 @@ ElementBase{
         backgroundColor1 = json.backgroundColor1
         backgroundColor2 = json.backgroundColor2
 
-        x = json.x
+        x =  json.x1
         x1 = json.x1
         x2 = json.x2
         y =  json.y1
@@ -81,15 +81,16 @@ ElementBase{
         w =  json.w1
         w1 = json.w1
         w2 = json.w2
-        h = json.h1
+        h =  json.h1
         h1 = json.h1
         h2 = json.h2
-        r = json.r1
+        r =  json.r1
         r1 = json.r1
         r2 = json.r2
-        s = json.s1
         s1 = json.s1
         s2 = json.s2
+        fontSize =  json.s1
+        animeEnable = true
     }
     onCreated: {
         x1 = x
@@ -98,6 +99,7 @@ ElementBase{
         y2 = y
         animeEnable = true
     }
+
     onAngleChanged: {
         if(evoked)
             r2 = r
