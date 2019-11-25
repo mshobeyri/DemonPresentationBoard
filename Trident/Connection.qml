@@ -6,7 +6,7 @@ Item{
 
     property alias url: isocket.url
     property bool isConnected: isocket.status === WebSocket.Open
-    property var urls: ["ws://127.0.0.1:54322","ws://192.168.88.214:54321","ws://172.30.206.224:54322"]
+    property var urls: []
     property int urlsIndex: 0
 
     function fakeLaser(x,y){
@@ -17,11 +17,11 @@ Item{
         }
         isocket.sendTextMessage(JSON.stringify(m))
     }
-    function setLaserSettings(color , size){
+    function setLaserSettings(){
         var m ={
             "cmd": "laserSettings",
-            "color":color,
-            "size":size
+            "color":ilaserSetting.color,
+            "size":ilaserSetting.size
         }
         isocket.sendTextMessage(JSON.stringify(m))
     }
@@ -32,9 +32,24 @@ Item{
         }
         isocket.sendTextMessage(JSON.stringify(m))
     }
+
     function goPrev(){
         var m ={
             "cmd": "prev",
+        }
+        isocket.sendTextMessage(JSON.stringify(m))
+    }
+    function goTo(frameIndex){
+        var m = {
+            "cmd": "goto",
+            "frameIndex":frameIndex
+        }
+        isocket.sendTextMessage(JSON.stringify(m))
+    }
+
+    function getFrames(){
+        var m ={
+            "cmd": "frames",
         }
         isocket.sendTextMessage(JSON.stringify(m))
     }
@@ -49,13 +64,24 @@ Item{
         }
         onTextMessageReceived: {
             var mesageJson = JSON.parse(message)
-            notes = mesageJson.notes
-
+            switch(mesageJson.cmd){
+            case "frames":
+                var ci
+                ci = framesCombo.currentIndex
+                framesCombo.model = mesageJson.frames
+                framesCombo.currentIndex = ci
+                break
+            case "frameData":
+                notes = mesageJson.frameData.data.notes
+                framesCombo.currentIndex = mesageJson.frameData.index
+            }
         }
         onStatusChanged: {
-            if(status===WebSocket.Open)
+            if(status===WebSocket.Open){
                 ireconnecTimer.stop()
-            else{
+                getFrames()
+                setLaserSettings()
+            }else{
                 ireconnecTimer.start()
             }
         }

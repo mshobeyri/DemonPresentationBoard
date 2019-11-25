@@ -11,9 +11,25 @@ Item{
         connection.sendBinaryMessage(
                     fileio.getImageData(fileio.tempFolder()+"/sc.png"))
     }
+
     function sendMessage(message){
         if(connection!==null)
             connection.sendTextMessage(message)
+    }
+    function sendFrameDataToTrident(){
+        var message = {
+            "cmd": "frameData",
+            "frameData":itimeline.currentFrameData()
+        }
+        sendMessage(JSON.stringify(message))
+    }
+
+    function sendFramesNameToTrident(){
+        var message = {
+            "cmd":"frames",
+            "frames": itimeline.framesName()
+        }
+        sendMessage(JSON.stringify(message))
     }
 
     function handleMessage(message){
@@ -23,11 +39,18 @@ Item{
             break;
         case "prev": itimeline.goPrev()
             break;
-        case "goto": itimeline.goTo(messageJson.frame)
+        case "goto": itimeline.goTo(messageJson.frameIndex)
             break;
         case "laser":
             iworld.fakeLaser.
             pointTo(messageJson.x,messageJson.y)
+            break;
+        case "laserSettings":
+            iworld.fakeLaser.setLaserSetting(
+                        messageJson.color,messageJson.size)
+        break
+        case "frames":
+            sendFramesNameToTrident()
             break;
         }
     }

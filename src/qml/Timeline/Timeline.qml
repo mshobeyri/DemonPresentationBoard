@@ -40,13 +40,27 @@ CustomDialog {
                                           "x": x,
                                           "y": y,
                                           "scale": scale,
-                                          "name":"",
+                                          "name":name,
                                           "time":time,
                                           "spendTime":0,
                                           "notes":notes})
     }
+
     function currentFrameData(){
         return iframesGrid.currentFrameData()
+    }
+
+    function framesName(){
+        var frames = []
+        for(var i=0;i< iframesGrid.frameModel.count;i++){
+            var frame = iframesGrid.frameModel.get(i)
+            if(frame.name!=="")
+                frames.push(frame.name)
+            else{
+                frames.push("frame "+ (i+1))
+            }
+        }
+        return frames
     }
 
     function toJson(){

@@ -55,7 +55,6 @@ Item {
         }
 
         onWheel: {
-            console.log(wheel.angleDelta.y)
             if(wheel.angleDelta.y === 0)
                 return
             var factor = wheel.modifiers & Qt.ControlModifier? 1.01:1.5

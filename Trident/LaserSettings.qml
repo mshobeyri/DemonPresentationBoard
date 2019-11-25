@@ -18,7 +18,7 @@ Dialog {
                 icolorRepeater.itemAt(i).checked = true
             }
         }
-        iconnection.setLaserSettings(iroot.color,isize.value)
+        iconnection.setLaserSettings()
         icolorRepeater.backgroundColor
     }
 
@@ -63,7 +63,7 @@ Dialog {
             id: isize
             value: 20
             onValueChanged: {
-                iconnection.setLaserSettings(iroot.color,isize.value)
+                iconnection.setLaserSettings()
             }
         }
     }

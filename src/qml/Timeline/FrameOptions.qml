@@ -24,9 +24,12 @@ Flickable {
             placeholderText: "set a name to this frame"
             text: iroot.visible ?iframesGrid.currentItem.modelObj().name:""
             onTextChanged: {
+                if(!focus)
+                    return
                 iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"name",text)
                 timelienChanged()
+                iremoteHandler.sendFramesNameToTrident()
             }
         }
         Item{
@@ -42,6 +45,7 @@ Flickable {
                 iframesGrid.frameModel.setProperty(
                                 iframesGrid.currentIndex,"time",value)
                 timelienChanged()
+                iremoteHandler.sendFrameDataToTrident()
             }
         }
         Item{
@@ -61,9 +65,12 @@ Flickable {
             placeholderText: "write some note for this frame ..."
             text: iroot.visible ?iframesGrid.currentItem.modelObj().notes:""
             onTextChanged: {
+                if(!focus)
+                    return
                 iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"notes",text)
                 timelienChanged()
+                iremoteHandler.sendFrameDataToTrident()
             }
         }
         Item{

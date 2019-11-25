@@ -14,6 +14,7 @@ ApplicationWindow {
 
     property string imageData: ""
     property string notes: ""
+    property alias framesCombo: iframesCombo
 
     header: ToolBar{
         topPadding: 0
@@ -21,6 +22,13 @@ ApplicationWindow {
         Material.background: Material.accent
         RowLayout{
             width: parent.width
+            Image{
+                source: "qrc:/../res/tridnetLogoCaption.png"
+                Layout.preferredHeight: parent.height/2
+                Layout.preferredWidth: parent.height/2*6
+                fillMode: Image.PreserveAspectFit
+            }
+
             Item{
                 Layout.fillWidth: true
             }
@@ -178,11 +186,18 @@ ApplicationWindow {
                 onClicked: iconnection.goNext()
             }
             ComboBox{
-                model: ["Name of god"]
+                id: iframesCombo
+
                 Layout.fillWidth: true
                 Layout.rightMargin: 10
                 flat: true
                 indicator.rotation: 180
+                delegate: MenuItem{
+                    width: parent.width
+                    text: modelData
+                    onClicked: iconnection.goTo(index+1)
+                    highlighted: iframesCombo.highlightedIndex === index
+                }
             }
         }
     }

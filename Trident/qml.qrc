@@ -7,5 +7,6 @@
         <file>NotesSettings.qml</file>
         <file>ConnectionSetting.qml</file>
         <file>../res/logo.png</file>
+        <file>../res/tridnetLogoCaption.png</file>
     </qresource>
 </RCC>

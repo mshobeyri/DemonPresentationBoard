@@ -33,7 +33,10 @@ ListView {
         igrid.currentIndex = frame - 1
     }
     function currentFrameData(){
-        return frameModel.get(igrid.currentIndex)
+        return {
+            "data":frameModel.get(igrid.currentIndex),
+            "index": igrid.currentIndex
+        }
     }
 
     footer: Frame {
@@ -67,9 +70,10 @@ ListView {
 
     onCurrentIndexChanged: {
         goCurrentFrame()
-        iremoteHandler.sendMessage(
-                    JSON.stringify(
-                        itimeline.currentFrameData()))
+        iremoteHandler.sendFrameDataToTrident()
+    }
+    onCountChanged: {
+        iremoteHandler.sendFramesNameToTrident()
     }
 
     ParallelAnimation{
@@ -234,6 +238,7 @@ ListView {
                     }
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
                     timelienChanged()
+                    sendFramesNameToTrident()
                 }
             }
         }
