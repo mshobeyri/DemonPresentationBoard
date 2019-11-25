@@ -29,12 +29,12 @@ Item {
     transform: Scale {
         id: itransform
 
-        Behavior on xScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutCubic } }
-        Behavior on yScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutCubic } }
+        Behavior on xScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutSine } }
+        Behavior on yScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutSine } }
     }
 
-    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutCubic } }
-    Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutCubic } }
+    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
+    Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
 
     MouseArea {
         id: iframeMouseArea
@@ -55,6 +55,9 @@ Item {
         }
 
         onWheel: {
+            console.log(wheel.angleDelta.y)
+            if(wheel.angleDelta.y === 0)
+                return
             var factor = wheel.modifiers & Qt.ControlModifier? 1.01:1.5
             var zoomFactor = wheel.angleDelta.y > 0 ? factor : 1 / factor
             var realX = wheel.x * xScale
