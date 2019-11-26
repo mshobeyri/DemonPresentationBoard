@@ -111,6 +111,22 @@ FileIO::copyToTempFolder(const QString& path) const {
     return tempFileName;
 }
 
+QString FileIO::copyToTempFolderAsThumbnail(const QString &path,const QString &name) const
+{
+    qDebug() << path;
+    QFile     file(toLocalFile(path));
+    QFileInfo in(file.fileName());
+
+    QString tempFileName{QString{"tn"}
+                             .append(name)
+                             .append(".jpg")};
+    qDebug() << tempFileName;
+    QFileInfo out(tempFolder(), tempFileName);
+    qDebug() << out.absoluteFilePath();
+    file.copy(out.absoluteFilePath());
+    return tempFileName;
+}
+
 QString
 FileIO::tempFolderFileUrl(const QString& fileName) const {
     QFileInfo out(tempFolder(), fileName);

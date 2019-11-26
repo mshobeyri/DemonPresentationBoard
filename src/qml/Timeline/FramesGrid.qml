@@ -130,9 +130,13 @@ ListView {
             }
             function updateImage(){
                 iworld.grabToImage(function(result) {
-                    iimage.source = result.url;
-                });
+                    var filePath = fileio.tempFolder()+"/tn.png"
+                    result.saveToFile(filePath);
+                    model.image = "data:image/png;base64," +fileio.getImageData(filePath);
+                    iimage.source = model.image
+                },Qt.size(320,180));
             }
+
             width: iwin.width / 6
             height: iwin.height / 6
             drag.target: icon
@@ -145,15 +149,18 @@ ListView {
             property string name: DelegateModel.toString()
             property int selectedIndex: -1
             property int visualIndex: DelegateModel.itemsIndex
-
             Component.onCompleted: {
-                updateImage()
+                if(model.image===""){
+                    updateImage()
+                }
+                iimage.source = model.image
             }
 
             onClicked: {
                 currentIndex = model.index
                 goCurrentFrame(model)
             }
+
             Rectangle {
                 id: icon
 
@@ -175,10 +182,6 @@ ListView {
                     width: parent.width
                     height: parent.height
                     visible: !ishaderEffectSource.live
-                    onVisibleChanged: {
-                        if(visible)
-                            idelegateRoot.updateImage()
-                    }
                 }
 
                 ShaderEffectSource {
@@ -193,11 +196,13 @@ ListView {
                            board.x===model.x &&
                            board.y===model.y &&
                            board.xScale===model.scale)
+                    visible: live
                     onLiveChanged:{
                         if(live){
+                            idelegateRoot.updateImage()
                             iworld.grabToImage(function(result) {
                                 iremoteHandler.sendImage(result)
-                            });
+                            },Qt.size(640,360));
                             var m ={
                                 "notes": model.notes
                             }
@@ -238,7 +243,7 @@ ListView {
                     }
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
                     timelienChanged()
-                    sendFramesNameToTrident()
+                    iremoteHandler.sendFramesNameToTrident()
                 }
             }
         }

@@ -24,8 +24,7 @@ ApplicationWindow {
             width: parent.width
             Image{
                 source: "qrc:/../res/tridnetLogoCaption.png"
-                Layout.preferredHeight: parent.height/2
-                Layout.preferredWidth: parent.height/2*6
+                Layout.preferredHeight: parent.height/1.7
                 fillMode: Image.PreserveAspectFit
             }
 
@@ -94,9 +93,11 @@ ApplicationWindow {
         }
         Frame{
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.width *9/16
+            Layout.preferredHeight: (parent.width - 20) *9/16
             Material.elevation: 7
-            padding: 0
+            padding: 1
+            topPadding: 1
+            bottomPadding: 1
             MouseArea{
                 anchors.fill: parent
                 onReleased: iconnection.fakeLaser(-1,-1)
@@ -122,6 +123,7 @@ ApplicationWindow {
             Image{
                 id: iimage
                 anchors.fill: parent
+                fillMode: Image.Stretch
                 source: imageData!==""?"data:image/png;base64," + imageData:""
             }
         }
@@ -191,6 +193,7 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.rightMargin: 10
                 flat: true
+                currentIndex: 0
                 indicator.rotation: 180
                 delegate: MenuItem{
                     width: parent.width

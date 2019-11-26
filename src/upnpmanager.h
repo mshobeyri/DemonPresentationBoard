@@ -11,6 +11,7 @@ public:
     UpnpManager();
     Q_INVOKABLE void startDiscovery();
     Q_INVOKABLE void stopDiscovery();
+    void writeRespond();
 
     void             handleMessage(QString message);
     bool handleNotify = false;

@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.3
+import Qt.labs.settings 1.0
 
 Dialog {
     id: iroot
@@ -11,6 +12,7 @@ Dialog {
     title: "Connection"
     property alias ip: iip.text
     property alias port: iport.text
+
     Column{
         id: icolumn
         spacing: 5
@@ -30,8 +32,7 @@ Dialog {
                 id: iip
 
                 selectByMouse: true
-                onTextChanged:
-                    iconnection.url = "ws://"+iip.text+":"+iport.text
+                onTextChanged:iconnection.setUrl("ws://"+iip.text+":"+iport.text)
             }
             Label{
                 text: ":"
@@ -46,8 +47,7 @@ Dialog {
                 width: iip.width/2
                 placeholderText: "port"
                 selectByMouse: true
-                onTextChanged:
-                    iconnection.url = "ws://"+iip.text+":"+iport.text
+                onTextChanged:iconnection.setUrl("ws://"+iip.text+":"+iport.text)
             }
             ToolButton{
                 font.family: ifontAwsome.name

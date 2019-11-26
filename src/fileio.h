@@ -20,6 +20,8 @@ public:
     Q_INVOKABLE QString getClipboard() const;
     Q_INVOKABLE QString tempFolder() const;
     Q_INVOKABLE QString copyToTempFolder(const QString& path) const;
+    Q_INVOKABLE QString copyToTempFolderAsThumbnail(const QString& path,
+                                                    const QString& name) const;
     Q_INVOKABLE QString tempFolderFileUrl(const QString& fileName) const;
     Q_INVOKABLE QString tempFolderFilePath(const QString& fileName) const;
     Q_INVOKABLE QString getImageData(const QString& fileName) const;

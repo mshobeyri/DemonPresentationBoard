@@ -29,12 +29,12 @@ CustomDialog {
     function grabFrame(){
         var bg = board.boardGeometry()
         var date = new Date;
-        var id = date.toString("yyyyMMddhhmmsszzz")
-        appendFrame(id,bg.x,bg.y,bg.scale,"",0,"")
+        var id = Qt.md5(date.toString())
+        appendFrame(id,bg.x,bg.y,bg.scale,"",0,"","")
         iroot.open()
     }
 
-    function appendFrame(id,x,y,scale,name,time,notes){
+    function appendFrame(id,x,y,scale,name,time,notes,image){
         iframesGrid.frameModel.append({
                                           "id": id,
                                           "x": x,
@@ -43,7 +43,8 @@ CustomDialog {
                                           "name":name,
                                           "time":time,
                                           "spendTime":0,
-                                          "notes":notes})
+                                          "notes":notes,
+                                          "image":image})
     }
 
     function currentFrameData(){
@@ -74,7 +75,8 @@ CustomDialog {
                             "scale":frame.scale,
                             "name":frame.name,
                             "time":frame.time,
-                            "notes":frame.notes})
+                            "notes":frame.notes,
+                            "image":frame.image})
         }
         return frames
     }
@@ -82,7 +84,7 @@ CustomDialog {
     function fromJson(json){
         for(var i=0 ; i< json.length;i++){
             var f = json[i]
-            appendFrame(f.id,f.x,f.y,f.scale,f.name,f.time,f.notes)
+            appendFrame(f.id,f.x,f.y,f.scale,f.name,f.time,f.notes,f.image)
         }
     }
     function clear(){

@@ -57,9 +57,12 @@ Item{
 
     WebSocketServer {
         id: isocketServer
-
+        host: "0.0.0.0"
         listen: true
         port: 54321
+        onErrorStringChanged: {
+            console.log(qsTr("Server error: %1").arg(errorString));
+        }
         onClientConnected: {
             connection = webSocket
             webSocket.onTextMessageReceived.connect(function(message) {

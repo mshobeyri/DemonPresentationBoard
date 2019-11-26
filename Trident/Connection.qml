@@ -6,8 +6,12 @@ Item{
 
     property alias url: isocket.url
     property bool isConnected: isocket.status === WebSocket.Open
-    property var urls: []
-    property int urlsIndex: 0
+
+    function setUrl(newurl){
+        url = newurl
+        isocket.active = false
+        isocket.active = true
+    }
 
     function fakeLaser(x,y){
         var m ={
@@ -98,27 +102,40 @@ Item{
 
     Connections{
         target: upnp
+
         onNewUrlListRecieved:{
+            notes = urlList
             upnp.stopDiscovery()
-            urls = JSON.parse(urlList)
-            urlsIndex = 0
-            iupnpsocket.url = ""
-            iupnpsocket.url = urls[0]
+            iupnpsocket.startDiscovery(JSON.parse(urlList))
         }
     }
     WebSocket{
         id: iupnpsocket
 
-        active: true
+        active: false
+        property var urls: []
+        property int urlsIndex: 0
+        function startDiscovery(upnpurls){
+            urls = upnpurls
+            urlsIndex = 0
+            iupnpsocket.url = ""
+            iupnpsocket.url = urls[0]
+            active = true
+        }
 
+        onUrlChanged: console.log(url)
         onStatusChanged: {
             if(status===WebSocket.Open){
+                active = false
                 isocket.url = iupnpsocket.url
-                var str = iupnpsocket.url.toString()
+                iupnpsocket.url = ""
+                var str = isocket.url.toString()
                 str = str.replace("ws://","");
                 str = str.split(":");
                 iconnectionSetting.ip = str[0]
                 iconnectionSetting.port = str[1]
+                isocket.active = false
+                isocket.active = true
 
             }else if(status===WebSocket.Error){
                 if(urlsIndex <urls.length-1){
