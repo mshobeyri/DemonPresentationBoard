@@ -104,7 +104,6 @@ Item{
         target: upnp
 
         onNewUrlListRecieved:{
-            notes = urlList
             upnp.stopDiscovery()
             iupnpsocket.startDiscovery(JSON.parse(urlList))
         }

@@ -28,8 +28,7 @@ CustomDialog {
 
     function grabFrame(){
         var bg = board.boardGeometry()
-        var date = new Date;
-        var id = Qt.md5(date.toString())
+        var id = Qt.md5(Qt.formatTime(new Date(),"yyyyMMddhhmmsszzz"))
         appendFrame(id,bg.x,bg.y,bg.scale,"",0,"","")
         iroot.open()
     }
