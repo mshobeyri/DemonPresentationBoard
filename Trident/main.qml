@@ -137,7 +137,7 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.topMargin: 0
             Label{
-                text: "Frame Details"
+                text: "NOTES"
                 font.pointSize: 14
                 Material.foreground: Material.accent
             }
@@ -152,33 +152,6 @@ ApplicationWindow {
             }
         }
 
-        Row{
-            visible: frameTime !==0
-            spacing: 10
-            Layout.alignment: Qt.AlignHCenter
-
-            TimePicker{
-                id: itimeSpend
-                values: 0
-                color: values > frameTime? "red":"white"
-            }
-            Label{
-                font.pointSize: 12
-                text: "/"
-                anchors.verticalCenter: parent.verticalCenter
-            }
-            TimePicker{
-                values: frameTime
-            }
-            Timer{
-                interval: 1000
-                running: frameTime!==0
-                repeat: true
-                onTriggered: {
-                    itimeSpend.values++
-                }
-            }
-        }
         Flickable{
             Layout.topMargin: 10
             contentHeight: icolumn.height
@@ -197,6 +170,44 @@ ApplicationWindow {
                     font.pointSize: inotesSetting.noteSize
                     wrapMode: "WordWrap"
                     text: frameNotes!==""?frameNotes : "No Note Available"
+                }
+            }
+        }
+        Item{
+            Layout.fillWidth: true
+            visible: frameTime !==0
+            height: itimeRow.height
+            Label{
+                text: "TIME"
+                font.pointSize: 14
+                Material.foreground: Material.accent
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            Row{
+                id: itimeRow
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                TimePicker{
+                    id: itimeSpend
+                    values: 0
+                    color: values > frameTime? "red":"white"
+                }
+                Label{
+                    font.pointSize: 12
+                    text: "/"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                TimePicker{
+                    values: frameTime
+                }
+                Timer{
+                    interval: 1000
+                    running: frameTime!==0
+                    repeat: true
+                    onTriggered: {
+                        itimeSpend.values++
+                    }
                 }
             }
         }
