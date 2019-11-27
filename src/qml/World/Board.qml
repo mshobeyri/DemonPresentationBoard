@@ -25,6 +25,38 @@ Item {
             "scale": iboard.xScale,
         }
     }
+    function toJson(){
+        var json ={
+            "type":ibackground.type,
+            "tempName":"",
+            "color": ibackground.color,
+            "tileH": ibackground.tileH,
+            "tileV": ibackground.tileV,
+            "velocity": ibackground.velocity,
+            "quality": ibackground.quality
+        }
+        if(ibackground.type!==0){
+            json.tempName =ibackground.tempName
+        }
+        return json
+    }
+    function fromJson(json){
+        ibackground.type = json.type
+        ibackground.tempName = json.tempName
+        ibackground.color = json.color
+        ibackground.tileH = json.tileH
+        ibackground.tileV = json.tileV
+        ibackground.velocity = json.velocity
+        ibackground.quality = json.quality
+        if(json.tempName!=="")
+        ibackground.source = fileio.tempFolderFileUrl(json.tempName)
+    }
+
+    function binaries(){
+        if(ibackground.type===0)
+            return ""
+        return background.tempName
+    }
 
     transform: Scale {
         id: itransform

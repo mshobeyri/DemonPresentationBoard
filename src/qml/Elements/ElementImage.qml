@@ -27,7 +27,7 @@ ElementBase{
 
     FileDialog{
         id: isourceSelector
-        nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
+        nameFilters: ["Image files (*.jpg *.jpeg *.png *.svg *.gif)", "All files (*.*)"]
         onAccepted: {
             icontainer.tempName = fileio.copyToTempFolder(currentFile)
             icontainer.source = fileio.tempFolderFileUrl(tempName)

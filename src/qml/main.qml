@@ -49,7 +49,6 @@ ApplicationWindow {
     ThemeGallery{
         id: ithemeGallery
     }
-
     Settings{
         id: isettings
     }

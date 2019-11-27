@@ -22,7 +22,8 @@ Item{
 
     function toJson(){
         var json = {
-            "elements":""
+            "elements":"",
+            "board":""
         }
 
         var elements = []
@@ -30,6 +31,7 @@ Item{
             elements.push(iboard.elementContainer.children[i].json)
         }
         json.elements = elements
+        json.board = board.toJson();
         return json
     }
 
@@ -38,8 +40,9 @@ Item{
         for(var i= 0;i<elements.length;i++){
             createElement(elements[i].type,elements[i])
         }
-
+        board.fromJson(json.board)
     }
+
     function binaryFiles(){
         var binaries = []
         for(var i= 0;i<iboard.elementContainer.children.length;i++){
@@ -47,6 +50,11 @@ Item{
                 binaries.push(iboard.elementContainer.children[i].json.tempName)
             }
         }
+        var boardImage = board.binaries()
+        if(boardImage!==""){
+            binaries.push(boardImage)
+        }
+
         return binaries
     }
 

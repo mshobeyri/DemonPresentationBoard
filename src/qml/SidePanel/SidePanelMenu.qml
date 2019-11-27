@@ -90,4 +90,14 @@ Menu {
         text: "Settings"
         onClicked: isettings.open()
     }
+    MenuSeparator{}
+    MenuItem{
+        text: iwin.visibility === ApplicationWindow.FullScreen?
+                  "Normal":"Fullscreen"
+        onClicked: {
+            iwin.visibility === ApplicationWindow.FullScreen?
+                        iwin.visibility = ApplicationWindow.Maximized:
+                        iwin.visibility = ApplicationWindow.FullScreen
+        }
+    }
 }

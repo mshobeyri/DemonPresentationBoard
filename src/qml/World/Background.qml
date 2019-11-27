@@ -9,6 +9,8 @@ Item{
     y: -iboard.y * velocity / 100
     width: parent.width
     height: parent.height
+
+    property string tempName: ""
     property int velocity: 0
     property string color: "#30080d"
     property string source: "qrc:/res/res/backgrounds/pattern-10.svg"
@@ -29,6 +31,7 @@ Item{
         iimage.sourceSize = undefined
         iimage.updateSize()
     }
+
     onTypeChanged: iimage.updateSize()
 
     Rectangle{
@@ -39,8 +42,12 @@ Item{
     FileDialog{
         id: isourceSelector
 
-        nameFilters: ["Image files (*.jpg *.png *.svg *.gif)", "All files (*.*)"]
-        onAccepted: iroot.source = currentFile
+        nameFilters: ["Image files (*.jpg *.jpeg *.png *.svg *.gif)", "All files (*.*)"]
+        onAccepted: {
+            iroot.tempName = fileio.copyToTempFolder(currentFile)
+            iroot.source = fileio.tempFolderFileUrl(tempName)
+            ifileManager.fileChanged()
+        }
     }
 
     Image{
