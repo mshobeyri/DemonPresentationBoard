@@ -17,7 +17,6 @@ Flickable {
         Label{
             text: "Frame Name:"
         }
-
         TextField{
             width: iroot.width
             selectByMouse: true
@@ -37,10 +36,11 @@ Flickable {
             height: 10
         }
         Label{
-            text: "Frame Time(min):"
+            text: "Frame Time (min:sec):"
         }
-        SpinBox{
-            value: iroot.visible?iframesGrid.currentItem.modelObj().time:0
+        TimePicker{
+            values: iroot.visible?iframesGrid.currentItem.modelObj().time:0
+
             onValueChanged: {
                 iframesGrid.frameModel.setProperty(
                                 iframesGrid.currentIndex,"time",value)

@@ -13,8 +13,12 @@ ApplicationWindow {
     Material.theme: Material.Dark
 
     property string imageData: ""
-    property string notes: ""
+    property string frameNotes: ""
+    property int frameTime: 0
     property alias framesCombo: iframesCombo
+    function resetTimer(){
+        itimeSpend.values = 0
+    }
 
     header: ToolBar{
         topPadding: 0
@@ -74,6 +78,7 @@ ApplicationWindow {
     ColumnLayout{
         anchors.fill: parent
         anchors.margins: 10
+        anchors.topMargin: 5
         RowLayout{
             Layout.fillWidth: true
             Label{
@@ -112,7 +117,7 @@ ApplicationWindow {
 
             }
             Image{
-                visible: iimage.status !== Image.Ready
+                visible: iimage.status !== Image.Ready && iimage.status !== Image.Loading
                 width: parent.width/1.5
                 height: parent.height/1.5
                 source: "qrc:/../res/logo.png"
@@ -124,14 +129,15 @@ ApplicationWindow {
                 id: iimage
                 anchors.fill: parent
                 fillMode: Image.Stretch
-                source: imageData!==""?"data:image/png;base64," + imageData:""
+                source: imageData!==""?imageData:""
             }
         }
+
         RowLayout{
             Layout.fillWidth: true
-            Layout.topMargin: 20
+            Layout.topMargin: 0
             Label{
-                text: "Notes"
+                text: "Frame Details"
                 font.pointSize: 14
                 Material.foreground: Material.accent
             }
@@ -145,20 +151,53 @@ ApplicationWindow {
                 onClicked: inotesSetting.open()
             }
         }
+
+        Row{
+            visible: frameTime !==0
+            spacing: 10
+            Layout.alignment: Qt.AlignHCenter
+
+            TimePicker{
+                id: itimeSpend
+                values: 0
+                color: values > frameTime? "red":"white"
+            }
+            Label{
+                font.pointSize: 12
+                text: "/"
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            TimePicker{
+                values: frameTime
+            }
+            Timer{
+                interval: 1000
+                running: frameTime!==0
+                repeat: true
+                onTriggered: {
+                    itimeSpend.values++
+                }
+            }
+        }
         Flickable{
-            contentHeight: inotes.paintedHeight
+            Layout.topMargin: 10
+            contentHeight: icolumn.height
             Layout.leftMargin: 10
             Layout.rightMargin: 10
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
             interactive: contentHeight>height
-            Label{
-                id: inotes
+            Column{
+                id: icolumn
+                spacing: 10
+                Label{
+                    id: inotes
 
-                font.pointSize: inotesSetting.noteSize
-                wrapMode: "WordWrap"
-                text: notes!==""?notes : "No Note Available"
+                    font.pointSize: inotesSetting.noteSize
+                    wrapMode: "WordWrap"
+                    text: frameNotes!==""?frameNotes : "No Note Available"
+                }
             }
         }
     }

@@ -64,7 +64,7 @@ Item{
         active: true
 
         onBinaryMessageReceived: {
-            imageData = message
+            imageData = "data:image/png;base64,"+message
         }
         onTextMessageReceived: {
             var mesageJson = JSON.parse(message)
@@ -76,7 +76,10 @@ Item{
                 framesCombo.currentIndex = ci
                 break
             case "frameData":
-                notes = mesageJson.frameData.data.notes
+                frameNotes = mesageJson.frameData.data.notes
+                frameTime = mesageJson.frameData.data.time
+                imageData = mesageJson.frameData.data.image
+                resetTimer()
                 framesCombo.currentIndex = mesageJson.frameData.index
             }
         }
