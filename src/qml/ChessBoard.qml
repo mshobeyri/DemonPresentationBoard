@@ -7,7 +7,7 @@ Item {
         id: ichessBoard
         flow: Grid.LeftToRight
         anchors.fill: parent
-        rows: height / (width/cellCount)
+        rows: (width/cellCount)!==0?height / (width/cellCount):0
         columns: cellCount
         clip: true
         Repeater {
