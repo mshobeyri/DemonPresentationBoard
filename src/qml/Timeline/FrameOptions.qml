@@ -9,6 +9,7 @@ Flickable {
              iframesGrid.currentItem!==null
     height: parent.height
     contentHeight: icol.height
+    interactive: contentHeight > height
     width: iwin.width / 3
     clip: true
     Column{

@@ -7,6 +7,7 @@ RowLayout {
     spacing: 10
     property alias label: ilable.text
     property alias value: ispinbox.value
+    property alias spinbox: ispinbox
     property int labelSize: ilable.paintedWidth
     Label{
         id: ilable

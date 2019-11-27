@@ -19,6 +19,7 @@ ColumnLayout{
             text: "bg type"
         }
         ComboBox{
+            id: ibackgroundType
             Layout.fillWidth: true
             flat: true
             model: ["Color","Image","Pattern"]
@@ -50,28 +51,46 @@ ColumnLayout{
         Button{
             text: "change image"
             onClicked: iworld.board.background.openImageSelector()
+            Layout.fillWidth: true
+            flat: true
         }
     }
 
     SidePanelValueBox{
         label: "quality"
+
+        visible: ibackgroundType.currentIndex===1
         labelSize: iroot.labelSize
         width: parent.width
         value: iworld.board.background.quality
         onValueChanged: iworld.board.background.quality = value
+        spinbox.from: 1
     }
     SidePanelValueBox{
         id: iabouncance
 
-        label: "abundance"
+        visible: ibackgroundType.currentIndex===2
+        label: "tiles count H"
         width: parent.width
-        value: iworld.board.background.aboundance
-        onValueChanged: iworld.board.background.aboundance = value
+        value: iworld.board.background.tileH
+        onValueChanged: iworld.board.background.tileH = value
+        spinbox.from: 1
+
     }
+    SidePanelValueBox{
+        visible: ibackgroundType.currentIndex===2
+        label: "tiles count V"
+        width: parent.width
+        value: iworld.board.background.tileV
+        onValueChanged: iworld.board.background.tileV = value
+        spinbox.from: 1
+    }
+
 
     SidePanelValueBox{
         label: "velocity"
         labelSize: iroot.labelSize
+        visible: ibackgroundType.currentIndex!==0
         width: parent.width
         value: iworld.board.background.velocity
         onValueChanged: iworld.board.background.velocity = value

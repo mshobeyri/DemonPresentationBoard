@@ -10,12 +10,16 @@ Item{
     width: parent.width
     height: parent.height
     property int velocity: 0
-//    property string color: "#500a99"
-property string color: "white"
+    property string color: "#30080d"
     property string source: "qrc:/res/res/backgrounds/pattern-10.svg"
     property int quality: 20
-    property int aboundance : 20
+    property int tileH : 5;
+    property int tileV : 5;
     property int type: 0 // color image pattern
+
+    onTileHChanged: iimage.updateSize()
+    onTileVChanged: iimage.updateSize()
+    onQualityChanged: iimage.updateSize()
 
     function openImageSelector(){
         isourceSelector.open()
@@ -31,8 +35,6 @@ property string color: "white"
         anchors.fill: parent
         antialiasing: true
         color: parent.color
-        border.width: 2
-        border.color: "black"
     }
     FileDialog{
         id: isourceSelector
@@ -50,16 +52,14 @@ property string color: "white"
         antialiasing: true
         smooth: true
         visible: type > 0
-        property int imageWidth: 1
-        property int imageHeight: 1
+        property int imageW
+        property int imageH
+
         function updateSize(){
             if(type == 1){
-                sourceSize = Qt.size(quality*iroot.width/20,quality*iroot.width/20)
+                sourceSize = Qt.size(quality*iroot.width/20,quality*iroot.height/20)
             }else if(type === 2){
-                imageWidth = sourceSize.width
-                imageHeight = sourceSize.height
-                sourceSize = Qt.size(iimage.width / imageWidth ,
-                                     iimage.height/imageHeight)
+                sourceSize = Qt.size(iroot.width/tileH,iroot.height/tileV)
             }
         }
 

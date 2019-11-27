@@ -122,6 +122,14 @@ ListView {
         delegate: MouseArea {
             id: idelegateRoot
 
+            width: iwin.width / 6
+            height: width / 16 * 9
+            drag.target: icon
+            scale: currentItem === idelegateRoot ? 1 : 0.9
+            property string name: DelegateModel.toString()
+            property int selectedIndex: -1
+            property int visualIndex: DelegateModel.itemsIndex
+
             function index(){
                 return model.index
             }
@@ -137,18 +145,10 @@ ListView {
                 },Qt.size(320,180));
             }
 
-            width: iwin.width / 6
-            height: iwin.height / 6
-            drag.target: icon
-            scale: currentItem === idelegateRoot ? 1 : 0.9
-
             Behavior on scale {
                 NumberAnimation{duration: 100}
             }
 
-            property string name: DelegateModel.toString()
-            property int selectedIndex: -1
-            property int visualIndex: DelegateModel.itemsIndex
             Component.onCompleted: {
                 if(model.image===""){
                     updateImage()
@@ -165,7 +165,7 @@ ListView {
                 id: icon
 
                 width: iwin.width / 6 - 10
-                height: iwin.height/6 - 10
+                height: width / 16 * 9
                 color: "#333333"
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
