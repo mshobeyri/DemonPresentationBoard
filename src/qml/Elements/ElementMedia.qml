@@ -23,6 +23,11 @@ ElementBase{
         color = json.color
     }
 
+    function handleFile(path){
+        icontainer.tempName = fileio.copyToTempFolder(path)
+        icontainer.source = fileio.tempFolderFileUrl(tempName)
+    }
+
     onCreated: {
         if(icontainer.source == "")
             isourceSelector.open()
@@ -32,8 +37,7 @@ ElementBase{
         id: isourceSelector
         nameFilters: ["Video files (*.mp4 *.avi *.mov *.mkv *.wmv)", "All files (*.*)"]
         onAccepted: {
-            icontainer.tempName = fileio.copyToTempFolder(currentFile)
-            icontainer.source = fileio.tempFolderFileUrl(tempName)
+            handleFile(currentFile)
         }
         onRejected: icontainer.deleteIt()
     }

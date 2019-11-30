@@ -19,6 +19,10 @@ ElementBase{
     function fromJson(json){
         source = fileio.tempFolderFileUrl(json.tempName)
     }
+    function handleFile(path){
+        icontainer.tempName = fileio.copyToTempFolder(path)
+        icontainer.source = fileio.tempFolderFileUrl(tempName)
+    }
 
     onCreated: {
         if(icontainer.source == "")
@@ -29,8 +33,7 @@ ElementBase{
         id: isourceSelector
         nameFilters: ["Image files (*.jpg *.jpeg *.png *.svg *.gif)", "All files (*.*)"]
         onAccepted: {
-            icontainer.tempName = fileio.copyToTempFolder(currentFile)
-            icontainer.source = fileio.tempFolderFileUrl(tempName)
+            handleFile(currentFile)
         }
         onRejected: icontainer.deleteIt()
     }

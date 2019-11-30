@@ -49,7 +49,7 @@ Item {
         ibackground.velocity = json.velocity
         ibackground.quality = json.quality
         if(json.tempName!=="")
-        ibackground.source = fileio.tempFolderFileUrl(json.tempName)
+            ibackground.source = fileio.tempFolderFileUrl(json.tempName)
     }
 
     function binaries(){
@@ -114,14 +114,15 @@ Item {
         onEntered: {
             drag.accepted = drag.urls[0]!==undefined &&
                     (Qmlhelper.isImage(drag.urls[0]) ||
-                    Qmlhelper.isMedia(drag.urls[0]))
+                     Qmlhelper.isMedia(drag.urls[0]))
         }
         onDropped: {
             for(var i = 0; i< drop.urls.length;i++){
                 if(Qmlhelper.isImage(drop.urls[i]))
-                    iworld.createElement(Element.image,{source:drop.urls[i],x:drag.x,y:drag.y})
+                    var element = iworld.createElement(Element.image,{source:drop.urls[i],x:drag.x,y:drag.y})
                 if(Qmlhelper.isMedia(drop.urls[i]))
-                    iworld.createElement(Element.media,{source:drop.urls[i],x:drag.x,y:drag.y})
+                    element = iworld.createElement(Element.media,{source:drop.urls[i],x:drag.x,y:drag.y})
+                element.handleFile(drop.urls[i])
             }
         }
     }
