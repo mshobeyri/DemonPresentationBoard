@@ -69,6 +69,7 @@ Trident is a crossplatform application to take presentation process in your hand
 - switch between frames
 - read the notes that you have wroted in demon-pb for the frame you are in
 - a fake laser pointer to point board just by touching mobile screen
+- see remained time for frame
 - customize your laser size and color
 
 ### Depends on

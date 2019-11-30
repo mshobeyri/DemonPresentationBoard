@@ -48,6 +48,10 @@ Item {
         isFileChanged = true
         iundoRedo.grab()
     }
+    function resetFile(){
+        currentFilePath = ""
+        currentFileName = ""
+    }
 
     Component.onCompleted:  {
         if(isettings.openRecentsStr === "")

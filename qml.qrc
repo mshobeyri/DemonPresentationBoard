@@ -83,5 +83,6 @@
         <file>res/backgrounds/pattern-9.svg</file>
         <file>res/backgrounds/pattern-10.svg</file>
         <file>res/backgrounds/tree.svg</file>
+        <file>res/Templates/about.dpb</file>
     </qresource>
 </RCC>

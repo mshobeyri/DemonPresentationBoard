@@ -19,15 +19,15 @@ CustomDialog {
             button.iconStr: "file-plus"
             label: "Templates"
             onBtnClicked: iwelcome.close()
+            onItemClicked: {
+                ifileManager.openAccepted(":/res/res/"+subtitle)
+                ifileManager.resetFile()
+                iwelcome.close()
+            }
             model: ListModel{
                 ListElement{
-                    title: "hell"
-                    subtitle : "red dragon theme"
-                }
-
-                ListElement{
-                    title: "dark"
-                    subtitle : "dark theme"
+                    title: "about"
+                    subtitle : "Templates/about.dpb"
                 }
             }
         }
