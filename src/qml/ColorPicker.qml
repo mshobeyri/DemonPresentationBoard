@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
+import QtQuick.Controls.Material 2.3
 
 Item {
     id: iroot
@@ -270,6 +271,59 @@ Item {
                 }
             }
         }
+        Column{
+            Layout.leftMargin: 10
+            property int size: 15
+            Button{
+                width: parent.size
+                height: width
+                Material.background: ithemeGallery.background
+                flat: true
+                topInset: 0
+                bottomInset: 0
+                onClicked: colorOutput = "background"
+            }
+            Button{
+                width: parent.size
+                height: width
+                Material.background: ithemeGallery.foregraound
+                flat: true
+                topInset: 0
+                bottomInset: 0
+                onClicked: colorOutput = "foregraound"
+            }
+
+            Button{
+                width: parent.size
+                height: width
+                Material.background: ithemeGallery.borders
+                flat: true
+                topInset: 0
+                bottomInset: 0
+                onClicked: colorOutput = "borders"
+            }
+
+            Button{
+                width: parent.size
+                height: width
+                Material.background: ithemeGallery.primary
+                flat: true
+                topInset: 0
+                bottomInset: 0
+                onClicked: colorOutput = "primary"
+            }
+
+            Button{
+                width: parent.size
+                height: width
+                Material.background: ithemeGallery.accent
+                flat: true
+                topInset: 0
+                bottomInset: 0
+                onClicked: colorOutput = "accent"
+            }
+        }
+
         Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
