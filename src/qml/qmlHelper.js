@@ -7,7 +7,7 @@ function fileFormatFromPath(path){
 
 function isImage(path){
     var f = fileFormatFromPath(path)
-    return f==="png" || f==="jpg" || f==="svg" || f==="gif"
+    return f==="png" || f==="jpeg"  || f==="jpg" || f==="svg" || f==="gif"
 }
 function isMedia(path){
     var f = fileFormatFromPath(path)
