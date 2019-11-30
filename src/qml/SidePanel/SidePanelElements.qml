@@ -32,8 +32,9 @@ Grid {
                 name: "media"
             }
             ListElement{
-                icon : "browser"
-                name: "browser"
+                icon : "Σ"
+                disable: true
+                name: "formula(not implemented)"
             }
             ListElement{
                 icon : "rectangle-landscape"
@@ -75,6 +76,7 @@ Grid {
             font.family: ifontAwsome.name
             leftInset: 5
             rightInset: 5
+            enabled: model.disable!==undefined && !model.disable
             width: height
             checkable: true
             ToolTip.text: model.name.toUpperCase()
