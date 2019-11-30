@@ -11,7 +11,7 @@ ElementBase{
 
     property string tempName: ""
     property string source: ""
-    property color color: "#000000"
+    property string color: "background"
     property var json: {
         "type":Element.media,
         "common": icontainer.commonData,
@@ -44,7 +44,7 @@ ElementBase{
 
             source: icontainer.source
             antialiasing: true
-            backgroundColor: icontainer.color
+            backgroundColor: ithemeGallery.themeColor(icontainer.color)
             Item{
                 width: parent.width
                 height: irowLayout.height

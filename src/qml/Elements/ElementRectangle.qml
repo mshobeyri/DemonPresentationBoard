@@ -6,9 +6,8 @@ ElementBase{
 
     baseWidth: 100
     baseHeight: 100
-
-    property color color: "#333333"
-    property color borderColor: "#141452"
+    property string color: "primary"
+    property string borderColor: "border"
     property real borderWidth: 10
     property var json: {
         "type":Element.rectangle,
@@ -24,9 +23,9 @@ ElementBase{
     }
     component:  Component {
         Rectangle {
-            color: icontainer.color
+            color: ithemeGallery.themeColor(icontainer.color)
             border.width: icontainer.borderWidth
-            border.color: icontainer.borderColor
+            border.color: ithemeGallery.themeColor(icontainer.borderColor)
             antialiasing: true
         }
     }

@@ -8,9 +8,9 @@ ElementBase{
     property int cols: 2
     property int lastRowsCount: 3
     property int lastColumnsCount: 2
-    property color sepratorsColor: "#9cb26a6a"
-    property color backgroundColor: "#584f4f"
-    property color textColor: "white"
+    property string sepratorsColor: "border"
+    property string backgroundColor: "primary"
+    property string textColor: "foreground"
     property int spacing: 4
     property font textFont
     property int textJustify: TextEdit.AlignLeft
@@ -88,7 +88,7 @@ ElementBase{
         Rectangle{
             id: irect
 
-            color: sepratorsColor
+            color: ithemeGallery.themeColor(sepratorsColor)
             clip: true
             antialiasing: true
 
@@ -115,14 +115,14 @@ ElementBase{
                         height: (igrid.height/icontainer.rows)-icontainer.spacing
                         Rectangle{
                             anchors.fill: parent
-                            color: icontainer.backgroundColor
+                            color: ithemeGallery.themeColor(icontainer.backgroundColor)
                             anchors.centerIn: parent
                             antialiasing: true
                             TextEdit {
                                 anchors.fill: parent
                                 antialiasing: true
                                 anchors.margins: icontainer.spacing
-                                color:icontainer.textColor
+                                color: ithemeGallery.themeColor(icontainer.textColor)
                                 enabled: editMode
                                 text: modelData
                                 onTextChanged: listmodel.splice(model.index,1,text)

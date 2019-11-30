@@ -5,8 +5,8 @@ ElementBase{
     id: icontainer
 
     property string text : "Your Text Here!"
-    property color color: "#333333"
-    property color backgroundColor: "transparent"
+    property string color: "foreground"
+    property string backgroundColor: "transparent"
     property font textFont
     property int textJustify: TextEdit.AlignLeft
     property var json: {
@@ -39,7 +39,7 @@ ElementBase{
     component:  Component {
         Rectangle{
             anchors.fill: parent
-            color: icontainer.backgroundColor
+            color: ithemeGallery.themeColor(icontainer.backgroundColor)
             border.width: 1
             border.color: selected? Qt.lighter(itxt.color): "transparent"
             antialiasing: true
@@ -49,7 +49,7 @@ ElementBase{
                 id: itxt
                 anchors.fill: parent
                 anchors.margins: 2
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 enabled: editMode
                 text: icontainer.text
                 font: icontainer.textFont

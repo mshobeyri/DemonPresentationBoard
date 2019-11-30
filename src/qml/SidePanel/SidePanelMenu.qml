@@ -53,7 +53,10 @@ Menu {
         text: "Welcome"
         onTriggered: iwelcome.open()
     }
-
+    MenuItem{
+        text: "Theme Gallery"
+        onTriggered: ithemeGallery.open()
+    }
     MenuSeparator{}
     Menu{
         title: "File"

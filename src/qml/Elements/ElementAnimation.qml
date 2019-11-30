@@ -8,12 +8,12 @@ ElementBase{
     property bool animeEnable: false
     property string text : "Your Text Here!"
     property int textJustify: TextEdit.AlignLeft
-    property color textColorHelper: "red"
-    property color color1: "red"
-    property color color2: "blue"
-    property color textBackgroundColor: "transparent"
-    property color backgroundColor1: "transparent"
-    property color backgroundColor2: "transparent"
+    property string textColorHelper: "foreground"
+    property string color1: "foreground"
+    property string color2: "accent"
+    property string textBackgroundColor: "transparent"
+    property string backgroundColor1: "transparent"
+    property string backgroundColor2: "transparent"
     property font animeTextFont
     property int x1:100
     property int x2:100
@@ -196,25 +196,25 @@ ElementBase{
     ColorAnimation on textColorHelper {
         duration: animationDuration
         easing.type: easingType
-        to: icontainer.color2
+        to: ithemeGallery.themeColor(icontainer.color2)
         running: evoked
     }
     ColorAnimation on textColorHelper {
         duration: animationDuration
         easing.type: easingType
-        to: icontainer.color1
+        to: ithemeGallery.themeColor(icontainer.color1)
         running: !evoked
     }
     ColorAnimation on textBackgroundColor {
         duration: animationDuration
         easing.type: easingType
-        to: icontainer.backgroundColor2
+        to: ithemeGallery.themeColor(icontainer.backgroundColor2)
         running: evoked
     }
     ColorAnimation on textBackgroundColor {
         duration: animationDuration
         easing.type: easingType
-        to: icontainer.backgroundColor1
+        to: ithemeGallery.themeColor(icontainer.backgroundColor1)
         running: !evoked
     }
     NumberAnimation on fontSize {
@@ -242,7 +242,7 @@ ElementBase{
                 id: itxt
                 anchors.fill: parent
                 anchors.margins: 2
-                color: icontainer.textColorHelper
+                color: ithemeGallery.themeColor(icontainer.textColorHelper)
                 enabled: editMode
                 text: icontainer.text
                 font.italic: icontainer.animeTextFont.italic

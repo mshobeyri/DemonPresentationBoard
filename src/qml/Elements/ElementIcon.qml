@@ -7,7 +7,7 @@ ElementBase{
 
     fixAspectRatio: true
 
-    property color color: "#002c4f"
+    property string color: "primary"
     property string fontFamilyName: ifontAwsome.name
     property string icon: "info-circle"
     property bool bold: false
@@ -27,7 +27,7 @@ ElementBase{
     }
     component:  Component {
         Label {
-            color: icontainer.color
+            color: ithemeGallery.themeColor(icontainer.color)
             antialiasing: true
             font.family: icontainer.fontFamilyName
             font.bold: icontainer.bold

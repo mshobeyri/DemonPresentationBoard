@@ -4,7 +4,7 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
-    property color color: "#333333"
+    property string color: "accent"
     property string rightMarker: "triangle"
     property string leftMarker: ""
 
@@ -32,7 +32,7 @@ ElementBase{
                     verticalCenter: parent.verticalCenter
                 }
                 height: parent.height / 2
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
             }
             Text{
@@ -42,7 +42,7 @@ ElementBase{
                 rotation: 90
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 font.pixelSize: parent.height
                 font.bold: true
                 font.family: ifontAwsome.name
@@ -57,7 +57,7 @@ ElementBase{
                 rotation: -90
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 font.pixelSize: parent.height
                 font.bold: true
                 font.family: ifontAwsome.name

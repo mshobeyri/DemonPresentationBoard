@@ -4,8 +4,8 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
-    property color color: "blue"
-    property color backgroundColor: "transparent"
+    property string color: "primary"
+    property string backgroundColor: "transparent"
     property int braceWidth: 10
     property var json: {
         "type":Element.bracket,
@@ -22,11 +22,11 @@ ElementBase{
 
     component:  Component {
         Rectangle {
-            color: icontainer.backgroundColor
+            color: ithemeGallery.themeColor(icontainer.backgroundColor)
             antialiasing: true
             Rectangle{
                 width:braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     top: parent.top
@@ -35,7 +35,7 @@ ElementBase{
             }
             Rectangle{
                 width:braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     top: parent.top
@@ -47,7 +47,7 @@ ElementBase{
             Rectangle{
                 width: 2*braceWidth
                 height: braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     top: parent.top
@@ -57,7 +57,7 @@ ElementBase{
             Rectangle{
                 width: 2*braceWidth
                 height: braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     top: parent.top
@@ -67,7 +67,7 @@ ElementBase{
             Rectangle{
                 width: 2*braceWidth
                 height: braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     bottom: parent.bottom
@@ -77,7 +77,7 @@ ElementBase{
             Rectangle{
                 width: 2*braceWidth
                 height: braceWidth
-                color: icontainer.color
+                color: ithemeGallery.themeColor(icontainer.color)
                 antialiasing: true
                 anchors{
                     bottom: parent.bottom

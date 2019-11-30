@@ -5,8 +5,8 @@ ElementBase{
     id: icontainer
 
     fixAspectRatio: true
-    property color color: "blue"
-    property color borderColor: "white"
+    property string color: "primary"
+    property string borderColor: "border"
     property real borderWidth: 10
     property var json: {
         "type":Element.circle,
@@ -23,10 +23,10 @@ ElementBase{
 
     component:  Component {
         Rectangle {
-            color: icontainer.color
+            color: ithemeGallery.themeColor(icontainer.color)
             width: height
             border.width: icontainer.borderWidth
-            border.color: icontainer.borderColor
+            border.color: ithemeGallery.themeColor(icontainer.borderColor)
             antialiasing: true
             smooth: true
             radius: width

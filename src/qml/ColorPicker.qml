@@ -9,6 +9,7 @@ Item {
 
 
     property bool alphaVisible: true
+    property bool visibleThemeColors: true
 
     readonly property color colorValue: hsba(ihueSlider.item.value, isbPicker.saturation,
                                              isbPicker.brightness, ialphaSlider.item.value)
@@ -274,10 +275,11 @@ Item {
         Column{
             Layout.leftMargin: 10
             property int size: 15
+            visible: visibleThemeColors
             Button{
                 width: parent.size
                 height: width
-                Material.background: ithemeGallery.background
+                Material.background: ithemeGallery.backgroundColor
                 flat: true
                 topInset: 0
                 bottomInset: 0
@@ -286,27 +288,27 @@ Item {
             Button{
                 width: parent.size
                 height: width
-                Material.background: ithemeGallery.foregraound
+                Material.background: ithemeGallery.foregroundColor
                 flat: true
                 topInset: 0
                 bottomInset: 0
-                onClicked: colorOutput = "foregraound"
+                onClicked: colorOutput = "foreground"
             }
 
             Button{
                 width: parent.size
                 height: width
-                Material.background: ithemeGallery.borders
+                Material.background: ithemeGallery.borderColor
                 flat: true
                 topInset: 0
                 bottomInset: 0
-                onClicked: colorOutput = "borders"
+                onClicked: colorOutput = "border"
             }
 
             Button{
                 width: parent.size
                 height: width
-                Material.background: ithemeGallery.primary
+                Material.background: ithemeGallery.primaryColor
                 flat: true
                 topInset: 0
                 bottomInset: 0
@@ -316,7 +318,7 @@ Item {
             Button{
                 width: parent.size
                 height: width
-                Material.background: ithemeGallery.accent
+                Material.background: ithemeGallery.accentColor
                 flat: true
                 topInset: 0
                 bottomInset: 0

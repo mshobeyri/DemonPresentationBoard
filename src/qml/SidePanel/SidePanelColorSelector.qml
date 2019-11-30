@@ -10,8 +10,9 @@ Column {
     Layout.preferredWidth: parent.width - 20
     property alias label: icolorCodeTextField.label
     property alias labelSize: icolorCodeTextField.labelSize
-    property color color
+    property string color
     property string colorOutput: ""
+    property bool visibleThemeColors: true
 
     RowLayout{
         width: parent.width
@@ -19,8 +20,8 @@ Column {
             id: icolorCodeTextField
             Layout.preferredWidth: 150
             label: "color"
-            text: irect.color
-            validationRegex: /^#(([0-9a-fA-F]{3}){1,2}|([0-9a-fA-F]{8}))$/
+            text: iroot.color
+            validationRegex: /^#(([0-9a-fA-F]{3}){1,2}|([0-9a-fA-F]{8}))$|^background$|^foreground$|^border$|^primary$|^accent$/
             onTextChanged:  if(isValid)iroot.colorOutput = text
         }
         ChessBoard{
@@ -33,8 +34,7 @@ Column {
                 border.width: 1
                 layer.enabled: true
                 anchors.fill: parent
-                color: iroot.color
-                onColorChanged: iroot.colorOutput = color
+                color: ithemeGallery.themeColor(iroot.color)
             }
             MouseArea{
                 anchors.fill: parent
@@ -54,6 +54,7 @@ Column {
         id: icolorPicker
 
         visible: opacity!==0
+        visibleThemeColors: iroot.visibleThemeColors
         width: parent.width - 20
         height: icolorCodeTextField.textFocus ?parent.width / 2 - 20:0
         opacity: icolorCodeTextField.textFocus?1:0

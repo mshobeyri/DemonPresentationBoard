@@ -37,7 +37,7 @@ Item{
     Rectangle{
         anchors.fill: parent
         antialiasing: true
-        color: parent.color
+        color: ithemeGallery.themeColor(parent.color)
     }
     FileDialog{
         id: isourceSelector
