@@ -1,4 +1,4 @@
-![Demon](./res/logo.png)
+![Demon](./res/logo.png =100x100)
 
 # Demon Presentation board
 Simple crossplatform non-linear presentation file maker-viewer application. you can add elements in the board and add frame in timeline using just one click and here it is... your presentation file. support Linux, Windows and macos.
@@ -29,7 +29,7 @@ this project also contain a mobile application for controlling presentation proc
 after clone project and build dependencied open demon-pb in qt creator and click run button.
 
 ### Todos
- [ ] Add Formula element
+- [ ] Add Formula element
 
 ### Logo
 logo desined base on first letters of demon presentation board.
@@ -38,7 +38,7 @@ at the bottom you can see this tree letters and main section is compound of this
 
 ----
 
-![Trident](./res/trident.png)
+![Trident](./res/trident.png =100x100)
 
 # Trident
 Trident is a crossplatform application to take presentation process in your hands.
@@ -52,10 +52,10 @@ Trident is a crossplatform application to take presentation process in your hand
 - customize your laser size and color
 
 ### Todos
- [x] Add WIFI support
- [x] UPNP support
- [ ] Add Bluetooth support
- [ ] Add audience question support(user ask question using their phones and you see the notification)
+- [x] Add WIFI support
+- [x] UPNP support
+- [ ] Add Bluetooth support
+- [ ] Add audience question support(user ask question using their phones and you see the notification)
 
 ### Logo
 logo desined base on demon presentation board logo.
