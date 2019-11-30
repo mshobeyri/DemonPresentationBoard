@@ -1,14 +1,14 @@
-![Demon](./res/logo.png)
-
 <p align="center">
-  <img width="100" height="100" src="./res/logo.png">
+  <img width="250" height="250" src="./res/logo.png">
 </p>
 
 # Demon Presentation board
 Simple crossplatform non-linear presentation file maker-viewer application. you can add elements in the board and add frame in timeline using just one click and here it is... your presentation file. support Linux, Windows and macos.
 this project also contain a mobile application for controlling presentation process called trident.
 
-![DemonSc](./screenshots/dpb.png)
+<p align="center">
+  <img src="./screenshots/dpb.png">
+</p>
 
 ### Elements
 - Text
@@ -42,12 +42,17 @@ at the bottom you can see this tree letters and main section is compound of this
 
 ----
 
-![Trident](./res/trident.png =100x100)
+<p align="center">
+  <img width="100" height="100" src="./res/logo.png">
+</p>
+
 
 # Trident
 Trident is a crossplatform application to take presentation process in your hands.
 
-![TriedntSc](./screenshots/trident.png)
+<p align="center">
+  <img src="./screenshots/trident.png">
+</p>
 
 ### Using Trident You Can...
 - switch between frames
