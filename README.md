@@ -1,8 +1,11 @@
-![Demon](./res/logo.jpg)
+![Demon](./res/logo.png)
+
 # Demon Presentation board
 Simple crossplatform non-linear presentation file maker-viewer application. you can add elements in the board and add frame in timeline using just one click and here it is... your presentation file. support Linux, Windows and macos.
 this project also contain a mobile application for controlling presentation process called trident.
+
 ![DemonSc](./screenshots/dpb.png)
+
 ### Elements
 - Text
 - Image
@@ -34,10 +37,14 @@ at the bottom you can see this tree letters and main section is compound of this
 *desined by: mehrdad shobeyri*
 
 ----
-![Trident](./res/trident.jpg)
+
+![Trident](./res/trident.png)
+
 # Trident
 Trident is a crossplatform application to take presentation process in your hands.
+
 ![TriedntSc](./screenshots/trident.png)
+
 ### Using Trident You Can...
 - switch between frames
 - read the notes that you have wroted in demon-pb for the frame you are in
