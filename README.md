@@ -9,8 +9,17 @@ this project also contain a mobile application for controlling presentation proc
 ### ScreenShots
 
 <p align="center">
-  <img src="./screenshots/dpb.png">
+  <img src="./screenshots/dpb1.png">
 </p>
+
+<p align="center">
+  <img src="./screenshots/dpb2.png">
+</p>
+
+<p align="center">
+  <img src="./screenshots/dpb3.png">
+</p>
+
 
 ### Elements
 - Text
