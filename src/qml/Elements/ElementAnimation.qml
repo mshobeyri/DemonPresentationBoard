@@ -14,6 +14,8 @@ ElementBase{
     property string textBackgroundColor: "transparent"
     property string backgroundColor1: "transparent"
     property string backgroundColor2: "transparent"
+    property string evokeInId: ""
+    property int evokeInIndex: -1
     property font animeTextFont
     property int x1:100
     property int x2:100
@@ -30,6 +32,17 @@ ElementBase{
     property int r2:0
     property int animationDuration: 1000
     property int easingType: Easing.Linear
+
+    Connections{
+        target: itimeline
+        onTimelineFrameOrderChanged:{
+            evokeInIndex = itimeline.getFrameIndex(evokeInId)
+        }
+        onTimelineFrameChanged:{
+            evoked = (index >= evokeInIndex)
+        }
+    }
+
     property var json: {
         "type": Element.animation,
         "common": icontainer.commonData,
@@ -52,6 +65,8 @@ ElementBase{
         "r2": icontainer.r2,
         "s1": icontainer.s1,
         "s2": icontainer.s2,
+        "evokeIndex": icontainer.evokeInIndex,
+        "evokeId": icontainer.evokeInId,
         "animationDuration": animationDuration,
         "easingType":easingType
     }

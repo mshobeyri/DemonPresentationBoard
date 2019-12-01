@@ -40,7 +40,7 @@ ApplicationWindow {
     Timeline{
         id: itimeline
         board: iworld.board
-        onTimelienChanged: ifileManager.fileChanged()
+        onTimelineChanged: ifileManager.fileChanged()
     }
     SidePanelIconGallery{
         id: iiconGallery

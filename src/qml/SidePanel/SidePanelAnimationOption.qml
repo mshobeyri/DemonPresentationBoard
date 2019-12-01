@@ -137,81 +137,15 @@ ColumnLayout{
             }
         }
     }
-    SidePanelValueBox{
-        id: ianimeDuration
-        Layout.topMargin: 10
-        visible: optionVisible('animeTextFont')
-        label: "duration"
-        value: visible?iworld.currentElement.animationDuration:0
+    MenuSeparator{
         Layout.fillWidth: true
-        onValueChanged: if(visible)iworld.currentElement.animationDuration = value
-    }
-    RowLayout {
-        spacing: 10
-        width: parent.width
-
-        Label{
-            Layout.preferredWidth: labelSize
-            text: "easing"
-        }
-        ComboBox{
-            visible: optionVisible("easingType")
-            Layout.fillWidth: true
-            model: ["Linear",
-                "In Quad",
-                "Out Quad",
-                "In Out Quad",
-                "Out In Quad",
-                "In Cubic",
-                "Out Cubic",
-                "In Out Cubic",
-                "Out In Cubic",
-                "In Quart",
-                "Out Quart",
-                "In Out Quart",
-                "Out In Quart",
-                "In Quint",
-                "Out Quint",
-                "In Out Quint",
-                "Out In Quint",
-                "InSine",
-                "OutSine",
-                "In OutSine",
-                "Out InSine",
-                "In Expo",
-                "Out Expo",
-                "In Out Expo",
-                "Out In Expo",
-                "In Circ",
-                "Out Circ",
-                "In Out Circ",
-                "Out In Circ",
-                "In Elastic",
-                "Out Elastic",
-                "In Out Elastic",
-                "Out In Elastic",
-                "In Back",
-                "Out Back",
-                "In Out Back",
-                "Out In Back",
-                "In Bounce",
-                "Out Bounce",
-                "In Out Bounce",
-                "Out In Bounce"]
-            popup.x: -labelSize
-            popup.width: iroot.width
-            popup.height: iwin.height / 2
-            flat: true
-            currentIndex: visible?iworld.currentElement.easingType:0
-            onCurrentTextChanged: if(visible)iworld.currentElement.easingType =
-                                             currentIndex
-            delegate: MenuItem{
-                text: modelData
-                font.family: modelData
-            }
-        }
     }
 
+    Label{
+        text: "parameters"
+        Material.foreground: Material.accent
+        Layout.alignment: Qt.AlignHCenter
+    }
     Button{
         id: ievokeBtn
         visible: optionVisible('animeTextFont')
@@ -222,7 +156,7 @@ ColumnLayout{
         checkable: true
         checked: visible?iworld.currentElement.evoked:false
         onCheckedChanged: {
-            iworld.currentElement.evoked = checked
+            if(visible)iworld.currentElement.evoked = checked
         }
     }
 
@@ -338,5 +272,123 @@ ColumnLayout{
                                              :iworld.currentElement.backgroundColor1= colorOutput
                                    iworld.currentElement.textBackgroundColor= colorOutput
                                }
+    }
+    MenuSeparator{
+        Layout.fillWidth: true
+    }
+
+    Label{
+        text: "animation"
+        Material.foreground: Material.accent
+        Layout.alignment: Qt.AlignHCenter
+    }
+
+    SidePanelValueBox{
+        id: ianimeDuration
+        Layout.topMargin: 10
+        visible: optionVisible('animeTextFont')
+        label: "duration"
+        value: visible?iworld.currentElement.animationDuration:0
+        Layout.fillWidth: true
+        onValueChanged: if(visible)iworld.currentElement.animationDuration = value
+    }
+    RowLayout {
+        spacing: 10
+        width: parent.width
+
+        Label{
+            Layout.preferredWidth: labelSize
+            text: "easing"
+        }
+        ComboBox{
+            visible: optionVisible("easingType")
+            Layout.fillWidth: true
+            model: ["Linear",
+                "In Quad",
+                "Out Quad",
+                "In Out Quad",
+                "Out In Quad",
+                "In Cubic",
+                "Out Cubic",
+                "In Out Cubic",
+                "Out In Cubic",
+                "In Quart",
+                "Out Quart",
+                "In Out Quart",
+                "Out In Quart",
+                "In Quint",
+                "Out Quint",
+                "In Out Quint",
+                "Out In Quint",
+                "InSine",
+                "OutSine",
+                "In OutSine",
+                "Out InSine",
+                "In Expo",
+                "Out Expo",
+                "In Out Expo",
+                "Out In Expo",
+                "In Circ",
+                "Out Circ",
+                "In Out Circ",
+                "Out In Circ",
+                "In Elastic",
+                "Out Elastic",
+                "In Out Elastic",
+                "Out In Elastic",
+                "In Back",
+                "Out Back",
+                "In Out Back",
+                "Out In Back",
+                "In Bounce",
+                "Out Bounce",
+                "In Out Bounce",
+                "Out In Bounce"]
+            popup.x: -labelSize
+            popup.width: iroot.width
+            popup.height: iwin.height / 2
+            flat: true
+            currentIndex: visible?iworld.currentElement.easingType:0
+            onCurrentTextChanged: if(visible)iworld.currentElement.easingType =
+                                             currentIndex
+            delegate: MenuItem{
+                text: modelData
+                font.family: modelData
+            }
+        }
+    }
+    MenuSeparator{
+        Layout.fillWidth: true
+    }
+    Label{
+        text: "auto evoke"
+        Material.foreground: Material.accent
+        Layout.alignment: Qt.AlignHCenter
+    }
+
+    Button{
+        visible: optionVisible('animeTextFont')
+        text: visible?"Evoke In This Frame":""
+        Layout.fillWidth: true
+        Layout.topMargin: 10
+        flat: true
+        onClicked: {
+            if(!visible || itimeline.currentFrameData().data === undefined)
+                return
+            iworld.currentElement.evokeInId = itimeline.currentFrameData().data.id
+            iworld.currentElement.evokeInIndex = itimeline.currentFrameData().index
+        }
+    }
+    Label{
+        Layout.alignment: Qt.AlignCenter
+        visible: optionVisible('animeTextFont')
+        text:{
+            if(!visible) ""
+            if(visible && iworld.currentElement.evokeInIndex >=0){
+                "evoke frame: Frame"+ (iworld.currentElement.evokeInIndex+1)
+            }else{
+                "evoke frame: No Frame"
+            }
+        }
     }
 }

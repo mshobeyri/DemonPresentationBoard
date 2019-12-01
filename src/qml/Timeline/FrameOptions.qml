@@ -28,7 +28,7 @@ Flickable {
                     return
                 iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"name",text)
-                timelienChanged()
+                timelineChanged()
                 iremoteHandler.sendFramesNameToTrident()
             }
         }
@@ -45,7 +45,7 @@ Flickable {
             onValueChanged: {
                 iframesGrid.frameModel.setProperty(
                                 iframesGrid.currentIndex,"time",value)
-                timelienChanged()
+                timelineChanged()
                 iremoteHandler.sendFrameDataToTrident()
             }
         }
@@ -70,7 +70,7 @@ Flickable {
                     return
                 iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"notes",text)
-                timelienChanged()
+                timelineChanged()
                 iremoteHandler.sendFrameDataToTrident()
             }
         }
@@ -89,6 +89,7 @@ Flickable {
             text: "delete frame"
             onClicked: {
                 iframesGrid.frameModel.remove(iframesGrid.currentIndex)
+                timelineFrameOrderChanged()
                 iframesGrid.currentIndex = -1
             }
         }

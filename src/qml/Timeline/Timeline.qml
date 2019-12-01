@@ -90,7 +90,17 @@ CustomDialog {
         iframesGrid.frameModel.clear()
     }
 
-    signal timelienChanged
+    function getFrameIndex(id){
+        for(var i=0;i< iframesGrid.frameModel.count;i++){
+            if(id === iframesGrid.frameModel.get(i).id){
+                return i
+            }
+        }
+    }
+
+    signal timelineChanged
+    signal timelineFrameOrderChanged
+    signal timelineFrameChanged(var index)
 
     Shortcut {
         sequence: StandardKey.MoveToNextChar

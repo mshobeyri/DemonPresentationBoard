@@ -18,6 +18,7 @@ ListView {
         if(currentItem!==null)
             currentFrameModel = currentItem.modelObj()
         ianimations.start()
+        timelineFrameChanged(currentIndex)
     }
     function goPrev(){
         if(igrid.currentIndex > 0 )
@@ -117,7 +118,7 @@ ListView {
         id: ivisualModel
         model: ListModel {
             id: iframesModel
-            onCountChanged: timelienChanged()
+            onCountChanged: timelineChanged()
         }
         delegate: MouseArea {
             id: idelegateRoot
@@ -158,7 +159,6 @@ ListView {
 
             onClicked: {
                 currentIndex = model.index
-                goCurrentFrame(model)
             }
 
             Rectangle {
@@ -242,7 +242,8 @@ ListView {
                         selectedIndex = drag.source.visualIndex
                     }
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
-                    timelienChanged()
+                    timelineFrameOrderChanged()
+                    timelineChanged()
                     iremoteHandler.sendFramesNameToTrident()
                 }
             }
