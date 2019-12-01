@@ -86,15 +86,6 @@ Item{
                 id: iloader
                 anchors.fill: parent
             }
-            DropShadow{
-                source: iloader.item
-                anchors.fill: ibaseElement
-                horizontalOffset: 0
-                verticalOffset: 0
-                radius: 8.0
-                samples: 17
-                color: "#80000000"
-            }
 
             MouseArea{
                 id: iselectDragMouseArea
@@ -104,7 +95,17 @@ Item{
                 onDoubleClicked: iroot.doubleClicked()
                 drag.target: iroot
                 drag.axis: Drag.XAndYAxis
-                enabled: !editMode && !locked
+                enabled: !editMode && !locked && !lockAllElements
+                cursorShape: {
+                    if(containsMouse && spaceIsDown){
+                        Qt.ClosedHandCursor
+                    }else if(!containsMouse && spaceIsDown){
+                        Qt.OpenHandCursor
+                    }else{
+                        Qt.ArrowCursor
+                    }
+                }
+
                 property bool moved: false
                 onClicked: {
                     if(currentElement == iroot)
@@ -129,6 +130,7 @@ Item{
                 anchors.fill: parent
                 enabled: locked
                 propagateComposedEvents: true
+                cursorShape: iselectDragMouseArea.cursorShape
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
                 onPressed: {
                     if (mouse.button === Qt.LeftButton){

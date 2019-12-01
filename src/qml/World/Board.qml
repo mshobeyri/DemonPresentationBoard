@@ -68,13 +68,41 @@ Item {
     Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
     Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
 
+    Shortcut{
+        sequence: "Space"
+        onActivated: {
+            iframeMouseArea.forceActiveFocus()
+            spaceIsDown = true
+            console.log(spaceIsDown)
+        }
+        autoRepeat: false
+    }
     MouseArea {
         id: iframeMouseArea
 
+        focus: true
         anchors.fill: parent
         propagateComposedEvents: true
         drag.axis: Drag.XAndYAxis
         drag.target: iboard
+        cursorShape: containsMouse && isidePanel.insertCandidateComponent===""?
+                         Qt.ClosedHandCursor:
+                         spaceIsDown? Qt.OpenHandCursor:
+                                      Qt.ArrowCursor
+
+        Keys.onSpacePressed: {
+            if (event.isAutoRepeat)
+                return ;
+            spaceIsDown = true
+        }
+        Keys.onReleased: {
+            if (event.isAutoRepeat)
+                return;
+            if (event.key === Qt.Key_Space && spaceIsDown)
+                spaceIsDown = false
+        }
+
+        onPressed: forceActiveFocus()
         onClicked: {
             if(isidePanel.insertCandidateComponent!==""){
                 createElement(isidePanel.insertCandidateComponent,

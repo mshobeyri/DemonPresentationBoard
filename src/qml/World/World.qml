@@ -13,12 +13,14 @@ Item{
     property real handlesScale: 1 / (iboard.xScale * iadjuster.scale)
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
-
+    property bool spaceIsDown: false
+    property bool lockAllElements: spaceIsDown || isidePanel.insertCandidateComponent!==""
     Component.onCompleted: {
         updatePosition()
         iboard.x = 0.025 * iboard.width
         iboard.y = 0.025 * iboard.height
     }
+
 
     function toJson(){
         var json = {
@@ -109,6 +111,7 @@ Item{
             iboard.yScale -= 0.1* iboard.yScale
         }
     }
+
     Item{
         id: iadjuster
         anchors.fill: parent
