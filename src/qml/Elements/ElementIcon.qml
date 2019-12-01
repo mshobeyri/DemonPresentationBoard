@@ -29,7 +29,7 @@ ElementBase{
         Label {
             color: ithemeGallery.themeColor(icontainer.color)
             antialiasing: true
-            font.family: icontainer.fontFamilyName
+            font.family: ifontAwsome.name//icontainer.fontFamilyName
             font.bold: icontainer.bold
             text: icontainer.icon
             width: height

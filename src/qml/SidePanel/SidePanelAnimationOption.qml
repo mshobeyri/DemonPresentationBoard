@@ -156,7 +156,7 @@ ColumnLayout{
         checkable: true
         checked: visible?iworld.currentElement.evoked:false
         onCheckedChanged: {
-            if(visible)iworld.currentElement.evoked = checked
+            if(iroot.visible)iworld.currentElement.evoked = checked
         }
     }
 
@@ -238,7 +238,7 @@ ColumnLayout{
         visible: optionVisible('fontSize')
         value: visible?iworld.currentElement.fontSize:0
         width: parent.width
-        onValueChanged: if(visible){
+        onValueChanged: if(iroot.visible){
                             ievokeBtn.checked?
                                         iworld.currentElement.s2= value
                                       :iworld.currentElement.s1= value
@@ -249,11 +249,10 @@ ColumnLayout{
     SidePanelColorSelector{
         id: icolor
         label: "color"
-        visible: parent.visible
         labelSize : iborderColor.labelSize
-        color: visible? ievokeBtn.checked?iworld.currentElement.color2:
+        color: iroot.visible? ievokeBtn.checked?iworld.currentElement.color2:
                                            iworld.currentElement.color1:"white"
-        onColorOutputChanged: if(visible){
+        onColorOutputChanged: if(iroot.visible){
                                   ievokeBtn.checked?
                                               iworld.currentElement.color2= colorOutput
                                             :iworld.currentElement.color1= colorOutput
@@ -266,7 +265,7 @@ ColumnLayout{
         color: visible?ievokeBtn.checked?
                             iworld.currentElement.backgroundColor2
                           :iworld.currentElement.backgroundColor1:"white"
-        onColorOutputChanged:  if(visible){
+        onColorOutputChanged:  if(iroot.visible){
                                    ievokeBtn.checked?
                                                iworld.currentElement.backgroundColor2= colorOutput
                                              :iworld.currentElement.backgroundColor1= colorOutput
@@ -290,7 +289,7 @@ ColumnLayout{
         label: "duration"
         value: visible?iworld.currentElement.animationDuration:0
         Layout.fillWidth: true
-        onValueChanged: if(visible)iworld.currentElement.animationDuration = value
+        onValueChanged: if(iroot.visible)iworld.currentElement.animationDuration = value
     }
     RowLayout {
         spacing: 10
@@ -349,7 +348,7 @@ ColumnLayout{
             popup.height: iwin.height / 2
             flat: true
             currentIndex: visible?iworld.currentElement.easingType:0
-            onCurrentTextChanged: if(visible)iworld.currentElement.easingType =
+            onCurrentTextChanged: if(iroot.visible)iworld.currentElement.easingType =
                                              currentIndex
             delegate: MenuItem{
                 text: modelData

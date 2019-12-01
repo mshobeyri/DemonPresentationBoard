@@ -25,8 +25,8 @@ ElementBase{
     }
     function fromJson(json){
         source = fileio.tempFolderFileUrl(json.tempName)
-        evokeIndex = json.evokeInIndex
-        evokeId = json.evokeInId
+        evokeInIndex = json.evokeIndex
+        evokeInId = json.evokeId
         color = json.color
     }
 

@@ -104,8 +104,8 @@ ElementBase{
         r2 = json.r2
         s1 = json.s1
         s2 = json.s2
-        evokeIndex= json.evokeInIndex
-        evokeId= json.evokeInId
+        evokeInIndex= json.evokeIndex
+        evokeInId= json.evokeId
         fontSize =  json.s1
         animeEnable = true
     }
