@@ -66,10 +66,12 @@ ApplicationWindow {
         toFileFunc: function toFile(){
             var file = {
                 "world":"",
-                "timeline":""
+                "timeline":"",
+                "theme": ""
             }
             file.world = iworld.toJson()
             file.timeline = itimeline.toJson()
+            file.theme = ithemeGallery.toJson()
 
             return JSON.stringify(file)
         }
@@ -80,6 +82,7 @@ ApplicationWindow {
             var jsData = JSON.parse(data)
             iworld.fromJson(jsData.world)
             itimeline.fromJson(jsData.timeline)
+            ithemeGallery.fromJson(jsData.theme)
         }
 
         binaryFilesFunc: function(){

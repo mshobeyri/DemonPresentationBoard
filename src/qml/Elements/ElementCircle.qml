@@ -5,7 +5,7 @@ ElementBase{
     id: icontainer
 
     fixAspectRatio: true
-    property string color: "primary"
+    property string color: "accent"
     property string borderColor: "border"
     property real borderWidth: 10
     property var json: {
