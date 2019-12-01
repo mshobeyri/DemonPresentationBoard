@@ -43,7 +43,7 @@ ElementBase{
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 color: ithemeGallery.themeColor(icontainer.color)
-                font.pixelSize: parent.height
+                font.pixelSize: parent.height / 1.3
                 font.bold: true
                 font.family: ifontAwsome.name
                 antialiasing: true
@@ -58,7 +58,7 @@ ElementBase{
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 color: ithemeGallery.themeColor(icontainer.color)
-                font.pixelSize: parent.height
+                font.pixelSize: parent.height/ 1.3
                 font.bold: true
                 font.family: ifontAwsome.name
                 antialiasing: true

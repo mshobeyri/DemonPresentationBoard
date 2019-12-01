@@ -262,7 +262,7 @@ ColumnLayout{
     SidePanelColorSelector{
         labelSize : iborderColor.labelSize
         label: "background"
-        color: visible?ievokeBtn.checked?
+        color: iroot.visible?ievokeBtn.checked?
                             iworld.currentElement.backgroundColor2
                           :iworld.currentElement.backgroundColor1:"white"
         onColorOutputChanged:  if(iroot.visible){
