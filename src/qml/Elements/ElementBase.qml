@@ -231,7 +231,7 @@ Item{
                     anchors.fill: parent
                     drag.target: isizeHandle
                     drag.axis: fixAspectRatio?Drag.XAxis:Drag.XAndYAxis
-                    drag.minimumX: 30
+                    drag.minimumX: Math.max(iworld.handlesScale * handleSize,10)
                     drag.minimumY: drag.minimumX
                     onReleased: {
                         ifileManager.fileChanged()

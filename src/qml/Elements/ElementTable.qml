@@ -49,6 +49,9 @@ ElementBase{
         if(loader.item!==null)
             loader.item.repeater.model = listmodel
     }
+    onCreated: {
+        textFont.pointSize = Math.floor(h / pixelDensity / 2.9)
+    }
 
     onRowsChanged: {
         if(rows > lastRowsCount){

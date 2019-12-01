@@ -27,6 +27,13 @@ ElementBase{
         textFont.italic = json.textFont.italic
         textFont.pointSize = json.textFont.pointSize
     }
+
+    onCreated: {
+        textFont.pointSize = Math.floor(h / pixelDensity / 2.9)
+        h = loader.item.textElement.paintedHeight
+        w = loader.item.textElement.paintedWidth
+    }
+
     onDoubleClicked:{
         icontainer.editMode = true
         currentElement = icontainer
@@ -44,6 +51,7 @@ ElementBase{
             border.color: selected? Qt.lighter(itxt.color): "transparent"
             antialiasing: true
             clip: true
+            property alias textElement: itxt
 
             TextEdit {
                 id: itxt

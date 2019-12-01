@@ -23,11 +23,11 @@ ElementBase{
     property int w2:100
     property int h1:100
     property int h2:100
+    property int fontSize: 12
     property int s1:12
     property int s2:12
     property int r1:0
     property int r2:0
-    property int fontSize: 12
     property int animationDuration: 1000
     property int easingType: Easing.Linear
     property var json: {
@@ -97,6 +97,15 @@ ElementBase{
         x2 = x
         y1 = y
         y2 = y
+        s1 =  Math.floor(h / 8)
+        s2 =  Math.floor(h / 8)
+        fontSize = Math.floor(h / 8)
+        h = loader.item.textElement.paintedHeight
+        w = loader.item.textElement.paintedWidth
+        h1 = loader.item.textElement.paintedHeight
+        w1 = loader.item.textElement.paintedWidth
+        h2 = loader.item.textElement.paintedHeight
+        w2 = loader.item.textElement.paintedWidth
         animeEnable = true
     }
 
@@ -133,6 +142,7 @@ ElementBase{
         if(!selected)
             icontainer.editMode = false
     }
+
     NumberAnimation on x {
         duration: animationDuration
         easing.type: easingType
@@ -161,73 +171,73 @@ ElementBase{
         duration: animationDuration
         easing.type: easingType
         to: w2
-        running: evoked
+        running: animeEnable && evoked
     }
     NumberAnimation on w {
         duration: animationDuration
         easing.type: easingType
         to: w1
-        running: !evoked
+        running: animeEnable && !evoked
     }
     NumberAnimation on h {
         duration: animationDuration
         easing.type: easingType
         to: h2
-        running: evoked
+        running: animeEnable && evoked
     }
     NumberAnimation on h {
         duration: animationDuration
         easing.type: easingType
         to: h1
-        running: !evoked
+        running: animeEnable && !evoked
     }
     RotationAnimation on r {
         duration: animationDuration
         easing.type: easingType
         to: r2
-        running: evoked
+        running: animeEnable && evoked
     }
     RotationAnimation on r {
         duration: animationDuration
         easing.type: easingType
         to: r1
-        running: !evoked
+        running: animeEnable && !evoked
     }
     ColorAnimation on textColorHelper {
         duration: animationDuration
         easing.type: easingType
         to: ithemeGallery.themeColor(icontainer.color2)
-        running: evoked
+        running: animeEnable && evoked
     }
     ColorAnimation on textColorHelper {
         duration: animationDuration
         easing.type: easingType
         to: ithemeGallery.themeColor(icontainer.color1)
-        running: !evoked
+        running: animeEnable && !evoked
     }
     ColorAnimation on textBackgroundColor {
         duration: animationDuration
         easing.type: easingType
         to: ithemeGallery.themeColor(icontainer.backgroundColor2)
-        running: evoked
+        running: animeEnable && evoked
     }
     ColorAnimation on textBackgroundColor {
         duration: animationDuration
         easing.type: easingType
         to: ithemeGallery.themeColor(icontainer.backgroundColor1)
-        running: !evoked
+        running: animeEnable && !evoked
     }
     NumberAnimation on fontSize {
         duration: animationDuration
         easing.type: easingType
         to: s2
-        running: evoked
+        running: animeEnable && evoked
     }
     NumberAnimation on fontSize {
         duration: animationDuration
         easing.type: easingType
         to: s1
-        running: !evoked
+        running: animeEnable && !evoked
     }
     component:  Component {
         Rectangle{
@@ -238,6 +248,7 @@ ElementBase{
             antialiasing: true
             clip: true
             color: textBackgroundColor
+            property alias textElement: itxt
             TextEdit {
                 id: itxt
                 anchors.fill: parent

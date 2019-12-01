@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
+import QtQuick.Window 2.12
 import "SidePanel"
 import "SidePanel/Chart"
 import "Theme"
@@ -23,6 +24,7 @@ ApplicationWindow {
     onHeightChanged: iworld.updatePosition()
 
     readonly property real animationDuration: 200
+    property real pixelDensity: Screen.pixelDensity
 
     FontLoader{
         id: ifontAwsome
