@@ -9,17 +9,24 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
+    property bool evoked:false
     property string tempName: ""
     property string source: ""
     property string color: "background"
+    property string evokeInId: ""
+    property int evokeInIndex: -1
     property var json: {
         "type":Element.media,
         "common": icontainer.commonData,
         "tempName": icontainer.tempName,
+        "evokeIndex": icontainer.evokeInIndex,
+        "evokeId": icontainer.evokeInId,
         "color": icontainer.color.toString(),
     }
     function fromJson(json){
         source = fileio.tempFolderFileUrl(json.tempName)
+        evokeIndex = json.evokeInIndex
+        evokeId = json.evokeInId
         color = json.color
     }
 
@@ -31,6 +38,15 @@ ElementBase{
     onCreated: {
         if(icontainer.source == "")
             isourceSelector.open()
+    }
+    Connections{
+        target: itimeline
+        onTimelineFrameOrderChanged:{
+            evokeInIndex = itimeline.getFrameIndex(evokeInId)
+        }
+        onTimelineFrameChanged:{
+            evoked = (index === evokeInIndex)
+        }
     }
 
     FileDialog{

@@ -357,38 +357,4 @@ ColumnLayout{
             }
         }
     }
-    MenuSeparator{
-        Layout.fillWidth: true
-    }
-    Label{
-        text: "auto evoke"
-        Material.foreground: Material.accent
-        Layout.alignment: Qt.AlignHCenter
-    }
-
-    Button{
-        visible: optionVisible('animeTextFont')
-        text: visible?"Evoke In This Frame":""
-        Layout.fillWidth: true
-        Layout.topMargin: 10
-        flat: true
-        onClicked: {
-            if(!visible || itimeline.currentFrameData().data === undefined)
-                return
-            iworld.currentElement.evokeInId = itimeline.currentFrameData().data.id
-            iworld.currentElement.evokeInIndex = itimeline.currentFrameData().index
-        }
-    }
-    Label{
-        Layout.alignment: Qt.AlignCenter
-        visible: optionVisible('animeTextFont')
-        text:{
-            if(!visible) ""
-            if(visible && iworld.currentElement.evokeInIndex >=0){
-                "evoke frame: Frame"+ (iworld.currentElement.evokeInIndex+1)
-            }else{
-                "evoke frame: No Frame"
-            }
-        }
-    }
 }

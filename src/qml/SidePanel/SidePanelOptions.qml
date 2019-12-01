@@ -195,4 +195,7 @@ ColumnLayout {
     SidePanelVectorOptions{
         labelSize: icolor.labelSize
     }
+    SidePanelPlayablesOption{
+        Layout.fillWidth: true
+    }
 }
