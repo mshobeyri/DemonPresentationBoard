@@ -63,12 +63,15 @@ Menu {
 
         MenuItem{
             text: "Open"
+            onTriggered: ifileManager.openBtnTriggered()
         }
         MenuItem{
             text: "Save"
+            onTriggered: ifileManager.saveBtnTriggered()
         }
         MenuItem{
             text: "SaveAs"
+            onTriggered: ifileManager.saveAsBtnTriggered()
         }
     }
     Menu{

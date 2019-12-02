@@ -89,11 +89,11 @@ CustomDialog {
                                      modelData.indexOf(isearchFields.text)!==-1
                             text: modelData
                             flat: true
-                            font.family: ifontAwsome.name
-                            font.bold: idelegate.modelObj().bold
+                            font.family: idelegate.modelObj().bold?
+                                             ifontAwsome.name:ifontAwsomereg.name
                             onClicked: {
                                 iworld.currentElement.icon = modelData
-                                iworld.currentElement.bold = font.bold
+                                iworld.currentElement.fontFamilyName = font.family
                             }
                         }
                     }

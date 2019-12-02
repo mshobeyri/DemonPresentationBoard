@@ -16,21 +16,19 @@ ElementBase{
         "common": icontainer.commonData,
         "color": icontainer.color.toString(),
         "fontFamilyName": icontainer.fontFamilyName,
-        "icon": icontainer.icon,
-        "bold": icontainer.bold
+        "icon": icontainer.icon
     }
     function fromJson(json){
         color = json.color
         fontFamilyName = json.fontFamilyName
         icon = json.icon
-        bold = json.bold
     }
 
     component:  Component {
         Label {
             color: ithemeGallery.themeColor(icontainer.color)
             antialiasing: true
-            font.family: ifontAwsome.name//icontainer.fontFamilyName
+            font.family: icontainer.fontFamilyName
             font.bold: icontainer.bold
             text: icontainer.icon
             width: height
