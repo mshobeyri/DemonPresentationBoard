@@ -25,6 +25,7 @@ ElementBase{
         icon = json.icon
         bold = json.bold
     }
+
     component:  Component {
         Label {
             color: ithemeGallery.themeColor(icontainer.color)
@@ -34,7 +35,7 @@ ElementBase{
             text: icontainer.icon
             width: height
             anchors.centerIn: parent
-            font.pixelSize: height / 1.4
+            font.pixelSize: height/1.1
         }
     }
 }
