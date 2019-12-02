@@ -28,25 +28,6 @@ activeInterfaces() {
     return actives;
 }
 
-
-QString
-urls() {
-    QStringList urls;
-    auto        interfaces = activeInterfaces();
-    for (auto& interface : interfaces) {
-        for (auto address : interface.addressEntries()) {
-            if (address.ip().protocol() != QAbstractSocket::IPv4Protocol)
-                continue;
-            auto url =
-                    address.ip().toString().prepend("ws://").append(":").append("54321");
-            if (!urls.contains(url)) {
-                urls.push_back(url);
-            }
-        }
-    }
-    return urls.join("\",\"").prepend("[\"").append("\"]");
-}
-
 UpnpManager::UpnpManager() {
     connect(
                 this,
@@ -72,6 +53,24 @@ UpnpManager::UpnpManager() {
     });
     bind(QHostAddress::AnyIPv4, upnpPort, QAbstractSocket::ShareAddress);
 
+}
+
+QString UpnpManager::urls()
+{
+    QStringList urls;
+    auto        interfaces = activeInterfaces();
+    for (auto& interface : interfaces) {
+        for (auto address : interface.addressEntries()) {
+            if (address.ip().protocol() != QAbstractSocket::IPv4Protocol)
+                continue;
+            auto url =
+                    address.ip().toString().prepend("ws://").append(":").append("54321");
+            if (!urls.contains(url)) {
+                urls.push_back(url);
+            }
+        }
+    }
+    return urls.join("\",\"").prepend("[\"").append("\"]");
 }
 
 void

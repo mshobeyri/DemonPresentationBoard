@@ -9,6 +9,7 @@ class UpnpManager : public QUdpSocket
     Q_OBJECT
 public:
     UpnpManager();
+    Q_INVOKABLE QString urls();
     Q_INVOKABLE void startDiscovery();
     Q_INVOKABLE void stopDiscovery();
     void writeRespond();
