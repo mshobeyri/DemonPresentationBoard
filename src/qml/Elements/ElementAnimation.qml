@@ -36,7 +36,9 @@ ElementBase{
     Connections{
         target: itimeline
         onTimelineFrameOrderChanged:{
-            evokeInIndex = itimeline.getFrameIndex(evokeInId)
+            var frameIndex = itimeline.getFrameIndex(evokeInId)
+            if(frameIndex!==undefined)
+                evokeInIndex = frameIndex
         }
         onTimelineFrameChanged:{
             evoked = (index >= evokeInIndex)

@@ -41,14 +41,16 @@ ElementBase{
     Connections{
         target: itimeline
         onTimelineFrameOrderChanged:{
-            evokeInIndex = itimeline.getFrameIndex(evokeInId)
+            var frameIndex = itimeline.getFrameIndex(evokeInId)
+            if(frameIndex!==undefined)
+                evokeInIndex = frameIndex
         }
         onTimelineFrameChanged:{
-             if(index === evokeInIndex){
-                 loader.item.play()
-             }else{
-                 loader.item.pause()
-             }
+            if(index === evokeInIndex){
+                loader.item.play()
+            }else{
+                loader.item.pause()
+            }
         }
     }
 
