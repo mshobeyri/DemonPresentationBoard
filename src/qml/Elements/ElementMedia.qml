@@ -9,10 +9,9 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
-    property bool evoked:false
     property string tempName: ""
     property string source: ""
-    property string color: "background"
+    property string color: "accent"
     property string evokeInId: ""
     property int evokeInIndex: -1
     property var json: {
@@ -45,7 +44,11 @@ ElementBase{
             evokeInIndex = itimeline.getFrameIndex(evokeInId)
         }
         onTimelineFrameChanged:{
-            evoked = (index === evokeInIndex)
+             if(index === evokeInIndex){
+                 loader.item.play()
+             }else{
+                 loader.item.pause()
+             }
         }
     }
 

@@ -30,7 +30,6 @@ ColumnLayout {
     }
     Label{
         Layout.alignment: Qt.AlignCenter
-        visible: optionVisible('animeTextFont')
         text:{
             if(!visible) ""
             if(visible && iworld.currentElement.evokeInIndex >=0){
