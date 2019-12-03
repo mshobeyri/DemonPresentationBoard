@@ -16,6 +16,7 @@ Dialog {
     visible: false
 
     property alias dialgTitle : ititle.text
+    property bool closable: true
 
     Behavior on x{
         NumberAnimation{
@@ -40,6 +41,7 @@ Dialog {
             padding: 10
             rightInset: 6
             leftInset: 6
+            visible: closable
             onClicked: {
                 iroot.close()
             }

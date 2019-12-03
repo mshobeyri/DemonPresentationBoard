@@ -11,6 +11,7 @@ CustomDialog {
 
     dialgTitle: "Chart Gallery"
     visible: false
+    closable: false
 
     property var selectedChart
     property alias imodel: ichartComponent.dataModel
@@ -51,8 +52,6 @@ CustomDialog {
     }
     function updateChart(){
         ichartComponent.updateChart()
-        if(selectedChart!==undefined && selectedChart!==null)
-            selectedChart.fromJsonChart(ichartComponent.toJson())
     }
 
     Flickable{
@@ -117,16 +116,16 @@ CustomDialog {
                         Layout.preferredHeight: 1
                     }
 
-                    Label{
-                        text: "animation duration"
-                    }
-                    SpinBox{
-                        id: ianimationDuration
-                        from: 0
-                        to: 10000
-                        editable: true
-                        value: 1000
-                    }
+//                    Label{
+//                        text: "animation duration"
+//                    }
+//                    SpinBox{
+//                        id: ianimationDuration
+//                        from: 0
+//                        to: 10000
+//                        editable: true
+//                        value: 1000
+//                    }
 
                     Label{
                         text: "value from"
@@ -237,6 +236,31 @@ CustomDialog {
                 ChartTable{
                     id: ichartTable
                 }
+            }
+        }
+    }
+    footer: RowLayout{
+        spacing: 10
+        Item{
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+        Button{
+            flat: true
+            text: "CANCEL"
+            Material.foreground: Material.accent
+            onClicked: close()
+        }
+        Button{
+            flat: true
+            text: "OK"
+            Layout.rightMargin: 10
+            Material.background: Material.accent
+            onClicked: {
+                if(selectedChart!==undefined && selectedChart!==null)
+                    selectedChart.fromJsonChart(ichartComponent.toJson())
+                ifileManager.fileChanged()
+                close()
             }
         }
     }
