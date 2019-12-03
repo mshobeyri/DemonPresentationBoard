@@ -52,6 +52,7 @@ Column{
                     textJustifyOutput = TextEdit.AlignLeft
                     //update position
                     updateCurrentElement()
+                    ifileManager.fileChanged()
                 }
             }
             Button{
@@ -66,6 +67,7 @@ Column{
                     textJustifyOutput = TextEdit.AlignHCenter
                     //update position
                     updateCurrentElement()
+                    ifileManager.fileChanged()
                 }
             }
             Button{
@@ -80,6 +82,7 @@ Column{
                     textJustifyOutput = TextEdit.AlignRight
                     //update position
                     updateCurrentElement()
+                    ifileManager.fileChanged()
                 }
             }
             Button{
@@ -94,6 +97,7 @@ Column{
                     textJustifyOutput = TextEdit.AlignJustify
                     //update position
                     updateCurrentElement()
+                    ifileManager.fileChanged()
                 }
             }
         }
@@ -108,8 +112,8 @@ Column{
                 flat: true
                 checked: textFont.bold
                 onToggled: {
-
                     textFontOutput.bold = checked
+                    ifileManager.fileChanged()
                 }
             }
             Button{
@@ -120,8 +124,10 @@ Column{
                 width: height - topPadding
                 flat: true
                 checked: textFont.italic
-                onToggled: textFontOutput.italic = checked
-
+                onToggled: {
+                    textFontOutput.italic = checked
+                    ifileManager.fileChanged()
+                }
             }
         }
     }
