@@ -44,7 +44,7 @@ Item{
 
     function deleteIt(){
         iworld.currentElement = undefined
-        iroot.destroy()
+        visible = false
         deleted = true
         ifileManager.fileChanged()
     }
