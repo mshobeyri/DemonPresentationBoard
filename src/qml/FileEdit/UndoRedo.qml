@@ -8,6 +8,7 @@ Item {
             "obj": "all",
             "js": ifileManager.toFileFunc()
         }
+        console.log(ifileManager.toFileFunc())
         history.splice(currentIndex+1,
                        history.length - currentIndex,
                        data)

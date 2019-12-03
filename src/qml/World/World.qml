@@ -9,12 +9,14 @@ Item{
     width: Math.min(parent.width,parent.height*16/9)
     height: Math.min(parent.height,parent.width*9/16)
     anchors.centerIn: parent
+
     property var currentElement: undefined
     property real handlesScale: 1 / (iboard.xScale * iadjuster.scale)
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
     property bool spaceIsDown: false
     property bool lockAllElements: spaceIsDown || isidePanel.insertCandidateComponent!==""
+
     Component.onCompleted: {
         updatePosition()
         iboard.x = 0.025 * iboard.width
@@ -30,7 +32,9 @@ Item{
 
         var elements = []
         for(var i= 0;i<iboard.elementContainer.children.length;i++){
-            elements.push(iboard.elementContainer.children[i].json)
+            var element = iboard.elementContainer.children[i]
+            if(!element.deleted)
+                elements.push(element.json)
         }
         json.elements = elements
         json.board = board.toJson();

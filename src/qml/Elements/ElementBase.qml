@@ -9,6 +9,7 @@ Item{
     y: 120
     width: 0;
     height: 0;
+    property bool deleted: false
     property int baseWidth: 100
     property int baseHeight: 100
     property alias w: isizeHandle.x
@@ -43,8 +44,9 @@ Item{
 
     function deleteIt(){
         iworld.currentElement = undefined
-        ifileManager.fileChanged()
         iroot.destroy()
+        deleted = true
+        ifileManager.fileChanged()
     }
 
     function fromJsonBase(json){
