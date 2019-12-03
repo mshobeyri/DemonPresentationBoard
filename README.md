@@ -36,9 +36,9 @@ this project also contain a mobile application for controlling presentation proc
 - Chart(line, area, spline, scatter, bar, stack, horisontal-bar,horisontal-stack, pie)
 
 ### Depends on
-- Qt (5.12)
+- Qt (>5.12)
 - C++11
-- QtAv (jsut for media element)
+- [QtAv](https://github.com/wang-bin/QtAV) (jsut for media element)
 
 ### Build
 After clone project and build dependencied open demon-pb.pro in qt creator and click run button.
