@@ -180,7 +180,7 @@ ColumnLayout {
         text: "Open Icon Gallery"
         Layout.fillWidth: true
         flat: true
-        onClicked: iiconGallery.open()
+        onClicked: iiconGallery.openGallery(iworld.currentElement)
     }
     IconButton{
         visible: optionVisible('chartTypeIcon')

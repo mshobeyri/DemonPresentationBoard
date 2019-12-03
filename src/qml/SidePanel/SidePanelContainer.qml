@@ -41,7 +41,8 @@ Flickable {
         }
 
         SidePanelWorldOptions{
-            visible: iworld.currentElement===undefined
+            visible: iworld.currentElement===undefined ||
+                     iworld.currentElement===null
         }
     }
 }

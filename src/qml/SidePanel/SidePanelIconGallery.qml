@@ -10,6 +10,9 @@ CustomDialog {
 
     dialgTitle: "Icon Gallery"
     visible: false
+
+    property var selectedIcon
+
     Component.onCompleted: {
         for(var i= 0;i<JsModel.icons.length;i++){
             imodel.append({ "category":JsModel.icons[i].label,
@@ -23,6 +26,10 @@ CustomDialog {
                               "bold":false
                           })
         }
+    }
+    function openGallery(icon){
+        open()
+        selectedIcon = icon
     }
     ListModel{
         id: imodel
@@ -93,9 +100,12 @@ CustomDialog {
                             font.family: idelegate.modelObj().bold?
                                              ifontAwsome.name:ifontAwsomereg.name
                             onClicked: {
-                                iworld.currentElement.icon = modelData
-                                iworld.currentElement.fontFamilyName = font.family
-                                iworld.currentElement.bold = font.bold
+                                if(selectedIcon === null)
+                                    return
+                                selectedIcon.icon = modelData
+                                selectedIcon.fontFamilyName = font.family
+                                selectedIcon.bold = font.bold
+                                ifileManager.fileChanged()
                             }
                         }
                     }
