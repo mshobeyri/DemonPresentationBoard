@@ -130,6 +130,21 @@ ListView {
             property string name: DelegateModel.toString()
             property int selectedIndex: -1
             property int visualIndex: DelegateModel.itemsIndex
+            property int lastIndex : -1
+
+            onReleased: {
+                if(lastIndex!==-1 && lastIndex!==model.index){
+                    timelineFrameOrderChanged()
+                    timelineChanged()
+                    iremoteHandler.sendFramesNameToTrident()
+                    lastIndex = -1
+                }
+            }
+            onPositionChanged: {
+                if(lastIndex === -1){
+                    lastIndex = model.index
+                }
+            }
 
             function index(){
                 return model.index
@@ -242,9 +257,6 @@ ListView {
                         selectedIndex = drag.source.visualIndex
                     }
                     iframesModel.move(drag.source.visualIndex,idelegateRoot.visualIndex,1)
-                    timelineFrameOrderChanged()
-                    timelineChanged()
-                    iremoteHandler.sendFramesNameToTrident()
                 }
             }
         }
