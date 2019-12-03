@@ -26,7 +26,7 @@ Item {
     function handle(){
         var data = history[currentIndex]
         if(data.obj === "all"){
-            ifileManager.fromFileFunc(data.js)
+            ifileManager.fromFile(data.js)
         }else{
             data.obj.fromJson(data.js)
         }

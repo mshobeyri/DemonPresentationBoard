@@ -24,12 +24,23 @@ Item {
     property string currentFileName: ""
     property bool isFileChanged: false
     property string appTitle
+    property int appStatus: FileManager.Loading
+
+    enum AppStatus{
+        Loading,
+        Loaded
+    }
 
     function saveBtnTriggered(){
         if(currentFilePath==="")
             saveAsBtnTriggered()
         else
             iprv.save()
+    }
+    function fromFile(json){
+        appStatus = FileManager.Loading
+        ifileManager.fromFileFunc(json)
+        appStatus = FileManager.Loaded
     }
 
     function saveAsBtnTriggered(){
@@ -45,6 +56,8 @@ Item {
     }
 
     function fileChanged(){
+        if(appStatus === FileManager.Loading)
+            return
         isFileChanged = true
         iundoRedo.grabAll()
     }
@@ -66,6 +79,7 @@ Item {
                                        "title": openRecentJs[i].title,
                                        "subtitle": openRecentJs[i].subtitle
                                    })
+        appStatus = FileManager.Loaded
 
     }
     Component.onDestruction: {
@@ -124,12 +138,12 @@ Item {
         function open(path){
             if(!iprv.doesForgotToSave(function(){
                 iundoRedo.clear()
-                fromFileFunc(fileio.read(path))
+                fromFile(fileio.read(path))
                 iundoRedo.grabAll()
                 iprv.newFile(path)
             })){
                 iundoRedo.clear()
-                fromFileFunc(fileio.read(path))
+                fromFile(fileio.read(path))
                 iundoRedo.grabAll()
                 iprv.newFile(path)
             }
