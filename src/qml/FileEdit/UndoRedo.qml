@@ -4,7 +4,6 @@ Item {
     property var history: []
     property int currentIndex: -1
     function grabAll(){
-        console.log("g")
         var data = {
             "obj": "all",
             "js": ifileManager.toFileFunc()

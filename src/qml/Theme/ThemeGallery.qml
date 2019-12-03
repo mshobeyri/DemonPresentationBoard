@@ -55,11 +55,11 @@ CustomDialog {
 
         for(var i=0;i<ilistModel.count;i++){
             var element = ilistModel.get(i)
-            if(element.background === backgroundColor.toString() &&
-                    element.foreground === foregroundColor.toString() &&
-                    element.border === borderColor.toString() &&
-                    element.primary === primaryColor.toString() &&
-                    element.accent === accentColor.toString()){
+            if(element.background.toUpperCase() === backgroundColor.toString().toUpperCase() &&
+                    element.foreground.toUpperCase() === foregroundColor.toString().toUpperCase() &&
+                    element.border.toUpperCase() === borderColor.toString().toUpperCase() &&
+                    element.primary.toUpperCase() === primaryColor.toString().toUpperCase() &&
+                    element.accent.toUpperCase() === accentColor.toString().toUpperCase()){
                 ilistview.currentIndex = i
                 iroot.name = ilistModel.get(i).name
                 break
@@ -254,20 +254,26 @@ CustomDialog {
                 Material.foreground: Material.accent
             }
             section.property: "editable"
+
             delegate: MenuItem{
                 width: 300
                 text: model.name
                 highlighted: model.index === ilistview.currentIndex
+                onHighlightedChanged: {
+                    if(highlighted){
+                        iroot.isEditable = model.editable
+                        iroot.name = model.name
+                        backgroundColor = model.background
+                        foregroundColor = model.foreground
+                        borderColor = model.border
+                        primaryColor = model.primary
+                        accentColor = model.accent
+                        ifileManager.fileChanged()
+                    }
+                }
+
                 onClicked: {
-                    iroot.isEditable = model.editable
-                    iroot.name = model.name
                     ilistview.currentIndex = model.index
-                    backgroundColor = model.background
-                    foregroundColor = model.foreground
-                    borderColor = model.border
-                    primaryColor = model.primary
-                    accentColor = model.accent
-                    ifileManager.fileChanged()
                 }
 
                 Row{
