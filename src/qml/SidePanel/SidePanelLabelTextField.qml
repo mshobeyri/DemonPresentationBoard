@@ -28,6 +28,8 @@ RowLayout {
         validator: RegExpValidator{
             id: iregex
         }
-        onFocusChanged: if(!focus)ifileManager.fileChanged()
+        onEditingFinished: {
+            ifileManager.fileChanged()
+        }
     }
 }

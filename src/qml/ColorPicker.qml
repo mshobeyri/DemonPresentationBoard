@@ -276,53 +276,20 @@ Item {
             Layout.leftMargin: 10
             property int size: 15
             visible: visibleThemeColors
-            Button{
-                width: parent.size
-                height: width
-                Material.background: ithemeGallery.backgroundColor
-                flat: true
-                topInset: 0
-                bottomInset: 0
-                onClicked: colorOutput = "background"
-            }
-            Button{
-                width: parent.size
-                height: width
-                Material.background: ithemeGallery.foregroundColor
-                flat: true
-                topInset: 0
-                bottomInset: 0
-                onClicked: colorOutput = "foreground"
-            }
-
-            Button{
-                width: parent.size
-                height: width
-                Material.background: ithemeGallery.borderColor
-                flat: true
-                topInset: 0
-                bottomInset: 0
-                onClicked: colorOutput = "border"
-            }
-
-            Button{
-                width: parent.size
-                height: width
-                Material.background: ithemeGallery.primaryColor
-                flat: true
-                topInset: 0
-                bottomInset: 0
-                onClicked: colorOutput = "primary"
-            }
-
-            Button{
-                width: parent.size
-                height: width
-                Material.background: ithemeGallery.accentColor
-                flat: true
-                topInset: 0
-                bottomInset: 0
-                onClicked: colorOutput = "accent"
+            Repeater{
+                model: ["background","foreground","border","primary","accent"]
+                Button{
+                    width: parent.size
+                    height: width
+                    Material.background: ithemeGallery.themeColor(modelData)
+                    flat: true
+                    topInset: 0
+                    bottomInset: 0
+                    onClicked: {
+                        colorOutput = modelData
+                        ifileManager.fileChanged()
+                    }
+                }
             }
         }
 

@@ -55,6 +55,8 @@ ElementBase{
 
             TextEdit {
                 id: itxt
+
+                property bool textChanged : false
                 anchors.fill: parent
                 anchors.margins: 2
                 color: ithemeGallery.themeColor(icontainer.color)
@@ -66,7 +68,18 @@ ElementBase{
                 selectByKeyboard: true
                 antialiasing: true
                 horizontalAlignment: textJustify
-                onTextChanged: icontainer.text = text
+                onEditingFinished: {
+                    if(textChanged){
+                        ifileManager.fileChanged()
+                    }
+                    textChanged = false
+                }
+                onTextChanged: {
+                    if(focus){
+                        textChanged = true
+                        icontainer.text = text
+                    }
+                }
             }
         }
     }

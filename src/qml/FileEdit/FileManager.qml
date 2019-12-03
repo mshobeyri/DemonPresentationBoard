@@ -46,8 +46,12 @@ Item {
 
     function fileChanged(){
         isFileChanged = true
-        iundoRedo.grab()
+        iundoRedo.grabAll()
     }
+    function grabChanges(object, json){
+        iundoRedo.grabChanges(object,json)
+    }
+
     function resetFile(){
         currentFilePath = ""
         currentFileName = ""
@@ -121,12 +125,12 @@ Item {
             if(!iprv.doesForgotToSave(function(){
                 iundoRedo.clear()
                 fromFileFunc(fileio.read(path))
-                iundoRedo.grab()
+                iundoRedo.grabAll()
                 iprv.newFile(path)
             })){
                 iundoRedo.clear()
                 fromFileFunc(fileio.read(path))
-                iundoRedo.grab()
+                iundoRedo.grabAll()
                 iprv.newFile(path)
             }
         }
