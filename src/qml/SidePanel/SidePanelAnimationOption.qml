@@ -29,115 +29,8 @@ ColumnLayout{
         textFontOutput.italic = !textFontOutput.italic
     }
 
+    SidePanelTextFormatOptions{
 
-    RowLayout {
-        spacing: 10
-        width: parent.width
-
-        Label{
-            Layout.preferredWidth: labelSize
-            text: "font"
-        }
-        ComboBox{
-            Layout.fillWidth: true
-            model: Qt.fontFamilies()
-            popup.x: -labelSize
-            popup.width: iroot.width
-            popup.height: iwin.height / 2
-            flat: true
-            currentIndex: model.indexOf(textFont.family)
-            onCurrentTextChanged: {
-                if(focus)textFontOutput.family = currentText
-                ifileManager.fileChanged()
-            }
-            delegate: MenuItem{
-                text: modelData
-                font.family: modelData
-            }
-        }
-    }
-    ButtonGroup {
-        buttons: itextAlignment.children
-    }
-    Row{
-        spacing: 10
-
-        Row{
-            id: itextAlignment
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-left"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignLeft
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignLeft
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-center"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignHCenter
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignHCenter
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-right"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignRight
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignRight
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-justify"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignJustify
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignJustify
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-        }
-
-        Row{
-            Button{
-                font.family: ifontAwsome.name
-                text: "bold"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textFont.bold
-                onCheckedChanged: if(focus)textFontOutput.bold = checked
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "italic"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textFont.italic
-                onCheckedChanged: if(focus)textFontOutput.italic = checked
-            }
-        }
     }
     MenuSeparator{
         Layout.fillWidth: true
@@ -157,7 +50,7 @@ ColumnLayout{
         flat: true
         checkable: true
         checked: visible?iworld.currentElement.evoked:false
-        onCheckedChanged: {
+        onToggled: {
             if(iroot.visible)iworld.currentElement.evoked = checked
         }
     }

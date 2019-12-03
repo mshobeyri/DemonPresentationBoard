@@ -107,7 +107,7 @@ CustomDialog {
                     CheckBox{
                         id: ilegendCheck
                         text: "legend"
-                        onCheckedChanged: {
+                        onToggled: {
                             ichartComponent.containLegend = checked
                             updateChart()
                         }

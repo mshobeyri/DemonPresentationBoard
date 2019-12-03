@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtQuick.Controls 2.5
+import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.3
 import QtQuick.Layouts 1.12
 
@@ -37,117 +37,130 @@ Column{
         width: parent.width
         onValueChanged: textFontOutput.pointSize = value
     }
+    SidePanelTextFormatOptions{
 
-    RowLayout {
-        spacing: 10
-        width: parent.width
-
-        Label{
-            Layout.preferredWidth: labelSize
-            text: "font"
-        }
-        ComboBox{
-            Layout.fillWidth: true
-            model: Qt.fontFamilies()
-            popup.x: -labelSize
-            popup.width: iroot.width
-            popup.height: iwin.height / 2
-            flat: true
-            currentIndex: model.indexOf(textFont.family)
-            onCurrentTextChanged: {
-                if(focus && currentText!==""){
-                    textFontOutput.family = currentText
-                    if(iroot.visible)ifileManager.fileChanged()
-                }
-            }
-
-            delegate: MenuItem{
-                text: modelData
-                font.family: modelData
-            }
-        }
     }
-    ButtonGroup {
-        buttons: itextAlignment.children
-    }
-    Row{
-        spacing: 10
-        anchors.horizontalCenter: parent.horizontalCenter
-        Row{
-            id: itextAlignment
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-left"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignLeft
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignLeft
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-center"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignHCenter
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignHCenter
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-right"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignRight
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignRight
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "align-justify"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textJustify === TextEdit.AlignJustify
-                onCheckedChanged: {
-                    textJustifyOutput = TextEdit.AlignJustify
-                    //update position
-                    updateCurrentElement()
-                }
-            }
-        }
 
-        Row{
-            Button{
-                font.family: ifontAwsome.name
-                text: "bold"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textFont.bold
-                onCheckedChanged: if(focus)textFontOutput.bold = checked
-            }
-            Button{
-                font.family: ifontAwsome.name
-                text: "italic"
-                checkable: true
-                width: height - topPadding
-                flat: true
-                checked: textFont.italic
-                onCheckedChanged: if(focus)textFontOutput.italic = checked
-            }
-        }
-    }
+//    RowLayout {
+//        spacing: 10
+//        width: parent.width
+
+//        Label{
+//            Layout.preferredWidth: labelSize
+//            text: "font"
+//        }
+//        ComboBox{
+//            Layout.fillWidth: true
+//            model: Qt.fontFamilies()
+//            popup.x: -labelSize
+//            popup.width: iroot.width
+//            popup.height: iwin.height / 2
+//            flat: true
+//            currentIndex: model.indexOf(textFont.family)
+//            onCurrentTextChanged: {
+//                if(focus && currentText!==""){
+//                    textFontOutput.family = currentText
+//                    if(iroot.visible)ifileManager.fileChanged()
+//                }
+//            }
+
+//            delegate: MenuItem{
+//                text: modelData
+//                font.family: modelData
+//            }
+//        }
+//    }
+//    ButtonGroup {
+//        buttons: itextAlignment.children
+//    }
+//    Row{
+//        spacing: 10
+//        anchors.horizontalCenter: parent.horizontalCenter
+//        Row{
+//            id: itextAlignment
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "align-left"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textJustify === TextEdit.AlignLeft
+//                onToggled: {
+//                    textJustifyOutput = TextEdit.AlignLeft
+//                    //update position
+//                    updateCurrentElement()
+//                }
+//            }
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "align-center"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textJustify === TextEdit.AlignHCenter
+//                onToggled: {
+//                    textJustifyOutput = TextEdit.AlignHCenter
+//                    //update position
+//                    updateCurrentElement()
+//                }
+//            }
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "align-right"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textJustify === TextEdit.AlignRight
+//                onToggled: {
+//                    textJustifyOutput = TextEdit.AlignRight
+//                    //update position
+//                    updateCurrentElement()
+//                }
+//            }
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "align-justify"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textJustify === TextEdit.AlignJustify
+//                onToggled: {
+//                    textJustifyOutput = TextEdit.AlignJustify
+//                    //update position
+//                    updateCurrentElement()
+//                }
+//            }
+//        }
+
+//        Row{
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "bold"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textFont.bold
+//                onToggled: {
+
+//                    textFontOutput.bold = checked
+//                }
+//            }
+//            Button{
+//                font.family: ifontAwsome.name
+//                text: "italic"
+//                checkable: true
+//                focusPolicy: Qt.NoFocus
+//                width: height - topPadding
+//                flat: true
+//                checked: textFont.italic
+//                onToggled: textFontOutput.italic = checked
+
+//            }
+//        }
+//    }
 }

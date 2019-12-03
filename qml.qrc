@@ -66,6 +66,7 @@
         <file>src/qml/SidePanel/SidePanelAnimationOption.qml</file>
         <file>src/qml/TimePicker.qml</file>
         <file>src/qml/SidePanel/SidePanelPlayablesOption.qml</file>
+        <file>src/qml/SidePanel/SidePanelTextFormatOptions.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>res/Font Awesome 5 Pro-Solid-900.otf</file>
