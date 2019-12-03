@@ -16,12 +16,14 @@ ElementBase{
         "common": icontainer.commonData,
         "color": icontainer.color.toString(),
         "fontFamilyName": icontainer.fontFamilyName,
+        "bold": icontainer.bold,
         "icon": icontainer.icon
     }
     function fromJson(json){
         color = json.color
         fontFamilyName = json.fontFamilyName
         icon = json.icon
+        bold = json.bold
     }
 
     component:  Component {

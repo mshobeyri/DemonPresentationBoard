@@ -1,9 +1,11 @@
 #include "upnpmanager.h"
 #include <QNetworkDatagram>
 #include <QNetworkInterface>
+#include <QTcpSocket>
 
 const QHostAddress upnpAddress = QHostAddress{"239.255.255.250"};
 const quint16      upnpPort    = 1900;
+static quint16      selectedPort=0;
 
 QList<QNetworkInterface>
 activeInterfaces() {
@@ -26,25 +28,6 @@ activeInterfaces() {
         actives.append(iface);
     }
     return actives;
-}
-
-
-QString
-urls() {
-    QStringList urls;
-    auto        interfaces = activeInterfaces();
-    for (auto& interface : interfaces) {
-        for (auto address : interface.addressEntries()) {
-            if (address.ip().protocol() != QAbstractSocket::IPv4Protocol)
-                continue;
-            auto url =
-                    address.ip().toString().prepend("ws://").append(":").append("54321");
-            if (!urls.contains(url)) {
-                urls.push_back(url);
-            }
-        }
-    }
-    return urls.join("\",\"").prepend("[\"").append("\"]");
 }
 
 UpnpManager::UpnpManager() {
@@ -72,6 +55,38 @@ UpnpManager::UpnpManager() {
     });
     bind(QHostAddress::AnyIPv4, upnpPort, QAbstractSocket::ShareAddress);
 
+}
+
+QString UpnpManager::urls()
+{
+    QStringList urls;
+    auto        interfaces = activeInterfaces();
+    for (auto& interface : interfaces) {
+        for (auto address : interface.addressEntries()) {
+            if (address.ip().protocol() != QAbstractSocket::IPv4Protocol)
+                continue;
+            auto url =
+                    address.ip().toString().prepend("ws://").append(":")
+                    .append(QString::number(selectedPort));
+            if (!urls.contains(url)) {
+                urls.push_back(url);
+            }
+        }
+    }
+    return urls.join("\",\"").prepend("[\"").append("\"]");
+}
+
+int UpnpManager::freePort()
+{
+    QTcpSocket socket;
+    for(quint16 i=54321;i < 60000;i++){
+        if(socket.bind(QHostAddress::Any,i)){
+            socket.close();
+            selectedPort = i;
+            return i;
+        }
+    }
+    return -1;
 }
 
 void

@@ -59,11 +59,13 @@ Item{
         id: isocketServer
         host: "0.0.0.0"
         listen: true
-        port: 54321
+        port: upnp.freePort()
         onErrorStringChanged: {
             console.log(qsTr("Server error: %1").arg(errorString));
         }
         onClientConnected: {
+            if(connection!==null && connection.status === WebSocket.Open)
+                return
             connection = webSocket
             webSocket.onTextMessageReceived.connect(function(message) {
                 handleMessage(message)

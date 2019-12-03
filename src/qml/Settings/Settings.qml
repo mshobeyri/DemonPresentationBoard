@@ -27,7 +27,7 @@ CustomDialog {
         rightInset: 1
         bottomInset: 1
         TabButton{
-            text: "Remote"
+            text: "Trident"
         }
         TabButton{
             text: "Interface"
