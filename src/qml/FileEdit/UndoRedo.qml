@@ -24,12 +24,14 @@ Item {
         currentIndex ++
     }
     function handle(){
+        var frameIndex = itimeline.currentFrameData().index
         var data = history[currentIndex]
         if(data.obj === "all"){
             ifileManager.fromFile(data.js)
         }else{
             data.obj.fromJson(data.js)
         }
+        itimeline.goTo(frameIndex+1)
     }
     function undo(){
         if(currentIndex <= 0)
