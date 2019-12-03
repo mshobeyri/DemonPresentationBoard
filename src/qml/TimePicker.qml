@@ -19,7 +19,7 @@ Row {
         wheelEnabled: true
         visibleItemCount: 1
         currentIndex: Math.floor(values/60)
-        onMovingChanged: updateValue()
+        onMovingChanged: if(!moving)updateValue()
         delegate:  Label {
             text: modelData
             width: parent.width
@@ -65,7 +65,7 @@ Row {
         height: 35
         wheelEnabled: true
         currentIndex: values%60
-        onMovingChanged: updateValue()
+        onMovingChanged: if(!moving)updateValue()
         visibleItemCount: 1
         delegate:  Label {
             text: modelData

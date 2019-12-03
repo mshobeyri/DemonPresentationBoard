@@ -173,6 +173,7 @@ ListView {
             }
 
             onClicked: {
+                forceActiveFocus()
                 currentIndex = model.index
             }
 

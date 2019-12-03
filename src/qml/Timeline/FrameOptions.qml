@@ -12,6 +12,11 @@ Flickable {
     interactive: contentHeight > height
     width: iwin.width / 3
     clip: true
+    function frameChanged(){
+        visible = false
+        visible = true
+    }
+
     Column{
         id: icol
         spacing: 5
@@ -23,9 +28,8 @@ Flickable {
             selectByMouse: true
             placeholderText: "set a name to this frame"
             text: iroot.visible ?iframesGrid.currentItem.modelObj().name:""
-            onTextChanged: {
-                if(!focus)
-                    return
+
+            onEditingFinished: {
                 iframesGrid.frameModel.setProperty(
                                iframesGrid.currentIndex,"name",text)
                 timelineChanged()
@@ -43,9 +47,10 @@ Flickable {
             values: iroot.visible?iframesGrid.currentItem.modelObj().time:0
 
             onValueChanged: {
+                timelineChanged()
                 iframesGrid.frameModel.setProperty(
                                 iframesGrid.currentIndex,"time",value)
-                timelineChanged()
+
                 iremoteHandler.sendFrameDataToTrident()
             }
         }
@@ -65,13 +70,13 @@ Flickable {
             selectByMouse: true
             placeholderText: "write some note for this frame ..."
             text: iroot.visible ?iframesGrid.currentItem.modelObj().notes:""
-            onTextChanged: {
-                if(!focus)
-                    return
-                iframesGrid.frameModel.setProperty(
-                               iframesGrid.currentIndex,"notes",text)
-                timelineChanged()
-                iremoteHandler.sendFrameDataToTrident()
+            onFocusChanged: {
+                if(!focus){
+                    iframesGrid.frameModel.setProperty(
+                                   iframesGrid.currentIndex,"notes",text)
+                    timelineChanged()
+                    iremoteHandler.sendFrameDataToTrident()
+                }
             }
         }
         Item{

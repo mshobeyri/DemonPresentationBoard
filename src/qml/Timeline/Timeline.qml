@@ -126,7 +126,6 @@ CustomDialog {
             height: parent.height
         }
         FrameOptions{
-
         }
     }
 }
