@@ -4,7 +4,6 @@ import QtQuick.Controls 2.5
 Row {
     id: iroot
     property int values
-    onValuesChanged: console.log(values)
     signal valueChanged(int value)
 
     function updateValue(){

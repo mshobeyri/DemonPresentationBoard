@@ -73,7 +73,6 @@ Item {
         onActivated: {
             iframeMouseArea.forceActiveFocus()
             spaceIsDown = true
-            console.log(spaceIsDown)
         }
         autoRepeat: false
     }
@@ -104,6 +103,7 @@ Item {
 
         onPressed: forceActiveFocus()
         onClicked: {
+            worldOptions.forceActiveFocus()
             if(isidePanel.insertCandidateComponent!==""){
                 createElement(isidePanel.insertCandidateComponent,
                               {x:mouseX,y:mouseY})

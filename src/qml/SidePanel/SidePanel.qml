@@ -7,6 +7,7 @@ import Qt.labs.settings 1.1
 Item{
     width: parent.width
     height: parent.height
+
     property var container: icontainer
     property string insertCandidateComponent : ""
     property Rectangle panelsPosition: Rectangle{

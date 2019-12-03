@@ -22,14 +22,20 @@ RowLayout {
 
         Layout.fillWidth: true
         selectByMouse: true
-        onAccepted: {
-            focus = false
-        }
+        property var lastText
         validator: RegExpValidator{
             id: iregex
         }
+        onFocusChanged: {
+            if(focus)
+                lastText = text
+        }
+
         onEditingFinished: {
-            ifileManager.fileChanged()
+            if(lastText !== text){
+                ifileManager.fileChanged()
+                lastText = text
+            }
         }
     }
 }

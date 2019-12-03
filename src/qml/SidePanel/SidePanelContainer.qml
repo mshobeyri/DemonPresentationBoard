@@ -41,6 +41,9 @@ Flickable {
         }
 
         SidePanelWorldOptions{
+            id: iworldOption
+
+            Component.onCompleted: iworld.worldOptions = iworldOption
             visible: iworld.currentElement===undefined ||
                      iworld.currentElement===null
         }

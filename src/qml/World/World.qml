@@ -15,6 +15,7 @@ Item{
     property alias fakeLaser: ifakeLaser
     property alias board: iboard
     property bool spaceIsDown: false
+    property var worldOptions
     property bool lockAllElements: spaceIsDown || isidePanel.insertCandidateComponent!==""
 
     Component.onCompleted: {
