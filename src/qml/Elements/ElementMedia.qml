@@ -32,6 +32,7 @@ ElementBase{
     function handleFile(path){
         icontainer.tempName = fileio.copyToTempFolder(path)
         icontainer.source = fileio.tempFolderFileUrl(tempName)
+        ifileManager.fileChanged()
     }
 
     onCreated: {
@@ -67,7 +68,7 @@ ElementBase{
         Video {
             id: imediaplayer
 
-            source: icontainer.source
+            source: icontainer.tempName!==""?icontainer.source:""
             antialiasing: true
             backgroundColor: ithemeGallery.themeColor(icontainer.color)
             Item{

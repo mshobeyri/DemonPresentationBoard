@@ -22,6 +22,7 @@ ElementBase{
     function handleFile(path){
         icontainer.tempName = fileio.copyToTempFolder(path)
         icontainer.source = fileio.tempFolderFileUrl(tempName)
+        ifileManager.fileChanged()
     }
 
     onCreated: {
@@ -42,7 +43,7 @@ ElementBase{
         Item{
             Image{
                 anchors.fill: parent
-                source: visible?icontainer.source:""
+                source: visible&& tempName!=="" ?icontainer.source:""
                 visible: icontainer.isVector
                 antialiasing: true
                 sourceSize: Qt.size(width/iworld.handlesScale,height/iworld.handlesScale)
@@ -50,14 +51,14 @@ ElementBase{
 
             Image {
                 anchors.fill: parent
-                source: visible?icontainer.source:""
+                source: visible&& tempName!=="" ?icontainer.source:""
                 visible: !icontainer.isVector && !icontainer.isAnimated
                 antialiasing: true
             }
 
             AnimatedImage{
                 anchors.fill: parent
-                source:visible?icontainer.source:""
+                source:visible&& tempName!=="" ?icontainer.source:""
                 visible: icontainer.isAnimated
                 antialiasing: true
             }

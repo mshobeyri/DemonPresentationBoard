@@ -107,8 +107,9 @@ Item {
             if(isidePanel.insertCandidateComponent!==""){
                 createElement(isidePanel.insertCandidateComponent,
                               {x:mouseX,y:mouseY})
-
-                ifileManager.fileChanged()
+                if(isidePanel.insertCandidateComponent!==Element.image &&
+                        isidePanel.insertCandidateComponent!==Element.media)
+                    ifileManager.fileChanged()
             }
             currentElement = undefined
             isidePanel.container.elements.deselectAll()
