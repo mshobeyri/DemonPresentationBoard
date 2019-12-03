@@ -10,7 +10,6 @@ ColumnLayout{
     property int labelSize: ianimeDuration.labelSize
     property int textJustify
     property font textFont
-    property font defaultFont
     property int textJustifyOutput
     property font textFontOutput
     onTextFontChanged: textFontOutput = textFont
@@ -47,7 +46,10 @@ ColumnLayout{
             popup.height: iwin.height / 2
             flat: true
             currentIndex: model.indexOf(textFont.family)
-            onCurrentTextChanged: if(focus)textFontOutput.family = currentText
+            onCurrentTextChanged: {
+                if(focus)textFontOutput.family = currentText
+                ifileManager.fileChanged()
+            }
             delegate: MenuItem{
                 text: modelData
                 font.family: modelData

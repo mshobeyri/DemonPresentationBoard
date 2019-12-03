@@ -166,12 +166,12 @@ ColumnLayout {
     }
     SidePanelTextOptions{
         visible: optionVisible('textFont')
-        textFont: visible? iworld.currentElement.textFont:defaultFont
+        textFont: visible? iworld.currentElement.textFont:""
         textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
     }
     SidePanelAnimationOption{
         visible: optionVisible('animeTextFont')
-        textFont: visible? iworld.currentElement.animeTextFont:defaultFont
+        textFont: visible? iworld.currentElement.animeTextFont:""
         textJustify: visible? iworld.currentElement.textJustify:TextEdit.AlignLeft
     }
     IconButton{

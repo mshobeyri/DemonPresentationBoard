@@ -10,19 +10,18 @@ Column{
     property int labelSize: ipointSize.labelSize
     property int textJustify
     property font textFont
-    property font defaultFont
     property int textJustifyOutput
     property font textFontOutput
     onTextFontChanged: textFontOutput = textFont
     onTextJustifyChanged: textJustifyOutput = textJustifyOutput
     onTextJustifyOutputChanged: {
         if(visible)
-        iworld.currentElement.textJustify = textJustifyOutput
+            iworld.currentElement.textJustify = textJustifyOutput
     }
 
     onTextFontOutputChanged: {
         if(visible)
-        iworld.currentElement.textFont = textFontOutput
+            iworld.currentElement.textFont = textFontOutput
     }
 
     function updateCurrentElement(){
@@ -55,7 +54,13 @@ Column{
             popup.height: iwin.height / 2
             flat: true
             currentIndex: model.indexOf(textFont.family)
-            onCurrentTextChanged: if(focus)textFontOutput.family = currentText
+            onCurrentTextChanged: {
+                if(focus && currentText!==""){
+                    textFontOutput.family = currentText
+                    if(iroot.visible)ifileManager.fileChanged()
+                }
+            }
+
             delegate: MenuItem{
                 text: modelData
                 font.family: modelData
@@ -119,7 +124,7 @@ Column{
                 onCheckedChanged: {
                     textJustifyOutput = TextEdit.AlignJustify
                     //update position
-                   updateCurrentElement()
+                    updateCurrentElement()
                 }
             }
         }
