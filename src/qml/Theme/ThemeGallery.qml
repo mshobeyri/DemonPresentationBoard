@@ -267,6 +267,7 @@ CustomDialog {
                     borderColor = model.border
                     primaryColor = model.primary
                     accentColor = model.accent
+                    ifileManager.fileChanged()
                 }
 
                 Row{
