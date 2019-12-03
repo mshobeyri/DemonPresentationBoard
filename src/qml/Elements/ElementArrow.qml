@@ -8,6 +8,15 @@ ElementBase{
     property string rightMarker: "triangle"
     property string leftMarker: ""
 
+    onRightMarkerChanged: {
+        json.rightMarker = rightMarker
+        ifileManager.fileChanged()
+    }
+    onLeftMarkerChanged: {
+        json.leftMarker = leftMarker
+        ifileManager.fileChanged()
+    }
+
     property var json: {
         "type": Element.arrow,
         "common": icontainer.commonData,
