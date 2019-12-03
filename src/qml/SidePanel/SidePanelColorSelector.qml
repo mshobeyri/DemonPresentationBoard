@@ -68,7 +68,7 @@ Column {
             NumberAnimation{duration: 200}
         }
 
-        onColorValueChanged: if(visible)
-                                 colorOutput = colorValue
+        onColorChanged: if(visible)
+                                 colorOutput = color
     }
 }

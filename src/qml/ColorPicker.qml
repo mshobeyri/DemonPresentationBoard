@@ -7,18 +7,20 @@ import QtQuick.Controls.Material 2.3
 Item {
     id: iroot
 
-
     property bool alphaVisible: true
     property bool visibleThemeColors: true
 
     readonly property color colorValue: hsba(ihueSlider.item.value, isbPicker.saturation,
                                              isbPicker.brightness, ialphaSlider.item.value)
-
+    property string color
     function hsba(h, s, b, a) {
         var lightness = (2 - s)*b;
         var satHSL = s*b/((lightness <= 1) ? lightness : 2 - lightness);
         lightness /= 2;
         return Qt.hsla(h, satHSL, lightness, a);
+    }
+    onColorValueChanged: {
+        color = colorValue
     }
 
     Component {
@@ -285,9 +287,9 @@ Item {
                     flat: true
                     topInset: 0
                     bottomInset: 0
+                    focusPolicy: Qt.NoFocus
                     onClicked: {
-                        colorOutput = modelData
-                        ifileManager.fileChanged()
+                        iroot.color = modelData
                     }
                 }
             }
