@@ -82,12 +82,36 @@ Grid {
             ToolTip.text: model.name.toUpperCase()
             ToolTip.delay: 0
             ToolTip.visible: hovered
-            onClicked: {
+            onToggled: {
+                checked = !checked
                 if(model.index === currentSelected){
                     deselectAll()
                 }else{
                     currentSelected = model.index
                     insertCandidateComponent = model.name
+                }
+            }
+            Image{
+                id: dragItem
+                source: ""
+                Drag.active: dragArea.drag.active
+                Drag.keys: [ "element" ]
+                Drag.dragType: Drag.Automatic
+                Drag.supportedActions: Qt.TargetMoveAction
+                property string type: model.name
+            }
+
+            MouseArea{
+                id:dragArea
+                anchors.fill: parent
+                drag.target: dragItem
+                onClicked: {
+                    parent.onToggled();
+                }
+                onPositionChanged: {
+                    parent.grabToImage(function(result) {
+                        dragItem.Drag.imageSource = result.url
+                    })
                 }
             }
         }

@@ -57,6 +57,17 @@ Item {
             return ""
         return background.tempName
     }
+    function elementAdd(candidate,x,y){
+        worldOptions.forceActiveFocus()
+        if(candidate!==""){
+            createElement(candidate, {x:x,y:y})
+            if(candidate!==Element.image &&
+                    candidate!==Element.media)
+                ifileManager.fileChanged()
+        }
+        currentElement = undefined
+        isidePanel.container.elements.deselectAll()
+    }
 
     transform: Scale {
         id: itransform
@@ -102,19 +113,7 @@ Item {
         }
 
         onPressed: forceActiveFocus()
-        onClicked: {
-            worldOptions.forceActiveFocus()
-            if(isidePanel.insertCandidateComponent!==""){
-                createElement(isidePanel.insertCandidateComponent,
-                              {x:mouseX,y:mouseY})
-                if(isidePanel.insertCandidateComponent!==Element.image &&
-                        isidePanel.insertCandidateComponent!==Element.media)
-                    ifileManager.fileChanged()
-            }
-            currentElement = undefined
-            isidePanel.container.elements.deselectAll()
-        }
-
+        onClicked: elementAdd(isidePanel.insertCandidateComponent,mouseX,mouseY)
         onWheel: {
             if(wheel.angleDelta.y === 0)
                 return
@@ -153,6 +152,12 @@ Item {
                     element = iworld.createElement(Element.media,{source:drop.urls[i],x:drag.x,y:drag.y})
                 element.handleFile(drop.urls[i])
             }
+        }
+    }
+    DropArea{
+        anchors.fill: parent
+        onDropped: {
+            elementAdd(drag.source.type,drag.x,drag.y)
         }
     }
 }

@@ -70,7 +70,8 @@ ListView {
     }
 
     onCurrentIndexChanged: {
-        goCurrentFrame()
+        if(currentIndex!==-1)
+            goCurrentFrame()
         iremoteHandler.sendFrameDataToTrident()
     }
     onCountChanged: {
