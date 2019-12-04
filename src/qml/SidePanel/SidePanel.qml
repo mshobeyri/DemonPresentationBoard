@@ -58,7 +58,7 @@ Item{
         }
 
         closePolicy: Drawer.NoAutoClose
-        visible: ipinDrawerBtn.checked
+        visible: ipinDrawerBtn.checked && !iwelcome.firstShine
         interactive: false
         modal: false
         ToolSeparator{

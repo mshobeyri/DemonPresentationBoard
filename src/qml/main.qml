@@ -107,7 +107,8 @@ ApplicationWindow {
             if(iwelcome.opened ||iiconGallery.opened ||
                     itimeline.opened ||
                     ithemeGallery.opened || isettings.opened){
-                iwelcome.close()
+                if(iwelcome.closable)
+                    iwelcome.close()
                 iiconGallery.close()
                 ithemeGallery.close()
                 isettings.close()

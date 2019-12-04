@@ -53,6 +53,7 @@ Item {
     }
     function newButtonTriggered(){
         iprv.clear()
+        iwelcome.close()
     }
     function openBtnTriggered(){
         iopenFileDialog.open()
@@ -220,13 +221,6 @@ Item {
         sequence: StandardKey.SaveAs
         onActivated: {
             saveAsBtnTriggered()
-        }
-    }
-
-    Shortcut {
-        sequence: StandardKey.Open
-        onActivated: {
-            openBtnTriggered()
         }
     }
 
