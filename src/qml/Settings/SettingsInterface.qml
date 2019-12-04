@@ -12,6 +12,7 @@ Item {
                                      Qt.RightEdge:Qt.LeftEdge
     property var menuOpacity: imenusBackground.currentIndex === 0 ? 0.9:1
     property bool insertAlwaysVisible: iinsertVisibility.currentIndex === 0
+    property int comboWidth: 300
 
     QLS.Settings{
         id: isettings
@@ -28,52 +29,56 @@ Item {
             spacing: 10
             Label{
                 text: "Theme"
-                width: isidpaneledge.width
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: ithemeCombo
                 model: ["Dark", "Light"]
+                width: comboWidth
             }
         }
         Row{
             spacing: 10
             Label{
-                id: isidpaneledge
-
                 text: "Side panel Edge"
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: isidePanelEdgeCombo
 
                 model: ["Right", "Left"]
+                width: comboWidth
             }
         }
         Row{
             spacing: 10
             Label{
                 text: "Visibility"
-                width: isidpaneledge.width
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: imenusBackground
 
                 model: ["Glassify", "Solid"]
+                width: comboWidth
             }
         }
         Row{
             spacing: 10
             Label{
+                id: iinsertVisibilityLabel
+
                 text: "Insert Menu visibility"
-                width: isidpaneledge.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: iinsertVisibility
 
                 model: ["Always visible", "Visible if no item selected"]
+                width: comboWidth
             }
         }
     }
