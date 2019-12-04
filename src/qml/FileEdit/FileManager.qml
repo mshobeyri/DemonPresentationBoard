@@ -33,10 +33,13 @@ Item {
     }
 
     function saveBtnTriggered(){
-        if(currentFilePath==="")
+        if(currentFilePath===""){
             saveAsBtnTriggered()
-        else
+            return false
+        } else {
             iprv.save()
+            return true
+        }
     }
     function fromFile(json){
         appStatus = FileManager.Loading
@@ -140,29 +143,22 @@ Item {
         }
 
         function clear(){
-            if(!iprv.doesForgotToSave(function(){
-                fileChanged()
-                isFileChanged = false
-                resetFile()
-            })){
+            checkIsSaved(function(){
                 clearFunc()
+                iundoRedo.clear()
                 isFileChanged = false
                 resetFile()
-            }
+                iundoRedo.grabAll()
+            })
         }
 
         function open(path){
-            if(!iprv.doesForgotToSave(function(){
+            checkIsSaved(function(){
                 iundoRedo.clear()
                 fromFile(fileio.read(path))
                 iundoRedo.grabAll()
                 iprv.newFile(path)
-            })){
-                iundoRedo.clear()
-                fromFile(fileio.read(path))
-                iundoRedo.grabAll()
-                iprv.newFile(path)
-            }
+            })
         }
 
         function save(){
@@ -175,9 +171,9 @@ Item {
 
         function closeBtnTriggered(close){
             close.accepted = false
-            if(!iprv.doesForgotToSave(function(){Qt.quit()})){
-                close.accepted = true
-            }
+            iprv.checkIsSaved(function(){
+                Qt.quit()
+            });
         }
 
         function newFile(path){
@@ -199,11 +195,12 @@ Item {
                 openRecentModel.remove(0)
         }
 
-        function doesForgotToSave(func){
-            if(!isFileChanged)
-                return false
-            iforgotToSaveDialog.setOnDiscartAndOpen(func)
-            return true
+        function checkIsSaved(afterSavedFunc){
+            if(!isFileChanged){
+                afterSavedFunc()
+            }else{
+                iforgotToSaveDialog.setAfterSavedAndOpen(afterSavedFunc)
+            }
         }
     }
 
@@ -239,10 +236,12 @@ Item {
         title: "Save changes before closing?"
         anchors.centerIn: parent
         closePolicy: QQ2.Dialog.NoAutoClose
-        property var discartFunc: undefined
+        modal: true
+        dim: true
+        property var afterSaveFunc: undefined
 
-        function setOnDiscartAndOpen(func){
-            discartFunc = func
+        function setAfterSavedAndOpen(func){
+            afterSaveFunc = func
             open()
         }
         QQ2.Label{
@@ -258,7 +257,7 @@ Item {
                 flat: true
                 text: "Close widhtout saving"
                 onClicked:  {
-                    iforgotToSaveDialog.discartFunc()
+                    iforgotToSaveDialog.afterSaveFunc()
                     iforgotToSaveDialog.close()
                 }
                 Material.foreground: Material.accent
@@ -272,8 +271,10 @@ Item {
             QQ2.Button{
                 text: "Save"
                 onClicked: {
+                    if(saveBtnTriggered()){
+                        iforgotToSaveDialog.afterSaveFunc()
+                    }
                     iforgotToSaveDialog.close()
-                    saveBtnTriggered()
                 }
                 Layout.rightMargin: 10
                 Material.background: Material.accent
