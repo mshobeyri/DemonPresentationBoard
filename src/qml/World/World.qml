@@ -16,7 +16,12 @@ Item{
     property alias board: iboard
     property bool spaceIsDown: false
     property var worldOptions
-    property bool lockAllElements: spaceIsDown || isidePanel.insertCandidateComponent!==""
+    property var lastLockedPressedElement: undefined
+    property bool selectLockedElement: false
+    property bool lockAllChecked: false
+    property bool lockAllElements: spaceIsDown ||
+                                   isidePanel.insertCandidateComponent!=="" ||
+                                   lockAllChecked
 
     Component.onCompleted: {
         updatePosition()

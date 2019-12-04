@@ -6,6 +6,8 @@ import "../SidePanel/Chart"
 ElementBase{
     id: icontainer
 
+    property int baseWidth: 250
+    property int baseHeight: 110
     property string chartTypeIcon:{
         return "chart-bar"
     }

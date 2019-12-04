@@ -93,6 +93,23 @@ Menu {
             onTriggered: paste()
         }
     }
+    Menu{
+        title: "Lock"
+        width: 300
+        CheckDelegate{
+            text: "Select Locked Element"
+            checked: iworld.selectLockedElement
+            onToggled:{
+                iworld.selectLockedElement = checked
+            }
+        }
+        CheckDelegate{
+            text: "Lock Board"
+            onToggled: {
+                iworld.lockAllChecked = checked
+            }
+        }
+    }
 
     MenuSeparator{}
     MenuItem{
@@ -100,6 +117,7 @@ Menu {
         onClicked: isettings.open()
     }
     MenuSeparator{}
+
     MenuItem{
         text: iwin.visibility === ApplicationWindow.FullScreen?
                   "Normal":"Fullscreen"
@@ -109,4 +127,5 @@ Menu {
                         iwin.visibility = ApplicationWindow.FullScreen
         }
     }
+
 }

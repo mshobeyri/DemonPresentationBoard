@@ -77,6 +77,7 @@ Item{
         property real centerX : (width / 2);
         property real centerY : (height / 2);
 
+
         Item{
             id: ibaseElement
 
@@ -106,24 +107,25 @@ Item{
                 onDoubleClicked: iroot.doubleClicked()
                 drag.target: iroot
                 drag.axis: Drag.XAndYAxis
-                enabled: !editMode && !locked && !lockAllElements
-                cursorShape: {
-                    if(containsMouse && spaceIsDown){
-                        Qt.ClosedHandCursor
-                    }else if(!containsMouse && spaceIsDown){
-                        Qt.OpenHandCursor
-                    }else{
-                        Qt.ArrowCursor
-                    }
-                }
-
+                cursorShape: {}
                 property bool moved: false
+
                 onClicked: {
                     if(currentElement == iroot)
                         currentElement = undefined
                     else
                         currentElement = iroot
-                    mouse.accepted = true
+                }
+                onPressed: {
+                    if(locked && iworld.selectLockedElement){
+                        iworld.selectLockedElement = false
+                        mouse.accepted = true
+                        return
+                    }
+                    iworld.selectLockedElement = false
+
+                    if(editMode || locked || lockAllElements)
+                        mouse.accepted = false
                 }
 
                 onPositionChanged: moved = true
@@ -133,21 +135,6 @@ Item{
                         ifileManager.fileChanged()
                         iroot.positionChanged()
                         moved = false
-                    }
-                }
-            }
-
-            MouseArea{
-                anchors.fill: parent
-                enabled: locked
-                propagateComposedEvents: true
-                cursorShape: iselectDragMouseArea.cursorShape
-                acceptedButtons: Qt.LeftButton | Qt.RightButton
-                onPressed: {
-                    if (mouse.button === Qt.LeftButton){
-                        mouse.accepted = false
-                    }else{
-                        locked = false
                     }
                 }
             }

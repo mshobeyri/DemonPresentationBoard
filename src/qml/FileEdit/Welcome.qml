@@ -78,4 +78,10 @@ CustomDialog {
             Layout.fillHeight: true
         }
     }
+    Label{
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.bottom
+        text: "Copyright © Mehrdad Shobeyri  2019 - V "+Qt.application.version
+        font.pixelSize: 11
+    }
 }

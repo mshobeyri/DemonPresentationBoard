@@ -43,3 +43,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     src/fileio.h \
     src/upnpmanager.h
+
+VERSION = 1.1.0.3

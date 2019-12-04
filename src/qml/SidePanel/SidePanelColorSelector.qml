@@ -39,7 +39,8 @@ Column {
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    icolorCodeTextField.textFocus = false
+                    icolorCodeTextField.textFocus =
+                            !icolorCodeTextField.textFocus
                 }
             }
         }

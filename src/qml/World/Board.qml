@@ -123,7 +123,11 @@ Item {
         }
 
         onPressed: forceActiveFocus()
-        onClicked: elementAdd(isidePanel.insertCandidateComponent,mouseX,mouseY)
+        onClicked: {
+            if(spaceIsDown)
+                return
+            elementAdd(isidePanel.insertCandidateComponent,mouseX,mouseY)
+        }
         onWheel: {
             if(wheel.angleDelta.y === 0)
                 return

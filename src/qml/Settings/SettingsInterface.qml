@@ -7,10 +7,12 @@ Item {
     id: iroot
 
     property var theme: ithemeCombo.currentIndex===0?
-                             Material.Dark:Material.Light
+                            Material.Dark:Material.Light
     property var sidePannelEdge: isidePanelEdgeCombo.currentIndex===0?
-                             Qt.RightEdge:Qt.LeftEdge
+                                     Qt.RightEdge:Qt.LeftEdge
     property var menuOpacity: imenusBackground.currentIndex === 0 ? 0.9:1
+    property bool insertAlwaysVisible: iinsertVisibility.currentIndex === 0
+    property int comboWidth: 300
 
     QLS.Settings{
         id: isettings
@@ -18,6 +20,7 @@ Item {
         property alias theme: ithemeCombo.currentIndex
         property alias sidePannelEdge: isidePanelEdgeCombo.currentIndex
         property alias menuOpacity: imenusBackground.currentIndex
+        property alias insertVisibility: iinsertVisibility.currentIndex
     }
 
     Column{
@@ -26,39 +29,56 @@ Item {
             spacing: 10
             Label{
                 text: "Theme"
-                width: isidpaneledge.width
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: ithemeCombo
                 model: ["Dark", "Light"]
+                width: comboWidth
             }
         }
         Row{
             spacing: 10
             Label{
-                id: isidpaneledge
-
                 text: "Side panel Edge"
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: isidePanelEdgeCombo
 
                 model: ["Right", "Left"]
+                width: comboWidth
             }
         }
         Row{
             spacing: 10
             Label{
                 text: "Visibility"
-                width: isidpaneledge.width
+                width: iinsertVisibilityLabel.width
                 anchors.verticalCenter: parent.verticalCenter
             }
             ComboBox{
                 id: imenusBackground
 
                 model: ["Glassify", "Solid"]
+                width: comboWidth
+            }
+        }
+        Row{
+            spacing: 10
+            Label{
+                id: iinsertVisibilityLabel
+
+                text: "Insert Menu visibility"
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            ComboBox{
+                id: iinsertVisibility
+
+                model: ["Always visible", "Visible if no item selected"]
+                width: comboWidth
             }
         }
     }

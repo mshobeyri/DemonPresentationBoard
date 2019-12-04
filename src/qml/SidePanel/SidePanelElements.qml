@@ -97,7 +97,8 @@ Grid {
                 Drag.active: dragArea.drag.active
                 Drag.keys: [ "element" ]
                 Drag.dragType: Drag.Automatic
-                Drag.supportedActions: Qt.TargetMoveAction
+                Drag.supportedActions: Qt.CopyAction
+                Drag.hotSpot : Qt.point(30,30)
                 property string type: model.name
                 property string key: "element"
             }
