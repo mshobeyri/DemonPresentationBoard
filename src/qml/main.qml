@@ -77,12 +77,15 @@ ApplicationWindow {
         }
 
         fromFileFunc: function fromFile(data){
-            itimeline.clear()
-            iworld.clear()
             var jsData = JSON.parse(data)
             iworld.fromJson(jsData.world)
             itimeline.fromJson(jsData.timeline)
             ithemeGallery.fromJson(jsData.theme)
+        }
+        clearFunc: function clear(){
+            itimeline.clear()
+            iworld.clear()
+            ithemeGallery.clear()
         }
 
         binaryFilesFunc: function(){

@@ -83,6 +83,7 @@ Item{
         for(var i= 0;i<iboard.elementContainer.children.length;i++){
             iboard.elementContainer.children[i].destroy()
         }
+        board.clear()
     }
     function updatePosition(){
         var baseScale = Math.min(iwin.height /iboard.height,iwin.width/iboard.width)

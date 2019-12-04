@@ -18,7 +18,10 @@ CustomDialog {
             button.text: "New Project"
             button.iconStr: "file-plus"
             label: "Templates"
-            onBtnClicked: iwelcome.close()
+            onBtnClicked: {
+                ifileManager.newButtonTriggered()
+                iwelcome.close()
+            }
             onItemClicked: {
                 ifileManager.openAccepted(":/res/res/"+subtitle)
                 ifileManager.resetFile()

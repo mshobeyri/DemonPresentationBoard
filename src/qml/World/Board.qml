@@ -51,6 +51,16 @@ Item {
         if(json.tempName!=="")
             ibackground.source = fileio.tempFolderFileUrl(json.tempName)
     }
+    function clear(){
+        ibackground.type = 0
+        ibackground.tempName = ""
+        ibackground.color = "background"
+        ibackground.tileH = 5
+        ibackground.tileV = 5
+        ibackground.velocity = 0
+        ibackground.quality = 20
+        ibackground.source = ""
+    }
 
     function binaries(){
         if(ibackground.type===0)

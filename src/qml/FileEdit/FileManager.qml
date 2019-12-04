@@ -14,6 +14,7 @@ Item {
     property var application: undefined
     property var toFileFunc:undefined
     property var fromFileFunc:undefined
+    property var clearFunc:undefined
     property var binaryFilesFunc:undefined
     property int openRecentsCount: 20
     property string fileFormat
@@ -39,6 +40,7 @@ Item {
     }
     function fromFile(json){
         appStatus = FileManager.Loading
+        ifileManager.clearFunc()
         ifileManager.fromFileFunc(json)
         appStatus = FileManager.Loaded
     }
@@ -46,7 +48,9 @@ Item {
     function saveAsBtnTriggered(){
         isaveFileDialog.open()
     }
-
+    function newButtonTriggered(){
+        iprv.clear()
+    }
     function openBtnTriggered(){
         iopenFileDialog.open()
     }
@@ -133,6 +137,18 @@ Item {
                 path = path + "."+fileFormat
             newFile(path)
             save()
+        }
+
+        function clear(){
+            if(!iprv.doesForgotToSave(function(){
+                fileChanged()
+                isFileChanged = false
+                resetFile()
+            })){
+                clearFunc()
+                isFileChanged = false
+                resetFile()
+            }
         }
 
         function open(path){
