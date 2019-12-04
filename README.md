@@ -45,6 +45,10 @@ After clone project and build dependencied open demon-pb.pro in qt creator and c
 
 ### Todos
 - [ ] Add Formula element
+- [ ] Append used fonts to dpb files
+- [ ] Fix aspect ratio on resizing when shift btn holded
+- [ ] Create help menu
+
 
 ### Logo
 logo desined base on first letters of demon presentation board.
@@ -84,7 +88,9 @@ After clone project from Trident folder open trident.pro in qt creator and click
 - [x] UPNP support
 - [ ] Add Bluetooth support
 - [ ] Add audience question support(user ask question using their phones and you see the notification)
-- [ ] Release application in mobile markets.
+- [ ] Release application in mobile markets
+- [ ] Connect to arbitrary dpb app
+- [ ] Secure connection
 
 ### Logo
 Logo desined base on demon presentation board logo.
