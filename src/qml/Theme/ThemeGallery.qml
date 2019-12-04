@@ -66,6 +66,9 @@ CustomDialog {
             }
         }
     }
+    function clear(){
+        ilistview.currentIndex = 1
+    }
 
     function userThemesToJson(){
         var json = []

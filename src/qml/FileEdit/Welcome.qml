@@ -7,9 +7,28 @@ import ".."
 CustomDialog {
     id: iwelcome
 
+    property bool firstShine: true
     dialgTitle: "Welcome"
+    closable: !firstShine
+    modal: firstShine
+    onClosed: {
+        firstShine = false
+    }
+    Shortcut {
+        sequence: StandardKey.New
+        onActivated: {
+            ifileManager.newButtonTriggered()
+        }
+    }
 
-     RowLayout{
+    Shortcut {
+        sequence: StandardKey.Open
+        onActivated: {
+            ifileManager.openBtnTriggered()
+        }
+    }
+
+    RowLayout{
         spacing: 10
         anchors.fill: parent
         WelcomeColumns{
@@ -18,7 +37,9 @@ CustomDialog {
             button.text: "New Project"
             button.iconStr: "file-plus"
             label: "Templates"
-            onBtnClicked: iwelcome.close()
+            onBtnClicked: {
+                ifileManager.newButtonTriggered()
+            }
             onItemClicked: {
                 ifileManager.openAccepted(":/res/res/"+subtitle)
                 ifileManager.resetFile()

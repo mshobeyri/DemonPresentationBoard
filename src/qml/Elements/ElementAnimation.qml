@@ -6,7 +6,7 @@ ElementBase{
 
     property bool evoked:false
     property bool animeEnable: false
-    property string text : "Your Text Here!"
+    property string text : ""
     property int textJustify: TextEdit.AlignLeft
     property string textColorHelper: "foreground"
     property string color1: "foreground"
@@ -119,12 +119,12 @@ ElementBase{
         s1 =  Math.floor(h / 8)
         s2 =  Math.floor(h / 8)
         fontSize = Math.floor(h / 8)
-        h = loader.item.textElement.paintedHeight
-        w = loader.item.textElement.paintedWidth
-        h1 = loader.item.textElement.paintedHeight
-        w1 = loader.item.textElement.paintedWidth
-        h2 = loader.item.textElement.paintedHeight
-        w2 = loader.item.textElement.paintedWidth
+        h = loader.item.placeHolder.paintedHeight
+        w = loader.item.placeHolder.paintedWidth
+        h1 = loader.item.placeHolder.paintedHeight
+        w1 = loader.item.placeHolder.paintedWidth
+        h2 = loader.item.placeHolder.paintedHeight
+        w2 = loader.item.placeHolder.paintedWidth
         animeEnable = true
     }
 
@@ -267,9 +267,11 @@ ElementBase{
             antialiasing: true
             clip: true
             color: textBackgroundColor
-            property alias textElement: itxt
+            property alias placeHolder: iplaceHolderText
             TextEdit {
                 id: itxt
+
+                property bool textChanged : false
                 anchors.fill: parent
                 anchors.margins: 2
                 color: ithemeGallery.themeColor(icontainer.textColorHelper)
@@ -284,12 +286,43 @@ ElementBase{
                 selectByKeyboard: true
                 antialiasing: true
                 horizontalAlignment: textJustify
-                onTextChanged: icontainer.text = text
+
+                onEnabledChanged:{
+                    if(enabled)
+                        forceActiveFocus()
+                }
+                onEditingFinished: {
+                    if(textChanged){
+                        ifileManager.fileChanged()
+                    }
+                    textChanged = false
+                }
+                onTextChanged: {
+                    if(focus){
+                        textChanged = true
+                        icontainer.text = text
+                    }
+                }
                 Behavior on font.pointSize {
                     NumberAnimation{
                         duration: animationDuration
                         easing.type: easingType
                     }
+                }
+                Text {
+                    id: iplaceHolderText
+
+                    anchors.fill: parent
+                    text: "Your Text Here!"
+                    visible: !editMode && icontainer.text===""
+                    font.italic: icontainer.animeTextFont.italic
+                    font.bold: icontainer.animeTextFont.bold
+                    font.family: icontainer.animeTextFont.family
+                    font.pixelSize: fontSize
+                    wrapMode: TextEdit.WordWrap
+                    color: parent.color
+                    antialiasing: true
+                    horizontalAlignment: textJustify
                 }
             }
         }

@@ -4,7 +4,7 @@ import "ElementHelper.js" as Element
 ElementBase{
     id: icontainer
 
-    property string text : "Your Text Here!"
+    property string text : ""
     property string color: "foreground"
     property string backgroundColor: "transparent"
     property font textFont
@@ -30,8 +30,8 @@ ElementBase{
 
     onCreated: {
         textFont.pointSize = Math.floor(h / pixelDensity / 2.9)
-        h = loader.item.textElement.paintedHeight
-        w = loader.item.textElement.paintedWidth
+        h = loader.item.placeHolder.paintedHeight
+        w = loader.item.placeHolder.paintedWidth
     }
 
     onDoubleClicked:{
@@ -51,7 +51,7 @@ ElementBase{
             border.color: selected? Qt.lighter(itxt.color): "transparent"
             antialiasing: true
             clip: true
-            property alias textElement: itxt
+            property alias placeHolder: iplaceHolderText
 
             TextEdit {
                 id: itxt
@@ -68,6 +68,10 @@ ElementBase{
                 selectByKeyboard: true
                 antialiasing: true
                 horizontalAlignment: textJustify
+                onEnabledChanged:{
+                    if(enabled)
+                        forceActiveFocus()
+                }
                 onEditingFinished: {
                     if(textChanged){
                         ifileManager.fileChanged()
@@ -79,6 +83,18 @@ ElementBase{
                         textChanged = true
                         icontainer.text = text
                     }
+                }
+                Text {
+                    id: iplaceHolderText
+
+                    anchors.fill: parent
+                    text: "Your Text Here!"
+                    visible: !editMode && icontainer.text===""
+                    font: parent.font
+                    antialiasing: true
+                    color: parent.color
+                    horizontalAlignment: textJustify
+                    wrapMode: TextEdit.WordWrap
                 }
             }
         }

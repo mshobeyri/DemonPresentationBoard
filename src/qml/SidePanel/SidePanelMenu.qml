@@ -60,7 +60,10 @@ Menu {
     MenuSeparator{}
     Menu{
         title: "File"
-
+        MenuItem{
+            text: "New"
+            onTriggered: ifileManager.newButtonTriggered()
+        }
         MenuItem{
             text: "Open"
             onTriggered: ifileManager.openBtnTriggered()

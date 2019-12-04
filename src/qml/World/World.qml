@@ -83,6 +83,7 @@ Item{
         for(var i= 0;i<iboard.elementContainer.children.length;i++){
             iboard.elementContainer.children[i].destroy()
         }
+        board.clear()
     }
     function updatePosition(){
         var baseScale = Math.min(iwin.height /iboard.height,iwin.width/iboard.width)
@@ -96,12 +97,7 @@ Item{
                 currentElement.deleteIt()
         }
     }
-    Shortcut {
-        sequence: StandardKey.Cancel
-        onActivated: {
-            currentElement = undefined
-        }
-    }
+
     Shortcut {
         sequence: StandardKey.ZoomIn
         onActivated: {
@@ -134,7 +130,9 @@ Item{
     DropArea{
         anchors.fill: parent
         onEntered: {
-            drag.accepted = drag.urls[0]!==undefined &&
+            drag.accepted =
+                    drag.source === null &&
+                    drag.urls[0]!==undefined &&
                     drag.urls.length === 1 &&
                     Qmlhelper.isAppFile(drag.urls[0])
         }

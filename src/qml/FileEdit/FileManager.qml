@@ -14,6 +14,7 @@ Item {
     property var application: undefined
     property var toFileFunc:undefined
     property var fromFileFunc:undefined
+    property var clearFunc:undefined
     property var binaryFilesFunc:undefined
     property int openRecentsCount: 20
     property string fileFormat
@@ -32,13 +33,17 @@ Item {
     }
 
     function saveBtnTriggered(){
-        if(currentFilePath==="")
+        if(currentFilePath===""){
             saveAsBtnTriggered()
-        else
+            return false
+        } else {
             iprv.save()
+            return true
+        }
     }
     function fromFile(json){
         appStatus = FileManager.Loading
+        ifileManager.clearFunc()
         ifileManager.fromFileFunc(json)
         appStatus = FileManager.Loaded
     }
@@ -46,7 +51,10 @@ Item {
     function saveAsBtnTriggered(){
         isaveFileDialog.open()
     }
-
+    function newButtonTriggered(){
+        iprv.clear()
+        iwelcome.close()
+    }
     function openBtnTriggered(){
         iopenFileDialog.open()
     }
@@ -135,18 +143,23 @@ Item {
             save()
         }
 
+        function clear(){
+            checkIsSaved(function(){
+                clearFunc()
+                iundoRedo.clear()
+                isFileChanged = false
+                resetFile()
+                iundoRedo.grabAll()
+            })
+        }
+
         function open(path){
-            if(!iprv.doesForgotToSave(function(){
+            checkIsSaved(function(){
                 iundoRedo.clear()
                 fromFile(fileio.read(path))
                 iundoRedo.grabAll()
                 iprv.newFile(path)
-            })){
-                iundoRedo.clear()
-                fromFile(fileio.read(path))
-                iundoRedo.grabAll()
-                iprv.newFile(path)
-            }
+            })
         }
 
         function save(){
@@ -159,9 +172,9 @@ Item {
 
         function closeBtnTriggered(close){
             close.accepted = false
-            if(!iprv.doesForgotToSave(function(){Qt.quit()})){
-                close.accepted = true
-            }
+            iprv.checkIsSaved(function(){
+                Qt.quit()
+            });
         }
 
         function newFile(path){
@@ -183,11 +196,12 @@ Item {
                 openRecentModel.remove(0)
         }
 
-        function doesForgotToSave(func){
-            if(!isFileChanged)
-                return false
-            iforgotToSaveDialog.setOnDiscartAndOpen(func)
-            return true
+        function checkIsSaved(afterSavedFunc){
+            if(!isFileChanged){
+                afterSavedFunc()
+            }else{
+                iforgotToSaveDialog.setAfterSavedAndOpen(afterSavedFunc)
+            }
         }
     }
 
@@ -210,23 +224,18 @@ Item {
         }
     }
 
-    Shortcut {
-        sequence: StandardKey.Open
-        onActivated: {
-            openBtnTriggered()
-        }
-    }
-
     QQ2.Dialog{
         id: iforgotToSaveDialog
 
         title: "Save changes before closing?"
         anchors.centerIn: parent
         closePolicy: QQ2.Dialog.NoAutoClose
-        property var discartFunc: undefined
+        modal: true
+        dim: true
+        property var afterSaveFunc: undefined
 
-        function setOnDiscartAndOpen(func){
-            discartFunc = func
+        function setAfterSavedAndOpen(func){
+            afterSaveFunc = func
             open()
         }
         QQ2.Label{
@@ -242,7 +251,7 @@ Item {
                 flat: true
                 text: "Close widhtout saving"
                 onClicked:  {
-                    iforgotToSaveDialog.discartFunc()
+                    iforgotToSaveDialog.afterSaveFunc()
                     iforgotToSaveDialog.close()
                 }
                 Material.foreground: Material.accent
@@ -256,8 +265,10 @@ Item {
             QQ2.Button{
                 text: "Save"
                 onClicked: {
+                    if(saveBtnTriggered()){
+                        iforgotToSaveDialog.afterSaveFunc()
+                    }
                     iforgotToSaveDialog.close()
-                    saveBtnTriggered()
                 }
                 Layout.rightMargin: 10
                 Material.background: Material.accent

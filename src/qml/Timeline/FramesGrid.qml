@@ -70,6 +70,9 @@ ListView {
     }
 
     onCurrentIndexChanged: {
+        if(currentIndex===-1)
+            return
+
         goCurrentFrame()
         iremoteHandler.sendFrameDataToTrident()
     }
@@ -180,6 +183,7 @@ ListView {
             Rectangle {
                 id: icon
 
+                property string key: "frame"
                 width: iwin.width / 6 - 10
                 height: width / 16 * 9
                 color: "#333333"
@@ -254,6 +258,8 @@ ListView {
             DropArea {
                 anchors { fill: parent; margins: 15 }
                 onEntered:{
+                    drag.accepted = drag.source !== null &&
+                            drag.source.key === "frame"
                     if(idelegateRoot.selectedIndex==-1){
                         selectedIndex = drag.source.visualIndex
                     }

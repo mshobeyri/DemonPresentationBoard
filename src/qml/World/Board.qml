@@ -51,11 +51,32 @@ Item {
         if(json.tempName!=="")
             ibackground.source = fileio.tempFolderFileUrl(json.tempName)
     }
+    function clear(){
+        ibackground.type = 0
+        ibackground.tempName = ""
+        ibackground.color = "background"
+        ibackground.tileH = 5
+        ibackground.tileV = 5
+        ibackground.velocity = 0
+        ibackground.quality = 20
+        ibackground.source = ""
+    }
 
     function binaries(){
         if(ibackground.type===0)
             return ""
         return background.tempName
+    }
+    function elementAdd(candidate,x,y){
+        worldOptions.forceActiveFocus()
+        if(candidate!==""){
+            createElement(candidate, {x:x,y:y})
+            if(candidate!==Element.image &&
+                    candidate!==Element.media)
+                ifileManager.fileChanged()
+        }
+        currentElement = undefined
+        isidePanel.container.elements.deselectAll()
     }
 
     transform: Scale {
@@ -102,19 +123,7 @@ Item {
         }
 
         onPressed: forceActiveFocus()
-        onClicked: {
-            worldOptions.forceActiveFocus()
-            if(isidePanel.insertCandidateComponent!==""){
-                createElement(isidePanel.insertCandidateComponent,
-                              {x:mouseX,y:mouseY})
-                if(isidePanel.insertCandidateComponent!==Element.image &&
-                        isidePanel.insertCandidateComponent!==Element.media)
-                    ifileManager.fileChanged()
-            }
-            currentElement = undefined
-            isidePanel.container.elements.deselectAll()
-        }
-
+        onClicked: elementAdd(isidePanel.insertCandidateComponent,mouseX,mouseY)
         onWheel: {
             if(wheel.angleDelta.y === 0)
                 return
@@ -141,7 +150,9 @@ Item {
     DropArea{
         anchors.fill: parent
         onEntered: {
-            drag.accepted = drag.urls[0]!==undefined &&
+            drag.accepted =
+                    drag.source === null &&
+                    drag.urls[0]!==undefined &&
                     (Qmlhelper.isImage(drag.urls[0]) ||
                      Qmlhelper.isMedia(drag.urls[0]))
         }
@@ -153,6 +164,17 @@ Item {
                     element = iworld.createElement(Element.media,{source:drop.urls[i],x:drag.x,y:drag.y})
                 element.handleFile(drop.urls[i])
             }
+        }
+    }
+    DropArea{
+        anchors.fill: parent
+        onEntered: {
+            drag.accepted = drag.source !== null &&
+                    drag.source.key === "element"
+        }
+
+        onDropped: {
+            elementAdd(drag.source.type,drag.x,drag.y)
         }
     }
 }
