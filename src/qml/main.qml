@@ -98,5 +98,21 @@ ApplicationWindow {
         id: iwelcome
         visible: true
     }
+    Shortcut {
+        sequence: StandardKey.Cancel
+        onActivated: {
+            if(iwelcome.opened ||iiconGallery.opened ||
+                    itimeline.opened ||
+                    ithemeGallery.opened || isettings.opened){
+                iwelcome.close()
+                iiconGallery.close()
+                ithemeGallery.close()
+                isettings.close()
+                itimeline.close()
+            }else{
+                iworld.currentElement = undefined
+            }
+        }
+    }
 }
 

@@ -96,12 +96,7 @@ Item{
                 currentElement.deleteIt()
         }
     }
-    Shortcut {
-        sequence: StandardKey.Cancel
-        onActivated: {
-            currentElement = undefined
-        }
-    }
+
     Shortcut {
         sequence: StandardKey.ZoomIn
         onActivated: {

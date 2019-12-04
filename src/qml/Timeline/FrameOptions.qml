@@ -41,7 +41,7 @@ Flickable {
             height: 10
         }
         Label{
-            text: "Frame Time (min:sec):"
+            text: "Frame Time (m:s):"
         }
         TimePicker{
             values: iroot.visible?iframesGrid.currentItem.modelObj().time:0
