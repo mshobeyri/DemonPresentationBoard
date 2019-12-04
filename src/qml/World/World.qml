@@ -130,7 +130,9 @@ Item{
     DropArea{
         anchors.fill: parent
         onEntered: {
-            drag.accepted = drag.urls[0]!==undefined &&
+            drag.accepted =
+                    drag.source === null &&
+                    drag.urls[0]!==undefined &&
                     drag.urls.length === 1 &&
                     Qmlhelper.isAppFile(drag.urls[0])
         }

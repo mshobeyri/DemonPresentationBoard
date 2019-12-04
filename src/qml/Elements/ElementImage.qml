@@ -4,8 +4,8 @@ import "ElementHelper.js" as Element
 
 ElementBase{
     id: icontainer
-    baseWidth: 130
     baseHeight: 90
+    property var sourceSize
     property string tempName: ""
     property string source: ""
     property bool isAnimated: icontainer.source.indexOf(".gif")===icontainer.source.length-4
@@ -23,6 +23,8 @@ ElementBase{
         icontainer.tempName = fileio.copyToTempFolder(path)
         icontainer.source = fileio.tempFolderFileUrl(tempName)
         ifileManager.fileChanged()
+        console.log(sourceSize.width,sourceSize.height)
+        w = h * (sourceSize.width/sourceSize.height)
     }
 
     onCreated: {
@@ -46,7 +48,10 @@ ElementBase{
                 source: visible&& tempName!=="" ?icontainer.source:""
                 visible: icontainer.isVector
                 antialiasing: true
-                sourceSize: Qt.size(width/iworld.handlesScale,height/iworld.handlesScale)
+                sourceSize: Qt.size(width,height)
+                onSourceChanged: {
+                    icontainer.sourceSize = sourceSize
+                }
             }
 
             Image {
@@ -54,6 +59,9 @@ ElementBase{
                 source: visible&& tempName!=="" ?icontainer.source:""
                 visible: !icontainer.isVector && !icontainer.isAnimated
                 antialiasing: true
+                onSourceChanged: {
+                    icontainer.sourceSize = sourceSize
+                }
             }
 
             AnimatedImage{
@@ -61,6 +69,9 @@ ElementBase{
                 source:visible&& tempName!=="" ?icontainer.source:""
                 visible: icontainer.isAnimated
                 antialiasing: true
+                onSourceChanged: {
+                    icontainer.sourceSize = sourceSize
+                }
             }
         }
     }

@@ -150,7 +150,9 @@ Item {
     DropArea{
         anchors.fill: parent
         onEntered: {
-            drag.accepted = drag.urls[0]!==undefined &&
+            drag.accepted =
+                    drag.source === null &&
+                    drag.urls[0]!==undefined &&
                     (Qmlhelper.isImage(drag.urls[0]) ||
                      Qmlhelper.isMedia(drag.urls[0]))
         }
@@ -166,6 +168,11 @@ Item {
     }
     DropArea{
         anchors.fill: parent
+        onEntered: {
+            drag.accepted = drag.source !== null &&
+                    drag.source.key === "element"
+        }
+
         onDropped: {
             elementAdd(drag.source.type,drag.x,drag.y)
         }

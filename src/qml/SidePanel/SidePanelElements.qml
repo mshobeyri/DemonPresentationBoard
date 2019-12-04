@@ -99,6 +99,7 @@ Grid {
                 Drag.dragType: Drag.Automatic
                 Drag.supportedActions: Qt.TargetMoveAction
                 property string type: model.name
+                property string key: "element"
             }
 
             MouseArea{

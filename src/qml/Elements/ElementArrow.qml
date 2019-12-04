@@ -29,6 +29,10 @@ ElementBase{
         rightMarker = json.rightMarker
         leftMarker = json.leftMarker
     }
+    onCreated: {
+        h = w / 4
+    }
+
     component:  Component {
         Item {
             antialiasing: true
