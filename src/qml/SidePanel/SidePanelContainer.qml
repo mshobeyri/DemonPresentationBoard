@@ -15,14 +15,15 @@ Flickable {
             id: iinsertLabel
             text: qsTr("Insert")
             padding: 10
+            visible: ielements.visible
             font.pointSize: 12
-            visible: iworld.currentElement===undefined
             Material.foreground: Material.accent
         }
         SidePanelElements{
             id: ielements
 
-            visible: iworld.currentElement===undefined
+            visible: isettings.appInterface.insertAlwaysVisible ||
+                iworld.currentElement===undefined
         }
         MenuSeparator{
             visible:iinsertLabel.visible
