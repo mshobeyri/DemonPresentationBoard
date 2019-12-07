@@ -23,6 +23,9 @@ main(int argc, char* argv[]) {
     QQmlApplicationEngine engine;
 
     FileIO fileio;
+    if(argc>1){
+        fileio.setOpenFilePaht(QString(argv[1]));
+    }
     engine.rootContext()->setContextProperty("fileio", &fileio);
     engine.rootContext()->setContextProperty("upnp", &upnpmanager);
 

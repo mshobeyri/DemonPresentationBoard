@@ -30,7 +30,7 @@ ColumnLayout{
 
     SidePanelColorSelector{
         visible: true
-        labelSize : 100
+        labelSize : iroot.labelSize
         label: "color"
         color: visible? iworld.board.background.color:"white"
         onColorOutputChanged: if(visible &&
@@ -70,7 +70,7 @@ ColumnLayout{
         id: iabouncance
 
         visible: ibackgroundType.currentIndex===2
-        label: "tiles count H"
+        label: "tiles #H"
         width: parent.width
         value: iworld.board.background.tileH
         onValueChanged: iworld.board.background.tileH = value
@@ -79,7 +79,7 @@ ColumnLayout{
     }
     SidePanelValueBox{
         visible: ibackgroundType.currentIndex===2
-        label: "tiles count V"
+        label: "tiles #V"
         width: parent.width
         value: iworld.board.background.tileV
         onValueChanged: iworld.board.background.tileV = value

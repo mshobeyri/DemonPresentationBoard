@@ -1,4 +1,10 @@
 *.pro.user
+*.exe
+*.cab
+*.ini
+*.txt
+
+
 /bin
 /build*
 */build*

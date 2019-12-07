@@ -44,4 +44,4 @@ HEADERS += \
     src/fileio.h \
     src/upnpmanager.h
 
-VERSION = 1.1.0.3
+VERSION = 1.1.1.0
