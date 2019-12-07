@@ -29,7 +29,7 @@
     <ROW Property="ProductCode" Value="1033:{1F74C3C7-44C5-46DF-AFA4-8AD121F42330} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Demon Presentation Board"/>
-    <ROW Property="ProductVersion" Value="1.1.0.3" Type="32" TargetFile="demonpb.exe_1"/>
+    <ROW Property="ProductVersion" Value="1.1.1.0" Type="32" TargetFile="demonpb.exe_1"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{6C957956-99B2-485A-9F88-E2DE11D220EE}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
