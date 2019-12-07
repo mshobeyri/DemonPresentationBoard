@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.3" version="16.3" Modules="architect" RootPath="." Language="en" Id="{CD1C0F86-186A-498D-99B3-C931B813AADF}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;ActSyncAppComponent;FixupComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_COLOR_DISABLED_TEXT" Value="3026478" MsiKey="AI_COLOR_DISABLED_TEXT"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE" Value="2960685;4276545;6776679;16176031" MsiKey="AI_CONTROL_VISUAL_STYLE"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_EX" Value="1513239;3026478;3026478" MsiKey="AI_CONTROL_VISUAL_STYLE_EX"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_FLAT" MsiKey="AI_CONTROL_VISUAL_STYLE_FLAT"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_FrameBtnsColor" Value="metroblack" MsiKey="AI_FrameBtnsColor"/>
+    <ROW Property="AI_FrameColor" Value="metroblack" MsiKey="AI_FrameColor"/>
+    <ROW Property="AI_NO_BORDER_NORMAL" MultiBuildValue="DefaultBuild:1" MsiKey="AI_NO_BORDER_NORMAL"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="Demon Presentation Board"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_ThemeStyleEx" Value="border" MultiBuildValue="DefaultBuild:flat" MsiKey="AI_ThemeStyleEx"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="logo.exe" Type="8"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="DefaultBuild:logo.png" Type="1" MsiKey="AppLogoIcon"/>
+    <ROW Property="Manufacturer" Value="Water Bear"/>
+    <ROW Property="ProductCode" Value="1033:{1F74C3C7-44C5-46DF-AFA4-8AD121F42330} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Demon Presentation Board"/>
+    <ROW Property="ProductVersion" Value="1.1.0.3" Type="32" TargetFile="demonpb.exe_1"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{6C957956-99B2-485A-9F88-E2DE11D220EE}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="metroinstallbutton" Value="metroinstallbutton.png" Type="1" MsiKey="metroinstallbutton"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="Controls.2_Dir" Directory_Parent="QtQuick_Dir" DefaultDir="Controls.2"/>
+    <ROW Directory="Fusion_Dir" Directory_Parent="Controls.2_Dir" DefaultDir="Fusion"/>
+    <ROW Directory="Imagine_Dir" Directory_Parent="Controls.2_Dir" DefaultDir="Imagine"/>
+    <ROW Directory="Layouts_Dir" Directory_Parent="QtQuick_Dir" DefaultDir="Layouts"/>
+    <ROW Directory="Material_Dir" Directory_Parent="Controls.2_Dir" DefaultDir="Material"/>
+    <ROW Directory="Models.2_Dir" Directory_Parent="QtQml_Dir" DefaultDir="Models.2"/>
+    <ROW Directory="ProgramFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramFilesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="QtAV_Dir" Directory_Parent="__Dir" DefaultDir="QtAV"/>
+    <ROW Directory="QtCharts_Dir" Directory_Parent="__Dir" DefaultDir="QtCharts"/>
+    <ROW Directory="QtGraphicalEffects_Dir" Directory_Parent="__Dir" DefaultDir="QTGRAP~1|QtGraphicalEffects"/>
+    <ROW Directory="QtQml_Dir" Directory_Parent="__Dir" DefaultDir="QtQml"/>
+    <ROW Directory="QtQuick.2_Dir" Directory_Parent="__Dir" DefaultDir="QtQuick.2"/>
+    <ROW Directory="QtQuick_Dir" Directory_Parent="__Dir" DefaultDir="QtQuick"/>
+    <ROW Directory="QtWebSockets_Dir" Directory_Parent="__Dir" DefaultDir="QTWEBS~1|QtWebSockets"/>
+    <ROW Directory="Qt_Dir" Directory_Parent="__Dir" DefaultDir="Qt"/>
+    <ROW Directory="RemoteObjects_Dir" Directory_Parent="QtQml_Dir" DefaultDir="REMOTE~1|RemoteObjects"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="StateMachine_Dir" Directory_Parent="QtQml_Dir" DefaultDir="STATEM~1|StateMachine"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="Templates.2_Dir" Directory_Parent="QtQuick_Dir" DefaultDir="TEMPLA~1.2|Templates.2"/>
+    <ROW Directory="Universal_Dir" Directory_Parent="Controls.2_Dir" DefaultDir="UNIVER~1|Universal"/>
+    <ROW Directory="Window.2_Dir" Directory_Parent="QtQuick_Dir" DefaultDir="Window.2"/>
+    <ROW Directory="__Dir" Directory_Parent="ProgramFilesFolder" DefaultDir="DEMONP~1|DemonPresentationBoard"/>
+    <ROW Directory="bearer_Dir" Directory_Parent="__Dir" DefaultDir="bearer"/>
+    <ROW Directory="iconengines_Dir" Directory_Parent="__Dir" DefaultDir="ICONEN~1|iconengines"/>
+    <ROW Directory="imageformats_Dir" Directory_Parent="__Dir" DefaultDir="IMAGEF~1|imageformats"/>
+    <ROW Directory="labs_Dir" Directory_Parent="Qt_Dir" DefaultDir="labs"/>
+    <ROW Directory="platform_Dir" Directory_Parent="labs_Dir" DefaultDir="platform"/>
+    <ROW Directory="platforminputcontexts_Dir" Directory_Parent="__Dir" DefaultDir="PLATFO~1|platforminputcontexts"/>
+    <ROW Directory="platforms_Dir" Directory_Parent="__Dir" DefaultDir="PLATFO~2|platforms"/>
+    <ROW Directory="private_Dir" Directory_Parent="QtGraphicalEffects_Dir" DefaultDir="private"/>
+    <ROW Directory="qmltooling_Dir" Directory_Parent="__Dir" DefaultDir="QMLTOO~1|qmltooling"/>
+    <ROW Directory="scenegraph_Dir" Directory_Parent="__Dir" DefaultDir="SCENEG~1|scenegraph"/>
+    <ROW Directory="settings_Dir" Directory_Parent="labs_Dir" DefaultDir="settings"/>
+    <ROW Directory="styles_Dir" Directory_Parent="__Dir" DefaultDir="styles"/>
+    <ROW Directory="translations_Dir" Directory_Parent="__Dir" DefaultDir="TRANSL~1|translations"/>
+    <ROW Directory="virtualkeyboard_Dir" Directory_Parent="__Dir" DefaultDir="VIRTUA~1|virtualkeyboard"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{C1C9CD61-886A-4CA6-85A7-A68285935DC2}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{69977832-57FD-4BDF-9EFC-9063F0FD4D5D}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{B9EE5891-D854-4062-BC23-2AF5CA82F614}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="AbstractButton.qml" ComponentId="{6FA00879-F01B-4439-83AF-B26A4575D7E4}" Directory_="Controls.2_Dir" Attributes="0" KeyPath="AbstractButton.qml" Type="0"/>
+    <ROW Component="ApplicationWindow.qml" ComponentId="{A7F75F65-B2D0-4439-89A6-0BADA8BE6CB2}" Directory_="Fusion_Dir" Attributes="0" KeyPath="ApplicationWindow.qml_1" Type="0"/>
+    <ROW Component="ApplicationWindow.qml_1" ComponentId="{3906B7F3-21C5-44C7-9449-0B33B6CA01C1}" Directory_="Imagine_Dir" Attributes="0" KeyPath="ApplicationWindow.qml_2" Type="0"/>
+    <ROW Component="ApplicationWindow.qml_2" ComponentId="{57FDC47F-65A5-4760-92EA-C0FF59C56B5B}" Directory_="Material_Dir" Attributes="0" KeyPath="ApplicationWindow.qml_3" Type="0"/>
+    <ROW Component="ApplicationWindow.qml_3" ComponentId="{163527B7-2656-44CB-9F31-B8C1F9B8D28D}" Directory_="Universal_Dir" Attributes="0" KeyPath="ApplicationWindow.qml_4" Type="0"/>
+    <ROW Component="B35B3203FEB4CFFA576A27CB835D3E6" ComponentId="{BB26C25F-78CC-4D6F-8CFA-823DC8D904F8}" Directory_="APPDIR" Attributes="4" KeyPath="B35B3203FEB4CFFA576A27CB835D3E6" Options="2"/>
+    <ROW Component="Blend.qml" ComponentId="{E8D38696-41AE-4D23-A317-903E37439C08}" Directory_="QtGraphicalEffects_Dir" Attributes="0" KeyPath="Blend.qml" Type="0"/>
+    <ROW Component="D3Dcompiler_47.dll_1" ComponentId="{C72A7524-9EB2-410A-ADA9-FA40F057E98E}" Directory_="__Dir" Attributes="0" KeyPath="D3Dcompiler_47.dll_1"/>
+    <ROW Component="DropShadowBase.qml" ComponentId="{9E9F96BC-A386-40F7-B8C2-2FD0D5720379}" Directory_="private_Dir" Attributes="0" KeyPath="DropShadowBase.qml" Type="0"/>
+    <ROW Component="ProductInformation" ComponentId="{EAC4701C-4204-4E77-AD19-5AB08DEDE2F3}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="QmlAV.dll" ComponentId="{FD1CB644-1A68-43C1-BF9D-F391096D348A}" Directory_="QtAV_Dir" Attributes="0" KeyPath="QmlAV.dll"/>
+    <ROW Component="Qt5Charts.dll_1" ComponentId="{D0237CFE-EE3C-4D53-8A4C-0449C70A2ABD}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Charts.dll_1"/>
+    <ROW Component="Qt5Core.dll_1" ComponentId="{EBB93348-E140-4EEC-8815-7647D121C7EF}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Core.dll_1"/>
+    <ROW Component="Qt5Gui.dll_1" ComponentId="{C5DF326A-C368-436D-BBE9-7EB9CB0212B6}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Gui.dll_1"/>
+    <ROW Component="Qt5Network.dll_1" ComponentId="{2C7D784D-802D-469B-9842-64C97CEBFC6A}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Network.dll_1"/>
+    <ROW Component="Qt5Qml.dll_1" ComponentId="{B3285433-DB99-4C2F-A514-78F299D23FA7}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Qml.dll_1"/>
+    <ROW Component="Qt5Quick.dll_1" ComponentId="{278D8FF8-727F-4B78-A624-8122A32487C1}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Quick.dll_1"/>
+    <ROW Component="Qt5QuickControls2.dll_1" ComponentId="{A4AD8678-3F73-43AF-BAA7-55B0E7EFDB67}" Directory_="__Dir" Attributes="0" KeyPath="Qt5QuickControls2.dll_1"/>
+    <ROW Component="Qt5QuickTemplates2.dll_1" ComponentId="{DFAEBF7A-4C09-4045-9398-047725B37DA9}" Directory_="__Dir" Attributes="0" KeyPath="Qt5QuickTemplates2.dll_1"/>
+    <ROW Component="Qt5RemoteObjects.dll_1" ComponentId="{F05F09CE-52BD-4403-B643-1F540F0B37FC}" Directory_="__Dir" Attributes="0" KeyPath="Qt5RemoteObjects.dll_1"/>
+    <ROW Component="Qt5Svg.dll_1" ComponentId="{1C361053-2C16-4E37-B64A-C515274489C5}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Svg.dll_1"/>
+    <ROW Component="Qt5WebSockets.dll_1" ComponentId="{FADC1B69-F1ED-431C-9F54-7E5B45C438E1}" Directory_="__Dir" Attributes="0" KeyPath="Qt5WebSockets.dll_1"/>
+    <ROW Component="Qt5Widgets.dll_1" ComponentId="{3ABAA8C4-3B02-4D6E-B12C-C40D3B0F4E72}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Widgets.dll_1"/>
+    <ROW Component="QtAV1.dll_1" ComponentId="{D0569C99-6008-443B-B11F-A2643602369A}" Directory_="__Dir" Attributes="0" KeyPath="QtAV1.dll_1"/>
+    <ROW Component="QtAVWidgets1.dll_1" ComponentId="{7B70DE4D-0863-48B8-9D9A-01E7C95F7E9C}" Directory_="__Dir" Attributes="0" KeyPath="QtAVWidgets1.dll_1"/>
+    <ROW Component="QtAVWidgetsd1.dll_1" ComponentId="{AF73CB91-C5AD-4542-AD80-DA940CFD95BA}" Directory_="__Dir" Attributes="0" KeyPath="QtAVWidgetsd1.dll_1"/>
+    <ROW Component="QtAVd1.dll_1" ComponentId="{FE7FD407-9A08-4E75-B2FC-10D3D188B5F9}" Directory_="__Dir" Attributes="0" KeyPath="QtAVd1.dll_1"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{BE845608-CBFD-4008-A4B5-09A512A4AA1C}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="avcodec57.dll_1" ComponentId="{DA019EF9-3DCC-4545-9979-94FB6781F0E4}" Directory_="__Dir" Attributes="0" KeyPath="avcodec57.dll_1"/>
+    <ROW Component="avdevice57.dll_1" ComponentId="{2F283A80-EA84-4B45-97D8-43D3FC96E15C}" Directory_="__Dir" Attributes="0" KeyPath="avdevice57.dll_1"/>
+    <ROW Component="avfilter6.dll_1" ComponentId="{B9C47F4C-1575-403B-A16F-C7AEE519A9A0}" Directory_="__Dir" Attributes="0" KeyPath="avfilter6.dll_1"/>
+    <ROW Component="avformat57.dll_1" ComponentId="{577FBE33-E024-4CFB-A950-D93271CFDBDA}" Directory_="__Dir" Attributes="0" KeyPath="avformat57.dll_1"/>
+    <ROW Component="avresample3.dll_1" ComponentId="{632481E5-A681-4A79-ACA3-1FF5D1C8EEFC}" Directory_="__Dir" Attributes="0" KeyPath="avresample3.dll_1"/>
+    <ROW Component="avutil55.dll_1" ComponentId="{A1199703-CA13-47D6-86FB-E01FCE0C7E0D}" Directory_="__Dir" Attributes="0" KeyPath="avutil55.dll_1"/>
+    <ROW Component="declarative_qmlwebsockets.dll" ComponentId="{A10781F3-52A8-4593-825F-7084E8CFD84D}" Directory_="QtWebSockets_Dir" Attributes="0" KeyPath="declarative_qmlwebsockets.dll"/>
+    <ROW Component="demonpb.VisualElementsManifest.xml" ComponentId="{1ACE1CA5-7B96-4DB4-98C2-57D53DC40695}" Directory_="__Dir" Attributes="0" KeyPath="demonpb.VisualElementsManifest.xml"/>
+    <ROW Component="demonpb.exe_1" ComponentId="{8F8AE65B-CEB8-48E6-93F3-8A3AA1F5361F}" Directory_="__Dir" Attributes="0" KeyPath="demonpb.exe_1"/>
+    <ROW Component="libEGL.dll_1" ComponentId="{653818C1-3231-48A4-B021-EA0E96DE84A7}" Directory_="__Dir" Attributes="0" KeyPath="libEGL.dll_1"/>
+    <ROW Component="libGLESV2.dll_1" ComponentId="{D69A5074-0F00-4820-8D5E-07E7EFB3F08C}" Directory_="__Dir" Attributes="0" KeyPath="libGLESV2.dll_1"/>
+    <ROW Component="modelsplugin.dll" ComponentId="{45676ED5-08AE-49D9-9F11-99E2D4DCC95E}" Directory_="Models.2_Dir" Attributes="0" KeyPath="modelsplugin.dll"/>
+    <ROW Component="plugins.qmltypes" ComponentId="{21732638-DEEC-444C-B53D-9E55DA9E8420}" Directory_="platform_Dir" Attributes="0" KeyPath="plugins.qmltypes" Type="0"/>
+    <ROW Component="plugins.qmltypes_1" ComponentId="{E0DE8F4D-3478-44D8-ADA9-A7B751C28B52}" Directory_="settings_Dir" Attributes="0" KeyPath="plugins.qmltypes_1" Type="0"/>
+    <ROW Component="plugins.qmltypes_10" ComponentId="{3BB654C1-1F68-401C-AE6B-B66D472C3C57}" Directory_="Window.2_Dir" Attributes="0" KeyPath="plugins.qmltypes_16" Type="0"/>
+    <ROW Component="plugins.qmltypes_11" ComponentId="{7B858C48-5E97-4157-B7AB-11CFD4448DC0}" Directory_="QtQuick.2_Dir" Attributes="0" KeyPath="plugins.qmltypes_17" Type="0"/>
+    <ROW Component="plugins.qmltypes_12" ComponentId="{A835E0EB-796A-479C-9280-A57D7D7ACCA3}" Directory_="QtWebSockets_Dir" Attributes="0" KeyPath="plugins.qmltypes_18" Type="0"/>
+    <ROW Component="plugins.qmltypes_2" ComponentId="{BD7B5D01-19FB-4190-99FD-86EFEB4D470D}" Directory_="QtAV_Dir" Attributes="0" KeyPath="plugins.qmltypes_2" Type="0"/>
+    <ROW Component="plugins.qmltypes_3" ComponentId="{854FEA86-E54B-4830-96B6-63F5DF328505}" Directory_="QtCharts_Dir" Attributes="0" KeyPath="plugins.qmltypes_3" Type="0"/>
+    <ROW Component="plugins.qmltypes_4" ComponentId="{4E4ED06A-7DB3-445C-812C-E3D260AA4F38}" Directory_="Models.2_Dir" Attributes="0" KeyPath="plugins.qmltypes_5" Type="0"/>
+    <ROW Component="plugins.qmltypes_5" ComponentId="{9CF20E71-F988-4D2A-BACD-97B0966535EE}" Directory_="QtQml_Dir" Attributes="0" KeyPath="plugins.qmltypes_6" Type="0"/>
+    <ROW Component="plugins.qmltypes_6" ComponentId="{C3BA44C2-07C6-45B5-8A4C-7C39CBB7DEC9}" Directory_="RemoteObjects_Dir" Attributes="0" KeyPath="plugins.qmltypes_7" Type="0"/>
+    <ROW Component="plugins.qmltypes_7" ComponentId="{87932F8B-D593-48E9-AC00-15B4FDBA61BE}" Directory_="StateMachine_Dir" Attributes="0" KeyPath="plugins.qmltypes_8" Type="0"/>
+    <ROW Component="plugins.qmltypes_8" ComponentId="{D676198A-9D87-4955-B08C-01D32520777A}" Directory_="Layouts_Dir" Attributes="0" KeyPath="plugins.qmltypes_14" Type="0"/>
+    <ROW Component="plugins.qmltypes_9" ComponentId="{06B707A2-EF5A-42DD-B1AF-7877A3FBCE9A}" Directory_="Templates.2_Dir" Attributes="0" KeyPath="plugins.qmltypes_15" Type="0"/>
+    <ROW Component="qgenericbearer.dll" ComponentId="{82FEBCDF-CDA6-461F-871C-DC1657BE13EC}" Directory_="bearer_Dir" Attributes="0" KeyPath="qgenericbearer.dll"/>
+    <ROW Component="qgif.dll" ComponentId="{B7D3F8DA-B16C-46CD-94D5-2C77E98BA00B}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qgif.dll"/>
+    <ROW Component="qicns.dll" ComponentId="{C643647F-E0A7-4A34-A5DC-AC83322745B0}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qicns.dll"/>
+    <ROW Component="qico.dll" ComponentId="{4EB45439-C25C-4D96-8F70-869A44C3C1A8}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qico.dll"/>
+    <ROW Component="qjpeg.dll" ComponentId="{5106DB86-BF61-4FA0-A385-A2F4EF7591C2}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qjpeg.dll"/>
+    <ROW Component="qmldbg_debugger.dll" ComponentId="{3316859F-AF8F-4B01-B7B0-2F4E6F63BA07}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_debugger.dll"/>
+    <ROW Component="qmldbg_inspector.dll" ComponentId="{C3132368-CA78-44D3-8FE0-028B94B9AC99}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_inspector.dll"/>
+    <ROW Component="qmldbg_local.dll" ComponentId="{6D33122E-1EB2-47FD-A851-09DFCD857A3D}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_local.dll"/>
+    <ROW Component="qmldbg_messages.dll" ComponentId="{715245F7-7AF2-4E07-849E-ABA179518304}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_messages.dll"/>
+    <ROW Component="qmldbg_native.dll" ComponentId="{329E2A19-E00A-4FAE-BB0E-5248D6930D7C}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_native.dll"/>
+    <ROW Component="qmldbg_nativedebugger.dll" ComponentId="{5BB48E57-E186-4A80-B3D3-0FE319C16679}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_nativedebugger.dll"/>
+    <ROW Component="qmldbg_preview.dll" ComponentId="{0B2435F0-0528-480A-8404-DF3EC677F81C}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_preview.dll"/>
+    <ROW Component="qmldbg_profiler.dll" ComponentId="{092D8D29-7DC1-4970-84FC-703A7A39F511}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_profiler.dll"/>
+    <ROW Component="qmldbg_quickprofiler.dll" ComponentId="{32C82B25-7914-473B-9BAF-8C472BD06716}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_quickprofiler.dll"/>
+    <ROW Component="qmldbg_server.dll" ComponentId="{7DBDAC06-BB8D-4F52-A988-8417F17D2530}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_server.dll"/>
+    <ROW Component="qmldbg_tcp.dll" ComponentId="{5D2A2C9F-A5EA-4944-A71E-DD05E559404A}" Directory_="qmltooling_Dir" Attributes="0" KeyPath="qmldbg_tcp.dll"/>
+    <ROW Component="qmlsettingsplugin.dll" ComponentId="{80836EA7-0CCC-40FE-AAC0-7213D31A60BF}" Directory_="settings_Dir" Attributes="0" KeyPath="qmlsettingsplugin.dll"/>
+    <ROW Component="qquicklayoutsplugin.dll" ComponentId="{E1341708-71E8-4A26-9F66-53EBF9A25A1D}" Directory_="Layouts_Dir" Attributes="0" KeyPath="qquicklayoutsplugin.dll"/>
+    <ROW Component="qsgd3d12backend.dll" ComponentId="{04769205-1865-4A81-B0A3-2D9B1AC62987}" Directory_="scenegraph_Dir" Attributes="0" KeyPath="qsgd3d12backend.dll"/>
+    <ROW Component="qsvg.dll" ComponentId="{198B0813-3AF3-4C8A-8A5C-4040D3122F46}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qsvg.dll"/>
+    <ROW Component="qsvgicon.dll" ComponentId="{817B13A1-104A-4721-9756-EC69C240E276}" Directory_="iconengines_Dir" Attributes="0" KeyPath="qsvgicon.dll"/>
+    <ROW Component="qt_ar.qm" ComponentId="{CF6CEB90-5496-4FCD-906A-6AB2B21B2FA2}" Directory_="translations_Dir" Attributes="0" KeyPath="qt_ar.qm" Type="0"/>
+    <ROW Component="qtchartsqml2.dll" ComponentId="{DF040ADD-BF41-46E2-89BC-02168DDD5D84}" Directory_="QtCharts_Dir" Attributes="0" KeyPath="qtchartsqml2.dll"/>
+    <ROW Component="qtga.dll" ComponentId="{63B77BEB-3917-422C-90D0-3CE23D7F9321}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qtga.dll"/>
+    <ROW Component="qtgraphicaleffectsplugin.dll" ComponentId="{088D4AC7-21EB-4D0A-8A46-F5B510C2610E}" Directory_="QtGraphicalEffects_Dir" Attributes="0" KeyPath="qtgraphicaleffectsplugin.dll"/>
+    <ROW Component="qtgraphicaleffectsprivate.dll" ComponentId="{5CB6246E-2696-49C4-BE5B-38477A4C92A0}" Directory_="private_Dir" Attributes="0" KeyPath="qtgraphicaleffectsprivate.dll"/>
+    <ROW Component="qtiff.dll" ComponentId="{26143A93-00FB-4F71-84B5-1CB7C01DC714}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qtiff.dll"/>
+    <ROW Component="qtlabsplatformplugin.dll" ComponentId="{0E2FCB8F-EA59-4707-BF36-DDD3B4857247}" Directory_="platform_Dir" Attributes="0" KeyPath="qtlabsplatformplugin.dll"/>
+    <ROW Component="qtqmlremoteobjects.dll" ComponentId="{BD13C74E-9FA7-4B86-AFB9-581F2869C100}" Directory_="RemoteObjects_Dir" Attributes="0" KeyPath="qtqmlremoteobjects.dll"/>
+    <ROW Component="qtqmlstatemachine.dll" ComponentId="{6CAC3730-7B15-473A-A890-C387FEC601F0}" Directory_="StateMachine_Dir" Attributes="0" KeyPath="qtqmlstatemachine.dll"/>
+    <ROW Component="qtquick2plugin.dll" ComponentId="{2CB89E0C-13B5-4402-8D54-043772FC101F}" Directory_="QtQuick.2_Dir" Attributes="0" KeyPath="qtquick2plugin.dll"/>
+    <ROW Component="qtquickcontrols2fusionstyleplugin.dll" ComponentId="{074B5AF3-AE81-4933-9F9A-3531A5EDF3FC}" Directory_="Fusion_Dir" Attributes="0" KeyPath="qtquickcontrols2fusionstyleplugin.dll"/>
+    <ROW Component="qtquickcontrols2imaginestyleplugin.dll" ComponentId="{DDE7161F-2DF2-4C69-81E8-0180836C27EB}" Directory_="Imagine_Dir" Attributes="0" KeyPath="qtquickcontrols2imaginestyleplugin.dll"/>
+    <ROW Component="qtquickcontrols2materialstyleplugin.dll" ComponentId="{7A390225-4173-4646-9515-12419C644A60}" Directory_="Material_Dir" Attributes="0" KeyPath="qtquickcontrols2materialstyleplugin.dll"/>
+    <ROW Component="qtquickcontrols2plugin.dll" ComponentId="{4B3E8D12-637B-4CE6-A72A-5BCCB4860952}" Directory_="Controls.2_Dir" Attributes="0" KeyPath="qtquickcontrols2plugin.dll"/>
+    <ROW Component="qtquickcontrols2universalstyleplugin.dll" ComponentId="{ADC8E66E-D2EA-4851-BE89-E586AFE2E66D}" Directory_="Universal_Dir" Attributes="0" KeyPath="qtquickcontrols2universalstyleplugin.dll"/>
+    <ROW Component="qtquicktemplates2plugin.dll" ComponentId="{E2ED2E10-DECE-4B7B-BD84-5DA058039FB5}" Directory_="Templates.2_Dir" Attributes="0" KeyPath="qtquicktemplates2plugin.dll"/>
+    <ROW Component="qtvirtualkeyboard_hangul.dll" ComponentId="{EAE70070-9E24-4474-9EEA-3C7E71936C2D}" Directory_="virtualkeyboard_Dir" Attributes="0" KeyPath="qtvirtualkeyboard_hangul.dll"/>
+    <ROW Component="qtvirtualkeyboard_openwnn.dll" ComponentId="{EE91D02C-E86D-442D-B3B1-92A87FBDF687}" Directory_="virtualkeyboard_Dir" Attributes="0" KeyPath="qtvirtualkeyboard_openwnn.dll"/>
+    <ROW Component="qtvirtualkeyboard_pinyin.dll" ComponentId="{B1327ABF-0812-469F-8D62-3D10C8A229CF}" Directory_="virtualkeyboard_Dir" Attributes="0" KeyPath="qtvirtualkeyboard_pinyin.dll"/>
+    <ROW Component="qtvirtualkeyboard_tcime.dll" ComponentId="{099EAEA9-3502-4E8D-A8C3-7E5F0AF9C43C}" Directory_="virtualkeyboard_Dir" Attributes="0" KeyPath="qtvirtualkeyboard_tcime.dll"/>
+    <ROW Component="qtvirtualkeyboard_thai.dll" ComponentId="{27A4B016-FF17-4304-B098-8BFFD90D388E}" Directory_="virtualkeyboard_Dir" Attributes="0" KeyPath="qtvirtualkeyboard_thai.dll"/>
+    <ROW Component="qtvirtualkeyboardplugin.dll" ComponentId="{C6736DD9-4A6A-4B88-B4E2-3BCE2DB7F5C6}" Directory_="platforminputcontexts_Dir" Attributes="0" KeyPath="qtvirtualkeyboardplugin.dll"/>
+    <ROW Component="qwbmp.dll" ComponentId="{33A39E56-0C46-414D-B459-880D57FA1854}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qwbmp.dll"/>
+    <ROW Component="qwebp.dll" ComponentId="{27D6BAB4-BD9A-4B17-9E7B-B4478099D156}" Directory_="imageformats_Dir" Attributes="0" KeyPath="qwebp.dll"/>
+    <ROW Component="qwindows.dll" ComponentId="{87E1DAD4-6636-4FE7-802B-4F1A90F1A32F}" Directory_="platforms_Dir" Attributes="0" KeyPath="qwindows.dll"/>
+    <ROW Component="qwindowsvistastyle.dll" ComponentId="{EFDA2AA8-627D-4C77-AC1D-D051047777B5}" Directory_="styles_Dir" Attributes="0" KeyPath="qwindowsvistastyle.dll"/>
+    <ROW Component="swresample2.dll_1" ComponentId="{6FC1DC51-5AD7-4FB4-96D9-09BC15A0C291}" Directory_="__Dir" Attributes="0" KeyPath="swresample2.dll_1"/>
+    <ROW Component="swscale4.dll_1" ComponentId="{6BB164E5-EB3E-45FA-9D2A-DFD21FE61A9C}" Directory_="__Dir" Attributes="0" KeyPath="swscale4.dll_1"/>
+    <ROW Component="windowplugin.dll" ComponentId="{623FAD2E-AF68-4A06-8DFD-7B1AEA88C113}" Directory_="Window.2_Dir" Attributes="0" KeyPath="windowplugin.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="B35B3203FEB4CFFA576A27CB835D3E6" Title="Visual C++ Redistributable for Visual Studio 2017 x86" Description="Visual C++ Redistributable for Visual Studio 2017 x86" Display="3" Level="1" Attributes="0"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="TileAssets_DefaultBuild" Title="TileAssets_DefaultBuild" Description="Description" Display="0" Level="1" Directory_="APPDIR" Attributes="0" Options="271" Builds="DefaultBuild"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="avcodec57.dll_1" Component_="avcodec57.dll_1" FileName="AVCODE~1.DLL|avcodec-57.dll" Attributes="0" SourcePath="..\bin\release\32\avcodec-57.dll" SelfReg="false"/>
+    <ROW File="avdevice57.dll_1" Component_="avdevice57.dll_1" FileName="AVDEVI~1.DLL|avdevice-57.dll" Attributes="0" SourcePath="..\bin\release\32\avdevice-57.dll" SelfReg="false"/>
+    <ROW File="avfilter6.dll_1" Component_="avfilter6.dll_1" FileName="AVFILT~1.DLL|avfilter-6.dll" Attributes="0" SourcePath="..\bin\release\32\avfilter-6.dll" SelfReg="false"/>
+    <ROW File="avformat57.dll_1" Component_="avformat57.dll_1" FileName="AVFORM~1.DLL|avformat-57.dll" Attributes="0" SourcePath="..\bin\release\32\avformat-57.dll" SelfReg="false"/>
+    <ROW File="avresample3.dll_1" Component_="avresample3.dll_1" FileName="AVRESA~1.DLL|avresample-3.dll" Attributes="0" SourcePath="..\bin\release\32\avresample-3.dll" SelfReg="false"/>
+    <ROW File="avutil55.dll_1" Component_="avutil55.dll_1" FileName="AVUTIL~1.DLL|avutil-55.dll" Attributes="0" SourcePath="..\bin\release\32\avutil-55.dll" SelfReg="false"/>
+    <ROW File="qgenericbearer.dll" Component_="qgenericbearer.dll" FileName="QGENER~1.DLL|qgenericbearer.dll" Attributes="0" SourcePath="..\bin\release\32\bearer\qgenericbearer.dll" SelfReg="false"/>
+    <ROW File="D3Dcompiler_47.dll_1" Component_="D3Dcompiler_47.dll_1" FileName="D3DCOM~1.DLL|D3Dcompiler_47.dll" Attributes="0" SourcePath="..\bin\release\32\D3Dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="demonpb.exe_1" Component_="demonpb.exe_1" FileName="demon-pb.exe" Attributes="0" SourcePath="..\bin\release\32\demon-pb.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="qsvgicon.dll" Component_="qsvgicon.dll" FileName="qsvgicon.dll" Attributes="0" SourcePath="..\bin\release\32\iconengines\qsvgicon.dll" SelfReg="false"/>
+    <ROW File="qgif.dll" Component_="qgif.dll" FileName="qgif.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qgif.dll" SelfReg="false"/>
+    <ROW File="qicns.dll" Component_="qicns.dll" FileName="qicns.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qicns.dll" SelfReg="false"/>
+    <ROW File="qico.dll" Component_="qico.dll" FileName="qico.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qico.dll" SelfReg="false"/>
+    <ROW File="qjpeg.dll" Component_="qjpeg.dll" FileName="qjpeg.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qjpeg.dll" SelfReg="false"/>
+    <ROW File="qsvg.dll" Component_="qsvg.dll" FileName="qsvg.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qsvg.dll" SelfReg="false"/>
+    <ROW File="qtga.dll" Component_="qtga.dll" FileName="qtga.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qtga.dll" SelfReg="false"/>
+    <ROW File="qtiff.dll" Component_="qtiff.dll" FileName="qtiff.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qtiff.dll" SelfReg="false"/>
+    <ROW File="qwbmp.dll" Component_="qwbmp.dll" FileName="qwbmp.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qwbmp.dll" SelfReg="false"/>
+    <ROW File="qwebp.dll" Component_="qwebp.dll" FileName="qwebp.dll" Attributes="0" SourcePath="..\bin\release\32\imageformats\qwebp.dll" SelfReg="false"/>
+    <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="..\bin\release\32\libEGL.dll" SelfReg="false"/>
+    <ROW File="libGLESV2.dll_1" Component_="libGLESV2.dll_1" FileName="LIBGLE~1.DLL|libGLESV2.dll" Attributes="0" SourcePath="..\bin\release\32\libGLESV2.dll" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboardplugin.dll" Component_="qtvirtualkeyboardplugin.dll" FileName="QTVIRT~1.DLL|qtvirtualkeyboardplugin.dll" Attributes="0" SourcePath="..\bin\release\32\platforminputcontexts\qtvirtualkeyboardplugin.dll" SelfReg="false"/>
+    <ROW File="qwindows.dll" Component_="qwindows.dll" FileName="qwindows.dll" Attributes="0" SourcePath="..\bin\release\32\platforms\qwindows.dll" SelfReg="false"/>
+    <ROW File="qmldbg_debugger.dll" Component_="qmldbg_debugger.dll" FileName="QMLDBG~1.DLL|qmldbg_debugger.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_debugger.dll" SelfReg="false"/>
+    <ROW File="qmldbg_inspector.dll" Component_="qmldbg_inspector.dll" FileName="QMLDBG~2.DLL|qmldbg_inspector.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_inspector.dll" SelfReg="false"/>
+    <ROW File="qmldbg_local.dll" Component_="qmldbg_local.dll" FileName="QMLDBG~3.DLL|qmldbg_local.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_local.dll" SelfReg="false"/>
+    <ROW File="qmldbg_messages.dll" Component_="qmldbg_messages.dll" FileName="QMLDBG~4.DLL|qmldbg_messages.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_messages.dll" SelfReg="false"/>
+    <ROW File="qmldbg_native.dll" Component_="qmldbg_native.dll" FileName="QMLDBG~5.DLL|qmldbg_native.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_native.dll" SelfReg="false"/>
+    <ROW File="qmldbg_nativedebugger.dll" Component_="qmldbg_nativedebugger.dll" FileName="QMLDBG~6.DLL|qmldbg_nativedebugger.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_nativedebugger.dll" SelfReg="false"/>
+    <ROW File="qmldbg_preview.dll" Component_="qmldbg_preview.dll" FileName="QMLDBG~7.DLL|qmldbg_preview.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_preview.dll" SelfReg="false"/>
+    <ROW File="qmldbg_profiler.dll" Component_="qmldbg_profiler.dll" FileName="QMLDBG~8.DLL|qmldbg_profiler.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_profiler.dll" SelfReg="false"/>
+    <ROW File="qmldbg_quickprofiler.dll" Component_="qmldbg_quickprofiler.dll" FileName="QMLDBG~9.DLL|qmldbg_quickprofiler.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_quickprofiler.dll" SelfReg="false"/>
+    <ROW File="qmldbg_server.dll" Component_="qmldbg_server.dll" FileName="QMLDB~10.DLL|qmldbg_server.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_server.dll" SelfReg="false"/>
+    <ROW File="qmldbg_tcp.dll" Component_="qmldbg_tcp.dll" FileName="QMLDB~11.DLL|qmldbg_tcp.dll" Attributes="0" SourcePath="..\bin\release\32\qmltooling\qmldbg_tcp.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes" Component_="plugins.qmltypes" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\platform\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir" Component_="plugins.qmltypes" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\platform\qmldir" SelfReg="false"/>
+    <ROW File="qtlabsplatformplugin.dll" Component_="qtlabsplatformplugin.dll" FileName="QTLABS~1.DLL|qtlabsplatformplugin.dll" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\platform\qtlabsplatformplugin.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_1" Component_="plugins.qmltypes_1" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\settings\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_1" Component_="plugins.qmltypes_1" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\settings\qmldir" SelfReg="false"/>
+    <ROW File="qmlsettingsplugin.dll" Component_="qmlsettingsplugin.dll" FileName="QMLSET~1.DLL|qmlsettingsplugin.dll" Attributes="0" SourcePath="..\bin\release\32\Qt\labs\settings\qmlsettingsplugin.dll" SelfReg="false"/>
+    <ROW File="Qt5Charts.dll_1" Component_="Qt5Charts.dll_1" FileName="QT5CHA~1.DLL|Qt5Charts.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Charts.dll" SelfReg="false"/>
+    <ROW File="Qt5Core.dll_1" Component_="Qt5Core.dll_1" FileName="Qt5Core.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Core.dll" SelfReg="false"/>
+    <ROW File="Qt5Gui.dll_1" Component_="Qt5Gui.dll_1" FileName="Qt5Gui.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Gui.dll" SelfReg="false"/>
+    <ROW File="Qt5Network.dll_1" Component_="Qt5Network.dll_1" FileName="QT5NET~1.DLL|Qt5Network.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Network.dll" SelfReg="false"/>
+    <ROW File="Qt5Qml.dll_1" Component_="Qt5Qml.dll_1" FileName="Qt5Qml.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Qml.dll" SelfReg="false"/>
+    <ROW File="Qt5Quick.dll_1" Component_="Qt5Quick.dll_1" FileName="Qt5Quick.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Quick.dll" SelfReg="false"/>
+    <ROW File="Qt5QuickControls2.dll_1" Component_="Qt5QuickControls2.dll_1" FileName="QT5QUI~1.DLL|Qt5QuickControls2.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5QuickControls2.dll" SelfReg="false"/>
+    <ROW File="Qt5QuickTemplates2.dll_1" Component_="Qt5QuickTemplates2.dll_1" FileName="QT5QUI~2.DLL|Qt5QuickTemplates2.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5QuickTemplates2.dll" SelfReg="false"/>
+    <ROW File="Qt5RemoteObjects.dll_1" Component_="Qt5RemoteObjects.dll_1" FileName="QT5REM~1.DLL|Qt5RemoteObjects.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5RemoteObjects.dll" SelfReg="false"/>
+    <ROW File="Qt5Svg.dll_1" Component_="Qt5Svg.dll_1" FileName="Qt5Svg.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Svg.dll" SelfReg="false"/>
+    <ROW File="Qt5WebSockets.dll_1" Component_="Qt5WebSockets.dll_1" FileName="QT5WEB~1.DLL|Qt5WebSockets.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5WebSockets.dll" SelfReg="false"/>
+    <ROW File="Qt5Widgets.dll_1" Component_="Qt5Widgets.dll_1" FileName="QT5WID~1.DLL|Qt5Widgets.dll" Attributes="0" SourcePath="..\bin\release\32\Qt5Widgets.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_2" Component_="plugins.qmltypes_2" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtAV\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="QmlAV.dll" Component_="QmlAV.dll" FileName="QmlAV.dll" Attributes="0" SourcePath="..\bin\release\32\QtAV\QmlAV.dll" SelfReg="false"/>
+    <ROW File="qmldir_2" Component_="plugins.qmltypes_2" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtAV\qmldir" SelfReg="false"/>
+    <ROW File="Video.qml" Component_="plugins.qmltypes_2" FileName="Video.qml" Attributes="0" SourcePath="..\bin\release\32\QtAV\Video.qml" SelfReg="false"/>
+    <ROW File="QtAV1.dll_1" Component_="QtAV1.dll_1" FileName="QtAV1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAV1.dll" SelfReg="false"/>
+    <ROW File="QtAVd1.dll_1" Component_="QtAVd1.dll_1" FileName="QtAVd1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVd1.dll" SelfReg="false"/>
+    <ROW File="QtAVWidgets1.dll_1" Component_="QtAVWidgets1.dll_1" FileName="QTAVWI~1.DLL|QtAVWidgets1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVWidgets1.dll" SelfReg="false"/>
+    <ROW File="QtAVWidgetsd1.dll_1" Component_="QtAVWidgetsd1.dll_1" FileName="QTAVWI~2.DLL|QtAVWidgetsd1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVWidgetsd1.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_3" Component_="plugins.qmltypes_3" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtCharts\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_3" Component_="plugins.qmltypes_3" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtCharts\qmldir" SelfReg="false"/>
+    <ROW File="qtchartsqml2.dll" Component_="qtchartsqml2.dll" FileName="QTCHAR~1.DLL|qtchartsqml2.dll" Attributes="0" SourcePath="..\bin\release\32\QtCharts\qtchartsqml2.dll" SelfReg="false"/>
+    <ROW File="Blend.qml" Component_="Blend.qml" FileName="Blend.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\Blend.qml" SelfReg="false"/>
+    <ROW File="BrightnessContrast.qml" Component_="Blend.qml" FileName="BRIGHT~1.QML|BrightnessContrast.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\BrightnessContrast.qml" SelfReg="false"/>
+    <ROW File="Colorize.qml" Component_="Blend.qml" FileName="Colorize.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\Colorize.qml" SelfReg="false"/>
+    <ROW File="ColorOverlay.qml" Component_="Blend.qml" FileName="COLORO~1.QML|ColorOverlay.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\ColorOverlay.qml" SelfReg="false"/>
+    <ROW File="ConicalGradient.qml" Component_="Blend.qml" FileName="CONICA~1.QML|ConicalGradient.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\ConicalGradient.qml" SelfReg="false"/>
+    <ROW File="Desaturate.qml" Component_="Blend.qml" FileName="DESATU~1.QML|Desaturate.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\Desaturate.qml" SelfReg="false"/>
+    <ROW File="DirectionalBlur.qml" Component_="Blend.qml" FileName="DIRECT~1.QML|DirectionalBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\DirectionalBlur.qml" SelfReg="false"/>
+    <ROW File="Displace.qml" Component_="Blend.qml" FileName="Displace.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\Displace.qml" SelfReg="false"/>
+    <ROW File="DropShadow.qml" Component_="Blend.qml" FileName="DROPSH~1.QML|DropShadow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\DropShadow.qml" SelfReg="false"/>
+    <ROW File="FastBlur.qml" Component_="Blend.qml" FileName="FastBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\FastBlur.qml" SelfReg="false"/>
+    <ROW File="GammaAdjust.qml" Component_="Blend.qml" FileName="GAMMAA~1.QML|GammaAdjust.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\GammaAdjust.qml" SelfReg="false"/>
+    <ROW File="GaussianBlur.qml" Component_="Blend.qml" FileName="GAUSSI~1.QML|GaussianBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\GaussianBlur.qml" SelfReg="false"/>
+    <ROW File="Glow.qml" Component_="Blend.qml" FileName="Glow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\Glow.qml" SelfReg="false"/>
+    <ROW File="HueSaturation.qml" Component_="Blend.qml" FileName="HUESAT~1.QML|HueSaturation.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\HueSaturation.qml" SelfReg="false"/>
+    <ROW File="InnerShadow.qml" Component_="Blend.qml" FileName="INNERS~1.QML|InnerShadow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\InnerShadow.qml" SelfReg="false"/>
+    <ROW File="LevelAdjust.qml" Component_="Blend.qml" FileName="LEVELA~1.QML|LevelAdjust.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\LevelAdjust.qml" SelfReg="false"/>
+    <ROW File="LinearGradient.qml" Component_="Blend.qml" FileName="LINEAR~1.QML|LinearGradient.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\LinearGradient.qml" SelfReg="false"/>
+    <ROW File="MaskedBlur.qml" Component_="Blend.qml" FileName="MASKED~1.QML|MaskedBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\MaskedBlur.qml" SelfReg="false"/>
+    <ROW File="OpacityMask.qml" Component_="Blend.qml" FileName="OPACIT~1.QML|OpacityMask.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\OpacityMask.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_4" Component_="Blend.qml" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="DropShadowBase.qml" Component_="DropShadowBase.qml" FileName="DROPSH~1.QML|DropShadowBase.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\DropShadowBase.qml" SelfReg="false"/>
+    <ROW File="DropShadowBase.qmlc" Component_="DropShadowBase.qml" FileName="DROPSH~2.QML|DropShadowBase.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\DropShadowBase.qmlc" SelfReg="false"/>
+    <ROW File="FastGlow.qml" Component_="DropShadowBase.qml" FileName="FastGlow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastGlow.qml" SelfReg="false"/>
+    <ROW File="FastGlow.qmlc" Component_="DropShadowBase.qml" FileName="FASTGL~1.QML|FastGlow.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastGlow.qmlc" SelfReg="false"/>
+    <ROW File="FastInnerShadow.qml" Component_="DropShadowBase.qml" FileName="FASTIN~1.QML|FastInnerShadow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastInnerShadow.qml" SelfReg="false"/>
+    <ROW File="FastInnerShadow.qmlc" Component_="DropShadowBase.qml" FileName="FASTIN~2.QML|FastInnerShadow.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastInnerShadow.qmlc" SelfReg="false"/>
+    <ROW File="FastMaskedBlur.qml" Component_="DropShadowBase.qml" FileName="FASTMA~1.QML|FastMaskedBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastMaskedBlur.qml" SelfReg="false"/>
+    <ROW File="FastMaskedBlur.qmlc" Component_="DropShadowBase.qml" FileName="FASTMA~2.QML|FastMaskedBlur.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\FastMaskedBlur.qmlc" SelfReg="false"/>
+    <ROW File="GaussianDirectionalBlur.qml" Component_="DropShadowBase.qml" FileName="GAUSSI~1.QML|GaussianDirectionalBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianDirectionalBlur.qml" SelfReg="false"/>
+    <ROW File="GaussianDirectionalBlur.qmlc" Component_="DropShadowBase.qml" FileName="GAUSSI~2.QML|GaussianDirectionalBlur.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianDirectionalBlur.qmlc" SelfReg="false"/>
+    <ROW File="GaussianGlow.qml" Component_="DropShadowBase.qml" FileName="GAUSSI~3.QML|GaussianGlow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianGlow.qml" SelfReg="false"/>
+    <ROW File="GaussianGlow.qmlc" Component_="DropShadowBase.qml" FileName="GAUSSI~4.QML|GaussianGlow.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianGlow.qmlc" SelfReg="false"/>
+    <ROW File="GaussianInnerShadow.qml" Component_="DropShadowBase.qml" FileName="GAUSSI~5.QML|GaussianInnerShadow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianInnerShadow.qml" SelfReg="false"/>
+    <ROW File="GaussianInnerShadow.qmlc" Component_="DropShadowBase.qml" FileName="GAUSSI~6.QML|GaussianInnerShadow.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianInnerShadow.qmlc" SelfReg="false"/>
+    <ROW File="GaussianMaskedBlur.qml" Component_="DropShadowBase.qml" FileName="GAUSSI~7.QML|GaussianMaskedBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianMaskedBlur.qml" SelfReg="false"/>
+    <ROW File="GaussianMaskedBlur.qmlc" Component_="DropShadowBase.qml" FileName="GAUSSI~8.QML|GaussianMaskedBlur.qmlc" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\GaussianMaskedBlur.qmlc" SelfReg="false"/>
+    <ROW File="qmldir_4" Component_="DropShadowBase.qml" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\qmldir" SelfReg="false"/>
+    <ROW File="qtgraphicaleffectsprivate.dll" Component_="qtgraphicaleffectsprivate.dll" FileName="QTGRAP~1.DLL|qtgraphicaleffectsprivate.dll" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\private\qtgraphicaleffectsprivate.dll" SelfReg="false"/>
+    <ROW File="qmldir_5" Component_="Blend.qml" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\qmldir" SelfReg="false"/>
+    <ROW File="qtgraphicaleffectsplugin.dll" Component_="qtgraphicaleffectsplugin.dll" FileName="QTGRAP~1.DLL|qtgraphicaleffectsplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\qtgraphicaleffectsplugin.dll" SelfReg="false"/>
+    <ROW File="RadialBlur.qml" Component_="Blend.qml" FileName="RADIAL~1.QML|RadialBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\RadialBlur.qml" SelfReg="false"/>
+    <ROW File="RadialGradient.qml" Component_="Blend.qml" FileName="RADIAL~2.QML|RadialGradient.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\RadialGradient.qml" SelfReg="false"/>
+    <ROW File="RectangularGlow.qml" Component_="Blend.qml" FileName="RECTAN~1.QML|RectangularGlow.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\RectangularGlow.qml" SelfReg="false"/>
+    <ROW File="RecursiveBlur.qml" Component_="Blend.qml" FileName="RECURS~1.QML|RecursiveBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\RecursiveBlur.qml" SelfReg="false"/>
+    <ROW File="ThresholdMask.qml" Component_="Blend.qml" FileName="THRESH~1.QML|ThresholdMask.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\ThresholdMask.qml" SelfReg="false"/>
+    <ROW File="ZoomBlur.qml" Component_="Blend.qml" FileName="ZoomBlur.qml" Attributes="0" SourcePath="..\bin\release\32\QtGraphicalEffects\ZoomBlur.qml" SelfReg="false"/>
+    <ROW File="modelsplugin.dll" Component_="modelsplugin.dll" FileName="MODELS~1.DLL|modelsplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQml\Models.2\modelsplugin.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_5" Component_="plugins.qmltypes_4" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQml\Models.2\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_6" Component_="plugins.qmltypes_4" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQml\Models.2\qmldir" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_6" Component_="plugins.qmltypes_5" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQml\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_7" Component_="plugins.qmltypes_5" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQml\qmldir" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_7" Component_="plugins.qmltypes_6" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQml\RemoteObjects\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_8" Component_="plugins.qmltypes_6" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQml\RemoteObjects\qmldir" SelfReg="false"/>
+    <ROW File="qtqmlremoteobjects.dll" Component_="qtqmlremoteobjects.dll" FileName="QTQMLR~1.DLL|qtqmlremoteobjects.dll" Attributes="0" SourcePath="..\bin\release\32\QtQml\RemoteObjects\qtqmlremoteobjects.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_8" Component_="plugins.qmltypes_7" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQml\StateMachine\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_9" Component_="plugins.qmltypes_7" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQml\StateMachine\qmldir" SelfReg="false"/>
+    <ROW File="qtqmlstatemachine.dll" Component_="qtqmlstatemachine.dll" FileName="QTQMLS~1.DLL|qtqmlstatemachine.dll" Attributes="0" SourcePath="..\bin\release\32\QtQml\StateMachine\qtqmlstatemachine.dll" SelfReg="false"/>
+    <ROW File="AbstractButton.qml" Component_="AbstractButton.qml" FileName="ABSTRA~1.QML|AbstractButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\AbstractButton.qml" SelfReg="false"/>
+    <ROW File="Action.qml" Component_="AbstractButton.qml" FileName="Action.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Action.qml" SelfReg="false"/>
+    <ROW File="ActionGroup.qml" Component_="AbstractButton.qml" FileName="ACTION~1.QML|ActionGroup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ActionGroup.qml" SelfReg="false"/>
+    <ROW File="ApplicationWindow.qml" Component_="AbstractButton.qml" FileName="APPLIC~1.QML|ApplicationWindow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ApplicationWindow.qml" SelfReg="false"/>
+    <ROW File="BusyIndicator.qml" Component_="AbstractButton.qml" FileName="BUSYIN~1.QML|BusyIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\BusyIndicator.qml" SelfReg="false"/>
+    <ROW File="Button.qml" Component_="AbstractButton.qml" FileName="Button.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Button.qml" SelfReg="false"/>
+    <ROW File="ButtonGroup.qml" Component_="AbstractButton.qml" FileName="BUTTON~1.QML|ButtonGroup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ButtonGroup.qml" SelfReg="false"/>
+    <ROW File="CheckBox.qml" Component_="AbstractButton.qml" FileName="CheckBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\CheckBox.qml" SelfReg="false"/>
+    <ROW File="CheckDelegate.qml" Component_="AbstractButton.qml" FileName="CHECKD~1.QML|CheckDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\CheckDelegate.qml" SelfReg="false"/>
+    <ROW File="ComboBox.qml" Component_="AbstractButton.qml" FileName="ComboBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ComboBox.qml" SelfReg="false"/>
+    <ROW File="Container.qml" Component_="AbstractButton.qml" FileName="CONTAI~1.QML|Container.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Container.qml" SelfReg="false"/>
+    <ROW File="Control.qml" Component_="AbstractButton.qml" FileName="Control.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Control.qml" SelfReg="false"/>
+    <ROW File="DelayButton.qml" Component_="AbstractButton.qml" FileName="DELAYB~1.QML|DelayButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\DelayButton.qml" SelfReg="false"/>
+    <ROW File="Dial.qml" Component_="AbstractButton.qml" FileName="Dial.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Dial.qml" SelfReg="false"/>
+    <ROW File="Dialog.qml" Component_="AbstractButton.qml" FileName="Dialog.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Dialog.qml" SelfReg="false"/>
+    <ROW File="DialogButtonBox.qml" Component_="AbstractButton.qml" FileName="DIALOG~1.QML|DialogButtonBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\DialogButtonBox.qml" SelfReg="false"/>
+    <ROW File="Drawer.qml" Component_="AbstractButton.qml" FileName="Drawer.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Drawer.qml" SelfReg="false"/>
+    <ROW File="Frame.qml" Component_="AbstractButton.qml" FileName="Frame.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Frame.qml" SelfReg="false"/>
+    <ROW File="ApplicationWindow.qml_1" Component_="ApplicationWindow.qml" FileName="APPLIC~1.QML|ApplicationWindow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ApplicationWindow.qml" SelfReg="false"/>
+    <ROW File="BusyIndicator.qml_1" Component_="ApplicationWindow.qml" FileName="BUSYIN~1.QML|BusyIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\BusyIndicator.qml" SelfReg="false"/>
+    <ROW File="Button.qml_1" Component_="ApplicationWindow.qml" FileName="Button.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Button.qml" SelfReg="false"/>
+    <ROW File="ButtonPanel.qml" Component_="ApplicationWindow.qml" FileName="BUTTON~1.QML|ButtonPanel.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ButtonPanel.qml" SelfReg="false"/>
+    <ROW File="CheckBox.qml_1" Component_="ApplicationWindow.qml" FileName="CheckBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\CheckBox.qml" SelfReg="false"/>
+    <ROW File="CheckDelegate.qml_1" Component_="ApplicationWindow.qml" FileName="CHECKD~1.QML|CheckDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\CheckDelegate.qml" SelfReg="false"/>
+    <ROW File="CheckIndicator.qml" Component_="ApplicationWindow.qml" FileName="CHECKI~1.QML|CheckIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\CheckIndicator.qml" SelfReg="false"/>
+    <ROW File="ComboBox.qml_1" Component_="ApplicationWindow.qml" FileName="ComboBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ComboBox.qml" SelfReg="false"/>
+    <ROW File="DelayButton.qml_1" Component_="ApplicationWindow.qml" FileName="DELAYB~1.QML|DelayButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\DelayButton.qml" SelfReg="false"/>
+    <ROW File="Dial.qml_1" Component_="ApplicationWindow.qml" FileName="Dial.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Dial.qml" SelfReg="false"/>
+    <ROW File="Dialog.qml_1" Component_="ApplicationWindow.qml" FileName="Dialog.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Dialog.qml" SelfReg="false"/>
+    <ROW File="DialogButtonBox.qml_1" Component_="ApplicationWindow.qml" FileName="DIALOG~1.QML|DialogButtonBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\DialogButtonBox.qml" SelfReg="false"/>
+    <ROW File="Drawer.qml_1" Component_="ApplicationWindow.qml" FileName="Drawer.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Drawer.qml" SelfReg="false"/>
+    <ROW File="Frame.qml_1" Component_="ApplicationWindow.qml" FileName="Frame.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Frame.qml" SelfReg="false"/>
+    <ROW File="GroupBox.qml" Component_="ApplicationWindow.qml" FileName="GroupBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\GroupBox.qml" SelfReg="false"/>
+    <ROW File="ItemDelegate.qml" Component_="ApplicationWindow.qml" FileName="ITEMDE~1.QML|ItemDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ItemDelegate.qml" SelfReg="false"/>
+    <ROW File="Label.qml" Component_="ApplicationWindow.qml" FileName="Label.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Label.qml" SelfReg="false"/>
+    <ROW File="Menu.qml" Component_="ApplicationWindow.qml" FileName="Menu.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Menu.qml" SelfReg="false"/>
+    <ROW File="MenuBar.qml" Component_="ApplicationWindow.qml" FileName="MenuBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\MenuBar.qml" SelfReg="false"/>
+    <ROW File="MenuBarItem.qml" Component_="ApplicationWindow.qml" FileName="MENUBA~1.QML|MenuBarItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\MenuBarItem.qml" SelfReg="false"/>
+    <ROW File="MenuItem.qml" Component_="ApplicationWindow.qml" FileName="MenuItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\MenuItem.qml" SelfReg="false"/>
+    <ROW File="MenuSeparator.qml" Component_="ApplicationWindow.qml" FileName="MENUSE~1.QML|MenuSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\MenuSeparator.qml" SelfReg="false"/>
+    <ROW File="Page.qml" Component_="ApplicationWindow.qml" FileName="Page.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Page.qml" SelfReg="false"/>
+    <ROW File="PageIndicator.qml" Component_="ApplicationWindow.qml" FileName="PAGEIN~1.QML|PageIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\PageIndicator.qml" SelfReg="false"/>
+    <ROW File="Pane.qml" Component_="ApplicationWindow.qml" FileName="Pane.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Pane.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_9" Component_="ApplicationWindow.qml" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="Popup.qml" Component_="ApplicationWindow.qml" FileName="Popup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Popup.qml" SelfReg="false"/>
+    <ROW File="ProgressBar.qml" Component_="ApplicationWindow.qml" FileName="PROGRE~1.QML|ProgressBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ProgressBar.qml" SelfReg="false"/>
+    <ROW File="qmldir_10" Component_="ApplicationWindow.qml" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\qmldir" SelfReg="false"/>
+    <ROW File="qtquickcontrols2fusionstyleplugin.dll" Component_="qtquickcontrols2fusionstyleplugin.dll" FileName="QTQUIC~1.DLL|qtquickcontrols2fusionstyleplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\qtquickcontrols2fusionstyleplugin.dll" SelfReg="false"/>
+    <ROW File="RadioButton.qml" Component_="ApplicationWindow.qml" FileName="RADIOB~1.QML|RadioButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\RadioButton.qml" SelfReg="false"/>
+    <ROW File="RadioDelegate.qml" Component_="ApplicationWindow.qml" FileName="RADIOD~1.QML|RadioDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\RadioDelegate.qml" SelfReg="false"/>
+    <ROW File="RadioIndicator.qml" Component_="ApplicationWindow.qml" FileName="RADIOI~1.QML|RadioIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\RadioIndicator.qml" SelfReg="false"/>
+    <ROW File="RangeSlider.qml" Component_="ApplicationWindow.qml" FileName="RANGES~1.QML|RangeSlider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\RangeSlider.qml" SelfReg="false"/>
+    <ROW File="RoundButton.qml" Component_="ApplicationWindow.qml" FileName="ROUNDB~1.QML|RoundButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\RoundButton.qml" SelfReg="false"/>
+    <ROW File="ScrollBar.qml" Component_="ApplicationWindow.qml" FileName="SCROLL~1.QML|ScrollBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ScrollBar.qml" SelfReg="false"/>
+    <ROW File="ScrollIndicator.qml" Component_="ApplicationWindow.qml" FileName="SCROLL~2.QML|ScrollIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ScrollIndicator.qml" SelfReg="false"/>
+    <ROW File="Slider.qml" Component_="ApplicationWindow.qml" FileName="Slider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Slider.qml" SelfReg="false"/>
+    <ROW File="SliderGroove.qml" Component_="ApplicationWindow.qml" FileName="SLIDER~1.QML|SliderGroove.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SliderGroove.qml" SelfReg="false"/>
+    <ROW File="SliderHandle.qml" Component_="ApplicationWindow.qml" FileName="SLIDER~2.QML|SliderHandle.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SliderHandle.qml" SelfReg="false"/>
+    <ROW File="SpinBox.qml" Component_="ApplicationWindow.qml" FileName="SpinBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SpinBox.qml" SelfReg="false"/>
+    <ROW File="SplitView.qml" Component_="ApplicationWindow.qml" FileName="SPLITV~1.QML|SplitView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SplitView.qml" SelfReg="false"/>
+    <ROW File="SwipeDelegate.qml" Component_="ApplicationWindow.qml" FileName="SWIPED~1.QML|SwipeDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SwipeDelegate.qml" SelfReg="false"/>
+    <ROW File="Switch.qml" Component_="ApplicationWindow.qml" FileName="Switch.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Switch.qml" SelfReg="false"/>
+    <ROW File="SwitchDelegate.qml" Component_="ApplicationWindow.qml" FileName="SWITCH~1.QML|SwitchDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SwitchDelegate.qml" SelfReg="false"/>
+    <ROW File="SwitchIndicator.qml" Component_="ApplicationWindow.qml" FileName="SWITCH~2.QML|SwitchIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\SwitchIndicator.qml" SelfReg="false"/>
+    <ROW File="TabBar.qml" Component_="ApplicationWindow.qml" FileName="TabBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\TabBar.qml" SelfReg="false"/>
+    <ROW File="TabButton.qml" Component_="ApplicationWindow.qml" FileName="TABBUT~1.QML|TabButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\TabButton.qml" SelfReg="false"/>
+    <ROW File="TextArea.qml" Component_="ApplicationWindow.qml" FileName="TextArea.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\TextArea.qml" SelfReg="false"/>
+    <ROW File="TextField.qml" Component_="ApplicationWindow.qml" FileName="TEXTFI~1.QML|TextField.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\TextField.qml" SelfReg="false"/>
+    <ROW File="ToolBar.qml" Component_="ApplicationWindow.qml" FileName="ToolBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ToolBar.qml" SelfReg="false"/>
+    <ROW File="ToolButton.qml" Component_="ApplicationWindow.qml" FileName="TOOLBU~1.QML|ToolButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ToolButton.qml" SelfReg="false"/>
+    <ROW File="ToolSeparator.qml" Component_="ApplicationWindow.qml" FileName="TOOLSE~1.QML|ToolSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ToolSeparator.qml" SelfReg="false"/>
+    <ROW File="ToolTip.qml" Component_="ApplicationWindow.qml" FileName="ToolTip.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\ToolTip.qml" SelfReg="false"/>
+    <ROW File="Tumbler.qml" Component_="ApplicationWindow.qml" FileName="Tumbler.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Fusion\Tumbler.qml" SelfReg="false"/>
+    <ROW File="GroupBox.qml_1" Component_="AbstractButton.qml" FileName="GroupBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\GroupBox.qml" SelfReg="false"/>
+    <ROW File="ApplicationWindow.qml_2" Component_="ApplicationWindow.qml_1" FileName="APPLIC~1.QML|ApplicationWindow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ApplicationWindow.qml" SelfReg="false"/>
+    <ROW File="BusyIndicator.qml_2" Component_="ApplicationWindow.qml_1" FileName="BUSYIN~1.QML|BusyIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\BusyIndicator.qml" SelfReg="false"/>
+    <ROW File="Button.qml_2" Component_="ApplicationWindow.qml_1" FileName="Button.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Button.qml" SelfReg="false"/>
+    <ROW File="CheckBox.qml_2" Component_="ApplicationWindow.qml_1" FileName="CheckBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\CheckBox.qml" SelfReg="false"/>
+    <ROW File="CheckDelegate.qml_2" Component_="ApplicationWindow.qml_1" FileName="CHECKD~1.QML|CheckDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\CheckDelegate.qml" SelfReg="false"/>
+    <ROW File="ComboBox.qml_2" Component_="ApplicationWindow.qml_1" FileName="ComboBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ComboBox.qml" SelfReg="false"/>
+    <ROW File="DelayButton.qml_2" Component_="ApplicationWindow.qml_1" FileName="DELAYB~1.QML|DelayButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\DelayButton.qml" SelfReg="false"/>
+    <ROW File="Dial.qml_2" Component_="ApplicationWindow.qml_1" FileName="Dial.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Dial.qml" SelfReg="false"/>
+    <ROW File="Dialog.qml_2" Component_="ApplicationWindow.qml_1" FileName="Dialog.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Dialog.qml" SelfReg="false"/>
+    <ROW File="DialogButtonBox.qml_2" Component_="ApplicationWindow.qml_1" FileName="DIALOG~1.QML|DialogButtonBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\DialogButtonBox.qml" SelfReg="false"/>
+    <ROW File="Drawer.qml_2" Component_="ApplicationWindow.qml_1" FileName="Drawer.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Drawer.qml" SelfReg="false"/>
+    <ROW File="Frame.qml_2" Component_="ApplicationWindow.qml_1" FileName="Frame.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Frame.qml" SelfReg="false"/>
+    <ROW File="GroupBox.qml_2" Component_="ApplicationWindow.qml_1" FileName="GroupBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\GroupBox.qml" SelfReg="false"/>
+    <ROW File="ItemDelegate.qml_1" Component_="ApplicationWindow.qml_1" FileName="ITEMDE~1.QML|ItemDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ItemDelegate.qml" SelfReg="false"/>
+    <ROW File="Label.qml_1" Component_="ApplicationWindow.qml_1" FileName="Label.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Label.qml" SelfReg="false"/>
+    <ROW File="Menu.qml_1" Component_="ApplicationWindow.qml_1" FileName="Menu.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Menu.qml" SelfReg="false"/>
+    <ROW File="MenuItem.qml_1" Component_="ApplicationWindow.qml_1" FileName="MenuItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\MenuItem.qml" SelfReg="false"/>
+    <ROW File="MenuSeparator.qml_1" Component_="ApplicationWindow.qml_1" FileName="MENUSE~1.QML|MenuSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\MenuSeparator.qml" SelfReg="false"/>
+    <ROW File="Page.qml_1" Component_="ApplicationWindow.qml_1" FileName="Page.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Page.qml" SelfReg="false"/>
+    <ROW File="PageIndicator.qml_1" Component_="ApplicationWindow.qml_1" FileName="PAGEIN~1.QML|PageIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\PageIndicator.qml" SelfReg="false"/>
+    <ROW File="Pane.qml_1" Component_="ApplicationWindow.qml_1" FileName="Pane.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Pane.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_10" Component_="ApplicationWindow.qml_1" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="Popup.qml_1" Component_="ApplicationWindow.qml_1" FileName="Popup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Popup.qml" SelfReg="false"/>
+    <ROW File="ProgressBar.qml_1" Component_="ApplicationWindow.qml_1" FileName="PROGRE~1.QML|ProgressBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ProgressBar.qml" SelfReg="false"/>
+    <ROW File="qmldir_11" Component_="ApplicationWindow.qml_1" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\qmldir" SelfReg="false"/>
+    <ROW File="qtquickcontrols2imaginestyleplugin.dll" Component_="qtquickcontrols2imaginestyleplugin.dll" FileName="QTQUIC~1.DLL|qtquickcontrols2imaginestyleplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\qtquickcontrols2imaginestyleplugin.dll" SelfReg="false"/>
+    <ROW File="RadioButton.qml_1" Component_="ApplicationWindow.qml_1" FileName="RADIOB~1.QML|RadioButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\RadioButton.qml" SelfReg="false"/>
+    <ROW File="RadioDelegate.qml_1" Component_="ApplicationWindow.qml_1" FileName="RADIOD~1.QML|RadioDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\RadioDelegate.qml" SelfReg="false"/>
+    <ROW File="RangeSlider.qml_1" Component_="ApplicationWindow.qml_1" FileName="RANGES~1.QML|RangeSlider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\RangeSlider.qml" SelfReg="false"/>
+    <ROW File="RoundButton.qml_1" Component_="ApplicationWindow.qml_1" FileName="ROUNDB~1.QML|RoundButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\RoundButton.qml" SelfReg="false"/>
+    <ROW File="ScrollBar.qml_1" Component_="ApplicationWindow.qml_1" FileName="SCROLL~1.QML|ScrollBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ScrollBar.qml" SelfReg="false"/>
+    <ROW File="ScrollIndicator.qml_1" Component_="ApplicationWindow.qml_1" FileName="SCROLL~2.QML|ScrollIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ScrollIndicator.qml" SelfReg="false"/>
+    <ROW File="Slider.qml_1" Component_="ApplicationWindow.qml_1" FileName="Slider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Slider.qml" SelfReg="false"/>
+    <ROW File="SpinBox.qml_1" Component_="ApplicationWindow.qml_1" FileName="SpinBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\SpinBox.qml" SelfReg="false"/>
+    <ROW File="SplitView.qml_1" Component_="ApplicationWindow.qml_1" FileName="SPLITV~1.QML|SplitView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\SplitView.qml" SelfReg="false"/>
+    <ROW File="StackView.qml" Component_="ApplicationWindow.qml_1" FileName="STACKV~1.QML|StackView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\StackView.qml" SelfReg="false"/>
+    <ROW File="SwipeDelegate.qml_1" Component_="ApplicationWindow.qml_1" FileName="SWIPED~1.QML|SwipeDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\SwipeDelegate.qml" SelfReg="false"/>
+    <ROW File="SwipeView.qml" Component_="ApplicationWindow.qml_1" FileName="SWIPEV~1.QML|SwipeView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\SwipeView.qml" SelfReg="false"/>
+    <ROW File="Switch.qml_1" Component_="ApplicationWindow.qml_1" FileName="Switch.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Switch.qml" SelfReg="false"/>
+    <ROW File="SwitchDelegate.qml_1" Component_="ApplicationWindow.qml_1" FileName="SWITCH~1.QML|SwitchDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\SwitchDelegate.qml" SelfReg="false"/>
+    <ROW File="TabBar.qml_1" Component_="ApplicationWindow.qml_1" FileName="TabBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\TabBar.qml" SelfReg="false"/>
+    <ROW File="TabButton.qml_1" Component_="ApplicationWindow.qml_1" FileName="TABBUT~1.QML|TabButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\TabButton.qml" SelfReg="false"/>
+    <ROW File="TextArea.qml_1" Component_="ApplicationWindow.qml_1" FileName="TextArea.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\TextArea.qml" SelfReg="false"/>
+    <ROW File="TextField.qml_1" Component_="ApplicationWindow.qml_1" FileName="TEXTFI~1.QML|TextField.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\TextField.qml" SelfReg="false"/>
+    <ROW File="ToolBar.qml_1" Component_="ApplicationWindow.qml_1" FileName="ToolBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ToolBar.qml" SelfReg="false"/>
+    <ROW File="ToolButton.qml_1" Component_="ApplicationWindow.qml_1" FileName="TOOLBU~1.QML|ToolButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ToolButton.qml" SelfReg="false"/>
+    <ROW File="ToolSeparator.qml_1" Component_="ApplicationWindow.qml_1" FileName="TOOLSE~1.QML|ToolSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ToolSeparator.qml" SelfReg="false"/>
+    <ROW File="ToolTip.qml_1" Component_="ApplicationWindow.qml_1" FileName="ToolTip.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\ToolTip.qml" SelfReg="false"/>
+    <ROW File="Tumbler.qml_1" Component_="ApplicationWindow.qml_1" FileName="Tumbler.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Imagine\Tumbler.qml" SelfReg="false"/>
+    <ROW File="ItemDelegate.qml_2" Component_="AbstractButton.qml" FileName="ITEMDE~1.QML|ItemDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ItemDelegate.qml" SelfReg="false"/>
+    <ROW File="Label.qml_2" Component_="AbstractButton.qml" FileName="Label.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Label.qml" SelfReg="false"/>
+    <ROW File="ApplicationWindow.qml_3" Component_="ApplicationWindow.qml_2" FileName="APPLIC~1.QML|ApplicationWindow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ApplicationWindow.qml" SelfReg="false"/>
+    <ROW File="BoxShadow.qml" Component_="ApplicationWindow.qml_2" FileName="BOXSHA~1.QML|BoxShadow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\BoxShadow.qml" SelfReg="false"/>
+    <ROW File="BusyIndicator.qml_3" Component_="ApplicationWindow.qml_2" FileName="BUSYIN~1.QML|BusyIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\BusyIndicator.qml" SelfReg="false"/>
+    <ROW File="Button.qml_3" Component_="ApplicationWindow.qml_2" FileName="Button.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Button.qml" SelfReg="false"/>
+    <ROW File="CheckBox.qml_3" Component_="ApplicationWindow.qml_2" FileName="CheckBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\CheckBox.qml" SelfReg="false"/>
+    <ROW File="CheckDelegate.qml_3" Component_="ApplicationWindow.qml_2" FileName="CHECKD~1.QML|CheckDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\CheckDelegate.qml" SelfReg="false"/>
+    <ROW File="CheckIndicator.qml_1" Component_="ApplicationWindow.qml_2" FileName="CHECKI~1.QML|CheckIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\CheckIndicator.qml" SelfReg="false"/>
+    <ROW File="ComboBox.qml_3" Component_="ApplicationWindow.qml_2" FileName="ComboBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ComboBox.qml" SelfReg="false"/>
+    <ROW File="CursorDelegate.qml" Component_="ApplicationWindow.qml_2" FileName="CURSOR~1.QML|CursorDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\CursorDelegate.qml" SelfReg="false"/>
+    <ROW File="DelayButton.qml_3" Component_="ApplicationWindow.qml_2" FileName="DELAYB~1.QML|DelayButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\DelayButton.qml" SelfReg="false"/>
+    <ROW File="Dial.qml_3" Component_="ApplicationWindow.qml_2" FileName="Dial.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Dial.qml" SelfReg="false"/>
+    <ROW File="Dialog.qml_3" Component_="ApplicationWindow.qml_2" FileName="Dialog.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Dialog.qml" SelfReg="false"/>
+    <ROW File="DialogButtonBox.qml_3" Component_="ApplicationWindow.qml_2" FileName="DIALOG~1.QML|DialogButtonBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\DialogButtonBox.qml" SelfReg="false"/>
+    <ROW File="Drawer.qml_3" Component_="ApplicationWindow.qml_2" FileName="Drawer.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Drawer.qml" SelfReg="false"/>
+    <ROW File="ElevationEffect.qml" Component_="ApplicationWindow.qml_2" FileName="ELEVAT~1.QML|ElevationEffect.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ElevationEffect.qml" SelfReg="false"/>
+    <ROW File="Frame.qml_3" Component_="ApplicationWindow.qml_2" FileName="Frame.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Frame.qml" SelfReg="false"/>
+    <ROW File="GroupBox.qml_3" Component_="ApplicationWindow.qml_2" FileName="GroupBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\GroupBox.qml" SelfReg="false"/>
+    <ROW File="ItemDelegate.qml_3" Component_="ApplicationWindow.qml_2" FileName="ITEMDE~1.QML|ItemDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ItemDelegate.qml" SelfReg="false"/>
+    <ROW File="Label.qml_3" Component_="ApplicationWindow.qml_2" FileName="Label.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Label.qml" SelfReg="false"/>
+    <ROW File="Menu.qml_2" Component_="ApplicationWindow.qml_2" FileName="Menu.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Menu.qml" SelfReg="false"/>
+    <ROW File="MenuBar.qml_1" Component_="ApplicationWindow.qml_2" FileName="MenuBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\MenuBar.qml" SelfReg="false"/>
+    <ROW File="MenuBarItem.qml_1" Component_="ApplicationWindow.qml_2" FileName="MENUBA~1.QML|MenuBarItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\MenuBarItem.qml" SelfReg="false"/>
+    <ROW File="MenuItem.qml_2" Component_="ApplicationWindow.qml_2" FileName="MenuItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\MenuItem.qml" SelfReg="false"/>
+    <ROW File="MenuSeparator.qml_2" Component_="ApplicationWindow.qml_2" FileName="MENUSE~1.QML|MenuSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\MenuSeparator.qml" SelfReg="false"/>
+    <ROW File="Page.qml_2" Component_="ApplicationWindow.qml_2" FileName="Page.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Page.qml" SelfReg="false"/>
+    <ROW File="PageIndicator.qml_2" Component_="ApplicationWindow.qml_2" FileName="PAGEIN~1.QML|PageIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\PageIndicator.qml" SelfReg="false"/>
+    <ROW File="Pane.qml_2" Component_="ApplicationWindow.qml_2" FileName="Pane.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Pane.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_11" Component_="ApplicationWindow.qml_2" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="Popup.qml_2" Component_="ApplicationWindow.qml_2" FileName="Popup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Popup.qml" SelfReg="false"/>
+    <ROW File="ProgressBar.qml_2" Component_="ApplicationWindow.qml_2" FileName="PROGRE~1.QML|ProgressBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ProgressBar.qml" SelfReg="false"/>
+    <ROW File="qmldir_12" Component_="ApplicationWindow.qml_2" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\qmldir" SelfReg="false"/>
+    <ROW File="qtquickcontrols2materialstyleplugin.dll" Component_="qtquickcontrols2materialstyleplugin.dll" FileName="QTQUIC~1.DLL|qtquickcontrols2materialstyleplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\qtquickcontrols2materialstyleplugin.dll" SelfReg="false"/>
+    <ROW File="RadioButton.qml_2" Component_="ApplicationWindow.qml_2" FileName="RADIOB~1.QML|RadioButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RadioButton.qml" SelfReg="false"/>
+    <ROW File="RadioDelegate.qml_2" Component_="ApplicationWindow.qml_2" FileName="RADIOD~1.QML|RadioDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RadioDelegate.qml" SelfReg="false"/>
+    <ROW File="RadioIndicator.qml_1" Component_="ApplicationWindow.qml_2" FileName="RADIOI~1.QML|RadioIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RadioIndicator.qml" SelfReg="false"/>
+    <ROW File="RangeSlider.qml_2" Component_="ApplicationWindow.qml_2" FileName="RANGES~1.QML|RangeSlider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RangeSlider.qml" SelfReg="false"/>
+    <ROW File="RectangularGlow.qml_1" Component_="ApplicationWindow.qml_2" FileName="RECTAN~1.QML|RectangularGlow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RectangularGlow.qml" SelfReg="false"/>
+    <ROW File="RoundButton.qml_2" Component_="ApplicationWindow.qml_2" FileName="ROUNDB~1.QML|RoundButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\RoundButton.qml" SelfReg="false"/>
+    <ROW File="ScrollBar.qml_2" Component_="ApplicationWindow.qml_2" FileName="SCROLL~1.QML|ScrollBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ScrollBar.qml" SelfReg="false"/>
+    <ROW File="ScrollIndicator.qml_2" Component_="ApplicationWindow.qml_2" FileName="SCROLL~2.QML|ScrollIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ScrollIndicator.qml" SelfReg="false"/>
+    <ROW File="Slider.qml_2" Component_="ApplicationWindow.qml_2" FileName="Slider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Slider.qml" SelfReg="false"/>
+    <ROW File="SliderHandle.qml_1" Component_="ApplicationWindow.qml_2" FileName="SLIDER~1.QML|SliderHandle.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SliderHandle.qml" SelfReg="false"/>
+    <ROW File="SpinBox.qml_2" Component_="ApplicationWindow.qml_2" FileName="SpinBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SpinBox.qml" SelfReg="false"/>
+    <ROW File="SplitView.qml_2" Component_="ApplicationWindow.qml_2" FileName="SPLITV~1.QML|SplitView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SplitView.qml" SelfReg="false"/>
+    <ROW File="StackView.qml_1" Component_="ApplicationWindow.qml_2" FileName="STACKV~1.QML|StackView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\StackView.qml" SelfReg="false"/>
+    <ROW File="SwipeDelegate.qml_2" Component_="ApplicationWindow.qml_2" FileName="SWIPED~1.QML|SwipeDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SwipeDelegate.qml" SelfReg="false"/>
+    <ROW File="SwipeView.qml_1" Component_="ApplicationWindow.qml_2" FileName="SWIPEV~1.QML|SwipeView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SwipeView.qml" SelfReg="false"/>
+    <ROW File="Switch.qml_2" Component_="ApplicationWindow.qml_2" FileName="Switch.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Switch.qml" SelfReg="false"/>
+    <ROW File="SwitchDelegate.qml_2" Component_="ApplicationWindow.qml_2" FileName="SWITCH~1.QML|SwitchDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SwitchDelegate.qml" SelfReg="false"/>
+    <ROW File="SwitchIndicator.qml_1" Component_="ApplicationWindow.qml_2" FileName="SWITCH~2.QML|SwitchIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\SwitchIndicator.qml" SelfReg="false"/>
+    <ROW File="TabBar.qml_2" Component_="ApplicationWindow.qml_2" FileName="TabBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\TabBar.qml" SelfReg="false"/>
+    <ROW File="TabButton.qml_2" Component_="ApplicationWindow.qml_2" FileName="TABBUT~1.QML|TabButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\TabButton.qml" SelfReg="false"/>
+    <ROW File="TextArea.qml_2" Component_="ApplicationWindow.qml_2" FileName="TextArea.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\TextArea.qml" SelfReg="false"/>
+    <ROW File="TextField.qml_2" Component_="ApplicationWindow.qml_2" FileName="TEXTFI~1.QML|TextField.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\TextField.qml" SelfReg="false"/>
+    <ROW File="ToolBar.qml_2" Component_="ApplicationWindow.qml_2" FileName="ToolBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ToolBar.qml" SelfReg="false"/>
+    <ROW File="ToolButton.qml_2" Component_="ApplicationWindow.qml_2" FileName="TOOLBU~1.QML|ToolButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ToolButton.qml" SelfReg="false"/>
+    <ROW File="ToolSeparator.qml_2" Component_="ApplicationWindow.qml_2" FileName="TOOLSE~1.QML|ToolSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ToolSeparator.qml" SelfReg="false"/>
+    <ROW File="ToolTip.qml_2" Component_="ApplicationWindow.qml_2" FileName="ToolTip.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\ToolTip.qml" SelfReg="false"/>
+    <ROW File="Tumbler.qml_2" Component_="ApplicationWindow.qml_2" FileName="Tumbler.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Material\Tumbler.qml" SelfReg="false"/>
+    <ROW File="Menu.qml_3" Component_="AbstractButton.qml" FileName="Menu.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Menu.qml" SelfReg="false"/>
+    <ROW File="MenuBar.qml_2" Component_="AbstractButton.qml" FileName="MenuBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\MenuBar.qml" SelfReg="false"/>
+    <ROW File="MenuBarItem.qml_2" Component_="AbstractButton.qml" FileName="MENUBA~1.QML|MenuBarItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\MenuBarItem.qml" SelfReg="false"/>
+    <ROW File="MenuItem.qml_3" Component_="AbstractButton.qml" FileName="MenuItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\MenuItem.qml" SelfReg="false"/>
+    <ROW File="MenuSeparator.qml_3" Component_="AbstractButton.qml" FileName="MENUSE~1.QML|MenuSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\MenuSeparator.qml" SelfReg="false"/>
+    <ROW File="Page.qml_3" Component_="AbstractButton.qml" FileName="Page.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Page.qml" SelfReg="false"/>
+    <ROW File="PageIndicator.qml_3" Component_="AbstractButton.qml" FileName="PAGEIN~1.QML|PageIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\PageIndicator.qml" SelfReg="false"/>
+    <ROW File="Pane.qml_3" Component_="AbstractButton.qml" FileName="Pane.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Pane.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_12" Component_="AbstractButton.qml" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="Popup.qml_3" Component_="AbstractButton.qml" FileName="Popup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Popup.qml" SelfReg="false"/>
+    <ROW File="ProgressBar.qml_3" Component_="AbstractButton.qml" FileName="PROGRE~1.QML|ProgressBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ProgressBar.qml" SelfReg="false"/>
+    <ROW File="qmldir_13" Component_="AbstractButton.qml" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\qmldir" SelfReg="false"/>
+    <ROW File="qtquickcontrols2plugin.dll" Component_="qtquickcontrols2plugin.dll" FileName="QTQUIC~1.DLL|qtquickcontrols2plugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\qtquickcontrols2plugin.dll" SelfReg="false"/>
+    <ROW File="RadioButton.qml_3" Component_="AbstractButton.qml" FileName="RADIOB~1.QML|RadioButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\RadioButton.qml" SelfReg="false"/>
+    <ROW File="RadioDelegate.qml_3" Component_="AbstractButton.qml" FileName="RADIOD~1.QML|RadioDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\RadioDelegate.qml" SelfReg="false"/>
+    <ROW File="RangeSlider.qml_3" Component_="AbstractButton.qml" FileName="RANGES~1.QML|RangeSlider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\RangeSlider.qml" SelfReg="false"/>
+    <ROW File="RoundButton.qml_3" Component_="AbstractButton.qml" FileName="ROUNDB~1.QML|RoundButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\RoundButton.qml" SelfReg="false"/>
+    <ROW File="ScrollBar.qml_3" Component_="AbstractButton.qml" FileName="SCROLL~1.QML|ScrollBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ScrollBar.qml" SelfReg="false"/>
+    <ROW File="ScrollIndicator.qml_3" Component_="AbstractButton.qml" FileName="SCROLL~2.QML|ScrollIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ScrollIndicator.qml" SelfReg="false"/>
+    <ROW File="ScrollView.qml" Component_="AbstractButton.qml" FileName="SCROLL~3.QML|ScrollView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ScrollView.qml" SelfReg="false"/>
+    <ROW File="Slider.qml_3" Component_="AbstractButton.qml" FileName="Slider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Slider.qml" SelfReg="false"/>
+    <ROW File="SpinBox.qml_3" Component_="AbstractButton.qml" FileName="SpinBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\SpinBox.qml" SelfReg="false"/>
+    <ROW File="SplitView.qml_3" Component_="AbstractButton.qml" FileName="SPLITV~1.QML|SplitView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\SplitView.qml" SelfReg="false"/>
+    <ROW File="StackView.qml_2" Component_="AbstractButton.qml" FileName="STACKV~1.QML|StackView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\StackView.qml" SelfReg="false"/>
+    <ROW File="SwipeDelegate.qml_3" Component_="AbstractButton.qml" FileName="SWIPED~1.QML|SwipeDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\SwipeDelegate.qml" SelfReg="false"/>
+    <ROW File="SwipeView.qml_2" Component_="AbstractButton.qml" FileName="SWIPEV~1.QML|SwipeView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\SwipeView.qml" SelfReg="false"/>
+    <ROW File="Switch.qml_3" Component_="AbstractButton.qml" FileName="Switch.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Switch.qml" SelfReg="false"/>
+    <ROW File="SwitchDelegate.qml_3" Component_="AbstractButton.qml" FileName="SWITCH~1.QML|SwitchDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\SwitchDelegate.qml" SelfReg="false"/>
+    <ROW File="TabBar.qml_3" Component_="AbstractButton.qml" FileName="TabBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\TabBar.qml" SelfReg="false"/>
+    <ROW File="TabButton.qml_3" Component_="AbstractButton.qml" FileName="TABBUT~1.QML|TabButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\TabButton.qml" SelfReg="false"/>
+    <ROW File="TextArea.qml_3" Component_="AbstractButton.qml" FileName="TextArea.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\TextArea.qml" SelfReg="false"/>
+    <ROW File="TextField.qml_3" Component_="AbstractButton.qml" FileName="TEXTFI~1.QML|TextField.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\TextField.qml" SelfReg="false"/>
+    <ROW File="ToolBar.qml_3" Component_="AbstractButton.qml" FileName="ToolBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ToolBar.qml" SelfReg="false"/>
+    <ROW File="ToolButton.qml_3" Component_="AbstractButton.qml" FileName="TOOLBU~1.QML|ToolButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ToolButton.qml" SelfReg="false"/>
+    <ROW File="ToolSeparator.qml_3" Component_="AbstractButton.qml" FileName="TOOLSE~1.QML|ToolSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ToolSeparator.qml" SelfReg="false"/>
+    <ROW File="ToolTip.qml_3" Component_="AbstractButton.qml" FileName="ToolTip.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\ToolTip.qml" SelfReg="false"/>
+    <ROW File="Tumbler.qml_3" Component_="AbstractButton.qml" FileName="Tumbler.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Tumbler.qml" SelfReg="false"/>
+    <ROW File="ApplicationWindow.qml_4" Component_="ApplicationWindow.qml_3" FileName="APPLIC~1.QML|ApplicationWindow.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ApplicationWindow.qml" SelfReg="false"/>
+    <ROW File="BusyIndicator.qml_4" Component_="ApplicationWindow.qml_3" FileName="BUSYIN~1.QML|BusyIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\BusyIndicator.qml" SelfReg="false"/>
+    <ROW File="Button.qml_4" Component_="ApplicationWindow.qml_3" FileName="Button.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Button.qml" SelfReg="false"/>
+    <ROW File="CheckBox.qml_4" Component_="ApplicationWindow.qml_3" FileName="CheckBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\CheckBox.qml" SelfReg="false"/>
+    <ROW File="CheckDelegate.qml_4" Component_="ApplicationWindow.qml_3" FileName="CHECKD~1.QML|CheckDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\CheckDelegate.qml" SelfReg="false"/>
+    <ROW File="CheckIndicator.qml_2" Component_="ApplicationWindow.qml_3" FileName="CHECKI~1.QML|CheckIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\CheckIndicator.qml" SelfReg="false"/>
+    <ROW File="ComboBox.qml_4" Component_="ApplicationWindow.qml_3" FileName="ComboBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ComboBox.qml" SelfReg="false"/>
+    <ROW File="DelayButton.qml_4" Component_="ApplicationWindow.qml_3" FileName="DELAYB~1.QML|DelayButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\DelayButton.qml" SelfReg="false"/>
+    <ROW File="Dial.qml_4" Component_="ApplicationWindow.qml_3" FileName="Dial.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Dial.qml" SelfReg="false"/>
+    <ROW File="Dialog.qml_4" Component_="ApplicationWindow.qml_3" FileName="Dialog.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Dialog.qml" SelfReg="false"/>
+    <ROW File="DialogButtonBox.qml_4" Component_="ApplicationWindow.qml_3" FileName="DIALOG~1.QML|DialogButtonBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\DialogButtonBox.qml" SelfReg="false"/>
+    <ROW File="Drawer.qml_4" Component_="ApplicationWindow.qml_3" FileName="Drawer.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Drawer.qml" SelfReg="false"/>
+    <ROW File="Frame.qml_4" Component_="ApplicationWindow.qml_3" FileName="Frame.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Frame.qml" SelfReg="false"/>
+    <ROW File="GroupBox.qml_4" Component_="ApplicationWindow.qml_3" FileName="GroupBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\GroupBox.qml" SelfReg="false"/>
+    <ROW File="ItemDelegate.qml_4" Component_="ApplicationWindow.qml_3" FileName="ITEMDE~1.QML|ItemDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ItemDelegate.qml" SelfReg="false"/>
+    <ROW File="Label.qml_4" Component_="ApplicationWindow.qml_3" FileName="Label.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Label.qml" SelfReg="false"/>
+    <ROW File="Menu.qml_4" Component_="ApplicationWindow.qml_3" FileName="Menu.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Menu.qml" SelfReg="false"/>
+    <ROW File="MenuBar.qml_3" Component_="ApplicationWindow.qml_3" FileName="MenuBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\MenuBar.qml" SelfReg="false"/>
+    <ROW File="MenuBarItem.qml_3" Component_="ApplicationWindow.qml_3" FileName="MENUBA~1.QML|MenuBarItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\MenuBarItem.qml" SelfReg="false"/>
+    <ROW File="MenuItem.qml_4" Component_="ApplicationWindow.qml_3" FileName="MenuItem.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\MenuItem.qml" SelfReg="false"/>
+    <ROW File="MenuSeparator.qml_4" Component_="ApplicationWindow.qml_3" FileName="MENUSE~1.QML|MenuSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\MenuSeparator.qml" SelfReg="false"/>
+    <ROW File="Page.qml_4" Component_="ApplicationWindow.qml_3" FileName="Page.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Page.qml" SelfReg="false"/>
+    <ROW File="PageIndicator.qml_4" Component_="ApplicationWindow.qml_3" FileName="PAGEIN~1.QML|PageIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\PageIndicator.qml" SelfReg="false"/>
+    <ROW File="Pane.qml_4" Component_="ApplicationWindow.qml_3" FileName="Pane.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Pane.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_13" Component_="ApplicationWindow.qml_3" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="Popup.qml_4" Component_="ApplicationWindow.qml_3" FileName="Popup.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Popup.qml" SelfReg="false"/>
+    <ROW File="ProgressBar.qml_4" Component_="ApplicationWindow.qml_3" FileName="PROGRE~1.QML|ProgressBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ProgressBar.qml" SelfReg="false"/>
+    <ROW File="qmldir_14" Component_="ApplicationWindow.qml_3" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\qmldir" SelfReg="false"/>
+    <ROW File="qtquickcontrols2universalstyleplugin.dll" Component_="qtquickcontrols2universalstyleplugin.dll" FileName="QTQUIC~1.DLL|qtquickcontrols2universalstyleplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\qtquickcontrols2universalstyleplugin.dll" SelfReg="false"/>
+    <ROW File="RadioButton.qml_4" Component_="ApplicationWindow.qml_3" FileName="RADIOB~1.QML|RadioButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\RadioButton.qml" SelfReg="false"/>
+    <ROW File="RadioDelegate.qml_4" Component_="ApplicationWindow.qml_3" FileName="RADIOD~1.QML|RadioDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\RadioDelegate.qml" SelfReg="false"/>
+    <ROW File="RadioIndicator.qml_2" Component_="ApplicationWindow.qml_3" FileName="RADIOI~1.QML|RadioIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\RadioIndicator.qml" SelfReg="false"/>
+    <ROW File="RangeSlider.qml_4" Component_="ApplicationWindow.qml_3" FileName="RANGES~1.QML|RangeSlider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\RangeSlider.qml" SelfReg="false"/>
+    <ROW File="RoundButton.qml_4" Component_="ApplicationWindow.qml_3" FileName="ROUNDB~1.QML|RoundButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\RoundButton.qml" SelfReg="false"/>
+    <ROW File="ScrollBar.qml_4" Component_="ApplicationWindow.qml_3" FileName="SCROLL~1.QML|ScrollBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ScrollBar.qml" SelfReg="false"/>
+    <ROW File="ScrollIndicator.qml_4" Component_="ApplicationWindow.qml_3" FileName="SCROLL~2.QML|ScrollIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ScrollIndicator.qml" SelfReg="false"/>
+    <ROW File="Slider.qml_4" Component_="ApplicationWindow.qml_3" FileName="Slider.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Slider.qml" SelfReg="false"/>
+    <ROW File="SpinBox.qml_4" Component_="ApplicationWindow.qml_3" FileName="SpinBox.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\SpinBox.qml" SelfReg="false"/>
+    <ROW File="SplitView.qml_4" Component_="ApplicationWindow.qml_3" FileName="SPLITV~1.QML|SplitView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\SplitView.qml" SelfReg="false"/>
+    <ROW File="StackView.qml_3" Component_="ApplicationWindow.qml_3" FileName="STACKV~1.QML|StackView.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\StackView.qml" SelfReg="false"/>
+    <ROW File="SwipeDelegate.qml_4" Component_="ApplicationWindow.qml_3" FileName="SWIPED~1.QML|SwipeDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\SwipeDelegate.qml" SelfReg="false"/>
+    <ROW File="Switch.qml_4" Component_="ApplicationWindow.qml_3" FileName="Switch.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Switch.qml" SelfReg="false"/>
+    <ROW File="SwitchDelegate.qml_4" Component_="ApplicationWindow.qml_3" FileName="SWITCH~1.QML|SwitchDelegate.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\SwitchDelegate.qml" SelfReg="false"/>
+    <ROW File="SwitchIndicator.qml_2" Component_="ApplicationWindow.qml_3" FileName="SWITCH~2.QML|SwitchIndicator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\SwitchIndicator.qml" SelfReg="false"/>
+    <ROW File="TabBar.qml_4" Component_="ApplicationWindow.qml_3" FileName="TabBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\TabBar.qml" SelfReg="false"/>
+    <ROW File="TabButton.qml_4" Component_="ApplicationWindow.qml_3" FileName="TABBUT~1.QML|TabButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\TabButton.qml" SelfReg="false"/>
+    <ROW File="TextArea.qml_4" Component_="ApplicationWindow.qml_3" FileName="TextArea.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\TextArea.qml" SelfReg="false"/>
+    <ROW File="TextField.qml_4" Component_="ApplicationWindow.qml_3" FileName="TEXTFI~1.QML|TextField.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\TextField.qml" SelfReg="false"/>
+    <ROW File="ToolBar.qml_4" Component_="ApplicationWindow.qml_3" FileName="ToolBar.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ToolBar.qml" SelfReg="false"/>
+    <ROW File="ToolButton.qml_4" Component_="ApplicationWindow.qml_3" FileName="TOOLBU~1.QML|ToolButton.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ToolButton.qml" SelfReg="false"/>
+    <ROW File="ToolSeparator.qml_4" Component_="ApplicationWindow.qml_3" FileName="TOOLSE~1.QML|ToolSeparator.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ToolSeparator.qml" SelfReg="false"/>
+    <ROW File="ToolTip.qml_4" Component_="ApplicationWindow.qml_3" FileName="ToolTip.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\ToolTip.qml" SelfReg="false"/>
+    <ROW File="Tumbler.qml_4" Component_="ApplicationWindow.qml_3" FileName="Tumbler.qml" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Controls.2\Universal\Tumbler.qml" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_14" Component_="plugins.qmltypes_8" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Layouts\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_15" Component_="plugins.qmltypes_8" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Layouts\qmldir" SelfReg="false"/>
+    <ROW File="qquicklayoutsplugin.dll" Component_="qquicklayoutsplugin.dll" FileName="QQUICK~1.DLL|qquicklayoutsplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Layouts\qquicklayoutsplugin.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_15" Component_="plugins.qmltypes_9" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Templates.2\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_16" Component_="plugins.qmltypes_9" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Templates.2\qmldir" SelfReg="false"/>
+    <ROW File="qtquicktemplates2plugin.dll" Component_="qtquicktemplates2plugin.dll" FileName="QTQUIC~1.DLL|qtquicktemplates2plugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Templates.2\qtquicktemplates2plugin.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_16" Component_="plugins.qmltypes_10" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Window.2\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_17" Component_="plugins.qmltypes_10" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Window.2\qmldir" SelfReg="false"/>
+    <ROW File="windowplugin.dll" Component_="windowplugin.dll" FileName="WINDOW~1.DLL|windowplugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick\Window.2\windowplugin.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_17" Component_="plugins.qmltypes_11" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtQuick.2\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_18" Component_="plugins.qmltypes_11" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtQuick.2\qmldir" SelfReg="false"/>
+    <ROW File="qtquick2plugin.dll" Component_="qtquick2plugin.dll" FileName="QTQUIC~1.DLL|qtquick2plugin.dll" Attributes="0" SourcePath="..\bin\release\32\QtQuick.2\qtquick2plugin.dll" SelfReg="false"/>
+    <ROW File="declarative_qmlwebsockets.dll" Component_="declarative_qmlwebsockets.dll" FileName="DECLAR~1.DLL|declarative_qmlwebsockets.dll" Attributes="0" SourcePath="..\bin\release\32\QtWebSockets\declarative_qmlwebsockets.dll" SelfReg="false"/>
+    <ROW File="plugins.qmltypes_18" Component_="plugins.qmltypes_12" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtWebSockets\plugins.qmltypes" SelfReg="false"/>
+    <ROW File="qmldir_19" Component_="plugins.qmltypes_12" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtWebSockets\qmldir" SelfReg="false"/>
+    <ROW File="qsgd3d12backend.dll" Component_="qsgd3d12backend.dll" FileName="QSGD3D~1.DLL|qsgd3d12backend.dll" Attributes="0" SourcePath="..\bin\release\32\scenegraph\qsgd3d12backend.dll" SelfReg="false"/>
+    <ROW File="qwindowsvistastyle.dll" Component_="qwindowsvistastyle.dll" FileName="QWINDO~1.DLL|qwindowsvistastyle.dll" Attributes="0" SourcePath="..\bin\release\32\styles\qwindowsvistastyle.dll" SelfReg="false"/>
+    <ROW File="swresample2.dll_1" Component_="swresample2.dll_1" FileName="SWRESA~1.DLL|swresample-2.dll" Attributes="0" SourcePath="..\bin\release\32\swresample-2.dll" SelfReg="false"/>
+    <ROW File="swscale4.dll_1" Component_="swscale4.dll_1" FileName="SWSCAL~1.DLL|swscale-4.dll" Attributes="0" SourcePath="..\bin\release\32\swscale-4.dll" SelfReg="false"/>
+    <ROW File="qt_ar.qm" Component_="qt_ar.qm" FileName="qt_ar.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_ar.qm" SelfReg="false"/>
+    <ROW File="qt_bg.qm" Component_="qt_ar.qm" FileName="qt_bg.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_bg.qm" SelfReg="false"/>
+    <ROW File="qt_ca.qm" Component_="qt_ar.qm" FileName="qt_ca.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_ca.qm" SelfReg="false"/>
+    <ROW File="qt_cs.qm" Component_="qt_ar.qm" FileName="qt_cs.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_cs.qm" SelfReg="false"/>
+    <ROW File="qt_da.qm" Component_="qt_ar.qm" FileName="qt_da.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_da.qm" SelfReg="false"/>
+    <ROW File="qt_de.qm" Component_="qt_ar.qm" FileName="qt_de.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_de.qm" SelfReg="false"/>
+    <ROW File="qt_en.qm" Component_="qt_ar.qm" FileName="qt_en.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_en.qm" SelfReg="false"/>
+    <ROW File="qt_es.qm" Component_="qt_ar.qm" FileName="qt_es.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_es.qm" SelfReg="false"/>
+    <ROW File="qt_fi.qm" Component_="qt_ar.qm" FileName="qt_fi.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_fi.qm" SelfReg="false"/>
+    <ROW File="qt_fr.qm" Component_="qt_ar.qm" FileName="qt_fr.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_fr.qm" SelfReg="false"/>
+    <ROW File="qt_gd.qm" Component_="qt_ar.qm" FileName="qt_gd.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_gd.qm" SelfReg="false"/>
+    <ROW File="qt_he.qm" Component_="qt_ar.qm" FileName="qt_he.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_he.qm" SelfReg="false"/>
+    <ROW File="qt_hu.qm" Component_="qt_ar.qm" FileName="qt_hu.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_hu.qm" SelfReg="false"/>
+    <ROW File="qt_it.qm" Component_="qt_ar.qm" FileName="qt_it.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_it.qm" SelfReg="false"/>
+    <ROW File="qt_ja.qm" Component_="qt_ar.qm" FileName="qt_ja.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_ja.qm" SelfReg="false"/>
+    <ROW File="qt_ko.qm" Component_="qt_ar.qm" FileName="qt_ko.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_ko.qm" SelfReg="false"/>
+    <ROW File="qt_lv.qm" Component_="qt_ar.qm" FileName="qt_lv.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_lv.qm" SelfReg="false"/>
+    <ROW File="qt_pl.qm" Component_="qt_ar.qm" FileName="qt_pl.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_pl.qm" SelfReg="false"/>
+    <ROW File="qt_ru.qm" Component_="qt_ar.qm" FileName="qt_ru.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_ru.qm" SelfReg="false"/>
+    <ROW File="qt_sk.qm" Component_="qt_ar.qm" FileName="qt_sk.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_sk.qm" SelfReg="false"/>
+    <ROW File="qt_uk.qm" Component_="qt_ar.qm" FileName="qt_uk.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_uk.qm" SelfReg="false"/>
+    <ROW File="qt_zh_TW.qm" Component_="qt_ar.qm" FileName="qt_zh_TW.qm" Attributes="0" SourcePath="..\bin\release\32\translations\qt_zh_TW.qm" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboard_hangul.dll" Component_="qtvirtualkeyboard_hangul.dll" FileName="QTVIRT~1.DLL|qtvirtualkeyboard_hangul.dll" Attributes="0" SourcePath="..\bin\release\32\virtualkeyboard\qtvirtualkeyboard_hangul.dll" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboard_openwnn.dll" Component_="qtvirtualkeyboard_openwnn.dll" FileName="QTVIRT~2.DLL|qtvirtualkeyboard_openwnn.dll" Attributes="0" SourcePath="..\bin\release\32\virtualkeyboard\qtvirtualkeyboard_openwnn.dll" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboard_pinyin.dll" Component_="qtvirtualkeyboard_pinyin.dll" FileName="QTVIRT~3.DLL|qtvirtualkeyboard_pinyin.dll" Attributes="0" SourcePath="..\bin\release\32\virtualkeyboard\qtvirtualkeyboard_pinyin.dll" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboard_tcime.dll" Component_="qtvirtualkeyboard_tcime.dll" FileName="QTVIRT~4.DLL|qtvirtualkeyboard_tcime.dll" Attributes="0" SourcePath="..\bin\release\32\virtualkeyboard\qtvirtualkeyboard_tcime.dll" SelfReg="false"/>
+    <ROW File="qtvirtualkeyboard_thai.dll" Component_="qtvirtualkeyboard_thai.dll" FileName="QTVIRT~5.DLL|qtvirtualkeyboard_thai.dll" Attributes="0" SourcePath="..\bin\release\32\virtualkeyboard\qtvirtualkeyboard_thai.dll" SelfReg="false"/>
+    <ROW File="demonpb.VisualElementsManifest.xml" Component_="demonpb.VisualElementsManifest.xml" FileName="DEMON-~1.XML|demon-pb.VisualElementsManifest.xml" Attributes="0" SourcePath="&lt;AI_RES&gt;app.VisualElementsManifest.xml" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="bin" PackageFileName="DemonPresentationBoardSetup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\res\logo.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="DemonPresentationBoardSetup"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FirewallExceptionComponent">
+    <ROW FirewallException="DemonPresentationBoard" DisplayName="DemonPresentationBoard" Enabled="1" Scope="*" Condition="((?demonpb.exe_1=2) AND ($demonpb.exe_1=3))" Profiles="0" AppPath="[#demonpb.exe_1]" Port="*" Protocol="ANY"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="InstallDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\InstallDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\LicenseAgreementDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;surface\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;surface\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRepairDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlAttributeComponent">
+    <ROW XmlAttribute="BackgroundColor" XmlElement="VisualElements" Name="BackgroundColor" Flags="14" Order="0" Value="#d0d1d2"/>
+    <ROW XmlAttribute="Executable" XmlElement="VisualElements" Name="Executable" Flags="14" Order="0" FileId="demonpb.exe_1"/>
+    <ROW XmlAttribute="ForegroundText" XmlElement="VisualElements" Name="ForegroundText" Flags="14" Order="0" Value="dark"/>
+    <ROW XmlAttribute="ShowNameOnSquare150x150Logo" XmlElement="VisualElements" Name="ShowNameOnSquare150x150Logo" Flags="14" Order="0" Value="off"/>
+    <ROW XmlAttribute="xmlnsxsi" XmlElement="Application" Name="xmlns:xsi" Flags="14" Order="0" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlElementComponent">
+    <ROW XmlElement="Application" Name="Application" Order="0" Flags="0" Type="53"/>
+    <ROW XmlElement="VisualElements" ParentElement="Application" Name="VisualElements" Order="0" Flags="0" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlFileComponent">
+    <ROW XmlFile="demonpb.VisualElementsManifest.xml" FileName="demon-pb.VisualElementsManifest.xml" RootElement="Application" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_ConfigureChainer" Description="Configuring prerequisites launcher" DescriptionLocId="ActionText.Description.AI_ConfigureChainer" Template="Configure Launcher" TemplateLocId="ActionText.Template.AI_ConfigureChainer"/>
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DownloadPrereq" Description="Downloading prerequisite software" DescriptionLocId="ActionText.Description.AI_DownloadPrereq" Template="Downloading [1]{[2] completed}" TemplateLocId="ActionText.Template.AI_DownloadPrereq"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractPrereq" Description="Extracting prerequisite software" DescriptionLocId="ActionText.Description.AI_ExtractPrereq" Template="Extracting [1]{[2] completed}" TemplateLocId="ActionText.Template.AI_ExtractPrereq"/>
+    <ROW Action="AI_FwConfig" Description="Executing Windows Firewall configurations" DescriptionLocId="ActionText.Description.AI_FwConfig" Template="Configuring Windows Firewall rule: &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_FwConfig"/>
+    <ROW Action="AI_FwInstall" Description="Generating actions to configure Windows Firewall" DescriptionLocId="ActionText.Description.AI_FwInstall"/>
+    <ROW Action="AI_FwRemove" Description="Executing Windows Firewall configurations" DescriptionLocId="ActionText.Description.AI_FwRemove" Template="Configuring Windows Firewall rule:  &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_FwRemove"/>
+    <ROW Action="AI_FwRollback" Description="Rolling back Windows Firewall configurations." DescriptionLocId="ActionText.Description.AI_FwRollback" Template="Rolling back Windows Firewall configurations." TemplateLocId="ActionText.Template.AI_FwRollback"/>
+    <ROW Action="AI_FwUninstall" Description="Generating actions to configure Windows Firewall" DescriptionLocId="ActionText.Description.AI_FwUninstall"/>
+    <ROW Action="AI_InstallPostPrerequisite" Description="Installing prerequisite software" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="Installing [1]{[2] completed}" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
+    <ROW Action="AI_InstallPrerequisite" Description="Installing prerequisite software" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="Installing [1]{[2] completed}" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
+    <ROW Action="AI_VerifyPrereq" Description="Verifying prerequisites" DescriptionLocId="ActionText.Description.AI_VerifyPrereq" Template="[1] was not installed correctly." TemplateLocId="ActionText.Template.AI_VerifyPrereq"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="NetFirewall.dll" SourcePath="&lt;AI_CUSTACTS&gt;NetFirewall.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="aipackagechainer.exe" SourcePath="&lt;AI_CUSTACTS&gt;aipackagechainer.exe"/>
+    <ROW Name="logo.png" SourcePath="..\res\logo.png"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+    <ROW Name="metroinstallbutton.png" SourcePath="res\metroinstallbutton.png"/>
+    <ATTRIBUTE name="DeletedRows" value="metroinstallbutton"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiConditionComponent">
+    <ROW Feature_="TileAssets_DefaultBuild" Level="4" Condition="VersionNT &lt; 603"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdminBrowseDlg" Control="DirectoryCombo" Type="DirectoryCombo" X="68" Y="131" Width="209" Height="16" Attributes="393227" Property="TARGETDIR" Order="800" MsiKey="AdminBrowseDlg#DirectoryCombo"/>
+    <ROW Dialog_="AdminBrowseDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="900" MsiKey="AdminBrowseDlg#ProductLogo"/>
+    <ROW Dialog_="AdminBrowseDlg" Control="Up" Type="PushButton" X="285" Y="131" Width="19" Height="19" Attributes="3670019" Text="[UpDirIcon]" Help="Up One Level|" Order="1000" HelpLocId="Control.Help.BrowseDlg#Up" MsiKey="AdminBrowseDlg#Up"/>
+    <ROW Dialog_="AdminBrowseDlg" Control="NewDirButton" Type="PushButton" X="310" Y="131" Width="19" Height="19" Attributes="3670019" Text="[NewDirIcon]" Help="Create A New Folder|" Order="1100" HelpLocId="Control.Help.BrowseDlg#NewFolder" MsiKey="AdminBrowseDlg#NewDirButton"/>
+    <ROW Dialog_="AdminBrowseDlg" Control="PathLabel" Type="Text" X="21" Y="278" Width="75" Height="18" Attributes="65539" Text="&amp;Folder name:" Order="1200" TextLocId="Control.Text.BrowseDlg#PathLabel" MsiKey="AdminBrowseDlg#PathLabel"/>
+    <ROW Dialog_="AdminBrowseDlg" Control="Title" Type="Text" X="17" Y="108" Width="312" Height="23" Attributes="196611" Text="Change current destination folder" TextStyle="[SubTitleStyle]" Order="1300" TextLocId="Control.Text.BrowseDlg#Title" MsiKey="AdminBrowseDlg#Title"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control="Description" Type="Text" X="17" Y="105" Width="312" Height="65" Attributes="65539" Text="The [Wizard] will create a server image of [ProductName], at a specified network location.  Click &quot;[Text_Next]&quot; to continue or &quot;Cancel&quot; to exit the [Wizard]." Order="700" TextLocId="Metro.Control.Text.AdminWelcomeDlg#Description" MsiKey="AdminInstallPointDlg#Description"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control="TitleIcon" Type="Icon" X="27" Y="5" Width="16" Height="16" Attributes="3145729" Text="[AppLogoIcon]" Order="800" MsiKey="AdminInstallPointDlg#TitleIcon"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="900" MsiKey="AdminInstallPointDlg#ProductLogo"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control="BrowseButton" Type="ImageButton" X="311" Y="225" Width="21" Height="20" Attributes="3" Text="[browsebutton]" TextStyle="DlgFont8" Order="1000" MsiKey="AdminInstallPointDlg#BrowseButton" ExtType="ImageButton" ExtData="..." ExtDataLocId="Metro.Control.ExtData.WelcomeDlg.BrowseTxt"/>
+    <ROW Dialog_="AdminWelcomeDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="600" MsiKey="AdminWelcomeDlg#ProductLogo"/>
+    <ROW Dialog_="BrowseDlg" Control="Title" Type="Text" X="17" Y="108" Width="312" Height="23" Attributes="196611" Text="Change current destination folder" TextStyle="[SubTitleStyle]" Order="1100" TextLocId="Control.Text.BrowseDlg#Title" MsiKey="BrowseDlg#Title"/>
+    <ROW Dialog_="BrowseDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="1200" MsiKey="BrowseDlg#ProductLogo"/>
+    <ROW Dialog_="CustomizeDlg" Control="CustomizeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="CustomizeDlg" Control="SubTitle" Type="Text" X="17" Y="105" Width="310" Height="24" Attributes="196611" Text="Select which components of will be installed" Order="500" MsiKey="CustomizeDlg#SubTitle"/>
+    <ROW Dialog_="CustomizeDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="1200" MsiKey="CustomizeDlg#ProductLogo"/>
+    <ROW Dialog_="DiskCostDlg" Control="Description" Type="Text" X="17" Y="100" Width="312" Height="35" Attributes="196611" Text="Disk space required for the selected features" TextStyle="[SubTitleStyle]" Order="500" TextLocId="Azure.Control.Text.DiskCostDlg#Title" MsiKey="DiskCostDlg#Description"/>
+    <ROW Dialog_="DiskCostDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="600" MsiKey="DiskCostDlg#ProductLogo"/>
+    <ROW Dialog_="ExitDialog" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="ExitDialog#ProductLogo"/>
+    <ROW Dialog_="ExitDialog" Control="ReadmeButton" Type="ImageButton" X="77" Y="155" Width="92" Height="123" Attributes="3" Text="[ViewReadMeButton]" Order="900" MsiKey="ExitDialog#ReadmeButton" ExtType="ImageButton"/>
+    <ROW Dialog_="ExitDialog" Control="MetroReadmeText" Type="Text" X="83" Y="278" Width="86" Height="16" Attributes="196611" Text="Readme" Order="1000" TextLocId="Metro.Control.Text.ExitDialog#Readme" MsiKey="ExitDialog#MetroReadmeText"/>
+    <ROW Dialog_="ExitDialog" Control="RunButton" Type="ImageButton" X="176" Y="155" Width="92" Height="123" Attributes="3" Text="[MetroRunApplicationButton]" Order="1100" MsiKey="ExitDialog#RunButton" ExtType="ImageButton"/>
+    <ROW Dialog_="ExitDialog" Control="RunLabel" Type="Text" X="182" Y="278" Width="86" Height="16" Attributes="196611" Text="Run" Order="1200" TextLocId="Metro.Control.Text.ExitDialog#Run" MsiKey="ExitDialog#RunLabel"/>
+    <ROW Dialog_="FatalError" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="1000" MsiKey="FatalError#ProductLogo"/>
+    <ROW Dialog_="FatalError" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="50" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="1100" TextLocId="Metro.Control.Text.ProductName" MsiKey="FatalError#ProductNameTitle"/>
+    <ROW Dialog_="FatalError" Control="CompanyText" Type="Text" X="83" Y="16" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="1200" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="FatalError#CompanyText"/>
+    <ROW Dialog_="FilesInUse" Control="Description" Type="Text" X="17" Y="100" Width="312" Height="35" Attributes="196611" Text="Some files that need to be updated are currently in use" TextStyle="[SubTitleStyle]" Order="700" TextLocId="Graphite.Control.Text.MsiRMFilesInUse#Description" MsiKey="FilesInUse#Description"/>
+    <ROW Dialog_="FilesInUse" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="FilesInUse#ProductLogo"/>
+    <ROW Dialog_="InstallDlg" Control="InstallButton" Type="ImageButton" X="109" Y="326" Width="128" Height="41" Attributes="3" Text="[metroinstallbutton]" TextStyle="[MetroInstallButtonFont]" Order="1000" MsiKey="InstallDlg#InstallButton" ExtType="ImageButton" ExtData="INSTALL" ExtDataLocId="Metro.Control.ExtData.VerifyReadyDlg#InstallButton"/>
+    <ROW Dialog_="InstallDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="1100" MsiKey="InstallDlg#ProductLogo"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="17" Y="122" Width="312" Height="227" Attributes="3" Property="EulaRead" Text="MIT-X License.rtf" Order="600" TextLocId="_2" MsiKey="LicenseAgreementDlg#AgreementText"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="PrintBtn" Type="ImageButton" X="301" Y="92" Width="28" Height="28" Attributes="3" Text="[MetroPrintButton]" Order="700" MsiKey="LicenseAgreementDlg#PrintBtn" AssociatedCtrl="AgreementText" ExtType="ImageButton"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="LicenseAgreementDlg#ProductLogo"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="SubTitle" Type="Text" X="17" Y="105" Width="312" Height="20" Attributes="196611" Text="Modify, Repair or Remove installation" TextStyle="[SubTitleStyle]" Order="1400" TextLocId="Control.Text.MaintenanceTypeDlg#Title" MsiKey="MaintenanceTypeDlg#SubTitle"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="1500" MsiKey="MaintenanceTypeDlg#ProductLogo"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroModifyButton" Type="ImageButton" X="27" Y="155" Width="92" Height="123" Attributes="3" Text="[ModifyButton]" Order="1600" MsiKey="MaintenanceTypeDlg#MetroModifyButton" ExtType="ImageButton"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroRepairButton" Type="ImageButton" X="128" Y="155" Width="92" Height="123" Attributes="3" Text="repair.png" Order="1700" MsiKey="MaintenanceTypeDlg#MetroRepairButton" ExtType="ImageButton"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroRemoveButton" Type="ImageButton" X="228" Y="155" Width="92" Height="123" Attributes="3" Text="remove.png" Order="1800" MsiKey="MaintenanceTypeDlg#MetroRemoveButton" ExtType="ImageButton"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroRemoveText" Type="Text" X="234" Y="278" Width="86" Height="15" Attributes="65539" Text="&amp;Remove" Order="1900" TextLocId="Control.Text.MaintenanceTypeDlg#RemoveLabel" MsiKey="MaintenanceTypeDlg#MetroRemoveText"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroRepairText" Type="Text" X="133" Y="278" Width="86" Height="16" Attributes="65539" Text="Re&amp;pair" Order="2000" TextLocId="Control.Text.MaintenanceTypeDlg#RepairLabel" MsiKey="MaintenanceTypeDlg#MetroRepairText"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="MetroModifyText" Type="Text" X="33" Y="278" Width="86" Height="16" Attributes="65539" Text="&amp;Modify" Order="2100" TextLocId="Control.Text.MaintenanceTypeDlg#ChangeLabel" MsiKey="MaintenanceTypeDlg#MetroModifyText"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="MsiRMFilesInUse#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="MsiRMFilesInUse#ProductLogo"/>
+    <ROW Dialog_="OutOfDiskDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="600" MsiKey="OutOfDiskDlg#ProductLogo"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="700" MsiKey="OutOfRbDiskDlg#ProductLogo"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="Text" Type="Text" X="17" Y="139" Width="312" Height="53" Attributes="196611" Text="Not enough disk space on the highlighted volumes. Choose a different destination drive, remove some files or install less features." Order="800" TextLocId="Metro.Control.Text.OutOfDiskDlg#Text" MsiKey="OutOfRbDiskDlg#Text"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="PatchWelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="600" MsiKey="PatchWelcomeDlg#ProductLogo"/>
+    <ROW Dialog_="PrepareDlg" Control="ProductLogo" Type="Bitmap" X="143" Y="11" Width="65" Height="63" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="PrepareDlg#ProductLogo"/>
+    <ROW Dialog_="ProgressDlg" Control="Text" Type="Text" X="17" Y="113" Width="312" Height="30" Attributes="196611" Text="Please wait while the [Wizard] [Progress2] [ProductName].  This may take several minutes." Order="700" TextLocId="Control.Text.ProgressDlg#Text" MsiKey="ProgressDlg#Text"/>
+    <ROW Dialog_="ProgressDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="ProgressDlg#ProductLogo"/>
+    <ROW Dialog_="ProgressDlg" Control="StatusLabel" Type="Text" X="17" Y="171" Width="45" Height="13" Attributes="196611" Text="Status:" TextStyle="[SubnoteFontStyle]" Order="900" TextLocId="Control.Text.ProgressDlg#StatusLabel" MsiKey="ProgressDlg#StatusLabel"/>
+    <ROW Dialog_="ResumeDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="700" MsiKey="ResumeDlg#ProductLogo"/>
+    <ROW Dialog_="UserExit" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="700" MsiKey="UserExit#ProductLogo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyReadyDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Back" Type="PushButton" X="5" Y="381" Width="11" Height="11" Attributes="2" Text="Control.Text.VerifyReadyDlg#Back" Help="Back|" Order="200" TextLocId="Control.Text.VerifyReadyDlg#Back" HelpLocId="Air.Control.Help#Back" MsiKey="VerifyReadyDlg#Back" Options="1" ExtType="PushButton" ExtData="[ButtonText_Back]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ReadyToInstall" Type="Text" X="17" Y="105" Width="312" Height="19" Attributes="196611" Text="Ready to Install" TextStyle="[SubTitleStyle]" Order="400" TextLocId="Control.Text.VerifyReadyDlg#Title" MsiKey="VerifyReadyDlg#ReadyToInstall"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Text_2" Type="Text" X="17" Y="139" Width="312" Height="100" Attributes="65539" Text="The [Wizard] is ready to begin the [ProductName] installation" Order="500" TextLocId="Control.Text.VerifyReadyDlg#Description" MsiKey="VerifyReadyDlg#Text_2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="InstallButton" Type="ImageButton" X="251" Y="359" Width="78" Height="28" Attributes="3" Text="[metrobuttonimage]" TextStyle="[MetroButtonText]" Order="600" MsiKey="VerifyReadyDlg#InstallButton" ExtType="ImageButton" ExtData="INSTALL" ExtDataLocId="Metro.Control.ExtData.VerifyReadyDlg#InstallButton"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="140" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="700" TextLocId="Metro.Control.Text.ProductName" MsiKey="VerifyReadyDlg#ProductNameTitle"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="CompanyText" Type="Text" X="11" Y="64" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="800" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="VerifyReadyDlg#CompanyText"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="900" MsiKey="VerifyReadyDlg#ProductLogo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="AdvInst" Type="Text" X="5" Y="388" Width="74" Height="11" Attributes="196611" Text="Advanced Installer" TextStyle="[BrandingStyle]" Order="1000" MsiKey="VerifyReadyDlg#AdvInst"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyRemoveDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="700" MsiKey="VerifyRemoveDlg#ProductLogo"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="345" Height="400" Attributes="1" Text="[Background]" Order="100" MsiKey="VerifyRepairDlg#Bitmap"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Repair" Type="ImageButton" X="251" Y="359" Width="78" Height="28" Attributes="3" Text="[metrobuttonimage]" TextStyle="[MetroButtonText]" Order="200" MsiKey="VerifyRepairDlg#Repair" Options="1" ExtType="ImageButton" ExtData="&amp;Repair" ExtDataLocId="Metro.Control.ExtData.VerifyRepairDlg#Repair"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="ProductLogo" Type="Bitmap" X="118" Y="6" Width="100" Height="94" Attributes="1" Text="[AppLogoIcon]" Order="700" MsiKey="VerifyRepairDlg#ProductLogo"/>
+    <ATTRIBUTE name="DeletedRows" value="AdminBrowseDlg#CompanyText@AdminBrowseDlg#ProductNameTitle@AdminInstallPointDlg#CompanyText@AdminInstallPointDlg#ProductNameTitle@AdminWelcomeDlg#CompanyText@AdminWelcomeDlg#ProductNameTitle@BrowseDlg#CompanyText@BrowseDlg#ProductNameTitle@CustomizeDlg#AdvInst@CustomizeDlg#CompanyText@CustomizeDlg#ProductNameTitle@DiskCostDlg#CompanyText@DiskCostDlg#ProductNameTitle@ExitDialog#AdvInst@ExitDialog#CompanyText@ExitDialog#ProductNameTitle@FilesInUse#AdvInst@FilesInUse#CompanyText@FilesInUse#ProductNameTitle@InstallDlg#AdvInst@InstallDlg#CompanyText@InstallDlg#ProductNameTitle@InstallDlg.aip@LicenseAgreementDlg#AdvInst@LicenseAgreementDlg#CompanyText@LicenseAgreementDlg#ProductNameTitle@MaintenanceTypeDlg#AdvInst@MaintenanceTypeDlg#CompanyText@MaintenanceTypeDlg#ProductNameTitle@MaintenanceTypeDlg.aip@MsiRMFilesInUse#CompanyText@MsiRMFilesInUse#ProductNameTitle@OutOfDiskDlg#CompanyText@OutOfDiskDlg#ProductNameTitle@OutOfRbDiskDlg#CompanyText@OutOfRbDiskDlg#ProductNameTitle@PatchWelcomeDlg#CompanyText@PatchWelcomeDlg#ProductNameTitle@PrepareDlg#CompanyText@PrepareDlg#ProductNameTitle@ProgressDlg#AdvInst@ProgressDlg#CompanyText@ProgressDlg#ProductNameTitle@ResumeDlg#CompanyText@ResumeDlg#ProductNameTitle@UI.aip@UserExit#AdvInst@UserExit#CompanyText@UserExit#ProductNameTitle@VerifyRemoveDlg#AdvInst@VerifyRemoveDlg#CompanyText@VerifyRemoveDlg#ProductNameTitle@VerifyRepairDlg#AdvInst@VerifyRepairDlg#CompanyText@VerifyRepairDlg#ProductNameTitle"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlConditionComponent">
+    <ATTRIBUTE name="DeletedRows" value="AdminBrowseDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@AdminInstallPointDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@AdminWelcomeDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@BrowseDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@CustomizeDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@ExitDialog#ProductNameTitle#Hide#NOT AIEXTERNALUI@FatalError#ProductNameTitle#Hide#NOT AIEXTERNALUI@MaintenanceTypeDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@OutOfDiskDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@OutOfRbDiskDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@PrepareDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@ProgressDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@ResumeDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@UserExit#ProductNameTitle#Hide#NOT AIEXTERNALUI@VerifyRemoveDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI@VerifyRepairDlg#ProductNameTitle#Hide#NOT AIEXTERNALUI"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="301"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="301"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="InstallDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="199" Options="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="99"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="304" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL" Ordering="101" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL" Ordering="102" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL" Ordering="103" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL" Ordering="104" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="0" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="1" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="2" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EnableRollback" Argument="False" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_MAINT AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_MAINT" Ordering="0" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_MAINT" Ordering="1" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="202" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="203" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_PATCH AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="204" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_PATCH" Ordering="2" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_PATCH" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="ExitDialog" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="101"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="201"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_CleanPrereq" Condition="1" Ordering="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ChooseTextStyles" Type="1" Source="aicustact.dll" Target="ChooseTextStyles"/>
+    <ROW Action="AI_CleanPrereq" Type="65" Source="Prereq.dll" Target="CleanPrereq" WithoutSeq="true"/>
+    <ROW Action="AI_ConfigureChainer" Type="1" Source="Prereq.dll" Target="ConfigurePrereqLauncher"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DownloadPrereq" Type="1" Source="Prereq.dll" Target="DownloadPrereq"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_ExtractPrereq" Type="65" Source="Prereq.dll" Target="ExtractPrereq"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_FwConfig" Type="11265" Source="NetFirewall.dll" Target="OnFwConfig" WithoutSeq="true"/>
+    <ROW Action="AI_FwInstall" Type="1" Source="NetFirewall.dll" Target="OnFwInstall" AdditionalSeq="AI_DATA_SETTER_1"/>
+    <ROW Action="AI_FwRemove" Type="11265" Source="NetFirewall.dll" Target="OnFwRemove" WithoutSeq="true"/>
+    <ROW Action="AI_FwRollback" Type="11521" Source="NetFirewall.dll" Target="OnFwRollback" WithoutSeq="true"/>
+    <ROW Action="AI_FwUninstall" Type="1" Source="NetFirewall.dll" Target="OnFwUninstall" AdditionalSeq="AI_DATA_SETTER_2"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_InstallPostPrerequisite" Type="1" Source="Prereq.dll" Target="InstallPostPrereq"/>
+    <ROW Action="AI_InstallPrerequisite" Type="1" Source="Prereq.dll" Target="InstallPrereq"/>
+    <ROW Action="AI_LaunchChainer" Type="3314" Source="AI_PREREQ_CHAINER"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RunFinishActions" Type="1" Source="aicustact.dll" Target="RunFinishActions" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_VerifyPrereq" Type="1" Source="Prereq.dll" Target="VerifyPrereq"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiExtComponent">
+    <ROW Extension="dpb" Component_="demonpb.exe_1" ProgId_="[|Manufacturer].[|ProductName]" Feature_="MainFeature" Options="32"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="avcodec57.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="avdevice57.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="avfilter6.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="avformat57.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="avresample3.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="avutil55.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="qgenericbearer.dll"/>
+    <ROW Feature_="MainFeature" Component_="D3Dcompiler_47.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="demonpb.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="qsvgicon.dll"/>
+    <ROW Feature_="MainFeature" Component_="qgif.dll"/>
+    <ROW Feature_="MainFeature" Component_="qicns.dll"/>
+    <ROW Feature_="MainFeature" Component_="qico.dll"/>
+    <ROW Feature_="MainFeature" Component_="qjpeg.dll"/>
+    <ROW Feature_="MainFeature" Component_="qsvg.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtga.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtiff.dll"/>
+    <ROW Feature_="MainFeature" Component_="qwbmp.dll"/>
+    <ROW Feature_="MainFeature" Component_="qwebp.dll"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="libGLESV2.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboardplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="qwindows.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_debugger.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_inspector.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_local.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_messages.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_native.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_nativedebugger.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_preview.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_profiler.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_quickprofiler.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_server.dll"/>
+    <ROW Feature_="MainFeature" Component_="qmldbg_tcp.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes"/>
+    <ROW Feature_="MainFeature" Component_="qtlabsplatformplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_1"/>
+    <ROW Feature_="MainFeature" Component_="qmlsettingsplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Charts.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Core.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Gui.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Network.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Qml.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Quick.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5QuickControls2.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5QuickTemplates2.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5RemoteObjects.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Svg.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5WebSockets.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Qt5Widgets.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_2"/>
+    <ROW Feature_="MainFeature" Component_="QmlAV.dll"/>
+    <ROW Feature_="MainFeature" Component_="QtAV1.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="QtAVd1.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="QtAVWidgets1.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="QtAVWidgetsd1.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_3"/>
+    <ROW Feature_="MainFeature" Component_="qtchartsqml2.dll"/>
+    <ROW Feature_="MainFeature" Component_="Blend.qml"/>
+    <ROW Feature_="MainFeature" Component_="DropShadowBase.qml"/>
+    <ROW Feature_="MainFeature" Component_="qtgraphicaleffectsprivate.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtgraphicaleffectsplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="modelsplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_4"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_5"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_6"/>
+    <ROW Feature_="MainFeature" Component_="qtqmlremoteobjects.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_7"/>
+    <ROW Feature_="MainFeature" Component_="qtqmlstatemachine.dll"/>
+    <ROW Feature_="MainFeature" Component_="AbstractButton.qml"/>
+    <ROW Feature_="MainFeature" Component_="ApplicationWindow.qml"/>
+    <ROW Feature_="MainFeature" Component_="qtquickcontrols2fusionstyleplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="ApplicationWindow.qml_1"/>
+    <ROW Feature_="MainFeature" Component_="qtquickcontrols2imaginestyleplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="ApplicationWindow.qml_2"/>
+    <ROW Feature_="MainFeature" Component_="qtquickcontrols2materialstyleplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtquickcontrols2plugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="ApplicationWindow.qml_3"/>
+    <ROW Feature_="MainFeature" Component_="qtquickcontrols2universalstyleplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_8"/>
+    <ROW Feature_="MainFeature" Component_="qquicklayoutsplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_9"/>
+    <ROW Feature_="MainFeature" Component_="qtquicktemplates2plugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_10"/>
+    <ROW Feature_="MainFeature" Component_="windowplugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_11"/>
+    <ROW Feature_="MainFeature" Component_="qtquick2plugin.dll"/>
+    <ROW Feature_="MainFeature" Component_="declarative_qmlwebsockets.dll"/>
+    <ROW Feature_="MainFeature" Component_="plugins.qmltypes_12"/>
+    <ROW Feature_="MainFeature" Component_="qsgd3d12backend.dll"/>
+    <ROW Feature_="MainFeature" Component_="qwindowsvistastyle.dll"/>
+    <ROW Feature_="MainFeature" Component_="swresample2.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="swscale4.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="qt_ar.qm"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboard_hangul.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboard_openwnn.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboard_pinyin.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboard_tcime.dll"/>
+    <ROW Feature_="MainFeature" Component_="qtvirtualkeyboard_thai.dll"/>
+    <ROW Feature_="B35B3203FEB4CFFA576A27CB835D3E6" Component_="B35B3203FEB4CFFA576A27CB835D3E6"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="TileAssets_DefaultBuild" Component_="demonpb.VisualElementsManifest.xml"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="ext.exe" SourcePath="..\res\file.ico" Index="0"/>
+    <ROW Name="logo.exe" SourcePath="..\res\logo.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_ConfigureChainer" Condition="((UILevel = 2) OR (UILevel = 3)) AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6597"/>
+    <ROW Action="AI_LaunchChainer" Condition="AI_PREREQ_CHAINER AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6598"/>
+    <ROW Action="AI_VerifyPrereq" Sequence="1101"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
+    <ROW Action="AI_FwInstall" Condition="(VersionNT &gt;= 501) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5802"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="(VersionNT &gt;= 501) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5801"/>
+    <ROW Action="AI_FwUninstall" Condition="(VersionNT &gt;= 501) AND (REMOVE=&quot;ALL&quot;)" Sequence="1702"/>
+    <ROW Action="AI_DATA_SETTER_2" Condition="(VersionNT &gt;= 501) AND (REMOVE=&quot;ALL&quot;)" Sequence="1701"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_DownloadPrereq" Sequence="1297"/>
+    <ROW Action="AI_ExtractPrereq" Sequence="1298"/>
+    <ROW Action="AI_InstallPrerequisite" Sequence="1299"/>
+    <ROW Action="AI_InstallPostPrerequisite" Sequence="1301"/>
+    <ROW Action="AI_CleanPrereq" Sequence="1302"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="InstallDlg" Condition="AI_INSTALL" Sequence="1230" SeqType="3" MsiKey="WelcomeDlg"/>
+    <ROW Action="MaintenanceTypeDlg" Condition="AI_MAINT" Sequence="1250" SeqType="3" MsiKey="MaintenanceTypeDlg"/>
+    <ROW Action="AI_ChooseTextStyles" Sequence="74"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiProgIdComponent">
+    <ROW ProgId="[|Manufacturer].[|ProductName]" Description="Demon Presentation Board Files" Icon_="ext.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="B35B3203FEB4CFFA576A27CB835D3E6" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="B35B3203FEB4CFFA576A27CB835D3E6" Value="1" Component_="B35B3203FEB4CFFA576A27CB835D3E6"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="DemonPresentationBoard" Directory_="SHORTCUTDIR" Name="DEMONP~1|Demon Presentation Board" Component_="demonpb.exe_1" Target="[#demonpb.exe_1]" Description="None linear presentation file creator" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1" WkDir="__Dir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="surface"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiVerbComponent">
+    <ROW Extension_="dpb" Component_="demonpb.exe_1" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="B35B3203FEB4CFFA576A27CB835D3E6" DisplayName="Visual C++ Redistributable for Visual Studio 2017 x86" VersionMin="14.16" SetupFileUrl="Prerequisites\Visual C++ Redistributable for Visual Studio 2017\vc_redist.x86.exe" Location="0" ExactSize="0" WinNTVersions="Windows Vista RTM x86, Windows Vista SP1 x86, Windows Server 2008 RTM x86, Windows 7 RTM x86" WinNT64Versions="Windows Vista RTM x64, Windows Vista SP1 x64, Windows Server 2008 RTM x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64" Operator="0" NoUiComLine="/q /norestart" Options="f" TargetName="Visual C++ Redistributable for Visual Studio 2017\vc_redist.x86.exe" Feature="B35B3203FEB4CFFA576A27CB835D3E6"/>
+    <ATTRIBUTE name="PrereqsOrder" value="B35B3203FEB4CFFA576A27CB835D3E6"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="B35B3203FEB4CFFA576A27CB835D3E6Syst" Prereq="B35B3203FEB4CFFA576A27CB835D3E6" SearchType="0" SearchString="[SystemFolder]vcruntime140.dll" VerMin="14.16.27012" Order="2" Property="PreReqSearch_2_B35B3203FEB4CFFA576A"/>
+    <ROW SearchKey="B35B3203FEB4CFFA576A27CB835D3E6Vers" Prereq="B35B3203FEB4CFFA576A27CB835D3E6" SearchType="2" SearchString="HKLM\SOFTWARE\Microsoft\DevDiv\VC\Servicing\14.0\RuntimeMinimum\Version" VerMin="14.16.27012" Order="1" Property="PreReqSearch_B35B3203FEB4CFFA576A27"/>
+  </COMPONENT>
+</DOCUMENT>
