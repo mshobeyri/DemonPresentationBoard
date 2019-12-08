@@ -62,4 +62,4 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
         $$PWD/android
 }
 
-VERSION = 1.1.0.2
+VERSION = 1.1.1
