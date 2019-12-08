@@ -8,3 +8,7 @@
 /bin
 /build*
 */build*
+
+*.stash
+
+Makefile
