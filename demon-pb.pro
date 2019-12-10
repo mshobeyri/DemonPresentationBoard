@@ -47,3 +47,4 @@ HEADERS += \
     src/upnpmanager.h
 
 VERSION = 1.1.1.0
+DEFINES += VERSION_STRING=\\\"$${VERSION}\\\"

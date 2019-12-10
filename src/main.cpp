@@ -14,6 +14,7 @@ main(int argc, char* argv[]) {
 
     app.setApplicationName("Demon Presentation Board");
     app.setOrganizationName("waterbear");
+    app.setApplicationVersion(VERSION_STRING);
     QQuickStyle::setStyle("material");
     QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
