@@ -9,10 +9,10 @@
 
 int
 main(int argc, char* argv[]) {
+    QApplication app(argc, argv);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QApplication app(argc, argv);
-    app.setApplicationName("demon-presentation-board");
+    app.setApplicationName("Demon Presentation Board");
     app.setOrganizationName("waterbear");
     QQuickStyle::setStyle("material");
     QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));

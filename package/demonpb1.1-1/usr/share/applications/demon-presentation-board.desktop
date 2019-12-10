@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.1
+Name=Demon Presentation Board
+Terminal=false
+Icon=demonpb
+Type=Application
+Categories=Office;Presentation;
+Exec=demonpb %F
+Keywords=present;prezi;powerpoint;power point;impress;office;
+MimeType=application/demonpb;

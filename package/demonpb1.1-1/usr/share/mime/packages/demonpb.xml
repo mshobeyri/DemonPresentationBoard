@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+   <mime-type type="application/demonpb">
+     <comment>Demon Presentation Board Project</comment>
+     <glob pattern="*.dpb"/>
+     <generic-icon name="demonpb-dpb"/>
+   </mime-type>
+</mime-info>

@@ -12,3 +12,9 @@
 *.stash
 
 Makefile
+
+package/demonpb1\.1-1/usr/bin/demonpb
+package/demonpb1\.1-1/usr/lib/
+package/demonpb1\.1-1/usr/share/demonpb/bin/demonpb
+package/demonpb1\.1-1/usr/share/demonpb/lib/
+package/demonpb1\.1-1/usr/share/demonpb/

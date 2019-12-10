@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Demonpb Installation"
+
+
+sudo echo "application/demonpb=demon-presentation-board.desktop" >> /usr/share/applications/defaults.list
+sudo update-mime-database /usr/share/mime
