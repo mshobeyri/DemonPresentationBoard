@@ -88,6 +88,10 @@ Item {
                                        "subtitle": openRecentJs[i].subtitle
                                    })
         appStatus = FileManager.Loaded
+        var openFilePath = fileio.openFilePaht();
+        if(openFilePath!==""){
+            ifileManager.openAccepted(openFilePath)
+        }
 
     }
     Component.onDestruction: {
@@ -180,8 +184,10 @@ Item {
         function newFile(path){
             currentFilePath = fileio.toLocalFile(path)
             for(var i=0;i<openRecentModel.count;i++){
+
                 if(openRecentModel.get(i).subtitle === currentFilePath){
                     openRecentModel.remove(i)
+                    break
                 }
             }
             currentFileName = currentFilePath.substring(

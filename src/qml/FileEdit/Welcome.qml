@@ -27,13 +27,6 @@ CustomDialog {
             ifileManager.openBtnTriggered()
         }
     }
-    Component.onCompleted: {
-        var openFilePath = fileio.openFilePaht();
-        if(openFilePath!==""){
-            ifileManager.openAccepted(openFilePath)
-            iwelcome.close()
-        }
-    }
 
     RowLayout{
         spacing: 10
