@@ -111,8 +111,6 @@
     <ROW Component="Qt5Widgets.dll_1" ComponentId="{3ABAA8C4-3B02-4D6E-B12C-C40D3B0F4E72}" Directory_="__Dir" Attributes="0" KeyPath="Qt5Widgets.dll_1"/>
     <ROW Component="QtAV1.dll_1" ComponentId="{D0569C99-6008-443B-B11F-A2643602369A}" Directory_="__Dir" Attributes="0" KeyPath="QtAV1.dll_1"/>
     <ROW Component="QtAVWidgets1.dll_1" ComponentId="{7B70DE4D-0863-48B8-9D9A-01E7C95F7E9C}" Directory_="__Dir" Attributes="0" KeyPath="QtAVWidgets1.dll_1"/>
-    <ROW Component="QtAVWidgetsd1.dll_1" ComponentId="{AF73CB91-C5AD-4542-AD80-DA940CFD95BA}" Directory_="__Dir" Attributes="0" KeyPath="QtAVWidgetsd1.dll_1"/>
-    <ROW Component="QtAVd1.dll_1" ComponentId="{FE7FD407-9A08-4E75-B2FC-10D3D188B5F9}" Directory_="__Dir" Attributes="0" KeyPath="QtAVd1.dll_1"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{BE845608-CBFD-4008-A4B5-09A512A4AA1C}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="avcodec57.dll_1" ComponentId="{DA019EF9-3DCC-4545-9979-94FB6781F0E4}" Directory_="__Dir" Attributes="0" KeyPath="avcodec57.dll_1"/>
     <ROW Component="avdevice57.dll_1" ComponentId="{2F283A80-EA84-4B45-97D8-43D3FC96E15C}" Directory_="__Dir" Attributes="0" KeyPath="avdevice57.dll_1"/>
@@ -254,9 +252,7 @@
     <ROW File="qmldir_2" Component_="plugins.qmltypes_2" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtAV\qmldir" SelfReg="false"/>
     <ROW File="Video.qml" Component_="plugins.qmltypes_2" FileName="Video.qml" Attributes="0" SourcePath="..\bin\release\32\QtAV\Video.qml" SelfReg="false"/>
     <ROW File="QtAV1.dll_1" Component_="QtAV1.dll_1" FileName="QtAV1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAV1.dll" SelfReg="false"/>
-    <ROW File="QtAVd1.dll_1" Component_="QtAVd1.dll_1" FileName="QtAVd1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVd1.dll" SelfReg="false"/>
     <ROW File="QtAVWidgets1.dll_1" Component_="QtAVWidgets1.dll_1" FileName="QTAVWI~1.DLL|QtAVWidgets1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVWidgets1.dll" SelfReg="false"/>
-    <ROW File="QtAVWidgetsd1.dll_1" Component_="QtAVWidgetsd1.dll_1" FileName="QTAVWI~2.DLL|QtAVWidgetsd1.dll" Attributes="0" SourcePath="..\bin\release\32\QtAVWidgetsd1.dll" SelfReg="false"/>
     <ROW File="plugins.qmltypes_3" Component_="plugins.qmltypes_3" FileName="PLUGIN~1.QML|plugins.qmltypes" Attributes="0" SourcePath="..\bin\release\32\QtCharts\plugins.qmltypes" SelfReg="false"/>
     <ROW File="qmldir_3" Component_="plugins.qmltypes_3" FileName="qmldir" Attributes="0" SourcePath="..\bin\release\32\QtCharts\qmldir" SelfReg="false"/>
     <ROW File="qtchartsqml2.dll" Component_="qtchartsqml2.dll" FileName="QTCHAR~1.DLL|qtchartsqml2.dll" Attributes="0" SourcePath="..\bin\release\32\QtCharts\qtchartsqml2.dll" SelfReg="false"/>
@@ -956,9 +952,7 @@
     <ROW Feature_="MainFeature" Component_="plugins.qmltypes_2"/>
     <ROW Feature_="MainFeature" Component_="QmlAV.dll"/>
     <ROW Feature_="MainFeature" Component_="QtAV1.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="QtAVd1.dll_1"/>
     <ROW Feature_="MainFeature" Component_="QtAVWidgets1.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="QtAVWidgetsd1.dll_1"/>
     <ROW Feature_="MainFeature" Component_="plugins.qmltypes_3"/>
     <ROW Feature_="MainFeature" Component_="qtchartsqml2.dll"/>
     <ROW Feature_="MainFeature" Component_="Blend.qml"/>
