@@ -28,6 +28,7 @@ contains(QT_ARCH, i386): {
 }
 
 RC_ICONS = res/logo.ico
+ICON = res/logo.icns
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

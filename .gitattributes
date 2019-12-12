@@ -5,3 +5,4 @@
 *.ico filter=lfs diff=lfs merge=lfs -text
 *.dpb filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+*.icns filter=lfs diff=lfs merge=lfs -text

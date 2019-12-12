@@ -44,6 +44,7 @@ CustomDialog {
                 id: isearchFields
 
                 Layout.fillWidth: true
+                selectByMouse: true
             }
         }
 
