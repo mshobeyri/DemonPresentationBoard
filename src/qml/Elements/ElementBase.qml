@@ -42,6 +42,10 @@ Item{
         "v": iroot.visible,
     }
 
+    function elementChanged(){
+        ifileManager.fileChanged()
+    }
+
     function deleteIt(){
         iworld.currentElement = undefined
         visible = false

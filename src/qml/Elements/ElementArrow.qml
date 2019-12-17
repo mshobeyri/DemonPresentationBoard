@@ -10,11 +10,11 @@ ElementBase{
 
     onRightMarkerChanged: {
         json.rightMarker = rightMarker
-        ifileManager.fileChanged()
+        icontainer.elementChanged()
     }
     onLeftMarkerChanged: {
         json.leftMarker = leftMarker
-        ifileManager.fileChanged()
+        icontainer.elementChanged()
     }
 
     property var json: {

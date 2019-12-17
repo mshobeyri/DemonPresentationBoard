@@ -32,7 +32,7 @@ ElementBase{
     function handleFile(path){
         icontainer.tempName = fileio.copyToTempFolder(path)
         icontainer.source = fileio.tempFolderFileUrl(tempName)
-        ifileManager.fileChanged()
+        icontainer.elementChanged()
     }
 
     onCreated: {

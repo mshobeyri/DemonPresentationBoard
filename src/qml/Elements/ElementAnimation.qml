@@ -293,7 +293,7 @@ ElementBase{
                 }
                 onEditingFinished: {
                     if(textChanged){
-                        ifileManager.fileChanged()
+                        icontainer.elementChanged()
                     }
                     textChanged = false
                 }

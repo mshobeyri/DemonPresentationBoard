@@ -22,8 +22,7 @@ ElementBase{
     function handleFile(path){
         icontainer.tempName = fileio.copyToTempFolder(path)
         icontainer.source = fileio.tempFolderFileUrl(tempName)
-        ifileManager.fileChanged()
-        console.log(sourceSize.width,sourceSize.height)
+        icontainer.elementChanged()
         w = h * (sourceSize.width/sourceSize.height)
     }
 
