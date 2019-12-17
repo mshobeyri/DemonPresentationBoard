@@ -48,13 +48,19 @@ ColumnLayout {
             id: ixField
             label: "x"
             text: ioptions.visible?iworld.currentElement.x.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.x = text
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.x = text
+                }catch(err){}
         }
         SidePanelLabelTextField{
             id: iyField
             label: "y"
             text: ioptions.visible?iworld.currentElement.y.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.y = text
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.y = text
+                }catch(err){}
         }
     }
     RowLayout{
@@ -65,13 +71,19 @@ ColumnLayout {
             id: iwField
             label: "w"
             text: ioptions.visible?iworld.currentElement.w.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.w = Number(text)
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.w = text
+                }catch(err){}
         }
         SidePanelLabelTextField{
             id: ihField
             label: "h"
             text: ioptions.visible?iworld.currentElement.h.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.h = Number(text)
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.h = text
+                }catch(err){}
         }
     }
     RowLayout{
@@ -81,14 +93,20 @@ ColumnLayout {
             id: izField
             label: "z"
             text: ioptions.visible?iworld.currentElement.z.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.z = Number(text)
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.z = text
+                }catch(err){}
         }
         SidePanelLabelTextField{
             id: irField
             visible: !optionVisible('animeTextFont')
             label: "r"
             text: ioptions.visible?iworld.currentElement.r.toFixed(0):0
-            onTextChanged: if(textFocus)iworld.currentElement.r = Number(text)
+            onTextChanged:
+                try{
+                    if(textFocus)iworld.currentElement.r = text
+                }catch(err){}
         }
     }
 

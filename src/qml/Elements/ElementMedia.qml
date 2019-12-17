@@ -72,9 +72,8 @@ ElementBase{
             antialiasing: true
             backgroundColor: ithemeGallery.themeColor(icontainer.color)
             onBackgroundColorChanged: {
-
                 imediaplayer.width++
-                   imediaplayer.width--
+                imediaplayer.width--
             }
             Item{
                 width: parent.width
