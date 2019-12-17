@@ -14,6 +14,8 @@ Item {
     property bool animeEnable: true
     property alias xScale: itransform.xScale
     property alias yScale: itransform.yScale
+    property int easingType: (Qt.platform.os === "linux" || Qt.platform.os === "windows")
+                             ? Easing.InOutSine: Easing.Linear
 
     function sceneCenter(){
         return mapFromItem(iworld,iworld.width/2,iworld.height/2)
@@ -82,12 +84,12 @@ Item {
     transform: Scale {
         id: itransform
 
-        Behavior on xScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutSine } }
-        Behavior on yScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: Easing.InOutSine } }
+        Behavior on xScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: easingType } }
+        Behavior on yScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: easingType } }
     }
 
-    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
-    Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: Easing.InOutSine } }
+    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: easingType} }
+    Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: easingType } }
 
     Shortcut{
         sequence: "Space"
