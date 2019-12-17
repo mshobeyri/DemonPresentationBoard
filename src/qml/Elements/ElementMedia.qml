@@ -71,6 +71,11 @@ ElementBase{
             source: icontainer.tempName!==""?icontainer.source:""
             antialiasing: true
             backgroundColor: ithemeGallery.themeColor(icontainer.color)
+            onBackgroundColorChanged: {
+
+                imediaplayer.width++
+                   imediaplayer.width--
+            }
             Item{
                 width: parent.width
                 height: irowLayout.height
