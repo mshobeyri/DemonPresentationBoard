@@ -80,6 +80,18 @@ Item {
         currentElement = undefined
         isidePanel.container.elements.deselectAll()
     }
+    function zoom(delta,modifiers,x,y){
+        if(delta === 0)
+            return
+        var factor = modifiers & Qt.ControlModifier? 1.02:1.5
+        var zoomFactor = delta > 0 ? factor : 1 / factor
+        var realX = x * xScale
+        var realY = y * yScale
+        iboard.x += (1 - zoomFactor) * realX
+        iboard.y += (1 - zoomFactor) * realY
+        xScale *= zoomFactor
+        yScale *= zoomFactor
+    }
 
     transform: Scale {
         id: itransform
@@ -88,7 +100,7 @@ Item {
         Behavior on yScale {enabled: animeEnable; PropertyAnimation { duration: animationDuration;  easing.type: easingType } }
     }
 
-    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: easingType} }
+    Behavior on x { PropertyAnimation { duration: animationDuration; easing.type: easingType } }
     Behavior on y { PropertyAnimation { duration: animationDuration; easing.type: easingType } }
 
     Shortcut{
@@ -107,7 +119,8 @@ Item {
         propagateComposedEvents: true
         drag.axis: Drag.XAndYAxis
         drag.target: iboard
-        cursorShape: containsMouse && isidePanel.insertCandidateComponent===""?
+        hoverEnabled: true
+        cursorShape: containsPress && isidePanel.insertCandidateComponent===""?
                          Qt.ClosedHandCursor:
                          spaceIsDown? Qt.OpenHandCursor:
                                       Qt.ArrowCursor
@@ -131,18 +144,22 @@ Item {
             elementAdd(isidePanel.insertCandidateComponent,mouseX,mouseY)
         }
         onWheel: {
-            if(wheel.angleDelta.y === 0)
-                return
-            var factor = wheel.modifiers & Qt.ControlModifier? 1.01:1.5
-            var zoomFactor = wheel.angleDelta.y > 0 ? factor : 1 / factor
-            var realX = wheel.x * xScale
-            var realY = wheel.y * yScale
-            iboard.x += (1 - zoomFactor) * realX
-            iboard.y += (1 - zoomFactor) * realY
-            xScale *= zoomFactor
-            yScale *= zoomFactor
+            zoom(wheel.angleDelta.y,wheel.modifiers,wheel.x,wheel.y)
+        }
+        Shortcut{
+            sequence: StandardKey.ZoomIn
+            onActivated: {
+                zoom(120,true,iframeMouseArea.mouseX,iframeMouseArea.mouseY)
+            }
+        }
+        Shortcut{
+            sequence: StandardKey.ZoomOut
+            onActivated: {
+                zoom(-120,true,iframeMouseArea.mouseX,iframeMouseArea.mouseY)
+            }
         }
     }
+
 
     Background{
         id: ibackground

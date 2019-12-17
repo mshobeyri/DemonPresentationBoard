@@ -103,21 +103,6 @@ Item{
         }
     }
 
-    Shortcut {
-        sequence: StandardKey.ZoomIn
-        onActivated: {
-            iboard.xScale += 0.1* iboard.xScale
-            iboard.yScale += 0.1* iboard.yScale
-        }
-    }
-    Shortcut {
-        sequence: StandardKey.ZoomOut
-        onActivated: {
-            iboard.xScale -= 0.1* iboard.xScale
-            iboard.yScale -= 0.1* iboard.yScale
-        }
-    }
-
     Item{
         id: iadjuster
         anchors.fill: parent
